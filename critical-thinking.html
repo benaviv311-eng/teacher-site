@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>חשיבה ביקורתית ותודעה חברתית | בית ספר אור</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,sans-serif;background:#f6f7fb;color:#172033}.app{max-width:1120px;margin:auto;padding:18px 16px 90px}a{color:inherit}header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}.brand{font-size:21px;font-weight:900}.home{border:0;background:#fff;border-radius:14px;padding:11px 15px;font-weight:800;box-shadow:0 5px 20px #17203310;cursor:pointer}.hero{background:linear-gradient(135deg,#24144f,#5b2bbf 52%,#8b5cf6);color:white;border-radius:30px;padding:30px;box-shadow:0 18px 45px #4c1d9530}.hero .eyebrow{font-size:13px;opacity:.82;font-weight:800}.hero h1{font-size:clamp(30px,6vw,52px);margin:8px 0 10px;line-height:1.05}.hero p{max-width:760px;line-height:1.75;margin:0;color:#f4f0ff}.principle{margin-top:18px;background:#ffffff18;border:1px solid #ffffff38;border-radius:18px;padding:16px 18px;font-size:17px;font-weight:800;line-height:1.6}.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:22px 0}.chip{background:#fff;border:1px solid #e6e7ee;border-radius:999px;padding:9px 13px;font-size:13px;font-weight:800}.chip.active{background:#efe9ff;color:#5426a8;border-color:#d9c7ff}.search{flex:1;min-width:240px;border:1px solid #e1e4eb;border-radius:15px;background:#fff;padding:12px 14px;font-size:15px}.toggle{border:0;border-radius:14px;padding:11px 14px;background:#1f2a44;color:#fff;font-weight:800;cursor:pointer}.section-title{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:28px 0 14px}.section-title h2{font-size:25px;margin:0}.section-title p{margin:0;color:#6d7484}.stories{display:grid;gap:16px}.story{background:#fff;border-radius:24px;box-shadow:0 6px 24px #14213d0d;overflow:hidden;border:1px solid #eceef4}.story[open]{box-shadow:0 14px 34px #44248b1a}.story summary{list-style:none;cursor:pointer;padding:20px;display:grid;grid-template-columns:auto 1fr auto;gap:15px;align-items:center}.story summary::-webkit-details-marker{display:none}.emoji{font-size:31px}.story h3{margin:0 0 6px;font-size:20px}.story .teaser{margin:0;color:#6b7280;line-height:1.55;font-size:14px}.arrow{font-size:22px;color:#7651c8;transition:.2s}.story[open] .arrow{transform:rotate(90deg)}.article{border-top:1px solid #edf0f5;padding:8px 22px 24px}.article h4{font-size:20px;margin:24px 0 9px}.article p,.article li{line-height:1.78}.article ul{padding-right:22px}.article .lead{font-size:17px;font-weight:700;color:#31394b}.flow{background:#f6f2ff;border-right:4px solid #7651c8;border-radius:16px;padding:15px 17px;line-height:1.8;font-weight:800}.question{background:#fff5d9;border:1px solid #f6df93;border-radius:18px;padding:17px;margin-top:20px}.question b{display:block;margin-bottom:8px}.sources{margin-top:18px;padding-top:14px;border-top:1px dashed #d9dde6;color:#667085;font-size:13px;line-height:1.7}.sources a{color:#4b36a6}.tag{display:inline-block;font-size:12px;font-weight:800;padding:6px 9px;background:#f0ecff;color:#5b36b0;border-radius:999px;margin-bottom:8px}.note{background:#eef7ff;border-radius:16px;padding:14px 16px;border-right:4px solid #4b8ec9}.empty{display:none;text-align:center;padding:38px;color:#6b7280}footer{margin-top:34px;color:#798192;text-align:center;font-size:13px}@media(max-width:700px){.app{padding:12px 12px 80px}.hero{padding:23px 20px;border-radius:24px}.story summary{grid-template-columns:auto 1fr}.arrow{display:none}.article{padding:6px 18px 22px}.section-title{display:block}.section-title p{margin-top:5px}.home{padding:10px 12px}}
+</style>
+</head>
+<body>
+<main class="app">
+<header><div class="brand">☀️ בית ספר אור</div><button class="home" onclick="location.href='index.html'">⌂ חזרה לבית</button></header>
+<section class="hero">
+<div class="eyebrow">עמוד תוכן חדש · חשיבה, מדע וחברה</div>
+<h1>חשיבה ביקורתית<br>ותודעה חברתית</h1>
+<p>סיפורים שנראים בהתחלה כמו עובדות פשוטות — ואז מגלים מאחוריהם היסטוריה, אינטרסים, שיווק, מדע משתנה והרגלים חברתיים. המטרה אינה לא להאמין; המטרה היא לדעת לבדוק.</p>
+<div class="principle">אל תשאל רק: “האם זה נכון?” — שאל גם: “איך הגעתי לחשוב שזה נכון?”</div>
+</section>
+<div class="toolbar">
+<span class="chip active">🍽️ אוכל ותזונה · 8 סיפורים</span>
+<span class="chip">בהמשך: בריאות וגוף</span>
+<span class="chip">בהמשך: פרסום וצרכנות</span>
+<input id="search" class="search" type="search" placeholder="חפש סיפור או מושג…" aria-label="חיפוש סיפורים">
+<button id="toggleAll" class="toggle">פתח הכל</button>
+</div>
+<div class="section-title"><div><h2>🍽️ אוכל ותזונה</h2><p>איך נוצרו “אמיתות” תזונתיות — ומה נשאר מהן אחרי שבודקים לעומק.</p></div></div>
+<section class="stories" id="stories">
+
+<details class="story" data-search="חמאה מרגרינה שומן טראנס כולסטרול הידרוגנציה">
+<summary><div class="emoji">🧈</div><div><h3>חמאה ומרגרינה — כשהפתרון יצר בעיה חדשה</h3><p class="teaser">איך “שומן צמחי” הפך לסמל של בריאות, ומה קרה כשהבנו מה שומן טראנס עושה לגוף.</p></div><div class="arrow">◀</div></summary>
+<div class="article"><span class="tag">מדע משתנה · שיווק מזון</span>
+<p class="lead">במשך שנים נבנה מסר פשוט: חמאה = שומן מן החי = לא בריא; מרגרינה = שמן צמחי = בריא יותר. אבל הסיפור האמיתי מורכב הרבה יותר.</p>
+<h4>המרגרינה לא נולדה כמזון בריאות</h4><p>המרגרינה פותחה בצרפת ב־1869 כתחליף זול וזמין לחמאה. בתחילת המאה ה־20 תעשיית המזון למדה להפוך שמנים צמחיים נוזליים למוצקים באמצעות הידרוגנציה. הידרוגנציה חלקית נתנה מרקם וחיי מדף מצוינים — אבל יצרה גם שומני טראנס תעשייתיים.</p>
+<h4>1961 — השומן הרווי נכנס לכוונת</h4><p>איגוד הלב האמריקאי פרסם המלצות להפחית שומן רווי ולהחליף חלק ממנו בשומנים רב־בלתי־רוויים. חמאה הייתה עשירה יחסית בשומן רווי, ולכן נוצרה לציבור משוואה קלה לזכירה: <b>חמאה = רווי = רע; שמן צמחי = בלתי רווי = טוב.</b> השיווק אימץ במהירות מילים כמו “vegetable oil”, “polyunsaturated” ו־“cholesterol free”.</p>
+<h4>ואז התבררה בעיית הטראנס</h4><p>ב־1990 מחקר מבוקר ב־NEJM הראה ששומן טראנס מעלה LDL ובמקביל מוריד HDL. בהמשך מחקרי אוכלוסייה קישרו צריכה גבוהה יותר של טראנס לסיכון לבבי גבוה יותר. כשנבנתה תמונה עקבית, התעשייה שינתה את המוצרים והרגולציה החלה להוציא שמנים מוקשים חלקית מהשימוש.</p>
+<div class="note"><b>הטוויסט:</b> זה לא אומר שחמאה “ניצחה”. חמאה עדיין עשירה בשומן רווי, ומרגרינות מודרניות רבות שונות מאוד ממוצרי הטראנס הישנים. צריך לבדוק את המוצר עצמו ואת ההרכב שלו.</div>
+<div class="flow">מחלת לב → חשש משומן רווי → חמאה הופכת לסמל → שמנים צמחיים מקבלים תדמית בריאה → חלק מהמוצרים מכילים טראנס → מחקרים חושפים את הסיכון → המוצרים וההמלצות משתנים.</div>
+<div class="question"><b>🧠 השאלה לתלמידים</b>איזה מהם בריא יותר — חמאה או מרגרינה? אחרי הסיפור, התשובה הטובה כבר אינה שם של מוצר אלא: איזה מוצר, איזה שומן, ומה מחליפים במה?</div>
+<div class="sources">מקורות: <a href="https://www.ahajournals.org/doi/pdf/10.1161/01.cir.23.1.133" target="_blank">AHA, 1961</a> · <a href="https://www.nejm.org/doi/full/10.1056/NEJM199008163230703" target="_blank">NEJM, 1990</a> · <a href="https://www.fda.gov/food/food-additives-petitions/trans-fat" target="_blank">FDA — Trans Fat</a></div></div>
+</details>
+
+<details class="story" data-search="מיץ תפוזים סאנקיסט ארוחת בוקר סוכר ויטמין c גלוקוז">
+<summary><div class="emoji">🍊</div><div><h3>מיץ תפוזים — איך לימדו אותנו לשתות את התפוז</h3><p class="teaser">עודפי תפוזים, “Drink an Orange”, ויטמין C ומלחמת העולם השנייה — כך נולד הרגל בוקר.</p></div><div class="arrow">◀</div></summary>
+<div class="article"><span class="tag">יצירת הרגל · שיווק</span>
+<p class="lead">כוס מיץ תפוזים ליד ארוחת הבוקר מרגישה טבעית. אבל הקשר הזה נבנה בהדרגה במשך עשרות שנים.</p>
+<h4>יותר תפוזים ממה שהשוק צריך</h4><p>בתחילת המאה ה־20 גידול ההדרים בקליפורניה צמח במהירות. המגדלים היו צריכים להגדיל את הביקוש. Sunkist לא הסתפקה במיתוג התפוז — ב־1916 היא קידמה את הרעיון <b>“Drink an Orange”</b>. במקום לאכול תפוז אחד, אפשר לסחוט כמה תפוזים לכוס אחת.</p>
+<h4>ויטמין C הופך את המוצר לבריאות</h4><p>עם התפתחות מדע הוויטמינים, תפוזים ומיץ תפוזים קיבלו חיבור חזק לוויטמין C. עכשיו המיץ היה לא רק טעים ונוח — הוא קיבל תדמית בריאותית.</p>
+<h4>מלחמת העולם השנייה והקפאה</h4><p>במהלך מלחמת העולם השנייה חיפשו דרך יציבה לספק ויטמין C לחיילים. פיתוח מיץ תפוזים מרוכז וקפוא הפך את המיץ למוצר שאפשר לאחסן, לשנע ולהכין במהירות בבית. אחרי המלחמה הוא נכנס למיליוני מטבחים והתחזק כחלק מארוחת הבוקר.</p>
+<h4>ומה באמת יש בכוס?</h4><p>כוס של כ־240–250 מ״ל מיץ תפוזים 100% מתקבלת בערך מ־2–4 תפוזים, לעיתים סביב 3, ומכילה בערך 20–22 גרם סוכר. הסוכר אינו בהכרח “מוסף”, אבל במיץ יש הרבה פחות סיבים מפרי שלם וקל מאוד לשתות כמה פירות בתוך דקה.</p>
+<p>לאחר השתייה הסוכר בדם בדרך כלל עולה, מגיע לשיא אצל אדם בריא לרוב בתוך עשרות דקות, ואז יורד בהשפעת אינסולין לכיוון רמת הבסיס במהלך השעות שלאחר מכן. “קפיצה ואז התרסקות” אינה כלל קבוע; אצל אדם בריא הירידה בדרך כלל היא חזרה לכיוון הבסיס ולא היפוגליקמיה.</p>
+<div class="flow">עודף ייצור → Sunkist → “שתה תפוז” → ויטמין C → טכנולוגיית הקפאה → נוחות → מיץ הופך לחלק “טבעי” מהבוקר.</div>
+<div class="question"><b>🧠 השאלה לתלמידים</b>אם לא הייתם אוכלים שלושה תפוזים ברצף בארוחת הבוקר — למה כל כך קל לשתות אותם? ומי עזר להפוך את ההרגל הזה לטבעי?</div>
+<div class="sources">מקורות: <a href="https://www.govinfo.gov/content/pkg/GOVPUB-I-6054d532b1967b7ed167f0e931eed1ca/pdf/GOVPUB-I-6054d532b1967b7ed167f0e931eed1ca.pdf" target="_blank">היסטוריה של תעשיית ההדרים</a> · <a href="https://publications.aap.org/pediatrics/article/139/6/e20170967/38754/Fruit-Juice-in-Infants-Children-and-Adolescents" target="_blank">AAP — Fruit Juice</a> · <a href="https://www.who.int/publications/i/item/9789241549028" target="_blank">WHO — Free Sugars</a></div></div>
+</details>
+
+<details class="story" data-search="מלח נתרן לחץ דם intersalt sodium">
+<summary><div class="emoji">🧂</div><div><h3>מלח — מי החליט שכמה שפחות, יותר טוב?</h3><p class="teaser">איך מחקר על לחץ דם הפך למדיניות ציבורית, ולמה אותו מחקר קיבל פרשנויות שונות.</p></div><div class="arrow">◀</div></summary>
+<div class="article"><span class="tag">מדיניות בריאות · פרשנות נתונים</span>
+<p class="lead">הקשר בין מלח ללחץ דם הוא אמיתי, אבל הדרך ממחקר מורכב לסיסמה ציבורית הייתה הרבה פחות פשוטה.</p>
+<h4>לפני התרופות המודרניות</h4><p>כבר במחצית הראשונה של המאה ה־20 רופאים ניסו דיאטות דלות מאוד בנתרן לטיפול ביתר לחץ דם. מחקריו של Lewis Dahl בשנות ה־50 וה־60 חיזקו את הקשר בין צריכת מלח ללחץ דם והדגישו שגם אנשים שונים מגיבים למלח בצורה שונה — מה שנקרא היום רגישות למלח.</p>
+<h4>מהמעבדה למדיניות</h4><p>בשנות ה־70 הפחתת מלח נכנסה להמלצות ציבוריות. המסר המורכב — מינון, רגישות אישית, לחץ דם, תזונה כוללת — הפך בהדרגה ל“מלח = רע”.</p>
+<h4>1988 — INTERSALT</h4><p>מחקר INTERSALT בחן יותר מ־10,000 אנשים ב־52 אוכלוסיות. הוא מצא קשרים בין נתרן ללחץ דם, אבל הוויכוח על עוצמת הקשר ועל דרך ניתוח הנתונים היה חריף. Salt Institute, שייצג את תעשיית המלח, טען שהמסקנות מוגזמות; החוקרים השיבו שהמכון מציג את הנתונים באופן מטעה.</p>
+<p>כיום הראיות מניסויים מבוקרים תומכות בכך שהפחתת נתרן יכולה להוריד לחץ דם, במיוחד אצל אנשים עם יתר לחץ דם או רגישות גבוהה למלח. עדיין קיימים דיונים על מידת ההפחתה האופטימלית ועל מדידת צריכה לאורך זמן.</p>
+<div class="flow">מחקרים מוקדמים → הפחתת נתרן מורידה לחץ דם אצל חלק מהאנשים → המלצות לציבור → מסר פשוט “מלח רע” → תעשייה וחוקרים נאבקים על פרשנות הנתונים.</div>
+<div class="question"><b>🧠 השאלה לתלמידים</b>מה קורה כשאותם נתונים עוברים דרך גוף בריאותי מצד אחד וגוף תעשייתי מצד אחר? מי מפרש — ומה האינטרס שלו?</div>
+<div class="sources">מקורות: <a href="https://www.bmj.com/content/297/6644/319" target="_blank">INTERSALT, BMJ</a> · <a href="https://www.bmj.com/content/312/7041/1285" target="_blank">הוויכוח עם Salt Institute</a> · <a href="https://www.who.int/news-room/fact-sheets/detail/sodium-reduction" target="_blank">WHO — Sodium Reduction</a></div></div>
+</details>
+
+<details class="story" data-search="בייקון ביצים bernays beech-nut ארוחת בוקר רופאים יחסי ציבור">
+<summary><div class="emoji">🥓🍳</div><div><h3>בייקון וביצים — איך יחסי ציבור עזרו לבנות ארוחת בוקר</h3><p class="teaser">חברת בייקון, אלפי רופאים ושאלה שנוסחה היטב — כך הרגל מסחרי מתחיל להרגיש כמו מסורת.</p></div><div class="arrow">◀</div></summary>
+<div class="article"><span class="tag">יחסי ציבור · סמכות רפואית</span>
+<p class="lead">בשנות ה־20 חברת Beech-Nut רצתה למכור יותר בייקון. איש יחסי הציבור Edward Bernays הבין שלא חייבים לפרסם רק את המוצר — אפשר לשנות את ההרגל שבתוכו הוא נצרך.</p>
+<h4>משנים את השאלה</h4><p>לפי תיאורו של Bernays, אמריקאים רבים אכלו ארוחת בוקר קלה. הוא פנה לרופא שעבד עם החברה ושאל אם ארוחת בוקר משמעותית עדיפה על ארוחה קלה. אחר כך נשלחה פנייה לכ־5,000 רופאים; Bernays סיפר שכ־4,500 תשובות תמכו בארוחת בוקר משמעותית יותר.</p>
+<h4>מה הציבור ראה?</h4><p>במקום מודעה שאומרת “חברת בייקון רוצה שתאכלו בייקון”, העיתונות קיבלה מסר בסגנון <b>“אלפי רופאים ממליצים על ארוחת בוקר משמעותית”</b>. בייקון וביצים התחברו לדוגמה של ארוחה כזאת.</p>
+<p>הנקודה החשובה: הרופאים לא בדקו אם Beech-Nut Bacon הוא מוצר בריא. הם נשאלו שאלה רחבה הרבה יותר. השילוב בייקון וביצים היה קיים לפני Bernays, אבל הקמפיין עזר לחזק אותו כחלק מתרבות ארוחת הבוקר.</p>
+<div class="flow">חברה רוצה למכור יותר → לא מוכרים רק מוצר, משנים הרגל → פונים לרופאים → “מומחים ממליצים” → בייקון וביצים נקשרים לארוחה הנכונה → ההרגל הופך למסורת.</div>
+<div class="question"><b>🧠 השאלה לתלמידים</b>כשאומרים “4,500 רופאים ממליצים” — מה בדיוק שאלו אותם? מי ניסח את השאלה? ומה נוסף לכותרת אחרי שהם כבר ענו?</div>
+<div class="sources">מקורות: <a href="https://blogs.loc.gov/preservation/2022/11/housing-bernays-scrapbooks/" target="_blank">Library of Congress — Bernays</a> · <a href="https://www.apa.org/monitor/2009/12/consumer" target="_blank">APA — Consumer Culture</a></div></div>
+</details>
+
+<details class="story" data-search="ביצה crisco procter gamble aha כולסטרול שבץ 1961 1968">
+<summary><div class="emoji">🥚</div><div><h3>הביצה, Crisco ואיגוד הלב — איך הביצה הפכה לסמל של כולסטרול</h3><p class="teaser">עובדות אמיתיות, קשרים אמיתיים — וההבדל בין שרשרת מעניינת לבין הוכחה לקונספירציה.</p></div><div class="arrow">◀</div></summary>
+<div class="article"><span class="tag">כולסטרול · קשר מול סיבתיות</span>
+<p class="lead">במשך עשרות שנים הביצה הייתה מזוהה עם כולסטרול, עורקים חסומים, התקפי לב ושבץ. במקביל צמח שוק של שומנים צמחיים ובראשיתו מוצר בשם Crisco.</p>
+<h4>1911 — Crisco</h4><p>Procter & Gamble השיקה את Crisco כשומן מוצק משמן צמחי שעבר הידרוגנציה. הוא שווק כחלופה מודרנית לשומנים מן החי.</p>
+<h4>1948 — P&amp;G וה־AHA</h4><p>תוכנית הרדיו Truth or Consequences, בחסות Procter & Gamble, ערכה את מבצע The Walking Man לטובת American Heart Association. יותר משני מיליון מאזינים תרמו יחד כ־1.58 מיליון דולר — סכום שעזר מאוד להתרחבות הארגון. חשוב: הכסף הגיע מהמאזינים; P&amp;G הייתה נותנת החסות של התוכנית ולא כתבה ל־AHA צ׳ק בסכום הזה.</p>
+<h4>1961 ו־1968 — הביצה נכנסת לכוונת</h4><p>ב־1961 ה־AHA פרסם המלצות להפחתת שומן רווי וכולסטרול ולהעדפת יותר שומנים בלתי־רוויים. ב־1968 ההמלצה נעשתה מוחשית יותר: פחות מ־300 מ״ג כולסטרול ליום ולא יותר משלושה חלמונים בשבוע.</p>
+<p>לציבור נוצרה שרשרת פשוטה: <b>ביצה → כולסטרול → עורק חסום → התקף לב/שבץ.</b> עם השנים התברר שהקשר בין כולסטרול במזון לכולסטרול בדם מורכב יותר, וששומן רווי, גנטיקה ודפוס התזונה הכולל חשובים מאוד. כיום AHA מציין שאצל אדם בריא ביצה שלמה ביום יכולה להשתלב בדפוס תזונה בריא.</p>
+<h4>הטוויסט</h4><p>קל מאוד לחבר את P&amp;G, Crisco, מבצע ההתרמה, ה־AHA וההמלצות ולספר: “P&amp;G קנתה את ההמלצות כדי למכור Crisco”. אבל העובדות הקיימות אינן מוכיחות את המסקנה הזאת. קשר, אינטרס ורווח אפשרי אינם כשלעצמם הוכחה לסיבתיות או לשחיתות.</p>
+<div class="flow">Crisco → P&amp;G נותנת חסות לתוכנית → הציבור תורם ל־AHA → ה־AHA מתחזק → המלצות נגד שומן רווי וכולסטרול → ביצים מוגבלות → שמנים צמחיים נהנים מתדמית טובה יותר → אבל השרשרת לבדה אינה הוכחה למזימה.</div>
+<div class="question"><b>🧠 השאלה לתלמידים</b>אם כל העובדות בסיפור נכונות — האם זה אומר שגם ההסבר שמחבר ביניהן בהכרח נכון?</div>
+<div class="sources">מקורות: <a href="https://www.heart.org/en/around-the-aha/what-actually-happened" target="_blank">AHA — What Actually Happened</a> · <a href="https://www.ahajournals.org/doi/pdf/10.1161/01.cir.23.1.133" target="_blank">AHA, 1961</a> · <a href="https://www.heart.org/en/news/2023/08/25/heres-the-latest-on-dietary-cholesterol-and-how-it-fits-in-with-a-healthy-diet" target="_blank">AHA — Dietary Cholesterol Today</a></div></div>
+</details>
+
+<details class="story" data-search="אטקינס קיטו ketogenic keto פחמימות אינסולין low carb">
+<summary><div class="emoji">🥩</div><div><h3>אטקינס וקיטו — איך הפחמימות הפכו לאויב</h3><p class="teaser">מטיפול באפילפסיה לדיאטת הרזיה עולמית — ואיך מנגנון אמיתי הפך לסיסמה רחבה מדי.</p></div><div class="arrow">◀</div></summary>
+<div class="article"><span class="tag">דיאטות · מנגנון מול תוצאה</span>
+<p class="lead">פעם המסר היה “שומן משמין”. אחר כך הגיע מסר כמעט הפוך: אולי דווקא הפחמימות הן הבעיה.</p>
+<h4>1921 — קיטו מתחיל כטיפול רפואי</h4><p>הדיאטה הקטוגנית פותחה כדי לחקות חלק מהשינויים המטבוליים של צום אצל ילדים עם אפילפסיה. כשהפחמימות נמוכות מאוד, הכבד מייצר קטונים שיכולים לשמש מקור אנרגיה. קיטו עדיין משמש כטיפול רפואי במקרים מתאימים של אפילפסיה.</p>
+<h4>שנות ה־70 — אטקינס</h4><p>Robert Atkins הפך הגבלה חריפה של פחמימות לדיאטת הרזיה פופולרית. ההסבר הפופולרי היה: פחמימה מעלה גלוקוז, גלוקוז מעלה אינסולין, אינסולין מעודד אגירת אנרגיה — ולכן פחמימות משמינות.</p>
+<h4>ואז אנשים באמת יורדים במשקל</h4><p>בתחילת דיאטה דלת מאוד בפחמימות יש לעיתים ירידה מהירה במשקל, שחלקה נובע מירידת גליקוגן והמים הקשורים אליו. בהמשך יכולה להיות ירידה אמיתית בשומן, בין היתר משום שהתפריט מצמצם מזונות רבים, חלבון ושומן יכולים לשפר שובע אצל חלק מהאנשים, וצריכת האנרגיה הכוללת יורדת.</p>
+<h4>מה קורה כשמשווים דיאטות?</h4><p>במחקר DIETFITS, 609 מבוגרים חולקו לדיאטה בריאה דלת פחמימות או דלת שומן. אחרי שנה שתי הקבוצות ירדו במשקל, ולא נמצא הבדל מובהק ביניהן. כלומר, דיאטה דלת פחמימות יכולה לעבוד — אבל זה לא מוכיח שפחמימות הן הסיבה היחידה להשמנה.</p>
+<p>וגם “פחמימה” אינה מזון אחד: קולה, עדשים, שיבולת שועל, פרי ולחם מלא כולם מכילים פחמימות — אבל הערך התזונתי וההשפעה שלהם שונים מאוד.</p>
+<div class="flow">קיטו רפואי → אטקינס לירידה במשקל → אינסולין מספק הסבר פשוט → אנשים יורדים במשקל → התוצאה אמיתית → נולדת מסקנה גדולה יותר: “פחמימות הן האויב”.</div>
+<div class="question"><b>🧠 השאלה לתלמידים</b>אם דיאטה עבדה — האם זה מוכיח שההסבר שנתנו לה נכון? ומה ההבדל בין קולה לעדשים אם שתיהן “פחמימות”?</div>
+<div class="sources">מקורות: <a href="https://www.hopkinsmedicine.org/neurology-neurosurgery/specialty-areas/epilepsy/keto-diet-timeline" target="_blank">Johns Hopkins — Keto Timeline</a> · <a href="https://jamanetwork.com/journals/jama/fullarticle/2673150" target="_blank">JAMA — DIETFITS</a> · <a href="https://www.who.int/news-room/fact-sheets/detail/healthy-diet" target="_blank">WHO — Healthy Diet</a></div></div>
+</details>
+
+<details class="story" data-search="מים אלקליניים alkaline ph9 ph 9 קיבה חומצה דם detox">
+<summary><div class="emoji">💧</div><div><h3>מים אלקליניים — האם אפשר “לבסס” את הגוף?</h3><p class="teaser">pH הוא מדע אמיתי. השאלה היא האם בקבוק pH 9 באמת משנה את ה־pH של הגוף.</p></div><div class="arrow">◀</div></summary>
+<div class="article"><span class="tag">שפה מדעית · שיווק בריאות</span>
+<p class="lead">על מים אלקליניים מופיעים מספרים כמו pH 9 ומילים כמו Balance ו־Detox. זה נשמע מדעי — אבל מה באמת קורה בגוף?</p>
+<h4>הקיבה חומצית בכוונה</h4><p>הקיבה פועלת בסביבה חומצית מאוד, לעיתים סביב pH 1–3. החומציות חשובה להפעלת פפסין, לפירוק חלבונים ולהגנה מפני חלק מהמיקרואורגניזמים. מים ב־pH 9 יכולים להשפיע זמנית על התוכן בקיבה, אבל הקיבה ממשיכה לייצר חומצה ולווסת את הסביבה שלה.</p>
+<h4>והדם?</h4><p>pH הדם נשמר בטווח צר מאוד, בערך 7.35–7.45, באמצעות מערכות חיץ, הריאות והכליות. אם בקבוק מים היה מזיז באופן משמעותי את pH הדם, זה לא היה “דיטוקס” — זו הייתה הפרעה בחומצה־בסיס.</p>
+<h4>למה בכל זאת אפשר לראות שינוי?</h4><p>שתייה ותזונה יכולות לשנות יותר בקלות את pH השתן, משום שהכליות מפרישות חומצות ובסיסים כדי לשמור על הסביבה הפנימית יציבה. שינוי בשתן אינו הוכחה שכל הגוף “הפך לבסיסי”.</p>
+<p>יש מחקרים קטנים על שימושים נקודתיים אפשריים, למשל בהקשר של פפסין ורפלוקס, אבל אין בסיס טוב לטענות רחבות כמו “מבסס את הגוף”, “דיטוקס”, “מחזק חיסון” או “מונע מחלות”.</p>
+<div class="flow">pH הוא מושג אמיתי → “חומצי” נשמע רע → “אלקליני” נשמע בריא → pH 9 על הבקבוק → מסקנה שיווקית: “מאזן את הגוף” → אבל הגוף מווסת את ה־pH בעצמו.</div>
+<div class="question"><b>🧠 השאלה לתלמידים</b>💧 מים pH 9 נכנסים לקיבה pH 2. מה קורה? והאם העובדה שמישהו משתמש במונח מדעי אמיתי הופכת גם את המסקנה שלו למדעית?</div>
+<div class="sources">מקורות: <a href="https://www.merckmanuals.com/professional/nephrology/acid-base-regulation-and-disorders/acid-base-disorders" target="_blank">Merck Manual — Acid/Base</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/22844861/" target="_blank">מחקר pH 8.8 ופפסין</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42433989/" target="_blank">סקירה עדכנית על מים אלקליניים</a></div></div>
+</details>
+
+<details class="story" data-search="gluten free ללא גלוטן צליאק פרוקטנים fodmap סוכר">
+<summary><div class="emoji">🌾</div><div><h3>Gluten Free — איך טיפול רפואי הפך לסמל של “בריא יותר”</h3><p class="teaser">צליאק הוא אמיתי. אבל “ללא גלוטן” אינו אומר אוטומטית פחות סוכר, פחות קלוריות או בריא יותר.</p></div><div class="arrow">◀</div></summary>
+<div class="article"><span class="tag">תוויות מזון · הילה בריאותית</span>
+<p class="lead">במקור “ללא גלוטן” הוא פתרון רפואי הכרחי לאנשים עם צליאק. עם הזמן התווית הפכה אצל חלק מהציבור לסמל של בריאות כללית.</p>
+<h4>צליאק — כאן אין טרנד</h4><p>בצליאק גלוטן מפעיל תגובה אוטואימונית שפוגעת ברירית המעי הדק. הימנעות קפדנית מגלוטן היא טיפול רפואי. ה־FDA הגדיר “gluten-free” כסטנדרט של פחות מ־20 חלקים למיליון גלוטן כדי להגן על הצרכנים האלה.</p>
+<h4>ואז השוק גדל</h4><p>לחמים, פסטות, עוגיות ודגני בוקר ללא גלוטן הופיעו בכל מקום. אצל אנשים בלי צליאק נולד לעיתים החיבור: <b>ללא גלוטן = קל יותר = בריא יותר.</b></p>
+<h4>“הפסקתי גלוטן והרגשתי טוב יותר”</h4><p>זה יכול להיות אמיתי — אבל כשמפסיקים גלוטן מורידים לעיתים גם לחם, מאפים, פיצה, מזון מעובד ורכיבים נוספים בחיטה. בניסוי כפול־סמיות באנשים שחשבו שהם רגישים לגלוטן, פרוקטנים — פחמימות מסוג FODMAP שנמצאות גם בחיטה — גרמו ליותר תסמינים מהגלוטן עצמו.</p>
+<h4>ללא גלוטן לא אומר פחות סוכר</h4><p>כדי להחליף את המבנה שהגלוטן נותן למזון משתמשים לעיתים בעמילני אורז, תירס, תפוח אדמה או טפיוקה, ולעיתים מוסיפים שומן או סוכר. מחקרים מצאו שבחלק מהקטגוריות מוצרים ללא גלוטן מכילים יותר סוכר וקלוריות ופחות חלבון; במחקרים אחרים התמונה הייתה שונה. לכן התווית לבדה אינה מספרת אם המוצר בריא יותר.</p>
+<div class="flow">מחלה אמיתית → צורך במוצרים ללא גלוטן → שוק גדול → התווית מקבלת “הילה בריאותית” → אנשים מרגישים לפעמים טוב יותר → מייחסים מיד את השיפור לגלוטן → אבל ייתכן שהשתנו עוד הרבה דברים.</div>
+<div class="question"><b>🧠 השאלה לתלמידים</b>עוגייה רגילה ועוגייה Gluten Free: איזו בריאה יותר? בלי טבלת הערכים — אין לנו מספיק מידע.</div>
+<div class="sources">מקורות: <a href="https://www.fda.gov/consumers/consumer-updates/gluten-free-means-what-it-says" target="_blank">FDA — Gluten Free</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/29102613/" target="_blank">Gluten vs Fructans</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/39666134/" target="_blank">השוואת מוצרים, 2024</a></div></div>
+</details>
+
+</section>
+<div class="empty" id="empty">לא נמצאו סיפורים שמתאימים לחיפוש.</div>
+<footer>בית ספר אור · חשיבה ביקורתית ותודעה חברתית · החומרים מיועדים ללמידה ולדיון, לא לייעוץ רפואי אישי.</footer>
+</main>
+<script>
+const search=document.getElementById('search');
+const stories=[...document.querySelectorAll('.story')];
+const empty=document.getElementById('empty');
+search.addEventListener('input',()=>{const q=search.value.trim().toLowerCase();let n=0;stories.forEach(s=>{const text=(s.innerText+' '+(s.dataset.search||'')).toLowerCase();const show=!q||text.includes(q);s.style.display=show?'':'none';if(show)n++;});empty.style.display=n?'none':'block';});
+const toggle=document.getElementById('toggleAll');let opened=false;
+toggle.addEventListener('click',()=>{opened=!opened;stories.filter(s=>s.style.display!=='none').forEach(s=>s.open=opened);toggle.textContent=opened?'סגור הכל':'פתח הכל';});
+</script>
+</body>
+</html>
