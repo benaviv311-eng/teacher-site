@@ -16,10 +16,19 @@ test('bottom navigation includes a lessons destination', async () => {
   assert.match(html, /📖/);
 });
 
-test('lessons page lists the sleep lesson', async () => {
+test('lessons page lists the sleep lesson as lesson 1 under its topic', async () => {
   const html = await read('lessons.html');
+  assert.match(html, /שינה ואורח חיים בריא/);
+  assert.match(html, /שיעור 1/);
   assert.match(html, /lesson-sleep\.html/);
   assert.match(html, /שינה: הבסיס לתפקוד היומיומי/);
+});
+
+test('lessons page contains lessons only, not enrichment tools', async () => {
+  const html = await read('lessons.html');
+  assert.doesNotMatch(html, /תוכן נוסף/);
+  assert.doesNotMatch(html, /critical-thinking\.html/);
+  assert.doesNotMatch(html, /nutrition-builder\.html/);
 });
 
 test('central feed data mixes content from multiple site areas', async () => {
