@@ -7,6 +7,7 @@
     current === 'games.html' ? 'games' : '';
 
   document.querySelectorAll('body > nav').forEach(el => el.remove());
+  document.querySelectorAll('button.home, a.home').forEach(el => el.remove());
 
   if (!document.getElementById('global-nav-style')) {
     const style = document.createElement('style');
