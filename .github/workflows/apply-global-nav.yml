@@ -1,0 +1,46 @@
+name: Apply global frozen navigation
+on:
+  push:
+    paths:
+      - '.github/workflows/apply-global-nav.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add shared navigation to all pages
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          pages = [
+              'index.html',
+              'lessons.html',
+              'lesson-sleep.html',
+              'critical-thinking.html',
+              'nutrition-builder.html',
+              'games.html',
+          ]
+          tag = '<script src="site-nav.js"></script>'
+          for name in pages:
+              p = Path(name)
+              s = p.read_text(encoding='utf-8')
+              if 'site-nav.js' not in s:
+                  if '</body>' not in s:
+                      raise SystemExit(f'Missing </body> in {name}')
+                  s = s.replace('</body>', tag + '</body>', 1)
+              if name == 'lesson-sleep.html':
+                  s = re.sub(r'<a class="back"[^>]*>.*?</a>', '', s, count=1)
+              p.write_text(s, encoding='utf-8')
+          PY
+      - name: Commit changes and remove temporary workflow
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/apply-global-nav.yml
+          git add index.html lessons.html lesson-sleep.html critical-thinking.html nutrition-builder.html games.html
+          git commit -m 'Use frozen navigation on every page and remove lesson back icon'
+          git push
