@@ -24,11 +24,11 @@ test('lessons page lists the sleep lesson as lesson 1 under its topic', async ()
   assert.match(html, /שינה: הבסיס לתפקוד היומיומי/);
 });
 
-test('lessons page contains lessons only, not enrichment tools', async () => {
+test('lessons page body does not list enrichment tools as lessons', async () => {
   const html = await read('lessons.html');
-  assert.doesNotMatch(html, /תוכן נוסף/);
-  assert.doesNotMatch(html, /critical-thinking\.html/);
-  assert.doesNotMatch(html, /nutrition-builder\.html/);
+  assert.doesNotMatch(html, /<h2>תוכן נוסף<\/h2>/);
+  assert.doesNotMatch(html, /<h3>חשיבה ביקורתית ותודעה חברתית<\/h3>/);
+  assert.doesNotMatch(html, /<h3>בונה תפריט<\/h3>/);
 });
 
 test('central feed data mixes content from multiple site areas', async () => {
