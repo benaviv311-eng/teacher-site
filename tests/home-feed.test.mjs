@@ -31,6 +31,14 @@ test('lessons page body does not list enrichment tools as lessons', async () => 
   assert.doesNotMatch(html, /<h3>בונה תפריט<\/h3>/);
 });
 
+test('sleep lesson has an icon-only fixed home button on the left', async () => {
+  const html = await read('lesson-sleep.html');
+  assert.match(html, /class="home-fixed"/);
+  assert.match(html, /href="index\.html"/);
+  assert.match(html, /\.home-fixed\{position:fixed;top:12px;left:14px/);
+  assert.match(html, /aria-label="בית"/);
+});
+
 test('central feed data mixes content from multiple site areas', async () => {
   const js = await read('central-feed-data.js');
   assert.match(js, /sleep/);
