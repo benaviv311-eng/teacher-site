@@ -58,3 +58,20 @@ test('central feed data mixes content from multiple site areas', async () => {
   assert.match(js, /critical-thinking\.html/);
   assert.match(js, /nutrition-builder\.html/);
 });
+
+test('shared navigation includes the English teacher area', async () => {
+  const nav = await read('site-nav.js');
+  assert.match(nav, /english\.html/);
+  assert.match(nav, /אנגלית/);
+  assert.match(nav, /current === 'english\.html'/);
+});
+
+test('English page teaches lesson 1 with separate teacher and student guidance', async () => {
+  const html = await read('english.html');
+  assert.match(html, /אנגלית/);
+  assert.match(html, /Introducing Myself/);
+  assert.match(html, /מה אני עושה כמורה/);
+  assert.match(html, /מה התלמידים עושים/);
+  assert.match(html, /45 דקות/);
+  assert.match(html, /site-nav\.js/);
+});
