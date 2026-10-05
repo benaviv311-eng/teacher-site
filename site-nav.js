@@ -66,6 +66,7 @@
           <article class="english-vocab-card"><h3 dir="ltr">school</h3><p>בית ספר</p><div class="example">I go to school.</div></article>
           <article class="english-vocab-card"><h3 dir="ltr">gaming</h3><p>משחקי מחשב / גיימינג</p><div class="example">I like gaming.</div></article>
           <article class="english-vocab-card"><h3 dir="ltr">basketball</h3><p>כדורסל</p><div class="example">I like basketball.</div></article>
+          <article class="english-vocab-card"><h3 dir="ltr">tennis</h3><p>טניס</p><div class="example">I like tennis.</div></article>
           <article class="english-vocab-card"><h3 dir="ltr">hamburger</h3><p>המבורגר</p><div class="example">My favorite food is hamburger.</div></article>
           <article class="english-vocab-card"><h3 dir="ltr">dancing</h3><p>ריקוד / לרקוד</p><div class="example">I like dancing.</div></article>
           <article class="english-vocab-card"><h3 dir="ltr">drawing</h3><p>ציור / לצייר</p><div class="example">I like drawing.</div></article>
