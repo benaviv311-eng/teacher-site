@@ -30,7 +30,7 @@
   nav.setAttribute('aria-label','ניווט ראשי');
   nav.innerHTML = `<div class="global-nav-inner">
     <a class="global-nav-item ${active==='home'?'active':''}" href="index.html"><strong>⌂</strong>בית</a>
-    <a class="global-nav-item ${active==='lessons'?'active':''}" href="lessons.html"><strong>📖</strong>שיעורים</a>
+    <a class="global-nav-item ${active==='lessons'?'active':''}" href="lessons.html"><strong>🌿</strong>שיעורי בריאות</a>
     <a class="global-nav-item ${active==='critical'?'active':''}" href="critical-thinking.html"><strong>🧠</strong>חשיבה</a>
     <a class="global-nav-item ${active==='nutrition'?'active':''}" href="nutrition-builder.html"><strong>🥗</strong>תזונה</a>
     <a class="global-nav-item ${active==='english'?'active':''}" href="english.html"><strong>📘🇬🇧</strong>שיעורי אנגלית</a>
