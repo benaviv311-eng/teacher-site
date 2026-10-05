@@ -69,6 +69,7 @@
           <article class="english-vocab-card"><h3 dir="ltr">tennis</h3><p>טניס</p><div class="example">I like tennis.</div></article>
           <article class="english-vocab-card"><h3 dir="ltr">Thailand</h3><p>תאילנד</p><div class="example">I live in Thailand.</div></article>
           <article class="english-vocab-card"><h3 dir="ltr">clarinet</h3><p>קלרינט</p><div class="example">I play the clarinet.</div></article>
+          <article class="english-vocab-card"><h3 dir="ltr">strength training</h3><p>אימוני כוח</p><div class="example">I do strength training.</div></article>
           <article class="english-vocab-card"><h3 dir="ltr">hamburger</h3><p>המבורגר</p><div class="example">My favorite food is hamburger.</div></article>
           <article class="english-vocab-card"><h3 dir="ltr">dancing</h3><p>ריקוד / לרקוד</p><div class="example">I like dancing.</div></article>
           <article class="english-vocab-card"><h3 dir="ltr">drawing</h3><p>ציור / לצייר</p><div class="example">I like drawing.</div></article>
