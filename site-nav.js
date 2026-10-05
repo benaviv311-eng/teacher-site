@@ -20,9 +20,57 @@
       .global-nav-item{text-decoration:none;text-align:center;font-size:11px;color:#667085;min-width:50px;font-family:Arial,sans-serif;font-weight:700}
       .global-nav-item strong{display:block;font-size:21px;line-height:1.15;margin-bottom:3px}
       .global-nav-item.active{color:#205fc1}
+      .english-subnav{display:flex;gap:9px;overflow:auto;padding:16px 0 3px}
+      .english-subnav a{text-decoration:none;border:1px solid #e5eaf2;background:#fff;color:#4f5f77;padding:11px 15px;border-radius:999px;font-weight:900;white-space:nowrap;box-shadow:0 3px 14px #14213d0a}
+      .english-subnav a:first-child{background:#edf4ff;color:#205fc1;border-color:#c8daf8}
+      .english-games-library{background:#fff;border:1px solid #eef1f6;border-radius:24px;padding:22px;margin-top:20px;box-shadow:0 5px 22px #14213d0c}
+      .english-games-library h2{margin:0 0 7px}.english-games-library>p{margin:0;color:#6d778b;line-height:1.55}
+      .english-games-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}
+      .english-game-card{border:1px solid #e5eaf2;background:#f8faff;border-radius:18px;padding:15px;line-height:1.55}
+      .english-game-card h3{margin:0 0 5px;font-size:18px}.english-game-card p{margin:0;color:#526076}.english-game-card .game-tag{display:inline-block;margin-top:10px;background:#edf4ff;color:#245fc0;padding:6px 9px;border-radius:999px;font-size:12px;font-weight:900}
+      .english-game-card.featured{background:#eef5ff;border-color:#cfe0fb}
+      @media(max-width:620px){.english-games-grid{grid-template-columns:1fr}}
       @media(max-width:420px){.global-nav-item{font-size:9px;min-width:44px}.global-nav-item strong{font-size:19px}}
     `;
     document.head.appendChild(style);
+  }
+
+  if (current === 'english.html' && !document.getElementById('englishGames')) {
+    const main = document.querySelector('main.app');
+    const hero = main?.querySelector('.hero');
+    if (main && hero) {
+      const subnav = document.createElement('div');
+      subnav.className = 'english-subnav';
+      subnav.setAttribute('aria-label','ניווט בתוך אנגלית');
+      subnav.innerHTML = `<a href="#englishLesson1">📘 שיעור 1</a><a href="#englishGames">🎮 משחקי אנגלית</a>`;
+      hero.insertAdjacentElement('afterend', subnav);
+
+      const lessonPanel = main.querySelector('.panel');
+      if (lessonPanel) lessonPanel.id = 'englishLesson1';
+
+      const games = document.createElement('section');
+      games.id = 'englishGames';
+      games.className = 'english-games-library';
+      games.innerHTML = `
+        <h2>🎮 משחקי אנגלית</h2>
+        <p>מאגר משחקים קצרים שאפשר לשלוף לפי מטרת השיעור. Hot Seat כבר משולב בשיעור 1; שאר המשחקים זמינים לשיעורים הבאים או לחזרה.</p>
+        <div class="english-games-grid">
+          <article class="english-game-card featured"><h3>🔥 Hot Seat</h3><p>תלמיד עם הגב ללוח מנחש מילה לפי רמזים באנגלית מהקבוצה. אסור לומר את המילה עצמה.</p><span class="game-tag">אוצר מילים · דיבור</span></article>
+          <article class="english-game-card"><h3>🔎 Find Someone Who</h3><p>התלמידים מסתובבים ושואלים שאלות כדי למצוא מישהו שמתאים למשפט, למשל: likes football או has a dog.</p><span class="game-tag">שאלות · דיבור</span></article>
+          <article class="english-game-card"><h3>🤥 Two Truths and a Lie</h3><p>כל תלמיד אומר שלושה משפטים על עצמו — שניים נכונים ואחד שקר — והאחרים מנחשים.</p><span class="game-tag">הצגה עצמית</span></article>
+          <article class="english-game-card"><h3>🏁 Board Race</h3><p>שתי קבוצות מתחרות בכתיבת מילים על הלוח לפי קטגוריה: food, hobbies, school ועוד.</p><span class="game-tag">שליפה מהירה</span></article>
+          <article class="english-game-card"><h3>🏃 Running Dictation</h3><p>טקסט קצר תלוי רחוק. תלמיד רץ, קורא, חוזר ומכתיב לבן הזוג שכותב.</p><span class="game-tag">קריאה · זיכרון · כתיבה</span></article>
+          <article class="english-game-card"><h3>🏐 Question Ball</h3><p>זורקים כדור; מי שתופס עונה על שאלה באנגלית ואז זורק לתלמיד הבא.</p><span class="game-tag">חזרה · דיבור</span></article>
+          <article class="english-game-card"><h3>❓ Guess Who / What</h3><p>תלמיד חושב על אדם, חפץ או תחביב והכיתה שואלת שאלות באנגלית עד שמנחשים.</p><span class="game-tag">שאלות · אוצר מילים</span></article>
+          <article class="english-game-card"><h3>💰 Sentence Auction</h3><p>מציגים משפטים נכונים ושגויים; קבוצות “קונות” את המשפטים שהן חושבות שנכונים.</p><span class="game-tag">דקדוק</span></article>
+          <article class="english-game-card"><h3>🃏 Memory Cards</h3><p>כרטיסי זוגות של מילה–תמונה או שאלה–תשובה. הופכים שניים ומחפשים התאמות.</p><span class="game-tag">אוצר מילים</span></article>
+          <article class="english-game-card"><h3>4️⃣ Four Corners</h3><p>ארבע פינות מייצגות תשובות שונות. התלמידים עוברים לפינה שלהם ואז מסבירים באנגלית למה בחרו בה.</p><span class="game-tag">בחירה · דיבור</span></article>
+        </div>`;
+
+      const footer = main.querySelector('.footer-card');
+      if (footer) footer.insertAdjacentElement('afterend', games);
+      else main.appendChild(games);
+    }
   }
 
   const nav = document.createElement('nav');
