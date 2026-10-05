@@ -75,3 +75,14 @@ test('English page teaches lesson 1 with separate teacher and student guidance',
   assert.match(html, /45 דקות/);
   assert.match(html, /site-nav\.js/);
 });
+
+test('English lesson 1 opens with Hot Seat and includes its rules and support language', async () => {
+  const html = await read('english.html');
+  assert.match(html, /Hot Seat/);
+  assert.match(html, /It is…/);
+  assert.match(html, /You can…/);
+  assert.match(html, /It has…/);
+  assert.match(html, /football/);
+  assert.match(html, /pizza/);
+  assert.match(html, /שתי קבוצות/);
+});
