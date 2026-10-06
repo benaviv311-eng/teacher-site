@@ -109,3 +109,18 @@ test('English lesson 1 opens with Hot Seat and includes its rules and support la
   assert.match(html, /pizza/);
   assert.match(html, /שתי קבוצות/);
 });
+
+test('English page includes lesson 2 My Daily Routine with board prep, vocabulary, game and exit ticket', async () => {
+  const html = await read('english.html');
+  assert.match(html, /שיעור 2 — My Daily Routine/);
+  assert.match(html, /Today I can talk about my daily routine in English/);
+  assert.match(html, /wake up/);
+  assert.match(html, /get dressed/);
+  assert.match(html, /eat breakfast/);
+  assert.match(html, /do homework/);
+  assert.match(html, /take a shower/);
+  assert.match(html, /Meet Maya/);
+  assert.match(html, /Mime & Guess/);
+  assert.match(html, /What time do you wake up\?/);
+  assert.match(html, /Exit Ticket/);
+});
