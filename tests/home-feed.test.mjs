@@ -110,17 +110,17 @@ test('English lesson 1 opens with Hot Seat and includes its rules and support la
   assert.match(html, /שתי קבוצות/);
 });
 
-test('English page includes lesson 2 My Daily Routine with board prep, vocabulary, game and exit ticket', async () => {
-  const html = await read('english.html');
-  assert.match(html, /שיעור 2 — My Daily Routine/);
-  assert.match(html, /Today I can talk about my daily routine in English/);
-  assert.match(html, /wake up/);
-  assert.match(html, /get dressed/);
-  assert.match(html, /eat breakfast/);
-  assert.match(html, /do homework/);
-  assert.match(html, /take a shower/);
-  assert.match(html, /Meet Maya/);
-  assert.match(html, /Mime & Guess/);
-  assert.match(html, /What time do you wake up\?/);
-  assert.match(html, /Exit Ticket/);
+test('English area injects lesson 2 My Daily Routine with board prep, vocabulary, game and exit ticket', async () => {
+  const nav = await read('site-nav.js');
+  assert.match(nav, /שיעור 2 — My Daily Routine/);
+  assert.match(nav, /Today I can talk about my daily routine in English/);
+  assert.match(nav, /wake up/);
+  assert.match(nav, /get dressed/);
+  assert.match(nav, /eat breakfast/);
+  assert.match(nav, /do homework/);
+  assert.match(nav, /take a shower/);
+  assert.match(nav, /Meet Maya/);
+  assert.match(nav, /Mime & Guess/);
+  assert.match(nav, /What time do you wake up\?/);
+  assert.match(nav, /Exit Ticket/);
 });
