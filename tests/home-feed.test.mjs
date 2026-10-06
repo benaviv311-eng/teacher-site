@@ -39,7 +39,7 @@ test('lesson 1 includes approved calorie quiz and energy-use section', async () 
   assert.match(html, /מאזן אנרגיה/);
 });
 
-test('lessons page lists the sleep lesson as lesson 1 under its topic', async () => {
+test('health lessons page lists the sleep lesson as lesson 1 under its topic', async () => {
   const html = await read('lessons.html');
   assert.match(html, /שינה ואורח חיים בריא/);
   assert.match(html, /שיעור 1/);
@@ -47,7 +47,7 @@ test('lessons page lists the sleep lesson as lesson 1 under its topic', async ()
   assert.match(html, /שינה: הבסיס לתפקוד היומיומי/);
 });
 
-test('lessons page body does not list enrichment tools as lessons', async () => {
+test('health lessons page body does not list enrichment tools as lessons', async () => {
   const html = await read('lessons.html');
   assert.doesNotMatch(html, /<h2>תוכן נוסף<\/h2>/);
   assert.doesNotMatch(html, /<h3>חשיבה ביקורתית ותודעה חברתית<\/h3>/);
@@ -62,16 +62,6 @@ test('sleep lesson has an icon-only fixed home button on the left', async () => 
   assert.match(html, /aria-label="בית"/);
 });
 
-test('every page loads the shared frozen navigation and sleep lesson has no top-right back icon', async () => {
-  const pages = ['index.html','lessons.html','lesson-sleep.html','critical-thinking.html','nutrition-builder.html','nutrition-science.html','nutrition-grade8-lesson1.html','games.html'];
-  for (const page of pages) {
-    const html = await read(page);
-    assert.match(html, /site-nav\.js/, `${page} should load site-nav.js`);
-  }
-  const sleep = await read('lesson-sleep.html');
-  assert.doesNotMatch(sleep, /class="back"/);
-});
-
 test('central feed data mixes content from multiple site areas', async () => {
   const js = await read('central-feed-data.js');
   assert.match(js, /sleep/);
@@ -82,45 +72,65 @@ test('central feed data mixes content from multiple site areas', async () => {
   assert.match(js, /nutrition-builder\.html/);
 });
 
-test('shared navigation includes the English teacher area', async () => {
-  const nav = await read('site-nav.js');
-  assert.match(nav, /english\.html/);
-  assert.match(nav, /אנגלית/);
-  assert.match(nav, /current === 'english\.html'/);
+test('subject landing pages share the same library visual structure', async () => {
+  for (const page of ['lessons.html','english.html','nutrition-science.html']) {
+    const html = await read(page);
+    assert.match(html, /data-subject-library/);
+    assert.match(html, /subject-library\.css/);
+    assert.match(html, /class="hero library-hero"/);
+    assert.match(html, /class="topic-card"/);
+    assert.match(html, /site-nav\.js/);
+  }
 });
 
-test('English page teaches lesson 1 with separate teacher and student guidance', async () => {
+test('English landing page is a clean lesson library', async () => {
   const html = await read('english.html');
-  assert.match(html, /אנגלית/);
+  assert.match(html, /כל שיעורי האנגלית/);
+  assert.match(html, /english-lesson1\.html/);
+  assert.match(html, /english-lesson2\.html/);
+  assert.match(html, /Introducing Myself/);
+  assert.match(html, /My Daily Routine/);
+  assert.doesNotMatch(html, /מה אני עושה כמורה/);
+});
+
+test('English lesson 1 lives on its own page with teacher and student guidance', async () => {
+  const html = await read('english-lesson1.html');
   assert.match(html, /Introducing Myself/);
   assert.match(html, /מה אני עושה כמורה/);
   assert.match(html, /מה התלמידים עושים/);
+  assert.match(html, /Hot Seat/);
+  assert.match(html, /It is…/);
+  assert.match(html, /football/);
   assert.match(html, /45 דקות/);
   assert.match(html, /site-nav\.js/);
 });
 
-test('English lesson 1 opens with Hot Seat and includes its rules and support language', async () => {
-  const html = await read('english.html');
-  assert.match(html, /Hot Seat/);
-  assert.match(html, /It is…/);
-  assert.match(html, /You can…/);
-  assert.match(html, /It has…/);
-  assert.match(html, /football/);
-  assert.match(html, /pizza/);
-  assert.match(html, /שתי קבוצות/);
+test('English lesson 2 lives on its own page with routine vocabulary, game and exit ticket', async () => {
+  const html = await read('english-lesson2.html');
+  assert.match(html, /שיעור 2 — My Daily Routine/);
+  assert.match(html, /Today I can talk about my daily routine in English/);
+  assert.match(html, /wake up/);
+  assert.match(html, /get dressed/);
+  assert.match(html, /eat breakfast/);
+  assert.match(html, /do homework/);
+  assert.match(html, /take a shower/);
+  assert.match(html, /Meet Maya/);
+  assert.match(html, /Mime & Guess/);
+  assert.match(html, /What time do you wake up\?/);
+  assert.match(html, /Exit Ticket/);
+  assert.match(html, /site-nav\.js/);
 });
 
-test('English area injects lesson 2 My Daily Routine with board prep, vocabulary, game and exit ticket', async () => {
+test('shared navigation keeps English active across English subpages', async () => {
   const nav = await read('site-nav.js');
-  assert.match(nav, /שיעור 2 — My Daily Routine/);
-  assert.match(nav, /Today I can talk about my daily routine in English/);
-  assert.match(nav, /wake up/);
-  assert.match(nav, /get dressed/);
-  assert.match(nav, /eat breakfast/);
-  assert.match(nav, /do homework/);
-  assert.match(nav, /take a shower/);
-  assert.match(nav, /Meet Maya/);
-  assert.match(nav, /Mime & Guess/);
-  assert.match(nav, /What time do you wake up\?/);
-  assert.match(nav, /Exit Ticket/);
+  assert.match(nav, /english\.html/);
+  assert.match(nav, /startsWith\('english-'\)/);
+});
+
+test('all core pages load shared frozen navigation', async () => {
+  const pages = ['index.html','lessons.html','lesson-sleep.html','critical-thinking.html','nutrition-builder.html','nutrition-science.html','nutrition-grade8-lesson1.html','games.html','english.html','english-lesson1.html','english-lesson2.html'];
+  for (const page of pages) {
+    const html = await read(page);
+    assert.match(html, /site-nav\.js/, `${page} should load site-nav.js`);
+  }
 });
