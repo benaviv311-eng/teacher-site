@@ -26,6 +26,7 @@
       .english-subnav a:first-child{background:#edf4ff;color:#205fc1;border-color:#c8daf8}
       .english-vocab-library,.english-games-library{background:#fff;border:1px solid #eef1f6;border-radius:24px;padding:22px;margin-top:20px;box-shadow:0 5px 22px #14213d0c}
       .english-vocab-library h2,.english-games-library h2{margin:0 0 7px}
+      .english-vocab-library h3.vocab-heading{margin:20px 0 8px;font-size:18px}
       .english-vocab-library>p,.english-games-library>p{margin:0;color:#6d778b;line-height:1.55}
       .english-vocab-grid,.english-games-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}
       .english-vocab-card,.english-game-card{border:1px solid #e5eaf2;background:#f8faff;border-radius:18px;padding:15px;line-height:1.55}
@@ -34,6 +35,8 @@
       .english-vocab-card .example{direction:ltr;text-align:left;margin-top:8px;background:#fff;border:1px solid #e4eaf3;border-radius:11px;padding:8px 10px;color:#263b5e;font-weight:700}
       .english-game-card .game-tag{display:inline-block;margin-top:10px;background:#edf4ff;color:#245fc0;padding:6px 9px;border-radius:999px;font-size:12px;font-weight:900}
       .english-game-card.featured{background:#eef5ff;border-color:#cfe0fb}
+      .lesson2-wrap{scroll-margin-top:18px;margin-top:34px;padding-top:6px;border-top:3px solid #dbe7fb}
+      .lesson2-wrap>.section-title{margin-top:20px}
       @media(max-width:620px){.english-vocab-grid,.english-games-grid{grid-template-columns:1fr}}
       @media(max-width:420px){.global-nav-item{font-size:8.5px;min-width:40px}.global-nav-item strong{font-size:18px}}
     `;
@@ -47,18 +50,114 @@
       const subnav = document.createElement('div');
       subnav.className = 'english-subnav';
       subnav.setAttribute('aria-label','ניווט בתוך אנגלית');
-      subnav.innerHTML = `<a href="#englishLesson1">📘 שיעור 1</a><a href="#englishVocabulary">🔤 אוצר מילים</a><a href="#englishGames">🎮 משחקי אנגלית</a>`;
+      subnav.innerHTML = `<a href="#englishLesson1">📘 שיעור 1</a><a href="#englishLesson2">📗 שיעור 2</a><a href="#englishVocabulary">🔤 אוצר מילים</a><a href="#englishGames">🎮 משחקי אנגלית</a>`;
       hero.insertAdjacentElement('afterend', subnav);
 
       const lessonPanel = main.querySelector('.panel');
       if (lessonPanel) lessonPanel.id = 'englishLesson1';
 
+      const lessonTabs = main.querySelectorAll('.lesson-tabs .tab');
+      if (lessonTabs[1]) {
+        lessonTabs[1].disabled = false;
+        lessonTabs[1].classList.remove('locked');
+        lessonTabs[1].textContent = 'שיעור 2 · My Daily Routine';
+        lessonTabs[1].onclick = () => document.getElementById('englishLesson2')?.scrollIntoView({behavior:'smooth'});
+      }
+
+      const lesson2 = document.createElement('section');
+      lesson2.id = 'englishLesson2';
+      lesson2.className = 'lesson2-wrap';
+      lesson2.innerHTML = `
+        <section class="panel">
+          <h2>שיעור 2 — My Daily Routine</h2>
+          <p class="sub">נושא: השגרה היומית שלי. התלמידים עוברים מתיאור מי הם לתיאור מה הם עושים במהלך היום, עם אוצר מילים שימושי, קריאה, משחק, כתיבה ושיחה.</p>
+          <div class="summary" style="margin-top:15px">
+            <div class="goal"><strong>🎯 Can-Do Goal</strong><br><span dir="ltr">Today I can talk about my daily routine in English.</span><br>בסוף השיעור התלמיד יכול לתאר את היום שלו ב־4–6 משפטים ולענות על שאלות בסיסיות על השגרה שלו.</div>
+            <div class="prep"><strong>🧰 לפני הכניסה לכיתה</strong><ul><li>כתוב מראש את ה־Do Now.</li><li>כתוב את Vocabulary Bank בצד הלוח.</li><li>הכן את הטקסט Meet Maya.</li><li>הכן פתקים ל־Mime & Guess.</li><li>השאר מקום לשאלות הראיון.</li></ul></div>
+          </div>
+          <div class="quickbar"><div class="quick"><b>13</b><span>שלבים</span></div><div class="quick"><b>45</b><span>דקות</span></div><div class="quick"><b>10</b><span>ביטויי שגרה</span></div><div class="quick"><b>1</b><span>משחק מרכזי</span></div></div>
+
+          <h3>מה צריך להיות על הלוח לפני הצלצול?</h3>
+          <div class="board"><strong>LESSON 2 — MY DAILY ROUTINE</strong><div class="en"><br>DO NOW<br><br>Complete:<br>1. I wake up at ______.<br>2. I go to school at ______.<br>3. I go to bed at ______.<br><br>TODAY I CAN:<br>Talk about my daily routine in English.</div><br><strong>VOCABULARY BANK</strong><div class="en">wake up — להתעורר<br>get dressed — להתלבש<br>eat breakfast — לאכול ארוחת בוקר<br>go to school — ללכת לבית הספר<br>come home — לחזור הביתה<br>eat lunch — לאכול ארוחת צהריים<br>do homework — להכין שיעורי בית<br>practice — להתאמן<br>take a shower — להתקלח<br>go to bed — ללכת לישון<br><br>I ______ at ______.<br>After school, I ______.</div></div>
+        </section>
+
+        <div class="section-title"><div><h2>שיעור 2 — דקה אחר דקה</h2><p>אותו מבנה קבוע: הקשר → קלט → תרגול → משחק → שימוש אישי → עצמאות.</p></div></div>
+
+        <section class="timeline">
+          <article class="stage">
+            <div class="stage-head"><div class="stage-num"><span class="num">1</span><h3>Do Now</h3></div><span class="time">00:00–04:00</span></div>
+            <div class="two"><div class="role teacher"><h4>👨‍🏫 מה אני עושה כמורה</h4><p>כוון את התלמידים מיד למשימה שעל הלוח והסתובב ביניהם בזמן הכתיבה.</p><div class="say"><small>Say:</small>Good morning. Sit down, take out your notebook and look at the board.<br>Complete the three sentences.<br>You have four minutes. Start.</div><div class="tip">אם תלמיד תקוע: “Start with number one. What time do you wake up?”</div></div><div class="role students"><h4>👥 מה התלמידים עושים</h4><p>משלימים שלושה משפטים אישיים: מתי הם קמים, מגיעים לבית הספר והולכים לישון.</p></div></div>
+          </article>
+
+          <article class="stage">
+            <div class="stage-head"><div class="stage-num"><span class="num">2</span><h3>השגת תשומת לב</h3></div><span class="time">04:00–05:00</span></div>
+            <div class="two"><div class="role teacher"><h4>👨‍🏫 מה אני עושה כמורה</h4><p>אל תדבר מעל רעש. עצור את העבודה ורק אז המשך.</p><div class="say"><small>Say:</small>3… 2… 1… Pens down. Eyes on me.</div></div><div class="role students"><h4>👥 מה התלמידים עושים</h4><p>מסיימים, מניחים עט ומפנים תשומת לב.</p></div></div>
+          </article>
+
+          <article class="stage">
+            <div class="stage-head"><div class="stage-num"><span class="num">3</span><h3>חזרה קצרה משיעור 1</h3></div><span class="time">05:00–08:00</span></div>
+            <div class="two"><div class="role teacher"><h4>👨‍🏫 מה אני עושה כמורה</h4><p>שאל 2–3 תלמידים שאלות מהשיעור הקודם כדי ליצור רצף.</p><div class="say"><small>Ask:</small>What’s your name?<br>Where do you live?<br>What do you like?<br><br>Last lesson, we talked about ourselves.<br>Today, we are going to talk about our day.</div></div><div class="role students"><h4>👥 מה התלמידים עושים</h4><p>עונים בקצרה ומחזירים חומר קודם לזיכרון.</p></div></div>
+          </article>
+
+          <article class="stage">
+            <div class="stage-head"><div class="stage-num"><span class="num">4</span><h3>Lead-in — היום שלך</h3></div><span class="time">08:00–11:00</span></div>
+            <div class="two"><div class="role teacher"><h4>👨‍🏫 מה אני עושה כמורה</h4><p>תן מודל אמיתי וקצר של היום שלך. קודם הבנה, אחר כך פירוק השפה.</p><div class="say"><small>Say slowly:</small>I wake up at 6:30.<br>I get dressed.<br>I eat breakfast.<br>I go to work.<br>I practice volleyball.<br>I come home.<br>I take a shower.<br>I go to bed at 11:00.<br><br>What did you understand about my day?</div><div class="tip">אפשר לקבל תשובות בעברית ולנסח אותן שוב באנגלית.</div></div><div class="role students"><h4>👥 מה התלמידים עושים</h4><p>מקשיבים ומנסים להבין מידע על השגרה שלך.</p></div></div>
+          </article>
+
+          <article class="stage">
+            <div class="stage-head"><div class="stage-num"><span class="num">5</span><h3>מטרת השיעור</h3></div><span class="time">11:00–12:00</span></div>
+            <div class="two"><div class="role teacher"><h4>👨‍🏫 מה אני עושה כמורה</h4><p>הצבע על המטרה שעל הלוח. הסבר במשפט אחד.</p><div class="say"><small>Say:</small>Today you will learn how to talk about your daily routine.</div></div><div class="role students"><h4>👥 מה התלמידים עושים</h4><p>מבינים מה יוכלו לעשות בסוף השיעור.</p></div></div>
+          </article>
+
+          <article class="stage">
+            <div class="stage-head"><div class="stage-num"><span class="num">6</span><h3>Input — Meet Maya</h3></div><span class="time">12:00–17:00</span></div>
+            <div class="two"><div class="role teacher"><h4>👨‍🏫 מה אני עושה כמורה</h4><p>בפעם הראשונה התלמידים רק מקשיבים. בפעם השנייה קוראים יחד ואז עונים על שאלות הבנה.</p><div class="say"><small>Meet Maya:</small>Hi, I’m Maya.<br>I wake up at 7:00.<br>I get dressed and eat breakfast.<br>I go to school at 8:00.<br>I come home at 2:00.<br>I eat lunch.<br>I do my homework in the afternoon.<br>I take a shower.<br>I go to bed at 10:00.</div><div class="say"><small>Ask:</small>What time does Maya wake up?<br>What time does she go to school?<br>What does she do in the afternoon?<br>What time does she go to bed?</div><div class="tip">חכה 3–5 שניות אחרי כל שאלה לפני שאתה עונה בעצמך.</div></div><div class="role students"><h4>👥 מה התלמידים עושים</h4><p>מקשיבים, קוראים יחד ומאתרים מידע מתוך הטקסט.</p></div></div>
+          </article>
+
+          <article class="stage">
+            <div class="stage-head"><div class="stage-num"><span class="num">7</span><h3>אוצר מילים בתוך משפטים</h3></div><span class="time">17:00–23:00</span></div>
+            <div class="two"><div class="role teacher"><h4>👨‍🏫 מה אני עושה כמורה</h4><p>לכל ביטוי: אמור משפט, הכיתה חוזרת, ואז תלמיד אחד אומר אותו בעצמו. אל תלמד את המילים כרשימה מנותקת.</p><div class="say"><small>Vocabulary in sentences:</small>I wake up at 7:00.<br>I get dressed in the morning.<br>I eat breakfast at home.<br>I go to school at 8:00.<br>I come home in the afternoon.<br>I eat lunch at 2:00.<br>I do my homework after school.<br>I practice after school.<br>I take a shower in the evening.<br>I go to bed at 10:00.</div></div><div class="role students"><h4>👥 מה התלמידים עושים</h4><p>חוזרים בקול ומשתמשים בביטויים בתוך משפטים.</p><div class="wordbank"><span class="word">wake up</span><span class="word">get dressed</span><span class="word">eat breakfast</span><span class="word">go to school</span><span class="word">come home</span><span class="word">eat lunch</span><span class="word">do homework</span><span class="word">practice</span><span class="word">take a shower</span><span class="word">go to bed</span></div></div></div>
+          </article>
+
+          <article class="stage">
+            <div class="stage-head"><div class="stage-num"><span class="num">8</span><h3>Mime & Guess — משחק</h3></div><span class="time">23:00–28:00</span></div>
+            <div class="two"><div class="role teacher"><h4>👨‍🏫 מה אני עושה כמורה</h4><p>חלק לשתי קבוצות. תלמיד מקבל פעולה וממחיז אותה בלי לדבר. הקבוצה מנחשת באנגלית.</p><div class="say"><small>Say:</small>Two teams.<br>One student comes to the front.<br>You act. No talking.<br>Your team guesses in English.</div><div class="check">בדיקת הוראות: Can you talk? — No. English or Hebrew? — English.</div><div class="tip">פעולות מומלצות: wake up, get dressed, eat breakfast, do homework, take a shower, go to bed.</div></div><div class="role students"><h4>👥 מה התלמידים עושים</h4><p>ממחיזים פעולות ומנחשים את הביטוי באנגלית. תשובה נכונה שווה נקודה.</p></div></div>
+          </article>
+
+          <article class="stage">
+            <div class="stage-head"><div class="stage-num"><span class="num">9</span><h3>סדר את היום</h3></div><span class="time">28:00–31:00</span></div>
+            <div class="two"><div class="role teacher"><h4>👨‍🏫 מה אני עושה כמורה</h4><p>כתוב פעולות בסדר מעורב ובקש מהזוגות לסדר אותן.</p><div class="say"><small>On the board:</small>go to bed<br>eat breakfast<br>come home<br>wake up<br>go to school<br><br>Put the actions in the correct order.</div><div class="tip">שאל: What comes first? What comes next?</div></div><div class="role students"><h4>👥 מה התלמידים עושים</h4><p>מסדרים: wake up → eat breakfast → go to school → come home → go to bed.</p></div></div>
+          </article>
+
+          <article class="stage">
+            <div class="stage-head"><div class="stage-num"><span class="num">10</span><h3>Guided Practice — כתיבה אישית</h3></div><span class="time">31:00–36:00</span></div>
+            <div class="two"><div class="role teacher"><h4>👨‍🏫 מה אני עושה כמורה</h4><p>בקש להשלים חמישה משפטים אישיים. בדוק: לבד או בזוג? כמה משפטים? אפשר להשתמש באוצר המילים?</p><div class="say"><small>Write:</small>MY DAILY ROUTINE<br><br>1. I wake up at ______.<br>2. I ______ in the morning.<br>3. I go to school at ______.<br>4. After school, I ______.<br>5. I go to bed at ______.<br><br>Complete five sentences. Work alone. You have five minutes. Start.</div><div class="tip">לתלמידים חזקים: Add two more sentences.</div></div><div class="role students"><h4>👥 מה התלמידים עושים</h4><p>כותבים חמישה משפטים על השגרה האישית שלהם ומשתמשים בבנק המילים.</p></div></div>
+          </article>
+
+          <article class="stage">
+            <div class="stage-head"><div class="stage-num"><span class="num">11</span><h3>Pair Interview</h3></div><span class="time">36:00–40:00</span></div>
+            <div class="two"><div class="role teacher"><h4>👨‍🏫 מה אני עושה כמורה</h4><p>קודם הדגם ראיון קצר עם תלמיד, ואז העבר לעבודה בזוגות.</p><div class="say"><small>Questions:</small>What time do you wake up?<br>What do you do after school?<br>What time do you go to bed?<br><br>Work with the person next to you.<br>Student A asks. Student B answers.<br>Then switch.</div><div class="check">לפני ההתחלה: מי שואל קודם? מה קורה אחר כך?</div></div><div class="role students"><h4>👥 מה התלמידים עושים</h4><p>שואלים ועונים על שלוש שאלות, ואז מחליפים תפקידים.</p></div></div>
+          </article>
+
+          <article class="stage">
+            <div class="stage-head"><div class="stage-num"><span class="num">12</span><h3>Independent Challenge — בלי מחברת</h3></div><span class="time">40:00–42:00</span></div>
+            <div class="two"><div class="role teacher"><h4>👨‍🏫 מה אני עושה כמורה</h4><p>בקש לסגור מחברות ולספר לבן הזוג על היום בשלושה משפטים לפחות.</p><div class="say"><small>Say:</small>Close your notebook.<br>Tell your partner about your day.<br>No reading.<br>At least three sentences.</div><div class="tip">חפש עצמאות, לא שלמות.</div></div><div class="role students"><h4>👥 מה התלמידים עושים</h4><p>מדברים מהזיכרון על השגרה שלהם.</p></div></div>
+          </article>
+
+          <article class="stage">
+            <div class="stage-head"><div class="stage-num"><span class="num">13</span><h3>Exit Ticket וסיום</h3></div><span class="time">42:00–45:00</span></div>
+            <div class="two"><div class="role teacher"><h4>👨‍🏫 מה אני עושה כמורה</h4><p>בקש שלושה משפטים על השגרה בלי להסתכל במחברת. בדוק כמה דוגמאות לפני היציאה.</p><div class="say"><small>Say:</small>Last task.<br>Write three sentences about your daily routine without looking at your notebook.<br><br>Can you talk about your daily routine in English now?</div><div class="check">מדד הצלחה: רוב התלמידים מייצרים לפחות 3 משפטים עצמאיים ומשתמשים ב־3–5 ביטויי שגרה.</div></div><div class="role students"><h4>👥 מה התלמידים עושים</h4><p>כותבים שלושה משפטים עצמאיים ומסיימים את השיעור עם הוכחה קצרה ללמידה.</p></div></div>
+          </article>
+        </section>
+      `;
+
       const vocabulary = document.createElement('section');
       vocabulary.id = 'englishVocabulary';
       vocabulary.className = 'english-vocab-library';
       vocabulary.innerHTML = `
-        <h2>🔤 אוצר מילים — שיעור 1</h2>
-        <p>המילים של Introducing Myself. כל מילה נשמרת יחד עם משמעות ומשפט שימושי כדי שלא תלמד כמילה מבודדת.</p>
+        <h2>🔤 אוצר מילים באנגלית</h2>
+        <p>כל מילה נשמרת יחד עם משמעות ומשפט שימושי כדי שלא תלמד כמילה מבודדת.</p>
+        <h3 class="vocab-heading">שיעור 1 — Introducing Myself</h3>
         <div class="english-vocab-grid">
           <article class="english-vocab-card"><h3 dir="ltr">football</h3><p>כדורגל</p><div class="example">I like football.</div></article>
           <article class="english-vocab-card"><h3 dir="ltr">pizza</h3><p>פיצה</p><div class="example">My favorite food is pizza.</div></article>
@@ -74,6 +173,19 @@
           <article class="english-vocab-card"><h3 dir="ltr">hamburger</h3><p>המבורגר</p><div class="example">My favorite food is hamburger.</div></article>
           <article class="english-vocab-card"><h3 dir="ltr">dancing</h3><p>ריקוד / לרקוד</p><div class="example">I like dancing.</div></article>
           <article class="english-vocab-card"><h3 dir="ltr">drawing</h3><p>ציור / לצייר</p><div class="example">I like drawing.</div></article>
+        </div>
+        <h3 class="vocab-heading">שיעור 2 — My Daily Routine</h3>
+        <div class="english-vocab-grid">
+          <article class="english-vocab-card"><h3 dir="ltr">wake up</h3><p>להתעורר</p><div class="example">I wake up at 7:00.</div></article>
+          <article class="english-vocab-card"><h3 dir="ltr">get dressed</h3><p>להתלבש</p><div class="example">I get dressed in the morning.</div></article>
+          <article class="english-vocab-card"><h3 dir="ltr">eat breakfast</h3><p>לאכול ארוחת בוקר</p><div class="example">I eat breakfast at home.</div></article>
+          <article class="english-vocab-card"><h3 dir="ltr">go to school</h3><p>ללכת לבית הספר</p><div class="example">I go to school at 8:00.</div></article>
+          <article class="english-vocab-card"><h3 dir="ltr">come home</h3><p>לחזור הביתה</p><div class="example">I come home in the afternoon.</div></article>
+          <article class="english-vocab-card"><h3 dir="ltr">eat lunch</h3><p>לאכול ארוחת צהריים</p><div class="example">I eat lunch at 2:00.</div></article>
+          <article class="english-vocab-card"><h3 dir="ltr">do homework</h3><p>להכין שיעורי בית</p><div class="example">I do my homework after school.</div></article>
+          <article class="english-vocab-card"><h3 dir="ltr">practice</h3><p>להתאמן</p><div class="example">I practice after school.</div></article>
+          <article class="english-vocab-card"><h3 dir="ltr">take a shower</h3><p>להתקלח</p><div class="example">I take a shower in the evening.</div></article>
+          <article class="english-vocab-card"><h3 dir="ltr">go to bed</h3><p>ללכת לישון</p><div class="example">I go to bed at 10:00.</div></article>
         </div>`;
 
       const games = document.createElement('section');
@@ -97,9 +209,11 @@
 
       const footer = main.querySelector('.footer-card');
       if (footer) {
+        footer.insertAdjacentElement('beforebegin', lesson2);
         footer.insertAdjacentElement('afterend', vocabulary);
         vocabulary.insertAdjacentElement('afterend', games);
       } else {
+        main.appendChild(lesson2);
         main.appendChild(vocabulary);
         main.appendChild(games);
       }
