@@ -30,6 +30,15 @@ test('shared navigation exposes Nutrition Science as its own icon and destinatio
   assert.match(nav, /🔬/);
 });
 
+test('lesson 1 includes approved calorie quiz and energy-use section', async () => {
+  const html = await read('nutrition-grade8-lesson1.html');
+  assert.match(html, /מה יותר קלורי/);
+  assert.match(html, /חפיסה שלמה של שוקולד פרה/);
+  assert.match(html, /לאן האנרגיה הולכת/);
+  assert.match(html, /להחזיק את הגוף עובד/);
+  assert.match(html, /מאזן אנרגיה/);
+});
+
 test('lessons page lists the sleep lesson as lesson 1 under its topic', async () => {
   const html = await read('lessons.html');
   assert.match(html, /שינה ואורח חיים בריא/);
