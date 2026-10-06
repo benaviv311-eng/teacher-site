@@ -22,6 +22,14 @@ test('home page exposes Nutrition Science as a separate destination', async () =
   assert.match(html, /מדעי התזונה/);
 });
 
+test('shared navigation exposes Nutrition Science as its own icon and destination', async () => {
+  const nav = await read('site-nav.js');
+  assert.match(nav, /nutrition-science\.html/);
+  assert.match(nav, /nutrition-grade8-lesson1\.html/);
+  assert.match(nav, /מדעי תזונה/);
+  assert.match(nav, /🔬/);
+});
+
 test('lessons page lists the sleep lesson as lesson 1 under its topic', async () => {
   const html = await read('lessons.html');
   assert.match(html, /שינה ואורח חיים בריא/);
@@ -46,7 +54,7 @@ test('sleep lesson has an icon-only fixed home button on the left', async () => 
 });
 
 test('every page loads the shared frozen navigation and sleep lesson has no top-right back icon', async () => {
-  const pages = ['index.html','lessons.html','lesson-sleep.html','critical-thinking.html','nutrition-builder.html','games.html'];
+  const pages = ['index.html','lessons.html','lesson-sleep.html','critical-thinking.html','nutrition-builder.html','nutrition-science.html','nutrition-grade8-lesson1.html','games.html'];
   for (const page of pages) {
     const html = await read(page);
     assert.match(html, /site-nav\.js/, `${page} should load site-nav.js`);
