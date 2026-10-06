@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>מדעי התזונה | כיתה ח׳ | שיעור 1</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}.app{max-width:980px;margin:auto;padding:18px 16px 110px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px}.brand{font-size:22px;font-weight:900}.back{display:inline-block;text-decoration:none;color:#172033;background:#fff;border-radius:14px;padding:11px 14px;box-shadow:0 4px 18px #14213d12;font-weight:800}.hero{margin-top:18px;background:linear-gradient(135deg,#14532d,#22c55e);color:#fff;border-radius:28px;padding:28px;box-shadow:0 14px 35px #16a34a22}.hero small{opacity:.86;font-weight:800}.hero h1{margin:7px 0 8px;font-size:clamp(28px,5vw,44px)}.hero p{margin:0;line-height:1.65;max-width:760px}.teacher,.game{background:#fff;border:1px solid #e8edf4;border-radius:24px;padding:22px;margin-top:20px;box-shadow:0 6px 24px #14213d0b}.teacher h2,.game h2{margin:0 0 10px}.teacher blockquote{margin:14px 0 0;background:#f0fdf4;border-right:5px solid #22c55e;border-radius:14px;padding:16px 18px;line-height:1.75;font-weight:700}.rules{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 18px}.rule{background:#f6f8fb;border-radius:999px;padding:8px 11px;font-size:13px;font-weight:800;color:#556278}.progress{height:8px;background:#edf1f6;border-radius:999px;overflow:hidden;margin:16px 0}.progress span{display:block;height:100%;width:5%;background:#22c55e;transition:width .2s}.qhead{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:16px}.qnumber{font-weight:900;color:#166534}.level{font-size:12px;background:#ecfdf3;color:#166534;padding:7px 10px;border-radius:999px;font-weight:900}.options{display:grid;grid-template-columns:1fr 1fr;gap:14px}.option{border:2px solid #edf1f6;border-radius:22px;padding:18px;background:#fbfcfe}.option h3{margin:0 0 8px;font-size:28px}.option p{font-size:19px;line-height:1.5;margin:0;min-height:58px}.counter{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:15px}.vote-btn{width:42px;height:42px;border:0;border-radius:13px;background:#eaf2ff;color:#1d4ed8;font-size:24px;font-weight:900;cursor:pointer}.vote-count{min-width:40px;text-align:center;font-size:22px;font-weight:900}.reveal-row{display:flex;justify-content:center;margin-top:18px}.reveal{border:0;border-radius:14px;background:#172033;color:#fff;padding:13px 22px;font-weight:900;font-size:16px;cursor:pointer}.hidden-answer{display:none;margin-top:16px;background:#ecfdf3;border:1px solid #bbf7d0;color:#166534;border-radius:16px;padding:15px;font-size:18px;font-weight:900;text-align:center}.hidden-answer.show{display:block}.pager{display:flex;justify-content:space-between;gap:12px;margin-top:20px}.pager button{border:0;border-radius:14px;padding:12px 18px;font-weight:900;cursor:pointer;background:#edf4ff;color:#205fc1}.pager button:disabled{opacity:.35;cursor:not-allowed}.finish{display:none;margin-top:18px;background:#fff7ed;border:1px solid #fed7aa;border-radius:18px;padding:16px;line-height:1.7}.finish.show{display:block}.note{margin-top:14px;color:#667085;font-size:13px;line-height:1.55}@media(max-width:700px){.options{grid-template-columns:1fr}.hero{padding:22px}.option p{min-height:auto}.app{padding:12px 11px 100px}}
+</style>
+</head>
+<body>
+<main class="app">
+<div class="top"><div class="brand">☀️ בית ספר אור</div><a class="back" href="nutrition-science.html">← מדעי התזונה</a></div>
+<section class="hero"><small>מדעי התזונה · כיתה ח׳ · שיעור 1</small><h1>מאזן אנרגיה</h1><p>שלב 1 בשיעור: משחק פתיחה אינטראקטיבי. התלמידים בוחרים, מצביעים, מסבירים — ורק אחר כך חושפים את התשובה.</p></section>
+<section class="teacher"><h2>🎤 פתיחה — מה אני אומר</h2><blockquote>“היום אנחנו מתחילים מדעי התזונה, אבל לפני שנדבר בכלל על אוכל, אני רוצה לבדוק אם אתם יודעים כמה אנרגיה הגוף שלנו מוציא. נתחיל במשחק.”</blockquote></section>
+<section class="game">
+<h2>⚡ דו־קרב האנרגיה</h2>
+<p>בכל שאלה התלמידים בוחרים א׳ או ב׳. סופרים את ההצבעות בעזרת + ו־−, ורק אחרי הדיון לוחצים על <strong>גלה תשובה</strong>.</p>
+<div class="rules"><span class="rule">אותו תלמיד בכל השאלות</span><span class="rule">בוחרים רק א׳ או ב׳</span><span class="rule">התשובה מוסתרת עד לחשיפה</span></div>
+<div class="progress"><span id="progressBar"></span></div>
+<div id="question"></div>
+<div class="pager"><button id="prevBtn">← שאלה קודמת</button><button id="nextBtn">שאלה הבאה →</button></div>
+<div id="finish" class="finish"><strong>בסיום המשחק אני שואל:</strong><br>“אז לפי המשחק שלנו — אילו דברים משפיעים על כמות האנרגיה שאנחנו מוציאים?”<br><br>המטרה להגיע עם הכיתה ל־<strong>סוג הפעילות · עצימות · משך הפעילות</strong>.</div>
+<div class="note">הביסוס המדעי והמקורות יתווספו בסוף השיעור, בנפרד מהחלק שאתה מעביר בכיתה.</div>
+</section>
+</main>
+<script>
+const questions=[
+{a:'שעה הליכה מהירה',b:'שעה ריצה קלה',answer:'ב׳',level:'חימום'},
+{a:'שעה רכיבה איטית על אופניים',b:'שעה כדורסל',answer:'ב׳',level:'חימום'},
+{a:'שעה טניס שולחן',b:'שעה טניס',answer:'ב׳',level:'חימום'},
+{a:'שעה כדורעף',b:'שעה כדורגל',answer:'ב׳',level:'חימום'},
+{a:'שעה תרגילי משקולות ידיים',b:'שעה ריצה קלה',answer:'ב׳',level:'חימום'},
+{a:'שעה טניס',b:'שעה כדורגל',answer:'ב׳',level:'עולה'},
+{a:'שעה כדורעף',b:'שעה כדורסל',answer:'ב׳',level:'עולה'},
+{a:'שעה ריצה קלה',b:'שעה רכיבה מהירה על אופניים',answer:'ב׳',level:'עולה'},
+{a:'שעה כדורסל',b:'שעה שחייה רציפה בקצב רגיל',answer:'ב׳',level:'עולה'},
+{a:'שעה טניס',b:'שעה ריצה מהירה',answer:'ב׳',level:'עולה'},
+{a:'45 דקות כדורגל',b:'שעה כדורעף',answer:'א׳',level:'זמן נכנס למשחק'},
+{a:'35 דקות שחייה רציפה',b:'שעה רכיבה איטית על אופניים',answer:'א׳',level:'זמן נכנס למשחק'},
+{a:'40 דקות טניס',b:'שעה הליכה מהירה',answer:'ב׳',level:'זמן נכנס למשחק'},
+{a:'30 דקות קפיצה בחבל',b:'שעה טניס שולחן',answer:'ב׳',level:'זמן נכנס למשחק'},
+{a:'40 דקות כדורסל',b:'שעה רכיבה על אופניים בקצב בינוני',answer:'ב׳',level:'זמן נכנס למשחק'},
+{a:'שעה קפיצה בחבל',b:'20 דקות כדורגל + 40 דקות כדורעף',answer:'א׳',level:'רמת בוס'},
+{a:'40 דקות כדורגל + 20 דקות הליכה מהירה',b:'שעה טניס',answer:'א׳',level:'רמת בוס'},
+{a:'30 דקות שחייה + 30 דקות טניס שולחן',b:'שעה רכיבה מהירה על אופניים',answer:'ב׳',level:'רמת בוס'},
+{a:'40 דקות קפיצה בחבל + 20 דקות טניס',b:'שעה ריצה מהירה',answer:'ב׳',level:'רמת בוס'},
+{a:'30 דקות כדורגל + 30 דקות טניס',b:'15 דקות ריצה מהירה + 45 דקות כדורעף',answer:'א׳',level:'שאלת הגמר'}
+];
+let current=0;const votes=questions.map(()=>({a:0,b:0}));const root=document.getElementById('question');
+function render(){const q=questions[current],v=votes[current];root.innerHTML=`<div class="qhead"><span class="qnumber">שאלה ${current+1} מתוך ${questions.length}</span><span class="level">${q.level}</span></div><div class="options"><div class="option"><h3>א׳</h3><p>${q.a}</p><div class="counter"><button class="vote-btn" data-side="a" data-step="-1">−</button><span class="vote-count">${v.a}</span><button class="vote-btn" data-side="a" data-step="1">+</button></div></div><div class="option"><h3>ב׳</h3><p>${q.b}</p><div class="counter"><button class="vote-btn" data-side="b" data-step="-1">−</button><span class="vote-count">${v.b}</span><button class="vote-btn" data-side="b" data-step="1">+</button></div></div></div><div class="reveal-row"><button class="reveal" id="revealBtn">גלה תשובה</button></div><div class="hidden-answer" id="answer">✅ התשובה הנכונה: ${q.answer}</div>`;document.getElementById('prevBtn').disabled=current===0;document.getElementById('nextBtn').disabled=current===questions.length-1;document.getElementById('progressBar').style.width=`${((current+1)/questions.length)*100}%`;document.getElementById('finish').classList.toggle('show',current===questions.length-1)}
+root.addEventListener('click',e=>{const vote=e.target.closest('.vote-btn');if(vote){const side=vote.dataset.side,step=Number(vote.dataset.step);votes[current][side]=Math.max(0,votes[current][side]+step);render();return}if(e.target.id==='revealBtn'){const ans=document.getElementById('answer');const open=ans.classList.toggle('show');e.target.textContent=open?'הסתר תשובה':'גלה תשובה'}});
+document.getElementById('prevBtn').onclick=()=>{if(current>0){current--;render()}};document.getElementById('nextBtn').onclick=()=>{if(current<questions.length-1){current++;render()}};render();
+</script>
+<script src="site-nav.js"></script>
+</body>
+</html>
