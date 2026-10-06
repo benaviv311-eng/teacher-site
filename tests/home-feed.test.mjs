@@ -16,6 +16,12 @@ test('bottom navigation includes a lessons destination', async () => {
   assert.match(html, /📖/);
 });
 
+test('home page exposes Nutrition Science as a separate destination', async () => {
+  const html = await read('index.html');
+  assert.match(html, /nutrition-science\.html/);
+  assert.match(html, /מדעי התזונה/);
+});
+
 test('lessons page lists the sleep lesson as lesson 1 under its topic', async () => {
   const html = await read('lessons.html');
   assert.match(html, /שינה ואורח חיים בריא/);
