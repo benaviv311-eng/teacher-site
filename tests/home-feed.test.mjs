@@ -51,6 +51,19 @@ test('energy duel uses varied question types and supports refreshing the current
   assert.match(html, /עלייה/);
 });
 
+test('food quiz mixes everyday nutritious foods with treats and supports refresh', async () => {
+  const html = await read('nutrition-grade8-lesson1.html');
+  assert.match(html, /foodQuestionPool/);
+  assert.match(html, /refreshFoodQuestion/);
+  assert.match(html, /רענן שאלה/);
+  assert.match(html, /יוגורט/);
+  assert.match(html, /אבוקדו/);
+  assert.match(html, /סוכריית גומי/);
+  assert.match(html, /שוקולד פרה/);
+  assert.match(html, /אי אפשר לדעת בלי לדעת/);
+  assert.match(html, /קלוריות לא אומרות אם מזון בריא/);
+});
+
 test('health lessons page lists the sleep lesson as lesson 1 under its topic', async () => {
   const html = await read('lessons.html');
   assert.match(html, /שינה ואורח חיים בריא/);
