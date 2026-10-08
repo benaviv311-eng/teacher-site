@@ -39,6 +39,18 @@ test('lesson 1 includes approved calorie quiz and energy-use section', async () 
   assert.match(html, /מאזן אנרגיה/);
 });
 
+test('energy duel uses varied question types and supports refreshing the current question', async () => {
+  const html = await read('nutrition-grade8-lesson1.html');
+  assert.match(html, /רענן שאלה/);
+  assert.match(html, /refreshQuestion/);
+  assert.match(html, /questionPool/);
+  assert.match(html, /מדרגות/);
+  assert.match(html, /מזיע/);
+  assert.match(html, /אי אפשר לדעת/);
+  assert.match(html, /ריקוד/);
+  assert.match(html, /עלייה/);
+});
+
 test('health lessons page lists the sleep lesson as lesson 1 under its topic', async () => {
   const html = await read('lessons.html');
   assert.match(html, /שינה ואורח חיים בריא/);
