@@ -28,12 +28,12 @@
 <section class="teacher"><span class="section-label">חלק 2</span><h2>🍫 מאיפה הגוף מקבל אנרגיה?</h2><blockquote>“במשחק הראשון דיברנו על אנרגיה שהגוף מוציא. עכשיו השאלה היא: מאיפה הגוף מקבל את האנרגיה הזאת?”</blockquote><p>אחרי שהתלמידים עונים: <strong>ממזון ומשקאות שמכילים אנרגיה.</strong> אני מסביר בקצרה: <strong>קלוריה היא יחידה למדידת אנרגיה.</strong></p><div class="teacher-tip"><strong>חשוב לומר:</strong> במשחק הבא אנחנו לא שואלים מה בריא יותר, מה משביע יותר או מה עדיף לאכול. השאלה היחידה היא: <strong>במה יש יותר קלוריות?</strong></div></section>
 <section class="game">
 <h2>🍬 משחק 2 — מה יותר קלורי?</h2>
-<p>בכל שאלה מציגים שתי אפשרויות שילדים מכירים. מצביעים, סופרים עם + ו־−, ורק אז חושפים את התשובה.</p>
-<div class="rules"><span class="rule">לא “מה יותר בריא”</span><span class="rule">רק “איפה יש יותר קלוריות”</span><span class="rule">התשובה מוסתרת</span></div>
+<p>השאלות מערבבות פירות, ארוחות, יוגורט, אבוקדו, חטיפים וממתקים. לפעמים דווקא המזון המזין יותר מכיל יותר קלוריות. אם השאלה לא מתאימה כרגע — לוחצים <strong>🔄 רענן שאלה</strong> ומקבלים אחרת באותה רמת קושי.</p>
+<div class="rules"><span class="rule">לא “מה יותר בריא”</span><span class="rule">לפעמים אי אפשר לדעת בלי כמות</span><span class="rule">קלוריות ≠ איכות תזונתית</span></div>
 <div class="progress"><span id="foodProgressBar"></span></div>
 <div id="foodQuestion"></div>
 <div class="pager"><button id="foodPrevBtn">← שאלה קודמת</button><button id="foodNextBtn">שאלה הבאה →</button></div>
-<div id="foodFinish" class="finish"><strong>בסיום המשחק אני שואל:</strong><br>“האם ממתק תמיד מכיל יותר קלוריות מאוכל רגיל?”<br><br>המטרה: להבין ש<strong>כמות הקלוריות תלויה גם בסוג המזון וגם בכמות שאוכלים</strong>, ושקלוריות לבדן לא אומרות אם מזון “בריא” או “לא בריא”.</div>
+<div id="foodFinish" class="finish"><strong>בסיום המשחק אני שואל:</strong><br>“אם מזון אחד מכיל יותר קלוריות — האם זה אומר שהוא פחות בריא?”<br><br><strong>לא.</strong> קלוריות מודדות כמות אנרגיה. הן לא מספרות לבדן על חלבון, סיבים, ויטמינים, מינרלים, שובע או איכות המזון. <strong>קלוריות לא אומרות אם מזון בריא או לא.</strong></div>
 </section>
 
 <section class="teacher"><span class="section-label">חלק 3</span><h2>🔥 לאן האנרגיה הולכת?</h2><blockquote>“אז גילינו שאוכל מכניס אנרגיה לגוף. עכשיו שאלה: מה הגוף עושה עם האנרגיה הזאת?”</blockquote><p>אני נותן לכיתה לזרוק תשובות, ואז אומר: <strong>“הרבה אנשים חושבים שאנחנו מוציאים אנרגיה בעיקר כשאנחנו עושים ספורט. אבל הגוף משתמש באנרגיה כל הזמן.”</strong></p></section>
@@ -93,60 +93,48 @@ const currentQuestions=initialIds.map(id=>questionPool.find(q=>q.id===id));
 let current=0;
 const votes=currentQuestions.map(()=>({a:0,b:0}));
 const root=document.getElementById('question');
+function refreshQuestion(){const level=currentQuestions[current].level;const usedIds=new Set(currentQuestions.map(q=>q.id));let candidates=questionPool.filter(q=>q.level===level&&!usedIds.has(q.id));if(!candidates.length)candidates=questionPool.filter(q=>q.level===level&&q.id!==currentQuestions[current].id);if(!candidates.length)return;currentQuestions[current]=candidates[Math.floor(Math.random()*candidates.length)];votes[current]={a:0,b:0};render()}
+function render(){const q=currentQuestions[current],v=votes[current];root.innerHTML=`<div class="qhead"><span class="qnumber">שאלה ${current+1} מתוך ${currentQuestions.length}</span><span class="level">${q.level}</span></div><div class="options"><div class="option"><h3>א׳</h3><p>${q.a}</p><div class="counter"><button class="vote-btn" data-side="a" data-step="-1">−</button><span class="vote-count">${v.a}</span><button class="vote-btn" data-side="a" data-step="1">+</button></div></div><div class="option"><h3>ב׳</h3><p>${q.b}</p><div class="counter"><button class="vote-btn" data-side="b" data-step="-1">−</button><span class="vote-count">${v.b}</span><button class="vote-btn" data-side="b" data-step="1">+</button></div></div></div><div class="reveal-row"><button class="reveal" id="revealBtn">גלה תשובה</button><button class="refresh-question" id="refreshBtn">🔄 רענן שאלה</button></div><div class="hidden-answer" id="answer">✅ התשובה הנכונה: ${q.answer}<br><span style="font-weight:600">${q.reason}</span></div>`;document.getElementById('prevBtn').disabled=current===0;document.getElementById('nextBtn').disabled=current===currentQuestions.length-1;document.getElementById('progressBar').style.width=`${((current+1)/currentQuestions.length)*100}%`;document.getElementById('finish').classList.toggle('show',current===currentQuestions.length-1)}
+root.addEventListener('click',e=>{const vote=e.target.closest('.vote-btn');if(vote){const side=vote.dataset.side,step=Number(vote.dataset.step);votes[current][side]=Math.max(0,votes[current][side]+step);render();return}if(e.target.id==='revealBtn'){const ans=document.getElementById('answer');const open=ans.classList.toggle('show');e.target.textContent=open?'הסתר תשובה':'גלה תשובה';return}if(e.target.id==='refreshBtn')refreshQuestion()});
+document.getElementById('prevBtn').onclick=()=>{if(current>0){current--;render()}};document.getElementById('nextBtn').onclick=()=>{if(current<currentQuestions.length-1){current++;render()}};render();
 
-function refreshQuestion(){
-  const level=currentQuestions[current].level;
-  const usedIds=new Set(currentQuestions.map(q=>q.id));
-  let candidates=questionPool.filter(q=>q.level===level&&!usedIds.has(q.id));
-  if(!candidates.length)candidates=questionPool.filter(q=>q.level===level&&q.id!==currentQuestions[current].id);
-  if(!candidates.length)return;
-  currentQuestions[current]=candidates[Math.floor(Math.random()*candidates.length)];
-  votes[current]={a:0,b:0};
-  render();
-}
-
-function render(){
-  const q=currentQuestions[current],v=votes[current];
-  root.innerHTML=`<div class="qhead"><span class="qnumber">שאלה ${current+1} מתוך ${currentQuestions.length}</span><span class="level">${q.level}</span></div><div class="options"><div class="option"><h3>א׳</h3><p>${q.a}</p><div class="counter"><button class="vote-btn" data-side="a" data-step="-1">−</button><span class="vote-count">${v.a}</span><button class="vote-btn" data-side="a" data-step="1">+</button></div></div><div class="option"><h3>ב׳</h3><p>${q.b}</p><div class="counter"><button class="vote-btn" data-side="b" data-step="-1">−</button><span class="vote-count">${v.b}</span><button class="vote-btn" data-side="b" data-step="1">+</button></div></div></div><div class="reveal-row"><button class="reveal" id="revealBtn">גלה תשובה</button><button class="refresh-question" id="refreshBtn">🔄 רענן שאלה</button></div><div class="hidden-answer" id="answer">✅ התשובה הנכונה: ${q.answer}<br><span style="font-weight:600">${q.reason}</span></div>`;
-  document.getElementById('prevBtn').disabled=current===0;
-  document.getElementById('nextBtn').disabled=current===currentQuestions.length-1;
-  document.getElementById('progressBar').style.width=`${((current+1)/currentQuestions.length)*100}%`;
-  document.getElementById('finish').classList.toggle('show',current===currentQuestions.length-1);
-}
-
-root.addEventListener('click',e=>{
-  const vote=e.target.closest('.vote-btn');
-  if(vote){const side=vote.dataset.side,step=Number(vote.dataset.step);votes[current][side]=Math.max(0,votes[current][side]+step);render();return}
-  if(e.target.id==='revealBtn'){const ans=document.getElementById('answer');const open=ans.classList.toggle('show');e.target.textContent=open?'הסתר תשובה':'גלה תשובה';return}
-  if(e.target.id==='refreshBtn')refreshQuestion();
-});
-document.getElementById('prevBtn').onclick=()=>{if(current>0){current--;render()}};
-document.getElementById('nextBtn').onclick=()=>{if(current<currentQuestions.length-1){current++;render()}};
-render();
-
-const foodQuestions=[
-{a:'תפוח אחד',b:'פסק זמן אחד',answer:'ב׳ — פסק זמן',level:'חימום'},
-{a:'בננה אחת',b:'מקופלת אחת',answer:'ב׳ — מקופלת',level:'חימום'},
-{a:'כוס אורז מבושל',b:'שקית ביסלי גריל אישית קטנה מהמארז',answer:'א׳ — כוס אורז',level:'חימום'},
-{a:'שתי בננות',b:'שקית במבה אישית קטנה מהמארז',answer:'א׳ — שתי הבננות',level:'חימום'},
-{a:'תפוח אחד',b:'שקית M&M’s אישית',answer:'ב׳ — M&M’s',level:'חימום'},
-{a:'חצי אבטיח אישי קטן',b:'חפיסה שלמה של שוקולד פרה',answer:'ב׳ — שוקולד פרה',level:'עולה'},
-{a:'פיתה שלמה עם חומוס',b:'מקופלת אחת',answer:'א׳ — הפיתה עם החומוס',level:'עולה'},
-{a:'שלושה תפוחים',b:'שקית M&M’s אישית',answer:'א׳ — שלושת התפוחים',level:'עולה'},
-{a:'ארבע ביצים',b:'פסק זמן אחד',answer:'א׳ — ארבע הביצים',level:'עולה'},
-{a:'צלחת עם שתי כוסות פסטה מבושלת',b:'פסק זמן אחד',answer:'א׳ — הפסטה',level:'עולה'},
-{a:'כוס אורז מבושל',b:'שקית ביסלי גריל רגילה',answer:'ב׳ — הביסלי',level:'קשה יותר'},
-{a:'שתי בננות',b:'שקית במבה רגילה',answer:'ב׳ — הבמבה',level:'קשה יותר'},
-{a:'צלחת עם שתי כוסות אורז מבושל',b:'חפיסה שלמה של שוקולד פרה',answer:'ב׳ — שוקולד פרה',level:'קשה יותר'},
-{a:'שלוש ביצים',b:'מקופלת אחת',answer:'א׳ — שלוש הביצים',level:'קשה יותר'},
-{a:'שתי פרוסות לחם עם גבינה צהובה',b:'מקופלת אחת',answer:'א׳ — הלחם עם הגבינה',level:'שאלת הבוס'}
+const foodQuestionPool=[
+{id:'fw1',level:'חימום',a:'תפוח אחד',b:'חפיסה שלמה של שוקולד פרה',answer:'ב׳ — שוקולד פרה',reason:'חפיסת שוקולד שלמה צפופה הרבה יותר באנרגיה מתפוח אחד.'},
+{id:'fw2',level:'חימום',a:'קערה גדולה של מלפפון ועגבנייה בלי רוטב',b:'שקית ביסלי רגילה',answer:'ב׳ — הביסלי',reason:'בחטיף יבש ומרוכז יש בדרך כלל הרבה יותר אנרגיה מירקות טריים.'},
+{id:'fw3',level:'חימום',a:'שתי בננות',b:'סוכריית גומי אחת',answer:'א׳ — שתי הבננות',reason:'גם מזון מזין יכול להכיל יותר קלוריות מממתק קטן מאוד.'},
+{id:'fw4',level:'חימום',a:'טוסט משתי פרוסות לחם עם גבינה',b:'סוכריית גומי אחת',answer:'א׳ — הטוסט',reason:'מנה שלמה של לחם וגבינה מכילה יותר אנרגיה מסוכרייה אחת.'},
+{id:'fw5',level:'חימום',a:'חצי אבטיח אישי קטן',b:'חפיסה שלמה של שוקולד פרה',answer:'ב׳ — שוקולד פרה',reason:'למרות הנפח הגדול של האבטיח, שוקולד הוא מזון הרבה יותר צפוף באנרגיה.'},
+{id:'fw6',level:'חימום',a:'יוגורט טבעי קטן',b:'חטיף שוקולד שלם',answer:'ב׳ — חטיף השוקולד',reason:'ברוב המקרים חטיף שוקולד שלם מכיל יותר אנרגיה מיוגורט טבעי קטן.'},
+{id:'fw7',level:'חימום',a:'שתי ביצים ופרוסת לחם',b:'סוכרייה על מקל אחת',answer:'א׳ — הביצים והלחם',reason:'ארוחה קטנה יכולה להכיל יותר קלוריות מממתק קטן, וזה לא אומר שהיא פחות איכותית.'},
+{id:'fw8',level:'חימום',a:'קערת תותים',b:'שקית במבה רגילה',answer:'ב׳ — הבמבה',reason:'במבה צפופה יותר באנרגיה מתותים, שמכילים הרבה מים.'},
+{id:'fr1',level:'עולה',a:'פיתה שלמה עם חומוס',b:'מקופלת אחת',answer:'א׳ — הפיתה עם החומוס',reason:'מנה של פיתה וחומוס יכולה להכיל יותר אנרגיה מממתק יחיד.'},
+{id:'fr2',level:'עולה',a:'קערת יוגורט עם בננה ושיבולת שועל',b:'שלוש סוכריות גומי',answer:'א׳ — קערת היוגורט',reason:'מזון מזין ומלא יותר יכול להיות גם קלורי יותר מכמה סוכריות קטנות.'},
+{id:'fr3',level:'עולה',a:'שתי פרוסות לחם מלא עם חצי אבוקדו',b:'קרטיב קטן אחד',answer:'א׳ — הלחם והאבוקדו',reason:'אבוקדו ולחם מספקים יותר אנרגיה מקרטיב קטן, גם אם הארוחה מזינה יותר.'},
+{id:'fr4',level:'עולה',a:'צלחת אורז עם עוף',b:'פסק זמן אחד',answer:'א׳ — האורז עם העוף',reason:'צלחת ארוחה שלמה יכולה להכיל יותר קלוריות מחטיף אחד.'},
+{id:'fr5',level:'עולה',a:'תפוח אחד',b:'שקית M&M’s אישית',answer:'ב׳ — M&M’s',reason:'שוקולד וסוכריות צפופים יותר באנרגיה מפרי טרי.'},
+{id:'fr6',level:'עולה',a:'צלחת עם שתי כוסות פסטה מבושלת',b:'פסק זמן אחד',answer:'א׳ — הפסטה',reason:'כמות גדולה של פסטה יכולה לעבור את כמות האנרגיה שבחטיף אחד.'},
+{id:'fr7',level:'עולה',a:'סלט עם חצי אבוקדו וכף טחינה',b:'סוכריית גומי אחת',answer:'א׳ — הסלט עם האבוקדו והטחינה',reason:'אבוקדו וטחינה הם מזונות מזינים אך גם מספקים אנרגיה; יותר קלוריות לא אומר פחות בריא.'},
+{id:'fr8',level:'עולה',a:'כוס אורז מבושל',b:'שקית ביסלי גריל רגילה',answer:'ב׳ — הביסלי',reason:'שקית חטיף רגילה יכולה להיות צפופה יותר באנרגיה מכוס אורז מבושל.'},
+{id:'ft1',level:'חשיבה',a:'שקית אגוזים',b:'שקית ביסלי',answer:'אי אפשר לדעת בלי לדעת את גודל שתי השקיות',reason:'המילה “שקית” לא מספרת לנו כמה אכלנו.'},
+{id:'ft2',level:'חשיבה',a:'סלט',b:'שתי פרוסות פיצה',answer:'אי אפשר לדעת בלי לדעת מה יש בסלט ומה גודל המנות',reason:'סלט עם שמן, טחינה, אבוקדו ותוספות יכול להיות שונה מאוד מסלט ירקות פשוט.'},
+{id:'ft3',level:'חשיבה',a:'יוגורט עם גרנולה',b:'שוקולד',answer:'אי אפשר לדעת בלי לדעת את הכמויות והמוצר',reason:'גם מזונות שנשמעים “בריאים” יכולים להשתנות מאוד בגודל המנה ובהרכב.'},
+{id:'ft4',level:'חשיבה',a:'אם במזון יש יותר קלוריות הוא בהכרח פחות בריא',b:'לא — קלוריות מודדות אנרגיה ולא את כל האיכות התזונתית',answer:'ב׳',reason:'קלוריות לא אומרות אם מזון בריא או לא; צריך להסתכל גם על ההרכב התזונתי.'},
+{id:'ft5',level:'חשיבה',a:'אבוקדו שלם',b:'שתי סוכריות גומי',answer:'א׳ — האבוקדו',reason:'האבוקדו מכיל יותר אנרגיה, אבל גם מספק שומן בלתי רווי, סיבים ורכיבים תזונתיים.'},
+{id:'ft6',level:'חשיבה',a:'קערת פופקורן',b:'קערת אגוזים',answer:'אי אפשר לדעת בלי לדעת גודל קערה, שמן וכמות',reason:'אותו שם של מזון יכול לייצג כמויות שונות מאוד.'},
+{id:'ft7',level:'חשיבה',a:'מנה גדולה של אותו מזון',b:'מנה קטנה של אותו מזון',answer:'א׳ — המנה הגדולה',reason:'כאשר מדובר בדיוק באותו מזון, יותר כמות פירושה יותר אנרגיה.'},
+{id:'ft8',level:'חשיבה',a:'מוצר שכתוב עליו “לייט”',b:'כל מזון רגיל',answer:'אי אפשר לדעת רק מהמילה “לייט”',reason:'צריך להשוות את התווית ואת גודל המנה; “לייט” לבדו לא מספר כמה קלוריות יש מול מזון אחר.'},
+{id:'fb1',level:'שאלת הבוס',a:'קערת יוגורט עם בננה, שיבולת שועל ואגוזים',b:'שלוש קוביות שוקולד',answer:'א׳ — קערת היוגורט',reason:'ארוחה מזינה ושלמה יכולה להכיל יותר קלוריות מכמות קטנה של שוקולד.'},
+{id:'fb2',level:'שאלת הבוס',a:'סלט גדול עם אבוקדו, טחינה ושמן זית',b:'קרטיב קטן',answer:'א׳ — הסלט',reason:'שומנים ממזונות כמו אבוקדו, טחינה ושמן מספקים הרבה אנרגיה, גם כשהם חלק מארוחה מזינה.'},
+{id:'fb3',level:'שאלת הבוס',a:'כריך מלחם מלא עם ביצה ואבוקדו',b:'שלוש סוכריות גומי',answer:'א׳ — הכריך',reason:'הכריך מכיל יותר אנרגיה וגם מגוון רחב יותר של רכיבים תזונתיים.'},
+{id:'fb4',level:'שאלת הבוס',a:'אפשר לקבוע מה בריא יותר רק לפי מספר הקלוריות',b:'אי אפשר — צריך לדעת גם מה המזון מכיל',answer:'ב׳',reason:'קלוריות הן רק מדד לאנרגיה, לא ציון בריאות.'}
 ];
+const foodInitialIds=['fw1','fw2','fw3','fw4','fw5','fr1','fr2','fr3','fr4','fr5','ft1','ft2','ft3','ft4','fb1'];
+const foodQuestions=foodInitialIds.map(id=>foodQuestionPool.find(q=>q.id===id));
 let foodCurrent=0;const foodVotes=foodQuestions.map(()=>({a:0,b:0}));const foodRoot=document.getElementById('foodQuestion');
-function renderFood(){const q=foodQuestions[foodCurrent],v=foodVotes[foodCurrent];foodRoot.innerHTML=`<div class="qhead"><span class="qnumber">שאלה ${foodCurrent+1} מתוך ${foodQuestions.length}</span><span class="level">${q.level}</span></div><div class="options"><div class="option"><h3>א׳</h3><p>${q.a}</p><div class="counter"><button class="vote-btn" data-food-side="a" data-step="-1">−</button><span class="vote-count">${v.a}</span><button class="vote-btn" data-food-side="a" data-step="1">+</button></div></div><div class="option"><h3>ב׳</h3><p>${q.b}</p><div class="counter"><button class="vote-btn" data-food-side="b" data-step="-1">−</button><span class="vote-count">${v.b}</span><button class="vote-btn" data-food-side="b" data-step="1">+</button></div></div></div><div class="reveal-row"><button class="reveal" id="foodRevealBtn">גלה תשובה</button></div><div class="hidden-answer" id="foodAnswer">✅ התשובה הנכונה: ${q.answer}</div>`;document.getElementById('foodPrevBtn').disabled=foodCurrent===0;document.getElementById('foodNextBtn').disabled=foodCurrent===foodQuestions.length-1;document.getElementById('foodProgressBar').style.width=`${((foodCurrent+1)/foodQuestions.length)*100}%`;document.getElementById('foodFinish').classList.toggle('show',foodCurrent===foodQuestions.length-1)}
-foodRoot.addEventListener('click',e=>{const vote=e.target.closest('[data-food-side]');if(vote){const side=vote.dataset.foodSide,step=Number(vote.dataset.step);foodVotes[foodCurrent][side]=Math.max(0,foodVotes[foodCurrent][side]+step);renderFood();return}if(e.target.id==='foodRevealBtn'){const ans=document.getElementById('foodAnswer');const open=ans.classList.toggle('show');e.target.textContent=open?'הסתר תשובה':'גלה תשובה'}});
-document.getElementById('foodPrevBtn').onclick=()=>{if(foodCurrent>0){foodCurrent--;renderFood()}};
-document.getElementById('foodNextBtn').onclick=()=>{if(foodCurrent<foodQuestions.length-1){foodCurrent++;renderFood()}};
-renderFood();
+function refreshFoodQuestion(){const level=foodQuestions[foodCurrent].level;const usedIds=new Set(foodQuestions.map(q=>q.id));let candidates=foodQuestionPool.filter(q=>q.level===level&&!usedIds.has(q.id));if(!candidates.length)candidates=foodQuestionPool.filter(q=>q.level===level&&q.id!==foodQuestions[foodCurrent].id);if(!candidates.length)return;foodQuestions[foodCurrent]=candidates[Math.floor(Math.random()*candidates.length)];foodVotes[foodCurrent]={a:0,b:0};renderFood()}
+function renderFood(){const q=foodQuestions[foodCurrent],v=foodVotes[foodCurrent];foodRoot.innerHTML=`<div class="qhead"><span class="qnumber">שאלה ${foodCurrent+1} מתוך ${foodQuestions.length}</span><span class="level">${q.level}</span></div><div class="options"><div class="option"><h3>א׳</h3><p>${q.a}</p><div class="counter"><button class="vote-btn" data-food-side="a" data-step="-1">−</button><span class="vote-count">${v.a}</span><button class="vote-btn" data-food-side="a" data-step="1">+</button></div></div><div class="option"><h3>ב׳</h3><p>${q.b}</p><div class="counter"><button class="vote-btn" data-food-side="b" data-step="-1">−</button><span class="vote-count">${v.b}</span><button class="vote-btn" data-food-side="b" data-step="1">+</button></div></div></div><div class="reveal-row"><button class="reveal" id="foodRevealBtn">גלה תשובה</button><button class="refresh-question" id="foodRefreshBtn">🔄 רענן שאלה</button></div><div class="hidden-answer" id="foodAnswer">✅ התשובה: ${q.answer}<br><span style="font-weight:600">${q.reason}</span></div>`;document.getElementById('foodPrevBtn').disabled=foodCurrent===0;document.getElementById('foodNextBtn').disabled=foodCurrent===foodQuestions.length-1;document.getElementById('foodProgressBar').style.width=`${((foodCurrent+1)/foodQuestions.length)*100}%`;document.getElementById('foodFinish').classList.toggle('show',foodCurrent===foodQuestions.length-1)}
+foodRoot.addEventListener('click',e=>{const vote=e.target.closest('[data-food-side]');if(vote){const side=vote.dataset.foodSide,step=Number(vote.dataset.step);foodVotes[foodCurrent][side]=Math.max(0,foodVotes[foodCurrent][side]+step);renderFood();return}if(e.target.id==='foodRevealBtn'){const ans=document.getElementById('foodAnswer');const open=ans.classList.toggle('show');e.target.textContent=open?'הסתר תשובה':'גלה תשובה';return}if(e.target.id==='foodRefreshBtn')refreshFoodQuestion()});
+document.getElementById('foodPrevBtn').onclick=()=>{if(foodCurrent>0){foodCurrent--;renderFood()}};document.getElementById('foodNextBtn').onclick=()=>{if(foodCurrent<foodQuestions.length-1){foodCurrent++;renderFood()}};renderFood();
 </script>
 <script src="site-nav.js"></script>
 </body>
