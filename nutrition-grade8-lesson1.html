@@ -5,136 +5,191 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>מדעי התזונה | כיתה ח׳ | שיעור 1</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}.app{max-width:980px;margin:auto;padding:18px 16px 110px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px}.brand{font-size:22px;font-weight:900}.back{display:inline-block;text-decoration:none;color:#172033;background:#fff;border-radius:14px;padding:11px 14px;box-shadow:0 4px 18px #14213d12;font-weight:800}.hero{margin-top:18px;background:linear-gradient(135deg,#14532d,#22c55e);color:#fff;border-radius:28px;padding:28px;box-shadow:0 14px 35px #16a34a22}.hero small{opacity:.86;font-weight:800}.hero h1{margin:7px 0 8px;font-size:clamp(28px,5vw,44px)}.hero p{margin:0;line-height:1.65;max-width:760px}.teacher,.game,.concept{background:#fff;border:1px solid #e8edf4;border-radius:24px;padding:22px;margin-top:20px;box-shadow:0 6px 24px #14213d0b}.teacher h2,.game h2,.concept h2{margin:0 0 10px}.teacher blockquote{margin:14px 0 0;background:#f0fdf4;border-right:5px solid #22c55e;border-radius:14px;padding:16px 18px;line-height:1.75;font-weight:700}.rules{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 18px}.rule{background:#f6f8fb;border-radius:999px;padding:8px 11px;font-size:13px;font-weight:800;color:#556278}.progress{height:8px;background:#edf1f6;border-radius:999px;overflow:hidden;margin:16px 0}.progress span{display:block;height:100%;width:5%;background:#22c55e;transition:width .2s}.qhead{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:16px}.qnumber{font-weight:900;color:#166534}.level{font-size:12px;background:#ecfdf3;color:#166534;padding:7px 10px;border-radius:999px;font-weight:900}.options{display:grid;grid-template-columns:1fr 1fr;gap:14px}.option{border:2px solid #edf1f6;border-radius:22px;padding:18px;background:#fbfcfe}.option h3{margin:0 0 8px;font-size:28px}.option p{font-size:19px;line-height:1.5;margin:0;min-height:58px}.counter{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:15px}.vote-btn{width:42px;height:42px;border:0;border-radius:13px;background:#eaf2ff;color:#1d4ed8;font-size:24px;font-weight:900;cursor:pointer}.vote-count{min-width:40px;text-align:center;font-size:22px;font-weight:900}.reveal-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:18px}.reveal,.refresh-question{border:0;border-radius:14px;padding:13px 22px;font-weight:900;font-size:16px;cursor:pointer}.reveal{background:#172033;color:#fff}.refresh-question{background:#edf4ff;color:#205fc1}.hidden-answer{display:none;margin-top:16px;background:#ecfdf3;border:1px solid #bbf7d0;color:#166534;border-radius:16px;padding:15px;font-size:17px;font-weight:800;text-align:center;line-height:1.6}.hidden-answer.show{display:block}.pager{display:flex;justify-content:space-between;gap:12px;margin-top:20px}.pager button{border:0;border-radius:14px;padding:12px 18px;font-weight:900;cursor:pointer;background:#edf4ff;color:#205fc1}.pager button:disabled{opacity:.35;cursor:not-allowed}.finish{display:none;margin-top:18px;background:#fff7ed;border:1px solid #fed7aa;border-radius:18px;padding:16px;line-height:1.7}.finish.show{display:block}.note{margin-top:14px;color:#667085;font-size:13px;line-height:1.55}.section-label{display:inline-block;background:#eaf8ef;color:#166534;border-radius:999px;padding:7px 11px;font-size:12px;font-weight:900;margin-bottom:8px}.destinations{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}.destination{background:#f7fafc;border:1px solid #e7edf3;border-radius:18px;padding:16px;text-align:center;font-weight:900;line-height:1.5}.destination strong{display:block;font-size:26px;margin-bottom:5px}.scenarios{display:grid;gap:12px;margin-top:16px}.scenario{border:1px solid #e5eaf1;border-radius:18px;background:#fbfcfe;overflow:hidden}.scenario summary{cursor:pointer;list-style:none;padding:16px 18px;font-weight:900;font-size:17px}.scenario summary::-webkit-details-marker{display:none}.scenario summary:after{content:'גלה';float:left;background:#172033;color:#fff;border-radius:10px;padding:5px 9px;font-size:12px}.scenario[open] summary:after{content:'הסתר'}.scenario .answer-box{padding:0 18px 16px;line-height:1.7;color:#405069}.balance-box{margin-top:18px;background:linear-gradient(135deg,#eff6ff,#f0fdf4);border:1px solid #dbeafe;border-radius:22px;padding:20px}.balance-box h3{margin:0 0 10px;font-size:25px}.energy-flow{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;margin-top:14px}.energy-side{background:#fff;border:1px solid #e7edf3;border-radius:18px;padding:16px;text-align:center;font-weight:900;line-height:1.6}.energy-center{font-size:30px}.teacher-tip{margin-top:14px;background:#fff7ed;border:1px solid #fed7aa;border-radius:16px;padding:14px 16px;line-height:1.65}@media(max-width:760px){.destinations{grid-template-columns:1fr 1fr}.energy-flow{grid-template-columns:1fr}.energy-center{transform:rotate(90deg)}}@media(max-width:700px){.options{grid-template-columns:1fr}.hero{padding:22px}.option p{min-height:auto}.app{padding:12px 11px 100px}}@media(max-width:480px){.destinations{grid-template-columns:1fr}}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}.app{max-width:1020px;margin:auto;padding:18px 16px 110px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px}.brand{font-size:22px;font-weight:900}.back{display:inline-block;text-decoration:none;color:#172033;background:#fff;border-radius:14px;padding:11px 14px;box-shadow:0 4px 18px #14213d12;font-weight:800}.hero{margin-top:18px;background:linear-gradient(135deg,#14532d,#22c55e);color:#fff;border-radius:28px;padding:28px;box-shadow:0 14px 35px #16a34a22}.hero small{opacity:.86;font-weight:800}.hero h1{margin:7px 0 8px;font-size:clamp(28px,5vw,44px)}.hero p{margin:0;line-height:1.65;max-width:800px}.teacher,.game,.concept{background:#fff;border:1px solid #e8edf4;border-radius:24px;padding:22px;margin-top:20px;box-shadow:0 6px 24px #14213d0b}.teacher h2,.game h2,.concept h2{margin:0 0 10px}.teacher blockquote{margin:14px 0 0;background:#f0fdf4;border-right:5px solid #22c55e;border-radius:14px;padding:16px 18px;line-height:1.75;font-weight:700}.rules{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 18px}.rule{background:#f6f8fb;border-radius:999px;padding:8px 11px;font-size:13px;font-weight:800;color:#556278}.progress{height:8px;background:#edf1f6;border-radius:999px;overflow:hidden;margin:16px 0}.progress span{display:block;height:100%;width:5%;background:#22c55e;transition:width .2s}.qhead{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:12px}.qnumber{font-weight:900;color:#166534}.badges{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}.level,.kind{font-size:12px;padding:7px 10px;border-radius:999px;font-weight:900}.level{background:#ecfdf3;color:#166534}.kind{background:#eff6ff;color:#1d4ed8}.prompt{font-size:22px;font-weight:900;line-height:1.45;margin:10px 0 16px}.options{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}.option{border:2px solid #edf1f6;border-radius:22px;padding:18px;background:#fbfcfe}.option h3{margin:0 0 8px;font-size:27px}.option p{font-size:18px;line-height:1.5;margin:0;min-height:58px}.counter{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:15px}.vote-btn{width:42px;height:42px;border:0;border-radius:13px;background:#eaf2ff;color:#1d4ed8;font-size:24px;font-weight:900;cursor:pointer}.vote-count{min-width:40px;text-align:center;font-size:22px;font-weight:900}.reveal-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:18px}.reveal,.refresh-question{border:0;border-radius:14px;padding:13px 22px;font-weight:900;font-size:16px;cursor:pointer}.reveal{background:#172033;color:#fff}.refresh-question{background:#edf4ff;color:#205fc1}.hidden-answer{display:none;margin-top:16px;background:#ecfdf3;border:1px solid #bbf7d0;color:#166534;border-radius:16px;padding:15px;font-size:17px;font-weight:800;text-align:center;line-height:1.65}.hidden-answer.show{display:block}.pager{display:flex;justify-content:space-between;gap:12px;margin-top:20px}.pager button{border:0;border-radius:14px;padding:12px 18px;font-weight:900;cursor:pointer;background:#edf4ff;color:#205fc1}.pager button:disabled{opacity:.35;cursor:not-allowed}.finish{display:none;margin-top:18px;background:#fff7ed;border:1px solid #fed7aa;border-radius:18px;padding:16px;line-height:1.7}.finish.show{display:block}.note{margin-top:14px;color:#667085;font-size:13px;line-height:1.55}.section-label{display:inline-block;background:#eaf8ef;color:#166534;border-radius:999px;padding:7px 11px;font-size:12px;font-weight:900;margin-bottom:8px}.destinations{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}.destination{background:#f7fafc;border:1px solid #e7edf3;border-radius:18px;padding:16px;text-align:center;font-weight:900;line-height:1.5}.destination strong{display:block;font-size:26px;margin-bottom:5px}.scenarios{display:grid;gap:12px;margin-top:16px}.scenario{border:1px solid #e5eaf1;border-radius:18px;background:#fbfcfe;overflow:hidden}.scenario summary{cursor:pointer;list-style:none;padding:16px 18px;font-weight:900;font-size:17px}.scenario summary::-webkit-details-marker{display:none}.scenario summary:after{content:'גלה';float:left;background:#172033;color:#fff;border-radius:10px;padding:5px 9px;font-size:12px}.scenario[open] summary:after{content:'הסתר'}.scenario .answer-box{padding:0 18px 16px;line-height:1.7;color:#405069}.balance-box{margin-top:18px;background:linear-gradient(135deg,#eff6ff,#f0fdf4);border:1px solid #dbeafe;border-radius:22px;padding:20px}.balance-box h3{margin:0 0 10px;font-size:25px}.energy-flow{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;margin-top:14px}.energy-side{background:#fff;border:1px solid #e7edf3;border-radius:18px;padding:16px;text-align:center;font-weight:900;line-height:1.6}.energy-center{font-size:30px}.teacher-tip{margin-top:14px;background:#fff7ed;border:1px solid #fed7aa;border-radius:16px;padding:14px 16px;line-height:1.65}@media(max-width:760px){.destinations{grid-template-columns:1fr 1fr}.energy-flow{grid-template-columns:1fr}.energy-center{transform:rotate(90deg)}}@media(max-width:700px){.hero{padding:22px}.option p{min-height:auto}.app{padding:12px 11px 100px}}@media(max-width:480px){.destinations{grid-template-columns:1fr}.prompt{font-size:20px}}
 </style>
 </head>
 <body>
 <main class="app">
 <div class="top"><div class="brand">☀️ בית ספר אור</div><a class="back" href="nutrition-science.html">← מדעי התזונה</a></div>
-<section class="hero"><small>מדעי התזונה · כיתה ח׳ · שיעור 1</small><h1>מאזן אנרגיה</h1><p>שיעור אינטראקטיבי: כמה אנרגיה אנחנו מוציאים, כמה אנרגיה יש במזון, ולאן הגוף משתמש באנרגיה לאורך היום.</p></section>
+<section class="hero"><small>מדעי התזונה · כיתה ח׳ · שיעור 1</small><h1>מאזן אנרגיה</h1><p>שיעור אינטראקטיבי על הוצאה אנרגטית, אנרגיה במזון ומאזן אנרגיה — עם חידות שמצריכות חשיבה ולא רק ניחוש.</p></section>
 
-<section class="teacher"><span class="section-label">חלק 1</span><h2>🎤 פתיחה — מה אני אומר</h2><blockquote>“היום אנחנו מתחילים מדעי התזונה, אבל לפני שנדבר בכלל על אוכל, אני רוצה לבדוק אם אתם יודעים כמה אנרגיה הגוף שלנו מוציא. נתחיל במשחק.”</blockquote></section>
+<section class="teacher"><span class="section-label">חלק 1</span><h2>🎤 פתיחה — מה אני אומר</h2><blockquote>“היום אנחנו מתחילים מדעי התזונה. לפני שנדבר על אוכל, אני רוצה לבדוק אם אתם באמת יודעים להבין הוצאה אנרגטית — ולא רק לנחש איזה ספורט נשמע קשה יותר.”</blockquote></section>
 <section class="game">
-<h2>⚡ דו־קרב האנרגיה</h2>
-<p>בכל שאלה התלמידים בוחרים א׳ או ב׳. השאלות משלבות ספורט, ריקוד, חיי יום־יום, זמן, עצימות, הפסקות ומיתוסים. אם שאלה פחות מתאימה לכיתה כרגע — לוחצים <strong>🔄 רענן שאלה</strong> ומקבלים שאלה אחרת באותה רמת קושי.</p>
-<div class="rules"><span class="rule">אותו תלמיד כשלא נאמר אחרת</span><span class="rule">לא תמיד אפשר לדעת</span><span class="rule">התשובה מוסתרת עד לחשיפה</span></div>
+<h2>⚡ דו־קרב האנרגיה — גרסת החשיבה</h2>
+<p>השאלות משלבות חישוב, מידע חסר, מיתוסים, דירוגים ומצבים מהחיים. לפעמים יש 2 תשובות ולפעמים 3. אם שאלה פחות מתאימה לכיתה — לוחצים <strong>🔄 רענן שאלה</strong> ומקבלים אחרת באותה רמת קושי.</p>
+<div class="rules"><span class="rule">לא תמיד יש מספיק מידע</span><span class="rule">מחפשים את המשתנה החשוב</span><span class="rule">זיעה ועייפות עלולות להטעות</span><span class="rule">התשובה מוסתרת</span></div>
 <div class="progress"><span id="progressBar"></span></div>
 <div id="question"></div>
 <div class="pager"><button id="prevBtn">← שאלה קודמת</button><button id="nextBtn">שאלה הבאה →</button></div>
-<div id="finish" class="finish"><strong>בסיום המשחק אני שואל:</strong><br>“אז לפי המשחק שלנו — אילו דברים משפיעים על כמות האנרגיה שאנחנו מוציאים?”<br><br>המטרה להגיע עם הכיתה ל־<strong>סוג הפעילות · עצימות · משך הפעילות · הפסקות · האדם שמבצע</strong>.</div>
-<div class="note">הביסוס המדעי והמקורות יתווספו בסוף השיעור, בנפרד מהחלק שמועבר בכיתה.</div>
+<div id="finish" class="finish"><strong>בסיום המשחק:</strong><br>הוצאה אנרגטית מושפעת מ<strong>סוג הפעילות, עצימות, משך, זמן פעיל והאדם שמבצע</strong>. זיעה, כאבי שרירים או שם הספורט לבדם לא מספיקים.</div>
+<div class="note">בשאלות המספריות “יחידות אנרגיה לדקה” הן מספרים לימודיים לצורך חישוב — לא אומדן קלורי אמיתי.</div>
 </section>
 
-<section class="teacher"><span class="section-label">חלק 2</span><h2>🍫 מאיפה הגוף מקבל אנרגיה?</h2><blockquote>“במשחק הראשון דיברנו על אנרגיה שהגוף מוציא. עכשיו השאלה היא: מאיפה הגוף מקבל את האנרגיה הזאת?”</blockquote><p>אחרי שהתלמידים עונים: <strong>ממזון ומשקאות שמכילים אנרגיה.</strong> אני מסביר בקצרה: <strong>קלוריה היא יחידה למדידת אנרגיה.</strong></p><div class="teacher-tip"><strong>חשוב לומר:</strong> במשחק הבא אנחנו לא שואלים מה בריא יותר, מה משביע יותר או מה עדיף לאכול. השאלה היחידה היא: <strong>במה יש יותר קלוריות?</strong></div></section>
+<section class="teacher"><span class="section-label">חלק 2</span><h2>🍫 מאיפה הגוף מקבל אנרגיה?</h2><blockquote>“במשחק הראשון דיברנו על אנרגיה שהגוף מוציא. עכשיו השאלה היא: מאיפה הגוף מקבל את האנרגיה הזאת?”</blockquote><p>אחרי שהתלמידים עונים: <strong>ממזון ומשקאות שמכילים אנרגיה.</strong> אני מסביר: <strong>קלוריה היא יחידה למדידת אנרגיה.</strong></p><div class="teacher-tip"><strong>חשוב:</strong> אנחנו לא מדרגים מזונות ל“טובים” ו“רעים”. השאלות בודקות אנרגיה, גודל מנה וצפיפות קלורית. <strong>קלוריות מודדות אנרגיה, לא איכות תזונתית.</strong></div></section>
 <section class="game">
 <h2>🍬 משחק 2 — מה יותר קלורי?</h2>
-<p>השאלות מערבבות פירות, ארוחות, יוגורט, אבוקדו, חטיפים וממתקים. לפעמים דווקא המזון המזין יותר מכיל יותר קלוריות. אם השאלה לא מתאימה כרגע — לוחצים <strong>🔄 רענן שאלה</strong> ומקבלים אחרת באותה רמת קושי.</p>
-<div class="rules"><span class="rule">לא “מה יותר בריא”</span><span class="rule">לפעמים אי אפשר לדעת בלי כמות</span><span class="rule">קלוריות ≠ איכות תזונתית</span></div>
+<p>כאן לא מספיק לזהות “ממתק” מול “אוכל”. יש שאלות על גודל מנה, 100 גרם, אותה מנה בכמות שונה, מידע חסר וגם מצבים שבהם מזון מזין יותר מכיל יותר קלוריות.</p>
+<div class="rules"><span class="rule">הכמות משנה</span><span class="rule">אותן קלוריות ≠ אותו ערך תזונתי</span><span class="rule">לפעמים אי אפשר לדעת בלי כמות</span><span class="rule">🔄 אפשר לרענן</span></div>
 <div class="progress"><span id="foodProgressBar"></span></div>
 <div id="foodQuestion"></div>
 <div class="pager"><button id="foodPrevBtn">← שאלה קודמת</button><button id="foodNextBtn">שאלה הבאה →</button></div>
-<div id="foodFinish" class="finish"><strong>בסיום המשחק אני שואל:</strong><br>“אם מזון אחד מכיל יותר קלוריות — האם זה אומר שהוא פחות בריא?”<br><br><strong>לא.</strong> קלוריות מודדות כמות אנרגיה. הן לא מספרות לבדן על חלבון, סיבים, ויטמינים, מינרלים, שובע או איכות המזון. <strong>קלוריות לא אומרות אם מזון בריא או לא.</strong></div>
+<div id="foodFinish" class="finish"><strong>בסיום המשחק:</strong><br>כמות הקלוריות תלויה גם <strong>בסוג המזון וגם בכמות</strong>. שני מזונות יכולים להכיל אותו מספר קלוריות ועדיין להיות שונים מאוד בחלבון, סיבים, ויטמינים, מינרלים ושובע.</div>
 </section>
 
-<section class="teacher"><span class="section-label">חלק 3</span><h2>🔥 לאן האנרגיה הולכת?</h2><blockquote>“אז גילינו שאוכל מכניס אנרגיה לגוף. עכשיו שאלה: מה הגוף עושה עם האנרגיה הזאת?”</blockquote><p>אני נותן לכיתה לזרוק תשובות, ואז אומר: <strong>“הרבה אנשים חושבים שאנחנו מוציאים אנרגיה בעיקר כשאנחנו עושים ספורט. אבל הגוף משתמש באנרגיה כל הזמן.”</strong></p></section>
+<section class="teacher"><span class="section-label">חלק 3</span><h2>🔥 לאן האנרגיה הולכת?</h2><blockquote>“אז גילינו שאוכל מכניס אנרגיה לגוף. עכשיו שאלה: מה הגוף עושה עם האנרגיה הזאת?”</blockquote><p>אני נותן לכיתה לענות ואז אומר: <strong>“הגוף משתמש באנרגיה כל הזמן — לא רק כשאנחנו עושים ספורט.”</strong></p></section>
 <section class="concept">
 <h2>🧭 ארבעת היעדים של האנרגיה</h2>
 <div class="destinations"><div class="destination"><strong>❤️</strong>להחזיק את הגוף עובד</div><div class="destination"><strong>🏃</strong>תנועה וספורט</div><div class="destination"><strong>🍽️</strong>לעכל ולעבד אוכל</div><div class="destination"><strong>📏</strong>לגדול ולבנות את הגוף</div></div>
 <p><strong>הוראה לכיתה:</strong> “אני אתן מצב. אתם אומרים לאיזה יעד הגוף משתמש באנרגיה. לפעמים יכולה להיות יותר מתשובה אחת.”</p>
 <div class="scenarios">
-<details class="scenario"><summary>1. אני ישן בלילה. הגוף עדיין משתמש באנרגיה?</summary><div class="answer-box"><strong>כן.</strong> הלב, הנשימה, המוח, ויסות חום הגוף ומערכות נוספות ממשיכים לעבוד גם בזמן שינה.</div></details>
-<details class="scenario"><summary>2. אני משחק 90 דקות כדורגל.</summary><div class="answer-box"><strong>תנועה וספורט.</strong> ובמקביל הגוף ממשיך להפעיל את כל המערכות הבסיסיות שלו.</div></details>
-<details class="scenario"><summary>3. סיימתי ארוחה גדולה ואני יושב על הספה. אני עדיין מוציא אנרגיה?</summary><div class="answer-box"><strong>כן.</strong> הגוף משתמש באנרגיה גם כדי לעכל, לספוג ולעבד את המזון.</div></details>
-<details class="scenario"><summary>4. תלמיד בכיתה ח׳ גדל השנה בכמה סנטימטרים. האם גם גדילה דורשת אנרגיה?</summary><div class="answer-box"><strong>כן.</strong> הגוף בגיל ההתבגרות עדיין בונה עצמות, שרירים ורקמות ולכן משתמש באנרגיה גם לגדילה ולהתפתחות.</div></details>
-<details class="scenario"><summary>5. מי מוציא יותר אנרגיה: הגוף במשך יום שלם או שעה אחת של אימון?</summary><div class="answer-box">בדרך כלל הגוף משתמש בכמות גדולה של אנרגיה לאורך כל 24 השעות כדי להמשיך לפעול. <strong>ספורט הוא חלק מההוצאה היומית — לא כולה.</strong></div></details>
+<details class="scenario"><summary>1. אני ישן בלילה. הגוף עדיין משתמש באנרגיה?</summary><div class="answer-box"><strong>כן.</strong> הלב, הנשימה, המוח, ויסות החום ומערכות נוספות ממשיכים לעבוד.</div></details>
+<details class="scenario"><summary>2. אני משחק 90 דקות כדורגל.</summary><div class="answer-box"><strong>תנועה וספורט.</strong> ובמקביל הגוף ממשיך להפעיל את כל המערכות הבסיסיות.</div></details>
+<details class="scenario"><summary>3. סיימתי ארוחה ואני יושב על הספה. אני עדיין מוציא אנרגיה?</summary><div class="answer-box"><strong>כן.</strong> הגוף משתמש באנרגיה גם כדי לעכל, לספוג ולעבד מזון.</div></details>
+<details class="scenario"><summary>4. תלמיד בכיתה ח׳ גדל השנה בכמה סנטימטרים. גם גדילה דורשת אנרגיה?</summary><div class="answer-box"><strong>כן.</strong> בגיל ההתבגרות הגוף עדיין בונה עצמות, שרירים ורקמות.</div></details>
+<details class="scenario"><summary>5. מי מוציא יותר אנרגיה: הגוף במשך יום שלם או שעה אחת של אימון?</summary><div class="answer-box">הגוף משתמש באנרגיה לאורך כל 24 השעות. <strong>ספורט הוא רק חלק מההוצאה היומית.</strong></div></details>
 </div>
-<div class="balance-box"><h3>⚖️ מכאן מגיעים ל״מאזן אנרגיה״</h3><div class="energy-flow"><div class="energy-side">🍽️ <strong>אנרגיה נכנסת</strong><br>מזון ומשקאות שמכילים אנרגיה</div><div class="energy-center">↔️</div><div class="energy-side">🔥 <strong>הגוף משתמש באנרגיה</strong><br>פעילות בסיסית · תנועה · עיכול · גדילה</div></div><p><strong>מה אני אומר:</strong> “מאזן אנרגיה הוא היחסים בין האנרגיה שנכנסת לגוף לבין האנרגיה שהגוף משתמש בה לאורך זמן.”</p><div class="teacher-tip"><strong>דיוק חשוב:</strong> לא מלמדים שהגוף צריך “לסגור חשבון” בדיוק בסוף כל יום. בגיל שלכם הגוף גם גדל ומתפתח, ולכן חלק מהאנרגיה משמש לבנייה של הגוף.</div></div>
+<div class="balance-box"><h3>⚖️ מכאן מגיעים ל״מאזן אנרגיה״</h3><div class="energy-flow"><div class="energy-side">🍽️ <strong>אנרגיה נכנסת</strong><br>מזון ומשקאות שמכילים אנרגיה</div><div class="energy-center">↔️</div><div class="energy-side">🔥 <strong>הגוף משתמש באנרגיה</strong><br>פעילות בסיסית · תנועה · עיכול · גדילה</div></div><p><strong>מה אני אומר:</strong> “מאזן אנרגיה הוא היחסים בין האנרגיה שנכנסת לגוף לבין האנרגיה שהגוף משתמש בה לאורך זמן.”</p><div class="teacher-tip"><strong>דיוק חשוב:</strong> הגוף לא צריך “לסגור חשבון” בדיוק בסוף כל יום. בגיל ההתבגרות חלק מהאנרגיה משמש גם לגדילה ולהתפתחות.</div></div>
 </section>
 </main>
+
 <script>
-const questionPool=[
-{id:'w1',level:'חימום',a:'לעלות 10 קומות במדרגות',b:'לעלות 10 קומות במעלית',answer:'א׳',reason:'במדרגות השרירים מבצעים עבודה פעילה לאורך העלייה.'},
-{id:'w2',level:'חימום',a:'30 דקות ריקוד מהיר',b:'30 דקות צפייה בריקוד בישיבה',answer:'א׳',reason:'ריקוד מפעיל שרירים ותנועה לאורך זמן.'},
-{id:'w3',level:'חימום',a:'אותו מסלול הליכה בעלייה',b:'אותו מסלול במישור, באותו קצב',answer:'א׳',reason:'עלייה דורשת יותר עבודה נגד כוח הכבידה.'},
-{id:'w4',level:'חימום',a:'40 דקות ריקוד רצוף',b:'40 דקות שבהן 15 דקות הן ישיבה ומנוחה',answer:'א׳',reason:'יותר זמן פעיל פירושו בדרך כלל יותר הוצאה אנרגטית.'},
-{id:'w5',level:'חימום',a:'45 דקות רכיבה מהירה',b:'45 דקות רכיבה רגועה',answer:'א׳',reason:'באותו זמן, עצימות גבוהה יותר בדרך כלל דורשת יותר אנרגיה.'},
-{id:'w6',level:'חימום',a:'20 דקות קפיצות ותנועה',b:'20 דקות שכיבה על הספה',answer:'א׳',reason:'פעילות גופנית דורשת יותר אנרגיה ממנוחה.'},
-{id:'w7',level:'חימום',a:'ללכת לבית הספר ברגל',b:'לנסוע את אותו מרחק ברכב',answer:'א׳',reason:'בהליכה הגוף מבצע את התנועה בעצמו.'},
-{id:'w8',level:'חימום',a:'30 דקות משחק תופסת',b:'30 דקות ישיבה בכיתה',answer:'א׳',reason:'משחק תופסת כולל ריצה ושינויי כיוון.'},
-{id:'r1',level:'עולה',a:'20 דקות מאותה פעילות',b:'40 דקות מאותה פעילות ובאותה עצימות',answer:'ב׳',reason:'כשהפעילות והעצימות זהות, יותר זמן פעיל מגדיל את ההוצאה.'},
-{id:'r2',level:'עולה',a:'התלמיד שמזיע יותר',b:'אי אפשר לדעת רק לפי כמות הזיעה',answer:'ב׳',reason:'הזעה מושפעת גם מחום, לחות והבדלים אישיים; היא לא מד אנרגיה מדויק.'},
-{id:'r3',level:'עולה',a:'שעה בחדר כושר',b:'אי אפשר לדעת בלי לדעת מה נעשה בחדר הכושר ובפארק',answer:'ב׳',reason:'שם המקום לא קובע את ההוצאה — מה שעושים, כמה זמן ובאיזו עצימות כן.'},
-{id:'r4',level:'עולה',a:'אותה הליכה עם תיק כבד',b:'אותה הליכה בלי תיק',answer:'א׳',reason:'נשיאת משקל נוסף מגדילה את העבודה שהגוף מבצע.'},
-{id:'r5',level:'עולה',a:'שחקן כדורסל שהיה פעיל כמעט כל השעה',b:'שחקן שהיה 20 דקות על הספסל',answer:'א׳',reason:'יותר זמן פעיל במשחק בדרך כלל מגדיל את ההוצאה.'},
-{id:'r6',level:'עולה',a:'אותה שחייה בקצב מהיר יותר',b:'אותה שחייה בקצב רגוע יותר ובאותו זמן',answer:'א׳',reason:'עצימות גבוהה יותר באותו משך דורשת בדרך כלל יותר אנרגיה.'},
-{id:'r7',level:'עולה',a:'לעלות במדרגות נעות בלי ללכת',b:'לעלות את אותן קומות במדרגות רגילות',answer:'ב׳',reason:'במדרגות רגילות הגוף מבצע יותר עבודה בעצמו.'},
-{id:'r8',level:'עולה',a:'30 דקות ניקיון ושאיבה',b:'30 דקות משחק מחשב בישיבה',answer:'א׳',reason:'גם פעילות יומיומית שאינה ספורט יכולה להגדיל הוצאה אנרגטית.'},
-{id:'t1',level:'חשיבה',a:'שני תלמידים חייבים להוציא בדיוק אותה כמות באותו אימון',b:'לא בהכרח — הגוף של כל אדם שונה',answer:'ב׳',reason:'משקל גוף, יעילות תנועה, כושר וגורמים נוספים משפיעים על ההוצאה.'},
-{id:'t2',level:'חשיבה',a:'ביום חם בהכרח מוציאים הרבה יותר אנרגיה באותו אימון',b:'לא בהכרח; אי אפשר לקבוע רק לפי הטמפרטורה',answer:'ב׳',reason:'חום משנה תגובות גוף, אבל אי אפשר להסיק ממנו לבדו את ההוצאה הכוללת.'},
-{id:'t3',level:'חשיבה',a:'30 דקות ריקוד אינטנסיבי עם תנועות גדולות',b:'30 דקות ריקוד רגוע עם תנועות קטנות',answer:'א׳',reason:'באותו משך, תנועה אינטנסיבית יותר דורשת בדרך כלל יותר אנרגיה.'},
-{id:'t4',level:'חשיבה',a:'לשאת שקיות קניות הביתה',b:'ללכת את אותו מסלול בלי לשאת דבר',answer:'א׳',reason:'נשיאת עומס נוסף מגדילה את העבודה.'},
-{id:'t5',level:'חשיבה',a:'מי שהדופק שלו גבוה יותר בוודאות הוציא יותר אנרגיה',b:'אי אפשר לדעת במדויק רק לפי הדופק',answer:'ב׳',reason:'דופק הוא רמז לעצימות, אבל מושפע גם מכושר, לחץ, חום ועוד.'},
-{id:'t6',level:'חשיבה',a:'שעה של שיעור ריקוד עם הרבה עצירות',b:'שעה של שיעור ריקוד כמעט רצוף',answer:'ב׳',reason:'יותר זמן פעיל בדרך כלל מגדיל את ההוצאה.'},
-{id:'t7',level:'חשיבה',a:'לרוץ אותו מסלול עם עלייה',b:'לרוץ אותו מסלול שטוח באותו קצב',answer:'א׳',reason:'העלייה מוסיפה עבודה נגד כוח הכבידה.'},
-{id:'t8',level:'חשיבה',a:'שעה של “ספורט” תמיד מוציאה יותר משעה של עבודה פיזית',b:'אי אפשר לדעת בלי לדעת מה עשו בפועל',answer:'ב׳',reason:'התווית של הפעילות לא מספיקה; צריך לדעת עצימות, זמן ותנועה בפועל.'},
-{id:'h1',level:'קשה',a:'20 דקות ריקוד מאוד אינטנסיבי',b:'40 דקות ריקוד קל — אי אפשר לדעת בלי מידע מדויק יותר',answer:'ב׳',reason:'כאן זמן ועצימות מתחרים זה בזה, ולכן חסר מידע כדי להכריע.'},
-{id:'h2',level:'קשה',a:'15 דקות אינטרוולים מהירים',b:'45 דקות הליכה מהירה — אי אפשר לדעת בוודאות מהתיאור בלבד',answer:'ב׳',reason:'כדי להשוות צריך לדעת את העצימות בפועל של שתי הפעילויות.'},
-{id:'h3',level:'קשה',a:'מי שסיים את אותו מסלול מהר יותר תמיד הוציא יותר אנרגיה',b:'לא בהכרח — מהירות וזמן שניהם משפיעים',answer:'ב׳',reason:'אם הזמן הכולל משתנה, אי אפשר להסיק רק מהמהירות.'},
-{id:'h4',level:'קשה',a:'שני אנשים עושים אותו אימון — ההוצאה חייבת להיות זהה',b:'לא; גם האדם עצמו משפיע על ההוצאה',answer:'ב׳',reason:'גודל גוף, כושר, טכניקה ויעילות תנועה יכולים לשנות את ההוצאה.'},
-{id:'h5',level:'קשה',a:'אם לא הזעתי, כנראה לא הוצאתי כמעט אנרגיה',b:'לא נכון — הזעה אינה מד ישיר לכמות האנרגיה',answer:'ב׳',reason:'אפשר להוציא אנרגיה גם בלי להזיע הרבה.'},
-{id:'h6',level:'קשה',a:'30 דקות שחייה קשה תמיד מנצחות שעה רכיבה קלה',b:'אי אפשר לדעת בלי להגדיר היטב את העצימות',answer:'ב׳',reason:'המילים “קשה” ו“קלה” אינן מספיק מדויקות להשוואה חותכת.'},
-{id:'f1',level:'שאלת הגמר',a:'מספיק לדעת את שם הספורט כדי לדעת כמה אנרגיה הוצאנו',b:'צריך להתחשב בסוג הפעילות, עצימות, זמן והאדם שמבצע',answer:'ב׳',reason:'זה בדיוק העיקרון שמסכם את המשחק.'},
-{id:'f2',level:'שאלת הגמר',a:'שעה פעילות תמיד שווה לשעה פעילות אחרת',b:'לא — שעה יכולה להיות שונה מאוד לפי עצימות וסוג הפעילות',answer:'ב׳',reason:'משך זה רק חלק אחד מהתמונה.'},
-{id:'f3',level:'שאלת הגמר',a:'אם יודעים כמה הזענו, יודעים כמה אנרגיה הוצאנו',b:'לא — צריך הרבה יותר מידע',answer:'ב׳',reason:'זיעה אינה מד אנרגיה.'}
+const labels=['א׳','ב׳','ג׳','ד׳'];
+
+const energyQuestionPool=[
+{id:'e1',level:'חימום',kind:'השוואה',prompt:'אותו תלמיד: מה כנראה דורש יותר אנרגיה?',options:['30 דקות ריקוד מהיר','30 דקות ישיבה וצפייה בריקוד'],answer:0,reason:'באותו זמן, פעילות גופנית דורשת יותר אנרגיה מישיבה.'},
+{id:'e2',level:'חימום',kind:'מה באמת קובע?',prompt:'איזה מידע הכי יעזור לדעת כמה אנרגיה הוצאה באימון?',options:['כמה זמן היה פעיל ובאיזו עצימות','איזה שיר התנגן','איזה צבע היו הנעליים'],answer:0,reason:'זמן פעיל ועצימות קשורים ישירות להוצאה; צבע נעליים ומוזיקה לא.'},
+{id:'e3',level:'חימום',kind:'חיי יום־יום',prompt:'אותו אדם עולה לאותה קומה. מה דורש יותר עבודה מהגוף?',options:['מדרגות רגילות','מעלית'],answer:0,reason:'במדרגות השרירים מבצעים את העלייה בעצמם.'},
+{id:'e4',level:'חימום',kind:'זמן פעיל',prompt:'שני שיעורי ריקוד נמשכו 40 דקות. באיזה מהם זמן הפעילות גדול יותר?',options:['40 דקות כמעט רצוף','20 דקות ריקוד + 20 דקות ישיבה'],answer:0,reason:'משך השיעור אינו זהה לזמן הפעיל בתוכו.'},
+{id:'e5',level:'חימום',kind:'מיתוס',prompt:'נועם מזיע הרבה יותר מעידו. מה אפשר להסיק?',options:['נועם בוודאות הוציא יותר אנרגיה','אי אפשר לדעת רק לפי הזיעה'],answer:1,reason:'הזעה מושפעת גם מחום, לחות והבדלים אישיים.'},
+{id:'e21',level:'חימום',kind:'התנגדות',prompt:'אותו רוכב, אותה מהירות ואותו זמן. מתי צפויה יותר עבודה?',options:['רכיבה מול רוח חזקה','רכיבה עם רוח גבית'],answer:0,reason:'שמירה על אותה מהירות מול התנגדות גדולה יותר דורשת יותר מאמץ.'},
+{id:'e22',level:'חימום',kind:'עומס',prompt:'אותה הליכה, אותו זמן ואותו קצב. מה צפוי לדרוש יותר?',options:['הליכה עם תיק כבד','הליכה בלי תיק'],answer:0,reason:'נשיאת עומס נוסף מגדילה את העבודה שהגוף מבצע.'},
+
+{id:'e6',level:'חשיבה',kind:'מידע חסר',prompt:'שני תלמידים רצו 5 ק״מ. מי הוציא יותר אנרגיה?',options:['מי שסיים ראשון','מי שהזיע יותר','אי אפשר לדעת מהמידע הזה'],answer:2,reason:'מרחק לבדו לא מספיק; גם גוף, קצב, זמן, כושר ותנאים משפיעים.'},
+{id:'e7',level:'חשיבה',kind:'מי מהתלמידים צודק?',prompt:'מי מהתלמידים צודק?',options:['אורי: “שעה תמיד מוציאה יותר מחצי שעה”','מאיה: “צריך לדעת גם את העצימות”','דן: “מי שמזיע יותר תמיד מוציא יותר”'],answer:1,reason:'משך הוא רק חלק מהתמונה; צריך להתחשב גם בעצימות ובפעילות עצמה.'},
+{id:'e8',level:'חשיבה',kind:'יום שלם',prompt:'א׳ התאמן שעה ואז ישב רוב היום. ב׳ לא התאמן אבל הלך הרבה, עלה מדרגות ועבד בעמידה. מי הוציא יותר ביום כולו?',options:['א׳ בוודאות','ב׳ בוודאות','אי אפשר לדעת מהמידע הזה'],answer:2,reason:'כדי להשוות יום שלם צריך לדעת את סך הפעילות וההוצאה, לא רק אם היה “אימון”.'},
+{id:'e9',level:'חשיבה',kind:'מה חסר לנו כדי לדעת?',prompt:'מה חסר לנו כדי לדעת אם 30 דקות שחייה הוציאו יותר אנרגיה מ־50 דקות הליכה?',options:['העצימות של שתי הפעילויות','צבע בגד הים','איזו פעילות הייתה מהנה יותר'],answer:0,reason:'כאן זמן ועצימות מתחרים זה בזה.'},
+{id:'e10',level:'חשיבה',kind:'תנאי שטח',prompt:'אותו תלמיד רץ אותו זמן ובאותו קצב. איפה צפויה יותר הוצאה?',options:['בעלייה','במישור'],answer:0,reason:'עלייה דורשת עבודה נוספת נגד כוח הכבידה.'},
+{id:'e23',level:'חשיבה',kind:'מיתוס',prompt:'אותו אימון ביום חם וביום קר. האם ביום החם בהכרח הוצאנו הרבה יותר אנרגיה?',options:['כן, תמיד','לא בהכרח'],answer:1,reason:'חום משפיע על הגוף ועל הזעה, אבל לא מאפשר לקבוע לבדו את ההוצאה הכוללת.'},
+{id:'e24',level:'חשיבה',kind:'שם הפעילות',prompt:'שעה בחדר כושר מול שעה בפארק — מי הוציא יותר?',options:['חדר כושר','פארק','אי אפשר לדעת בלי לדעת מה עשו בפועל'],answer:2,reason:'המקום או הכותרת אינם מספיקים; מה שקובע הוא הפעילות בפועל.'},
+
+{id:'e11',level:'אתגר',kind:'שאלת חישוב',prompt:'פעילות א׳ דורשת 4 יחידות אנרגיה לדקה במשך 30 דקות. פעילות ב׳ דורשת 6 יחידות לדקה במשך 20 דקות. מי הוציא יותר?',options:['פעילות א׳','פעילות ב׳','אותה כמות'],answer:2,reason:'4×30=120 וגם 6×20=120.'},
+{id:'e12',level:'אתגר',kind:'שאלת חישוב',prompt:'פעילות א׳: 3 יחידות לדקה × 45 דקות. פעילות ב׳: 5 יחידות לדקה × 30 דקות. מי הוציא יותר?',options:['פעילות א׳','פעילות ב׳','אותה כמות'],answer:1,reason:'א׳ = 135 יחידות; ב׳ = 150 יחידות.'},
+{id:'e13',level:'אתגר',kind:'שאלת חישוב',prompt:'15 דקות פעילות קשה ב־8 יחידות לדקה מול 50 דקות פעילות קלה ב־3 יחידות לדקה. מי מנצח?',options:['הפעילות הקשה','הפעילות הקלה','אותה כמות'],answer:1,reason:'8×15=120; 3×50=150. יותר זמן יכול לנצח עצימות גבוהה יותר.'},
+{id:'e14',level:'אתגר',kind:'איזה סדר נכון?',prompt:'אותו תלמיד עושה כל פעילות 20 דקות. איזה סדר נכון מהכי הרבה להכי מעט?',options:['ריקוד מהיר ← הליכה מהירה ← ישיבה','ישיבה ← הליכה ← ריקוד','הליכה ← ריקוד ← ישיבה'],answer:0,reason:'באותו משך, פעילות עצימה יותר דורשת בדרך כלל יותר אנרגיה.'},
+{id:'e15',level:'אתגר',kind:'איזה סדר נכון?',prompt:'לפי הנתונים: קל = 2 יחידות/דקה ל־40 דק׳; בינוני = 4 ל־20 דק׳; קשה = 7 ל־10 דק׳. איזה סדר נכון?',options:['קל = בינוני > קשה','קשה > בינוני > קל','בינוני > קשה > קל'],answer:0,reason:'קל=80, בינוני=80, קשה=70. התחושה “קשה” לא מבטיחה סך גדול יותר.'},
+{id:'e25',level:'אתגר',kind:'שאלת חישוב',prompt:'25 דקות ב־5 יחידות לדקה מול 30 דקות ב־4 יחידות לדקה. מי הוציא יותר?',options:['25 דקות בעצימות הגבוהה','30 דקות בעצימות הנמוכה','אותה כמות'],answer:0,reason:'125 לעומת 120 — הפעם העצימות הגבוהה מנצחת בפער קטן.'},
+{id:'e26',level:'אתגר',kind:'מידע מטעה',prompt:'שלושה תלמידים סיימו אימון. מי בוודאות הוציא הכי הרבה?',options:['זה שהכי עייף','זה שהכי מזיע','אי אפשר לדעת רק מהסימנים האלה'],answer:2,reason:'עייפות וזיעה הן רמזים חלקיים, לא מדידה ישירה של אנרגיה.'},
+
+{id:'e16',level:'בוס',kind:'מידע חסר',prompt:'25 דקות ריקוד אינטנסיבי מול 50 דקות ריקוד קל. מי הוציא יותר?',options:['25 דקות אינטנסיבי','50 דקות קל','אי אפשר לדעת מהמידע הזה'],answer:2,reason:'צריך לדעת עד כמה שונה העצימות בפועל; זמן ועצימות פועלים יחד.'},
+{id:'e17',level:'בוס',kind:'מלכודת',prompt:'לשני תלמידים היה אותו אימון. הדופק של א׳ היה גבוה יותר. האם א׳ בוודאות הוציא יותר?',options:['כן','לא'],answer:1,reason:'דופק מושפע גם מכושר, לחץ, חום וגורמים אישיים.'},
+{id:'e18',level:'בוס',kind:'מלכודת',prompt:'למחרת אימון, תלמיד א׳ תפוס מאוד ותלמיד ב׳ לא. מי הוציא יותר אנרגיה באימון?',options:['א׳','ב׳','אי אפשר לדעת לפי כאבי השרירים'],answer:2,reason:'כאבי שרירים אינם מד ישיר להוצאה אנרגטית.'},
+{id:'e19',level:'בוס',kind:'זמן פעיל',prompt:'אותה פעילות ובאותה עצימות: שיעור של 60 דקות עם 25 דקות מנוחה מול 45 דקות כמעט רצופות. מי צפוי להוציא יותר בזמן השיעור?',options:['60 דקות עם המנוחות','45 דקות כמעט רצופות','אותה כמות'],answer:1,reason:'בפועל מדובר בכ־35 דקות פעילות מול כ־45 דקות פעילות.'},
+{id:'e27',level:'בוס',kind:'מה באמת משנה?',prompt:'איזה שינוי הכי סביר שיגדיל את ההוצאה באותו אימון?',options:['להאריך את הזמן הפעיל בלי להוסיף מנוחות','להגביר את עוצמת המוזיקה','ללבוש חולצה עבה יותר כדי להזיע'],answer:0,reason:'יותר זמן פעיל מגדיל עבודה; זיעה בפני עצמה אינה המטרה.'},
+{id:'e28',level:'בוס',kind:'שילוב משתנים',prompt:'אותו מסלול הליכה: פעם עם תיק, פעם בלי. בפעם עם התיק הלכנו לאט יותר. מי הוציא יותר?',options:['עם התיק בוודאות','בלי התיק בוודאות','אי אפשר לדעת בלי עוד מידע'],answer:2,reason:'העומס גדל אבל הקצב ירד; צריך לדעת את גודל השינויים כדי להכריע.'},
+
+{id:'e20',level:'גמר',kind:'סיכום',prompt:'איזה משפט מסכם הכי טוב את המשחק?',options:['שם הספורט מספיק כדי לדעת כמה אנרגיה הוצאנו','זיעה היא המדד הכי טוב','צריך לשלב סוג פעילות, עצימות, זמן, זמן פעיל והאדם שמבצע'],answer:2,reason:'הוצאה אנרגטית היא תוצאה של כמה משתנים יחד.'}
 ];
 
-const initialIds=['w1','w2','w3','w4','w5','r1','r2','r3','r4','r5','t1','t2','t3','t4','t5','h1','h2','h3','h4','f1'];
-const currentQuestions=initialIds.map(id=>questionPool.find(q=>q.id===id));
+const energyInitialIds=['e1','e2','e3','e4','e5','e6','e7','e8','e9','e10','e11','e12','e13','e14','e15','e16','e17','e18','e19','e20'];
+const energyQuestions=energyInitialIds.map(id=>energyQuestionPool.find(q=>q.id===id));
+const questionPool=energyQuestionPool;
 let current=0;
-const votes=currentQuestions.map(()=>({a:0,b:0}));
+const energyVotes=energyQuestions.map(q=>Array(q.options.length).fill(0));
 const root=document.getElementById('question');
-function refreshQuestion(){const level=currentQuestions[current].level;const usedIds=new Set(currentQuestions.map(q=>q.id));let candidates=questionPool.filter(q=>q.level===level&&!usedIds.has(q.id));if(!candidates.length)candidates=questionPool.filter(q=>q.level===level&&q.id!==currentQuestions[current].id);if(!candidates.length)return;currentQuestions[current]=candidates[Math.floor(Math.random()*candidates.length)];votes[current]={a:0,b:0};render()}
-function render(){const q=currentQuestions[current],v=votes[current];root.innerHTML=`<div class="qhead"><span class="qnumber">שאלה ${current+1} מתוך ${currentQuestions.length}</span><span class="level">${q.level}</span></div><div class="options"><div class="option"><h3>א׳</h3><p>${q.a}</p><div class="counter"><button class="vote-btn" data-side="a" data-step="-1">−</button><span class="vote-count">${v.a}</span><button class="vote-btn" data-side="a" data-step="1">+</button></div></div><div class="option"><h3>ב׳</h3><p>${q.b}</p><div class="counter"><button class="vote-btn" data-side="b" data-step="-1">−</button><span class="vote-count">${v.b}</span><button class="vote-btn" data-side="b" data-step="1">+</button></div></div></div><div class="reveal-row"><button class="reveal" id="revealBtn">גלה תשובה</button><button class="refresh-question" id="refreshBtn">🔄 רענן שאלה</button></div><div class="hidden-answer" id="answer">✅ התשובה הנכונה: ${q.answer}<br><span style="font-weight:600">${q.reason}</span></div>`;document.getElementById('prevBtn').disabled=current===0;document.getElementById('nextBtn').disabled=current===currentQuestions.length-1;document.getElementById('progressBar').style.width=`${((current+1)/currentQuestions.length)*100}%`;document.getElementById('finish').classList.toggle('show',current===currentQuestions.length-1)}
-root.addEventListener('click',e=>{const vote=e.target.closest('.vote-btn');if(vote){const side=vote.dataset.side,step=Number(vote.dataset.step);votes[current][side]=Math.max(0,votes[current][side]+step);render();return}if(e.target.id==='revealBtn'){const ans=document.getElementById('answer');const open=ans.classList.toggle('show');e.target.textContent=open?'הסתר תשובה':'גלה תשובה';return}if(e.target.id==='refreshBtn')refreshQuestion()});
-document.getElementById('prevBtn').onclick=()=>{if(current>0){current--;render()}};document.getElementById('nextBtn').onclick=()=>{if(current<currentQuestions.length-1){current++;render()}};render();
+
+function pickReplacement(pool,questions,index){
+  const level=questions[index].level;
+  const used=new Set(questions.map(q=>q.id));
+  let choices=pool.filter(q=>q.level===level&&!used.has(q.id));
+  if(!choices.length)choices=pool.filter(q=>q.level===level&&q.id!==questions[index].id);
+  return choices.length?choices[Math.floor(Math.random()*choices.length)]:null;
+}
+function renderOptions(q,v,prefix){
+  return q.options.map((text,i)=>`<div class="option"><h3>${labels[i]}</h3><p>${text}</p><div class="counter"><button class="vote-btn" data-${prefix}-index="${i}" data-step="-1">−</button><span class="vote-count">${v[i]||0}</span><button class="vote-btn" data-${prefix}-index="${i}" data-step="1">+</button></div></div>`).join('');
+}
+function renderEnergy(){
+  const q=energyQuestions[current],v=energyVotes[current];
+  root.innerHTML=`<div class="qhead"><span class="qnumber">שאלה ${current+1} מתוך ${energyQuestions.length}</span><span class="badges"><span class="kind">${q.kind}</span><span class="level">${q.level}</span></span></div><div class="prompt">${q.prompt}</div><div class="options">${renderOptions(q,v,'energy')}</div><div class="reveal-row"><button class="reveal" id="energyRevealBtn">גלה תשובה</button><button class="refresh-question" id="energyRefreshBtn">🔄 רענן שאלה</button></div><div class="hidden-answer" id="energyAnswer">✅ ${labels[q.answer]} — ${q.options[q.answer]}<br><span style="font-weight:600">${q.reason}</span></div>`;
+  document.getElementById('prevBtn').disabled=current===0;
+  document.getElementById('nextBtn').disabled=current===energyQuestions.length-1;
+  document.getElementById('progressBar').style.width=`${((current+1)/energyQuestions.length)*100}%`;
+  document.getElementById('finish').classList.toggle('show',current===energyQuestions.length-1);
+}
+function refreshEnergyQuestion(){
+  const q=pickReplacement(energyQuestionPool,energyQuestions,current);if(!q)return;
+  energyQuestions[current]=q;energyVotes[current]=Array(q.options.length).fill(0);renderEnergy();
+}
+function refreshQuestion(){return refreshEnergyQuestion();}
+root.addEventListener('click',e=>{
+  const vote=e.target.closest('[data-energy-index]');
+  if(vote){const i=Number(vote.dataset.energyIndex),step=Number(vote.dataset.step);energyVotes[current][i]=Math.max(0,(energyVotes[current][i]||0)+step);renderEnergy();return;}
+  if(e.target.id==='energyRevealBtn'){const ans=document.getElementById('energyAnswer');const open=ans.classList.toggle('show');e.target.textContent=open?'הסתר תשובה':'גלה תשובה';return;}
+  if(e.target.id==='energyRefreshBtn')refreshEnergyQuestion();
+});
+document.getElementById('prevBtn').onclick=()=>{if(current>0){current--;renderEnergy();}};
+document.getElementById('nextBtn').onclick=()=>{if(current<energyQuestions.length-1){current++;renderEnergy();}};
+renderEnergy();
 
 const foodQuestionPool=[
-{id:'fw1',level:'חימום',a:'תפוח אחד',b:'חפיסה שלמה של שוקולד פרה',answer:'ב׳ — שוקולד פרה',reason:'חפיסת שוקולד שלמה צפופה הרבה יותר באנרגיה מתפוח אחד.'},
-{id:'fw2',level:'חימום',a:'קערה גדולה של מלפפון ועגבנייה בלי רוטב',b:'שקית ביסלי רגילה',answer:'ב׳ — הביסלי',reason:'בחטיף יבש ומרוכז יש בדרך כלל הרבה יותר אנרגיה מירקות טריים.'},
-{id:'fw3',level:'חימום',a:'שתי בננות',b:'סוכריית גומי אחת',answer:'א׳ — שתי הבננות',reason:'גם מזון מזין יכול להכיל יותר קלוריות מממתק קטן מאוד.'},
-{id:'fw4',level:'חימום',a:'טוסט משתי פרוסות לחם עם גבינה',b:'סוכריית גומי אחת',answer:'א׳ — הטוסט',reason:'מנה שלמה של לחם וגבינה מכילה יותר אנרגיה מסוכרייה אחת.'},
-{id:'fw5',level:'חימום',a:'חצי אבטיח אישי קטן',b:'חפיסה שלמה של שוקולד פרה',answer:'ב׳ — שוקולד פרה',reason:'למרות הנפח הגדול של האבטיח, שוקולד הוא מזון הרבה יותר צפוף באנרגיה.'},
-{id:'fw6',level:'חימום',a:'יוגורט טבעי קטן',b:'חטיף שוקולד שלם',answer:'ב׳ — חטיף השוקולד',reason:'ברוב המקרים חטיף שוקולד שלם מכיל יותר אנרגיה מיוגורט טבעי קטן.'},
-{id:'fw7',level:'חימום',a:'שתי ביצים ופרוסת לחם',b:'סוכרייה על מקל אחת',answer:'א׳ — הביצים והלחם',reason:'ארוחה קטנה יכולה להכיל יותר קלוריות מממתק קטן, וזה לא אומר שהיא פחות איכותית.'},
-{id:'fw8',level:'חימום',a:'קערת תותים',b:'שקית במבה רגילה',answer:'ב׳ — הבמבה',reason:'במבה צפופה יותר באנרגיה מתותים, שמכילים הרבה מים.'},
-{id:'fr1',level:'עולה',a:'פיתה שלמה עם חומוס',b:'מקופלת אחת',answer:'א׳ — הפיתה עם החומוס',reason:'מנה של פיתה וחומוס יכולה להכיל יותר אנרגיה מממתק יחיד.'},
-{id:'fr2',level:'עולה',a:'קערת יוגורט עם בננה ושיבולת שועל',b:'שלוש סוכריות גומי',answer:'א׳ — קערת היוגורט',reason:'מזון מזין ומלא יותר יכול להיות גם קלורי יותר מכמה סוכריות קטנות.'},
-{id:'fr3',level:'עולה',a:'שתי פרוסות לחם מלא עם חצי אבוקדו',b:'קרטיב קטן אחד',answer:'א׳ — הלחם והאבוקדו',reason:'אבוקדו ולחם מספקים יותר אנרגיה מקרטיב קטן, גם אם הארוחה מזינה יותר.'},
-{id:'fr4',level:'עולה',a:'צלחת אורז עם עוף',b:'פסק זמן אחד',answer:'א׳ — האורז עם העוף',reason:'צלחת ארוחה שלמה יכולה להכיל יותר קלוריות מחטיף אחד.'},
-{id:'fr5',level:'עולה',a:'תפוח אחד',b:'שקית M&M’s אישית',answer:'ב׳ — M&M’s',reason:'שוקולד וסוכריות צפופים יותר באנרגיה מפרי טרי.'},
-{id:'fr6',level:'עולה',a:'צלחת עם שתי כוסות פסטה מבושלת',b:'פסק זמן אחד',answer:'א׳ — הפסטה',reason:'כמות גדולה של פסטה יכולה לעבור את כמות האנרגיה שבחטיף אחד.'},
-{id:'fr7',level:'עולה',a:'סלט עם חצי אבוקדו וכף טחינה',b:'סוכריית גומי אחת',answer:'א׳ — הסלט עם האבוקדו והטחינה',reason:'אבוקדו וטחינה הם מזונות מזינים אך גם מספקים אנרגיה; יותר קלוריות לא אומר פחות בריא.'},
-{id:'fr8',level:'עולה',a:'כוס אורז מבושל',b:'שקית ביסלי גריל רגילה',answer:'ב׳ — הביסלי',reason:'שקית חטיף רגילה יכולה להיות צפופה יותר באנרגיה מכוס אורז מבושל.'},
-{id:'ft1',level:'חשיבה',a:'שקית אגוזים',b:'שקית ביסלי',answer:'אי אפשר לדעת בלי לדעת את גודל שתי השקיות',reason:'המילה “שקית” לא מספרת לנו כמה אכלנו.'},
-{id:'ft2',level:'חשיבה',a:'סלט',b:'שתי פרוסות פיצה',answer:'אי אפשר לדעת בלי לדעת מה יש בסלט ומה גודל המנות',reason:'סלט עם שמן, טחינה, אבוקדו ותוספות יכול להיות שונה מאוד מסלט ירקות פשוט.'},
-{id:'ft3',level:'חשיבה',a:'יוגורט עם גרנולה',b:'שוקולד',answer:'אי אפשר לדעת בלי לדעת את הכמויות והמוצר',reason:'גם מזונות שנשמעים “בריאים” יכולים להשתנות מאוד בגודל המנה ובהרכב.'},
-{id:'ft4',level:'חשיבה',a:'אם במזון יש יותר קלוריות הוא בהכרח פחות בריא',b:'לא — קלוריות מודדות אנרגיה ולא את כל האיכות התזונתית',answer:'ב׳',reason:'קלוריות לא אומרות אם מזון בריא או לא; צריך להסתכל גם על ההרכב התזונתי.'},
-{id:'ft5',level:'חשיבה',a:'אבוקדו שלם',b:'שתי סוכריות גומי',answer:'א׳ — האבוקדו',reason:'האבוקדו מכיל יותר אנרגיה, אבל גם מספק שומן בלתי רווי, סיבים ורכיבים תזונתיים.'},
-{id:'ft6',level:'חשיבה',a:'קערת פופקורן',b:'קערת אגוזים',answer:'אי אפשר לדעת בלי לדעת גודל קערה, שמן וכמות',reason:'אותו שם של מזון יכול לייצג כמויות שונות מאוד.'},
-{id:'ft7',level:'חשיבה',a:'מנה גדולה של אותו מזון',b:'מנה קטנה של אותו מזון',answer:'א׳ — המנה הגדולה',reason:'כאשר מדובר בדיוק באותו מזון, יותר כמות פירושה יותר אנרגיה.'},
-{id:'ft8',level:'חשיבה',a:'מוצר שכתוב עליו “לייט”',b:'כל מזון רגיל',answer:'אי אפשר לדעת רק מהמילה “לייט”',reason:'צריך להשוות את התווית ואת גודל המנה; “לייט” לבדו לא מספר כמה קלוריות יש מול מזון אחר.'},
-{id:'fb1',level:'שאלת הבוס',a:'קערת יוגורט עם בננה, שיבולת שועל ואגוזים',b:'שלוש קוביות שוקולד',answer:'א׳ — קערת היוגורט',reason:'ארוחה מזינה ושלמה יכולה להכיל יותר קלוריות מכמות קטנה של שוקולד.'},
-{id:'fb2',level:'שאלת הבוס',a:'סלט גדול עם אבוקדו, טחינה ושמן זית',b:'קרטיב קטן',answer:'א׳ — הסלט',reason:'שומנים ממזונות כמו אבוקדו, טחינה ושמן מספקים הרבה אנרגיה, גם כשהם חלק מארוחה מזינה.'},
-{id:'fb3',level:'שאלת הבוס',a:'כריך מלחם מלא עם ביצה ואבוקדו',b:'שלוש סוכריות גומי',answer:'א׳ — הכריך',reason:'הכריך מכיל יותר אנרגיה וגם מגוון רחב יותר של רכיבים תזונתיים.'},
-{id:'fb4',level:'שאלת הבוס',a:'אפשר לקבוע מה בריא יותר רק לפי מספר הקלוריות',b:'אי אפשר — צריך לדעת גם מה המזון מכיל',answer:'ב׳',reason:'קלוריות הן רק מדד לאנרגיה, לא ציון בריאות.'}
+{id:'f1',level:'חימום',kind:'השוואה',prompt:'במה יש יותר אנרגיה תזונתית?',options:['תפוח אחד','חפיסה שלמה של שוקולד פרה'],answer:1,reason:'בחפיסת שוקולד שלמה יש בדרך כלל הרבה יותר קלוריות מתפוח אחד.'},
+{id:'f2',level:'חימום',kind:'צפיפות קלורית',prompt:'אם מודדים בדיוק 100 גרם מכל מזון — במה יש יותר קלוריות?',options:['100 גרם שקדים','100 גרם אבטיח'],answer:0,reason:'שקדים צפופים הרבה יותר באנרגיה מאבטיח.'},
+{id:'f3',level:'חימום',kind:'מנה קטנה',prompt:'מה מכיל בדרך כלל יותר קלוריות?',options:['תפוז אחד','כף טחינה גולמית'],answer:1,reason:'גם כמות קטנה של טחינה צפופה יחסית באנרגיה.'},
+{id:'f4',level:'חימום',kind:'הפתעה',prompt:'מה מכיל יותר קלוריות?',options:['מלפפון שלם','כף חמאת בוטנים'],answer:1,reason:'חמאת בוטנים צפופה יותר באנרגיה מירק עתיר מים.'},
+{id:'f5',level:'חימום',kind:'כמות',prompt:'אותו יוגורט בדיוק: מה יכיל יותר קלוריות?',options:['מנה רגילה','מנה כפולה'],answer:1,reason:'באותו מזון, כמות כפולה מכילה בערך פי שניים אנרגיה.'},
+{id:'f21',level:'חימום',kind:'השוואה',prompt:'מה מכיל יותר קלוריות בדרך כלל?',options:['קערת חסה ומלפפון בלי רוטב','שתי כפות טחינה'],answer:1,reason:'טחינה צפופה באנרגיה, גם כשהנפח שלה קטן.'},
+{id:'f22',level:'חימום',kind:'השוואה',prompt:'מה מכיל יותר קלוריות?',options:['סוכריית גומי אחת','פיתה עם שתי ביצים'],answer:1,reason:'ארוחה של פיתה ושתי ביצים מכילה הרבה יותר אנרגיה מסוכרייה אחת.'},
+
+{id:'f6',level:'חשיבה',kind:'מידע חסר',prompt:'יש “שקית אגוזים” ו“שקית ביסלי”, אבל לא כתוב הגודל. במה יש יותר קלוריות?',options:['אגוזים','ביסלי','אי אפשר לדעת בלי לדעת את הכמות'],answer:2,reason:'שם המזון לא מספיק; צריך לדעת כמה באמת יש בכל שקית.'},
+{id:'f7',level:'חשיבה',kind:'מזון מול ממתק',prompt:'מה כנראה מכיל יותר קלוריות?',options:['קערת יוגורט עם בננה ושיבולת שועל','5 סוכריות גומי'],answer:0,reason:'קערה שלמה יכולה להכיל יותר אנרגיה מכמה סוכריות, גם אם היא מזינה יותר.'},
+{id:'f8',level:'חשיבה',kind:'מזון מול ממתק',prompt:'מה כנראה מכיל יותר קלוריות?',options:['שתי פרוסות לחם מלא עם חצי אבוקדו','סוכרייה על מקל אחת'],answer:0,reason:'המזון המזין יותר יכול בהחלט להכיל יותר קלוריות.'},
+{id:'f9',level:'חשיבה',kind:'מזון מול ממתק',prompt:'מה כנראה מכיל יותר אנרגיה?',options:['פיתה עם שתי ביצים','3 סוכריות גומי'],answer:0,reason:'ארוחה שלמה בדרך כלל מכילה יותר קלוריות מכמה סוכריות.'},
+{id:'f10',level:'חשיבה',kind:'השוואה',prompt:'במה יש יותר קלוריות?',options:['תפוח גדול','חפיסה שלמה של שוקולד פרה'],answer:1,reason:'חפיסת שוקולד שלמה צפופה מאוד באנרגיה.'},
+{id:'f11',level:'חשיבה',kind:'אותו מספר קלוריות',prompt:'קערת יוגורט ופירות וחטיף מסוים מכילים אותו מספר קלוריות. מה בהכרח זהה?',options:['כמות האנרגיה','כמות החלבון','כמות הסיבים'],answer:0,reason:'אותו מספר קלוריות אומר אותה כמות אנרגיה — לא אותו הרכב תזונתי.'},
+{id:'f23',level:'חשיבה',kind:'עיקרון',prompt:'ארוחה מכילה 450 קלוריות וחטיף מכיל 250. מה נכון?',options:['הארוחה בהכרח פחות בריאה','החטיף בהכרח עדיף','אי אפשר להסיק איכות תזונתית רק מהקלוריות'],answer:2,reason:'קלוריות מודדות אנרגיה, לא איכות תזונתית.'},
+{id:'f24',level:'חשיבה',kind:'מידע חסר',prompt:'פרוסת פיצה מול צלחת פסטה — מי מכילה יותר קלוריות?',options:['הפיצה תמיד','הפסטה תמיד','אי אפשר לדעת בלי לדעת גודל מנה ותוספות'],answer:2,reason:'גודל מנה, רוטב, גבינה ותוספות יכולים לשנות מאוד את התוצאה.'},
+
+{id:'f12',level:'אתגר',kind:'100 גרם',prompt:'אם משווים 100 גרם מול 100 גרם — במה יש יותר קלוריות?',options:['צ׳יפס','אורז מבושל'],answer:0,reason:'צ׳יפס מכיל בדרך כלל יותר שומן ופחות מים ולכן צפוף יותר באנרגיה.'},
+{id:'f13',level:'אתגר',kind:'100 גרם',prompt:'אם משווים 100 גרם מול 100 גרם — במה יש יותר קלוריות?',options:['חמאת בוטנים','בננה'],answer:0,reason:'חמאת בוטנים צפופה בהרבה באנרגיה מבננה.'},
+{id:'f14',level:'אתגר',kind:'כמות',prompt:'אותו מזון בדיוק: מנה אחת מכילה 180 קלוריות. כמה בערך יהיו במנה כפולה?',options:['90','180','360'],answer:2,reason:'אם הכמות באמת כפולה, גם האנרגיה בערך כפולה.'},
+{id:'f15',level:'אתגר',kind:'מה צריך לדעת?',prompt:'איזה מידע הכי חשוב כדי לחשב כמה קלוריות אכלנו?',options:['גודל המנה או הכמות','צבע המזון','אם אכלנו בבית או בחוץ'],answer:0,reason:'בלי הכמות אי אפשר לדעת את סך האנרגיה שאכלנו.'},
+{id:'f16',level:'אתגר',kind:'איזה סדר נכון?',prompt:'איזה סדר צפיפות קלורית נכון בדרך כלל, מהגבוה לנמוך?',options:['שמן זית ← שקדים ← אבטיח','אבטיח ← שקדים ← שמן זית','שקדים ← אבטיח ← שמן זית'],answer:0,reason:'שמן כמעט כולו שומן, אגוזים צפופים באנרגיה, ואבטיח מכיל הרבה מים.'},
+{id:'f25',level:'אתגר',kind:'מזון מזין',prompt:'מה כנראה מכיל יותר קלוריות?',options:['סלט ירקות עם חצי אבוקדו וטחינה','אותו סלט בלי אבוקדו ובלי טחינה'],answer:0,reason:'אבוקדו וטחינה מוסיפים אנרגיה וגם רכיבים תזונתיים; יותר קלוריות לא אומר “פחות בריא”.'},
+{id:'f26',level:'אתגר',kind:'אותו מספר קלוריות',prompt:'שני מזונות מכילים אותו מספר קלוריות. האם הם חייבים להיות זהים מבחינה תזונתית?',options:['כן','לא'],answer:1,reason:'הם יכולים להיות שונים מאוד בחלבון, סיבים, שומן, ויטמינים ומינרלים.'},
+
+{id:'f17',level:'בוס',kind:'טענה',prompt:'“אם במזון א׳ יש יותר קלוריות ממזון ב׳, מזון א׳ פחות בריא.” מה נכון?',options:['נכון תמיד','לא נכון — קלוריות לבדן אינן מדד לבריאות'],answer:1,reason:'כמות אנרגיה היא רק נתון אחד מתוך הרבה נתונים תזונתיים.'},
+{id:'f18',level:'בוס',kind:'מידע חסר',prompt:'שתי קערות גרנולה נראות באותו גודל. האם בטוח שיש בהן אותו מספר קלוריות?',options:['כן','לא'],answer:1,reason:'סוג הגרנולה, כמות האגוזים, תוספות והצפיפות יכולים להשתנות.'},
+{id:'f19',level:'בוס',kind:'מלכודת',prompt:'איזה משפט נכון?',options:['מזון בנפח גדול תמיד מכיל יותר קלוריות','מזון קטן תמיד מכיל פחות קלוריות','נפח לבדו לא אומר כמה קלוריות יש'],answer:2,reason:'מזונות שונים מאוד בצפיפות האנרגטית שלהם.'},
+{id:'f20',level:'בוס',kind:'חשיבה',prompt:'שני תלמידים אכלו “קערת קורנפלקס”. האם אפשר לדעת שאכלו אותה כמות קלוריות?',options:['כן, כי שם המזון זהה','לא — צריך לדעת כמות, סוג הקורנפלקס ומה הוסיפו'],answer:1,reason:'שם המנה אינו מספיק לחישוב קלוריות.'},
+
+{id:'f27',level:'גמר',kind:'סיכום',prompt:'מה המשפט הכי מדויק?',options:['ממתקים תמיד מכילים יותר קלוריות מכל אוכל רגיל','הכמות לא משנה — רק סוג המזון','קלוריות תלויות בסוג ובכמות, ולא מספרות לבדן על איכות המזון'],answer:2,reason:'זה העיקרון המרכזי של המשחק.'}
 ];
-const foodInitialIds=['fw1','fw2','fw3','fw4','fw5','fr1','fr2','fr3','fr4','fr5','ft1','ft2','ft3','ft4','fb1'];
+
+const foodInitialIds=['f1','f2','f3','f4','f5','f6','f7','f8','f9','f10','f11','f12','f13','f14','f27'];
 const foodQuestions=foodInitialIds.map(id=>foodQuestionPool.find(q=>q.id===id));
-let foodCurrent=0;const foodVotes=foodQuestions.map(()=>({a:0,b:0}));const foodRoot=document.getElementById('foodQuestion');
-function refreshFoodQuestion(){const level=foodQuestions[foodCurrent].level;const usedIds=new Set(foodQuestions.map(q=>q.id));let candidates=foodQuestionPool.filter(q=>q.level===level&&!usedIds.has(q.id));if(!candidates.length)candidates=foodQuestionPool.filter(q=>q.level===level&&q.id!==foodQuestions[foodCurrent].id);if(!candidates.length)return;foodQuestions[foodCurrent]=candidates[Math.floor(Math.random()*candidates.length)];foodVotes[foodCurrent]={a:0,b:0};renderFood()}
-function renderFood(){const q=foodQuestions[foodCurrent],v=foodVotes[foodCurrent];foodRoot.innerHTML=`<div class="qhead"><span class="qnumber">שאלה ${foodCurrent+1} מתוך ${foodQuestions.length}</span><span class="level">${q.level}</span></div><div class="options"><div class="option"><h3>א׳</h3><p>${q.a}</p><div class="counter"><button class="vote-btn" data-food-side="a" data-step="-1">−</button><span class="vote-count">${v.a}</span><button class="vote-btn" data-food-side="a" data-step="1">+</button></div></div><div class="option"><h3>ב׳</h3><p>${q.b}</p><div class="counter"><button class="vote-btn" data-food-side="b" data-step="-1">−</button><span class="vote-count">${v.b}</span><button class="vote-btn" data-food-side="b" data-step="1">+</button></div></div></div><div class="reveal-row"><button class="reveal" id="foodRevealBtn">גלה תשובה</button><button class="refresh-question" id="foodRefreshBtn">🔄 רענן שאלה</button></div><div class="hidden-answer" id="foodAnswer">✅ התשובה: ${q.answer}<br><span style="font-weight:600">${q.reason}</span></div>`;document.getElementById('foodPrevBtn').disabled=foodCurrent===0;document.getElementById('foodNextBtn').disabled=foodCurrent===foodQuestions.length-1;document.getElementById('foodProgressBar').style.width=`${((foodCurrent+1)/foodQuestions.length)*100}%`;document.getElementById('foodFinish').classList.toggle('show',foodCurrent===foodQuestions.length-1)}
-foodRoot.addEventListener('click',e=>{const vote=e.target.closest('[data-food-side]');if(vote){const side=vote.dataset.foodSide,step=Number(vote.dataset.step);foodVotes[foodCurrent][side]=Math.max(0,foodVotes[foodCurrent][side]+step);renderFood();return}if(e.target.id==='foodRevealBtn'){const ans=document.getElementById('foodAnswer');const open=ans.classList.toggle('show');e.target.textContent=open?'הסתר תשובה':'גלה תשובה';return}if(e.target.id==='foodRefreshBtn')refreshFoodQuestion()});
-document.getElementById('foodPrevBtn').onclick=()=>{if(foodCurrent>0){foodCurrent--;renderFood()}};document.getElementById('foodNextBtn').onclick=()=>{if(foodCurrent<foodQuestions.length-1){foodCurrent++;renderFood()}};renderFood();
+let foodCurrent=0;
+const foodVotes=foodQuestions.map(q=>Array(q.options.length).fill(0));
+const foodRoot=document.getElementById('foodQuestion');
+function renderFood(){
+  const q=foodQuestions[foodCurrent],v=foodVotes[foodCurrent];
+  foodRoot.innerHTML=`<div class="qhead"><span class="qnumber">שאלה ${foodCurrent+1} מתוך ${foodQuestions.length}</span><span class="badges"><span class="kind">${q.kind}</span><span class="level">${q.level}</span></span></div><div class="prompt">${q.prompt}</div><div class="options">${renderOptions(q,v,'food')}</div><div class="reveal-row"><button class="reveal" id="foodRevealBtn">גלה תשובה</button><button class="refresh-question" id="foodRefreshBtn">🔄 רענן שאלה</button></div><div class="hidden-answer" id="foodAnswer">✅ ${labels[q.answer]} — ${q.options[q.answer]}<br><span style="font-weight:600">${q.reason}</span></div>`;
+  document.getElementById('foodPrevBtn').disabled=foodCurrent===0;
+  document.getElementById('foodNextBtn').disabled=foodCurrent===foodQuestions.length-1;
+  document.getElementById('foodProgressBar').style.width=`${((foodCurrent+1)/foodQuestions.length)*100}%`;
+  document.getElementById('foodFinish').classList.toggle('show',foodCurrent===foodQuestions.length-1);
+}
+function refreshFoodQuestion(){
+  const q=pickReplacement(foodQuestionPool,foodQuestions,foodCurrent);if(!q)return;
+  foodQuestions[foodCurrent]=q;foodVotes[foodCurrent]=Array(q.options.length).fill(0);renderFood();
+}
+foodRoot.addEventListener('click',e=>{
+  const vote=e.target.closest('[data-food-index]');
+  if(vote){const i=Number(vote.dataset.foodIndex),step=Number(vote.dataset.step);foodVotes[foodCurrent][i]=Math.max(0,(foodVotes[foodCurrent][i]||0)+step);renderFood();return;}
+  if(e.target.id==='foodRevealBtn'){const ans=document.getElementById('foodAnswer');const open=ans.classList.toggle('show');e.target.textContent=open?'הסתר תשובה':'גלה תשובה';return;}
+  if(e.target.id==='foodRefreshBtn')refreshFoodQuestion();
+});
+document.getElementById('foodPrevBtn').onclick=()=>{if(foodCurrent>0){foodCurrent--;renderFood();}};
+document.getElementById('foodNextBtn').onclick=()=>{if(foodCurrent<foodQuestions.length-1){foodCurrent++;renderFood();}};
+renderFood();
 </script>
 <script src="site-nav.js"></script>
 </body>
