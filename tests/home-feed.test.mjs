@@ -134,3 +134,11 @@ test('all core pages load shared frozen navigation', async () => {
     assert.match(html, /site-nav\.js/, `${page} should load site-nav.js`);
   }
 });
+
+test('English lesson 1 prep board includes the lesson vocabulary bank', async () => {
+  const html = await read('english-lesson1.html');
+  assert.match(html, /VOCABULARY BANK/);
+  for (const word of ['football','basketball','tennis','music','clarinet','theater','gaming','drawing','dancing','strength training','dog','school','pizza','hamburger','Thailand']) {
+    assert.match(html, new RegExp(word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+  }
+});
