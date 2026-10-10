@@ -205,3 +205,11 @@ test('grade 8 lesson 2 teaches metabolism with both approved interactive games',
   assert.match(html, /ביסוס מדעי למורה/);
   assert.match(html, /site-nav\.js/);
 });
+
+test('nutrition science library and shared nav expose grade 8 lesson 2', async () => {
+  const library = await read('nutrition-science.html');
+  const nav = await read('site-nav.js');
+  assert.match(library, /nutrition-grade8-lesson2\.html/);
+  assert.match(library, /מטבוליזם/);
+  assert.match(nav, /startsWith\('nutrition-grade8-'\)/);
+});
