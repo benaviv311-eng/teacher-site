@@ -213,3 +213,14 @@ test('nutrition science library and shared nav expose grade 8 lesson 2', async (
   assert.match(library, /מטבוליזם/);
   assert.match(nav, /startsWith\('nutrition-grade8-'\)/);
 });
+
+test('English lesson 2 makes students write their own daily routine in at least six sentences', async () => {
+  const html = await read('english-lesson2.html');
+  assert.match(html, /MY DAILY ROUTINE/);
+  assert.match(html, /I eat breakfast at/);
+  assert.match(html, /I come home at/);
+  assert.match(html, /In the evening, I/);
+  assert.match(html, /at least six sentences/i);
+  assert.match(html, /This is your routine/);
+  assert.match(html, /Tell your partner about your day/);
+});
