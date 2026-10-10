@@ -2,9 +2,10 @@
   const current = location.pathname.split('/').pop() || 'index.html';
   const isEnglish = current === 'english.html' || current.startsWith('english-');
   const isSportsExcellence = current === 'sports-excellence.html' || current.startsWith('sports-excellence-');
+  const isNutritionScience = current === 'nutrition-science.html' || current.startsWith('nutrition-grade8-');
   const active = current === 'index.html' ? 'home' :
     (current === 'lessons.html' || current === 'lesson-sleep.html' || current === 'lesson-intro.html') ? 'lessons' :
-    (current === 'nutrition-science.html' || current === 'nutrition-grade8-lesson1.html') ? 'nutritionScience' :
+    isNutritionScience ? 'nutritionScience' :
     isSportsExcellence ? 'sportsExcellence' :
     current === 'critical-thinking.html' ? 'critical' :
     current === 'nutrition-builder.html' ? 'nutrition' :
