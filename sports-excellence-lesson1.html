@@ -5,40 +5,49 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>שיעור 1 — מה באמת יוצר מצוינות?</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#172033}.wrap{max-width:900px;margin:auto;padding:16px 14px 100px}.top{position:sticky;top:0;z-index:20;display:flex;justify-content:flex-start;align-items:center;gap:8px;min-height:48px;padding:6px 0;background:#f4f7fbee;backdrop-filter:blur(10px)}.back,.home{width:38px;height:38px;border-radius:12px;background:#fff;color:#245fc0;display:grid;place-items:center;text-decoration:none;font-size:20px;box-shadow:0 4px 16px #14213d18}.hero{margin-top:16px;background:linear-gradient(135deg,#7c2d12,#f59e0b);color:#fff;padding:28px;border-radius:28px;box-shadow:0 14px 36px #b453092c}.hero small{opacity:.9;font-weight:800}.hero h1{margin:8px 0 10px;font-size:clamp(30px,7vw,46px)}.hero p{line-height:1.7;margin:0;max-width:760px}.card{background:#fff;border-radius:24px;padding:22px;margin:14px 0;box-shadow:0 6px 24px #14213d0b;border:1px solid #edf1f7}.card h2{margin:0 0 12px;font-size:23px}.card h3{margin:18px 0 8px;font-size:18px;color:#b45309}.card p,.card li{line-height:1.75;color:#344054}.time{font-size:12px;font-weight:900;background:#fff7ed;color:#c2410c;padding:6px 9px;border-radius:999px;display:inline-block;margin-bottom:10px}.board{font-size:clamp(21px,4vw,28px);font-weight:900;line-height:1.6;color:#92400e;background:#fff7ed;border:1px solid #fed7aa;padding:19px;border-radius:18px;margin:12px 0}.quote-source{font-size:14px;color:#7c2d12;font-weight:800;margin-top:8px}.teacher-say{font-weight:800;background:#f8fafc;border-right:4px solid #f59e0b;padding:14px 16px;border-radius:14px;margin:14px 0;line-height:1.75}.goal{display:grid;grid-template-columns:1fr 1fr;gap:10px}.goal div{background:#f8fafc;padding:14px;border-radius:16px;line-height:1.6}.traits{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}.trait{background:#fffaf4;border:1px solid #fed7aa;border-radius:16px;padding:14px;font-weight:900}.trait span{float:left;color:#c2410c;font-size:13px}.rules{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.pill{background:#fff7ed;color:#9a3412;padding:8px 11px;border-radius:999px;font-weight:900;font-size:13px}.twist{background:linear-gradient(135deg,#172033,#334155);color:#fff}.twist p,.twist li{color:#fff}.twist .teacher-say{background:#ffffff12;color:#fff;border-right-color:#fbbf24}.questions{display:grid;gap:9px}.question{background:#f8fafc;border-radius:14px;padding:13px 14px;font-weight:800;line-height:1.55}.summary{background:#172033;color:#fff}.summary p{color:#fff}.summary .board{background:#ffffff12;border-color:#ffffff2b;color:#fff}.equipment{display:flex;gap:9px;flex-wrap:wrap}.equipment span{background:#edf4ff;color:#245fc0;border-radius:999px;padding:9px 12px;font-weight:900}.note{font-size:13px;color:#667085;line-height:1.6}.check{display:flex;gap:9px;align-items:flex-start;margin:8px 0}.check strong{color:#b45309}@media(max-width:620px){.wrap{padding-left:11px;padding-right:11px}.card{padding:18px}.hero{padding:22px}.goal,.traits{grid-template-columns:1fr}}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#172033}.wrap{max-width:920px;margin:auto;padding:16px 14px 110px}.top{position:sticky;top:0;z-index:20;display:flex;justify-content:flex-start;align-items:center;gap:8px;min-height:48px;padding:6px 0;background:#f4f7fbee;backdrop-filter:blur(10px)}.back,.home{width:38px;height:38px;border-radius:12px;background:#fff;color:#245fc0;display:grid;place-items:center;text-decoration:none;font-size:20px;box-shadow:0 4px 16px #14213d18}.hero{margin-top:16px;background:linear-gradient(135deg,#7c2d12,#f59e0b);color:#fff;padding:28px;border-radius:28px;box-shadow:0 14px 36px #b453092c}.hero small{opacity:.9;font-weight:800}.hero h1{margin:8px 0 10px;font-size:clamp(30px,7vw,46px)}.hero p{line-height:1.7;margin:0;max-width:800px}.card{background:#fff;border-radius:24px;padding:22px;margin:14px 0;box-shadow:0 6px 24px #14213d0b;border:1px solid #edf1f7}.card h2{margin:0 0 12px;font-size:23px}.card h3{margin:18px 0 8px;font-size:18px;color:#b45309}.card p,.card li{line-height:1.75;color:#344054}.time{font-size:12px;font-weight:900;background:#fff7ed;color:#c2410c;padding:6px 9px;border-radius:999px;display:inline-block;margin-bottom:10px}.board{font-size:clamp(21px,4vw,28px);font-weight:900;line-height:1.6;color:#92400e;background:#fff7ed;border:1px solid #fed7aa;padding:19px;border-radius:18px;margin:12px 0}.quote-source{font-size:14px;color:#7c2d12;font-weight:800;margin-top:8px}.teacher-say{font-weight:800;background:#f8fafc;border-right:4px solid #f59e0b;padding:14px 16px;border-radius:14px;margin:14px 0;line-height:1.75}.goal{display:grid;grid-template-columns:1fr 1fr;gap:10px}.goal div{background:#f8fafc;padding:14px;border-radius:16px;line-height:1.6}.traits{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}.trait{background:#fffaf4;border:1px solid #fed7aa;border-radius:16px;padding:14px;font-weight:900}.trait span{float:left;color:#c2410c;font-size:13px}.rules{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.pill{background:#fff7ed;color:#9a3412;padding:8px 11px;border-radius:999px;font-weight:900;font-size:13px}.twist{background:linear-gradient(135deg,#172033,#334155);color:#fff}.twist p,.twist li{color:#fff}.twist .teacher-say{background:#ffffff12;color:#fff;border-right-color:#fbbf24}.questions{display:grid;gap:9px}.question{background:#f8fafc;border-radius:14px;padding:13px 14px;font-weight:800;line-height:1.55}.answer{background:#ecfdf3;border:1px solid #bbf7d0;border-radius:18px;padding:16px;margin-top:14px;line-height:1.7;color:#166534}.science{background:linear-gradient(180deg,#eff6ff,#fff)}.science-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}.science-card{background:#fff;border:1px solid #dbeafe;border-radius:18px;padding:16px}.science-card .num{font-size:29px;font-weight:900;color:#1d4ed8;line-height:1}.science-card h3{margin:8px 0 6px;color:#1e3a8a}.science-card p{margin:0;line-height:1.65}.science-card small{display:block;color:#64748b;line-height:1.55;margin-top:10px}.science-note{margin-top:14px;background:#fff7ed;border:1px solid #fed7aa;border-radius:16px;padding:14px;line-height:1.65}.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.case{border-radius:18px;padding:16px;background:#f8fafc;border:1px solid #e5e7eb}.case strong{font-size:18px}.choice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:12px}.choice{padding:13px;border-radius:14px;background:#fff7ed;border:1px solid #fed7aa;font-weight:900;text-align:center}.personal{display:grid;grid-template-columns:1fr 1fr;gap:10px}.personal div{padding:15px;border-radius:16px;background:#f8fafc}.summary{background:#172033;color:#fff}.summary p{color:#fff}.summary .board{background:#ffffff12;border-color:#ffffff2b;color:#fff}.equipment{display:flex;gap:9px;flex-wrap:wrap}.equipment span{background:#edf4ff;color:#245fc0;border-radius:999px;padding:9px 12px;font-weight:900}.note{font-size:13px;color:#667085;line-height:1.6}.sources{display:grid;gap:10px}.source{background:#f8fafc;border-radius:14px;padding:13px;line-height:1.55;font-size:14px}.source a{color:#1d4ed8;font-weight:800}.warning{color:#9a3412;font-weight:900}.lesson-map{display:flex;gap:8px;flex-wrap:wrap}.lesson-map span{background:#fff;border:1px solid #e5e7eb;border-radius:999px;padding:8px 10px;font-size:12px;font-weight:900}@media(max-width:680px){.wrap{padding-left:11px;padding-right:11px}.card{padding:18px}.hero{padding:22px}.goal,.traits,.science-grid,.case-grid,.personal{grid-template-columns:1fr}.choice-grid{grid-template-columns:1fr}.trait span{float:none;display:block;margin-top:5px}}
 </style>
 </head>
 <body>
 <main class="wrap">
 <div class="top"><a class="back" href="sports-excellence.html" aria-label="חזרה למצוינות וספורט">↩</a><a class="home" href="index.html" aria-label="בית">🏠</a><b>☀️ בית ספר אור</b></div>
 
-<section class="hero"><small>מצוינות וספורט · שיעור 1 · שיעור כיתתי</small><h1>מה באמת יוצר מצוינות?</h1><p>שיעור על כישרון, התמדה, משמעת ובחירות. התלמידים צריכים להחליט אילו תכונות באמת שוות את ההשקעה — ואז להסביר למה.</p></section>
+<section class="hero">
+<small>מצוינות וספורט · שיעור 1 · שיעור כיתתי · 50–55 דקות</small>
+<h1>מה באמת יוצר מצוינות?</h1>
+<p>שיעור על כישרון, התמדה, משמעת, תרגול ומשוב. מתחילים במשחק בחירה, בודקים אם בכלל קיימת “תשובה נכונה”, פוגשים מחקרים על מומחיות ולמידה, ומסיימים בחיבור אישי.</p>
+</section>
 
 <section class="card">
 <h2>🧾 לפני שהתלמידים נכנסים</h2>
 <p><strong>את הציטוט כותבים על הלוח לפני תחילת השיעור.</strong> לא מסבירים אותו עדיין.</p>
 <div class="board">״אין אצילות בלהיות טוב יותר מאדם אחר. האצילות האמיתית היא להיות טוב יותר ממי שהיית קודם.״<div class="quote-source">— Walter L. Sheldon, 1897 · תרגום חופשי</div></div>
-<p class="note">הציטוט נשאר על הלוח לאורך כל השיעור. חוזרים אליו רק במהלך הדיון ובסיום.</p>
+<p class="note">הציטוט נשאר על הלוח לאורך כל השיעור. המטרה היא שהתלמידים יחזרו אליו אחרי שכבר עברו תהליך ולא יקבלו את הפירוש מראש.</p>
 </section>
 
 <section class="card">
 <h2>🎯 מטרת השיעור</h2>
-<div class="goal"><div><strong>מה התלמידים יבינו?</strong><br>מצוינות אינה רק כישרון או ניצחון. היא תהליך שמורכב מהרגלים, בחירות, התמדה ויכולת להשתפר.</div><div><strong>מה אני רוצה שיקרה בכיתה?</strong><br>שהתלמידים יתווכחו, יבחרו, ינמקו וישנו עמדה — לא רק ישמעו הסבר מהמורה.</div></div>
+<div class="goal">
+<div><strong>מה התלמידים יבינו?</strong><br>אין תכונה אחת שמייצרת מצוינות. ביצוע גבוה נבנה משילוב של יכולות, תרגול, משוב, הרגלים, תנאים והזדמנויות.</div>
+<div><strong>מה אני רוצה שיקרה בכיתה?</strong><br>שהתלמידים יבחרו, יתווכחו, ינמקו, יפגשו ראיות מדעיות — ואז יהיו מוכנים גם לשנות את הבחירה הראשונה שלהם.</div>
+</div>
 <h3>ציוד</h3>
 <div class="equipment"><span>לוח וטוש</span><span>דף לכל קבוצה</span><span>עט לכל קבוצה</span><span>100 נקודות דמיוניות לכל קבוצה</span></div>
+<h3>מפת השיעור</h3>
+<div class="lesson-map"><span>פתיחה</span><span>מכירה פומבית</span><span>טוויסט</span><span>דיון</span><span>אז מה התשובה?</span><span>מה המחקר אומר?</span><span>מקרה מבחן</span><span>דילמה</span><span>חיבור אישי</span><span>ציטוט</span></div>
 </section>
 
 <section class="card">
-<span class="time">5 דקות</span><h2>1. פתיחה — מה צריך כדי להיות מצוין?</h2>
+<span class="time">4 דקות</span><h2>1. פתיחה — מה צריך כדי להיות מצוין?</h2>
 <div class="teacher-say">״אם הייתי רוצה להפוך לאחד הטובים בעולם במשהו — ספורט, לימודים, מוזיקה או כל תחום אחר — מה הדבר הכי חשוב שאני צריך?״</div>
 <p>אני נותן לתלמידים לזרוק תשובות וכותב אותן על הלוח בלי לתקן: כישרון, התמדה, כסף, מאמן, ביטחון, משמעת, מזל, כוח, זמן, חברים ועוד.</p>
-<div class="teacher-say">״עוד מעט תצטרכו להחליט על מה באמת שווה לשלם.״</div>
+<div class="teacher-say">״עוד מעט תצטרכו להחליט על מה באמת שווה להשקיע.״</div>
 </section>
 
 <section class="card">
-<span class="time">15 דקות</span><h2>2. המשחק — מכירה פומבית של מצוינות</h2>
-<p>מחלקים את הכיתה לקבוצות של 3–5 תלמידים. לכל קבוצה יש <strong>100 נקודות בלבד</strong>. אני מציע תכונות למכירה, והקבוצות מחליטות כמה הן מוכנות להשקיע.</p>
-<div class="rules"><span class="pill">מתחילים ב־10</span><span class="pill">אי אפשר לקנות הכול</span><span class="pill">מי שמציע הכי הרבה זוכה</span><span class="pill">כל קבוצה מנהלת תקציב</span></div>
+<span class="time">12 דקות</span><h2>2. המשחק — מכירה פומבית של מצוינות</h2>
+<p>מחלקים את הכיתה לקבוצות של 3–5 תלמידים. לכל קבוצה יש <strong>100 נקודות</strong>. בכל פעם אני מציג תכונה, והקבוצות מחליטות כמה היא שווה בעיניהן.</p>
+<div class="rules"><span class="pill">מתחילים ב־10</span><span class="pill">התקציב מוגבל</span><span class="pill">חייבים לנמק בתוך הקבוצה</span><span class="pill">אין רמזים מהמורה</span></div>
 <div class="traits">
 <div class="trait">כישרון טבעי <span>פתיחה: 10</span></div>
 <div class="trait">התמדה <span>פתיחה: 10</span></div>
@@ -49,49 +58,110 @@
 <div class="trait">מוטיבציה <span>פתיחה: 10</span></div>
 <div class="trait">ריכוז <span>פתיחה: 10</span></div>
 <div class="trait">מאמן מצוין <span>פתיחה: 10</span></div>
-<div class="trait">מזל <span>פתיחה: 10</span></div>
+<div class="trait">מזל והזדמנות <span>פתיחה: 10</span></div>
 </div>
 <h3>מה אני אומר</h3>
-<div class="teacher-say">״התמדה! המחיר מתחיל ב־10. מי נותן 15? 20? אתם בטוחים שאתם רוצים לבזבז כל כך הרבה מהתקציב שלכם?״</div>
-<p>המטרה היא ליצור ויכוח בתוך הקבוצות. אני לא אומר להם מה נכון ולא רומז איזו תכונה חשובה יותר.</p>
+<div class="teacher-say">״התמדה! המחיר מתחיל ב־10. מי נותן 15? 20? אם אתם משקיעים כאן הרבה — במה תצטרכו להשקיע פחות אחר כך?״</div>
+<p><strong>המטרה במשחק:</strong> לא למצוא תשובה סודית, אלא להכריח את הקבוצות להחליט מה חשוב יותר בעיניהן ולגלות שאין להן מספיק תקציב בשביל “הכול”.</p>
 </section>
 
 <section class="card twist">
-<span class="time">4 דקות</span><h2>3. הטוויסט</h2>
-<div class="teacher-say">״עכשיו מתוך כל מה שקניתם — אתם יכולים לקחת איתכם רק שלוש תכונות. בעזרת שלוש התכונות האלה אתם צריכים לבנות אדם מצוין.״</div>
-<p>נותנים לקבוצות 2 דקות להחליט. אחר כך כל קבוצה מקריאה את שלוש הבחירות שלה במשפט אחד.</p>
-<p><strong>חשוב:</strong> אין כרגע תשובה נכונה. אני רוצה שהם ייאלצו לוותר על דברים טובים ולהסביר סדר עדיפויות.</p>
+<span class="time">4 דקות</span><h2>3. הטוויסט — עכשיו רק שלוש</h2>
+<div class="teacher-say">״עכשיו, בלי קשר למה קניתם, אתם יכולים לבחור רק שלוש תכונות מכל הרשימה. בעזרתן אתם צריכים לבנות אדם שמסוגל להגיע למצוינות לאורך זמן.״</div>
+<p>נותנים לקבוצות 2 דקות. אם הן משנות את דעתן לעומת המכירה — זה מצוין. הן צריכות להסביר <strong>למה</strong> שינו עמדה.</p>
+<p><strong>חשוב:</strong> אין כרגע שלוש תשובות נכונות. הבחירה היא חומר לדיון, לא מבחן.</p>
 </section>
 
 <section class="card">
-<span class="time">10 דקות</span><h2>4. הדיון — לפרק את הבחירות</h2>
-<p>אני לוקח את הבחירות של הקבוצות ומקשה עליהן בשאלות:</p>
+<span class="time">6 דקות</span><h2>4. הדיון — לפרק את הבחירות</h2>
 <div class="questions">
 <div class="question">בחרתם כישרון — מה קורה אם האדם המוכשר כמעט לא מתאמן?</div>
-<div class="question">בחרתם התמדה — האם אפשר להשתפר אם מתמידים בדרך לא נכונה?</div>
-<div class="question">מי שלא קנה ביטחון עצמי — מה יקרה ברגע של לחץ?</div>
-<div class="question">מה יותר חשוב: לא להיכשל, או לדעת מה לעשות אחרי שנכשלתי?</div>
-<div class="question">למה מזל היה שווה אצלכם כל כך הרבה / כל כך מעט?</div>
-<div class="question">האם יש בכלל שלוש תכונות נכונות לכולם?</div>
+<div class="question">בחרתם התמדה — האם אפשר להתמיד במשך שנים בדרך לא יעילה?</div>
+<div class="question">בחרתם מאמן — מה קורה אם השחקן לא מקשיב למשוב?</div>
+<div class="question">בחרתם ביטחון — האם ביטחון בלי יכולת מספיק?</div>
+<div class="question">לא בחרתם מזל והזדמנות — האם לכולם באמת יש אותה נקודת פתיחה?</div>
+<div class="question">מה יותר חשוב: לא להיכשל, או לדעת מה לעשות אחרי כישלון?</div>
 </div>
-<p>בשלב הזה אפשר להצביע על הציטוט שעל הלוח ולשאול: <strong>״מה הקשר בין מה שבחרתם לבין המשפט הזה?״</strong></p>
 </section>
 
 <section class="card">
-<span class="time">6 דקות</span><h2>5. מספורט לחיים</h2>
-<div class="teacher-say">״שני שחקנים מתחילים באותה קבוצה. הראשון מוכשר מאוד אבל כמעט לא מתאמן. השני פחות מוכשר, אבל מגיע לכל אימון, מקשיב, מתקן טעויות ומשתפר. איפה לדעתכם כל אחד יהיה בעוד שלוש שנים?״</div>
-<p>אחרי כמה תשובות אני מעביר את אותה שאלה לתחומים אחרים:</p>
-<div class="check"><strong>לימודים:</strong><span>תלמיד שקולט מהר אבל לא מתרגל מול תלמיד שמתקדם מעט בכל יום.</span></div>
-<div class="check"><strong>נגינה:</strong><span>מי שנולד עם שמיעה טובה מול מי שמתאמן באופן עקבי.</span></div>
-<div class="check"><strong>חיים:</strong><span>האם מצוינות היא להיות הכי טוב בחדר — או להשתפר ביחס לעצמי?</span></div>
+<span class="time">4 דקות</span><h2>5. אז מה התשובה?</h2>
+<div class="answer"><strong>אין שלוש תכונות נכונות.</strong><br>אין נוסחה מדעית שאומרת: “התמדה + משמעת + ביטחון = מצוינות”. תחומים שונים דורשים דברים שונים, וגם אנשים שונים מגיעים לאותה רמה בדרכים שונות.</div>
+<p>אבל כן אפשר לצאת עם מסר ברור: <strong>כישרון לבדו לא מספיק.</strong> לאורך זמן צריך תהליך — תרגול, למידה, משוב, התאמה, התמדה ותנאים שמאפשרים להתקדם.</p>
+<div class="teacher-say">״אם הייתם משחקים שוב עכשיו — הייתם קונים את אותן תכונות ובאותו מחיר? מה הייתם משנים?״</div>
+</section>
+
+<section class="card science">
+<span class="time">7 דקות</span><h2>🔬 6. מה המחקר אומר?</h2>
+<p>אני אומר לכיתה: <strong>״בואו נבדוק אם המדע נותן תשובה למכירה הפומבית שלנו.״</strong></p>
+<div class="science-grid">
+<div class="science-card">
+<div class="num">1</div><h3>לא כל תרגול הוא אותו תרגול</h3>
+<p><strong>תרגול מכוון</strong> הוא תרגול שבנוי כדי לשפר נקודה מסוימת: הוא מאתגר, ממוקד, כולל תיקון ומשוב ולא רק חזרה אוטומטית על מה שכבר יודעים.</p>
+<small>Ericsson, 2020 — review on expert performance in sport.</small>
+</div>
+<div class="science-card">
+<div class="num">18%</div><h3>תרגול חשוב — אבל הוא לא כל הסיפור</h3>
+<p>במטא־אנליזה של מחקרי ספורט, תרגול מכוון היה קשור לביצוע והסביר בערך <strong>18% מהשונות</strong> בביצועים בין ספורטאים במחקרים שנכללו.</p>
+<small>Macnamara, Moreau & Hambrick, 2016.</small>
+</div>
+<div class="science-card">
+<div class="num">↻</div><h3>משוב עוזר לנו לא רק “לעבוד קשה”</h3>
+<p>סקירה שיטתית בשיעורי חינוך גופני מצאה ראיות לכך שמשוב יכול לשפר למידת מיומנויות מוטוריות. כלומר: לא רק כמה חזרות עשיתי — אלא גם האם קיבלתי מידע שעוזר לי לתקן.</p>
+<small>Zhou, Shao & Wang, 2021.</small>
+</div>
+<div class="science-card">
+<div class="num">🎯</div><h3>“תעשו הכי טוב שלכם” זו לא תמיד מטרה טובה</h3>
+<p>מחקרי הצבת מטרות מראים שמטרות ברורות ומאתגרות יכולות לעזור יותר ממטרה עמומה, במיוחד כשיש מחויבות ומשוב על ההתקדמות.</p>
+<small>Kleingeld, van Mierlo & Arends, 2011 — meta-analysis on group performance.</small>
+</div>
+</div>
+<div class="science-note"><strong>דיוק חשוב למורה:</strong> <span class="warning">18% לא אומר ש־82% הם “כישרון”.</span> זה נתון סטטיסטי על שונות בין אנשים במחקרים מסוימים. שאר ההבדלים יכולים להיות קשורים לעוד גורמים רבים — גוף, ניסיון קודם, גיל, סביבה, איכות אימון, הזדמנויות, פסיכולוגיה ועוד. המדע כאן דווקא מחזק את הרעיון שאין גורם יחיד שמסביר מצוינות.</div>
+</section>
+
+<section class="card">
+<span class="time">6 דקות</span><h2>7. מקרה מבחן — מי יהיה טוב יותר בעוד שלוש שנים?</h2>
+<div class="case-grid">
+<div class="case"><strong>ספורטאי א׳</strong><p>מוכשר מאוד כבר מההתחלה. מצליח יחסית בקלות, אבל כמעט לא מתרגל את החולשות שלו, מתעצבן מביקורת ולעיתים מדלג על אימונים.</p></div>
+<div class="case"><strong>ספורטאי ב׳</strong><p>מתחיל ברמה נמוכה יותר. מגיע בקביעות, מבקש משוב, מתרגל דברים שקשים לו ומשנה את הדרך כשמשהו לא עובד.</p></div>
+</div>
+<div class="teacher-say">״מי לדעתכם יהיה טוב יותר בעוד שלוש שנים? ומה חסר לנו במידע כדי באמת לדעת?״</div>
+<p>אני לא מחפש “ב׳” כתשובה אוטומטית. אני רוצה שהם יזהו ש<strong>כיוון ההתפתחות</strong> של ב׳ נראה טוב, אבל אי אפשר לנבא אדם אמיתי רק מארבע שורות. גם לא׳ יש כישרון, והוא יכול לשנות הרגלים; וגם לב׳ יש מגבלות ותנאים שאנחנו לא יודעים.</p>
+<h3>שאלת המשך</h3>
+<div class="question">אם א׳ מתחיל לקבל משוב ולעבוד על החולשות שלו — האם הכישרון שלו הופך פתאום ליתרון גדול יותר?</div>
+</section>
+
+<section class="card">
+<span class="time">4 דקות</span><h2>8. דילמת המצטיין</h2>
+<p>אני מקריא מצב:</p>
+<div class="teacher-say">״שחקנית שהייתה רגילה להיות הכי טובה בקבוצה עולה לרמה גבוהה יותר. פתאום היא לא בהרכב, עושה יותר טעויות ומרגישה שהיא ‘כבר לא טובה’. מה היא הכי צריכה עכשיו?״</div>
+<div class="choice-grid"><div class="choice">יותר ביטחון?</div><div class="choice">יותר תרגול?</div><div class="choice">משוב טוב יותר?</div><div class="choice">סבלנות?</div><div class="choice">מטרה חדשה?</div><div class="choice">שילוב?</div></div>
+<p>כל קבוצה בוחרת אפשרות ומנמקת. אחרי דקה מותר להחליף עמדה אם קבוצה אחרת שכנעה אותה.</p>
+</section>
+
+<section class="card">
+<span class="time">3 דקות</span><h2>9. חיבור אישי — לא רק בספורט</h2>
+<p>כל תלמיד עונה לעצמו. לא חייבים לשתף בקול:</p>
+<div class="personal"><div><strong>תכונה אחת שכבר חזקה אצלי</strong><br><br>______________</div><div><strong>תכונה אחת שאני צריך לפתח</strong><br><br>______________</div></div>
+<p>ואז מוסיפים שאלה אחת: <strong>״מה פעולה קטנה שאני יכול לעשות השבוע כדי לפתח אותה?״</strong></p>
 </section>
 
 <section class="card summary">
-<span class="time">5 דקות</span><h2>6. סיום — חוזרים למה שהיה על הלוח</h2>
+<span class="time">2 דקות</span><h2>10. סיום — חוזרים למה שהיה על הלוח כל השיעור</h2>
 <div class="board">״אין אצילות בלהיות טוב יותר מאדם אחר. האצילות האמיתית היא להיות טוב יותר ממי שהיית קודם.״<div class="quote-source" style="color:#fde68a">— Walter L. Sheldon, 1897</div></div>
-<div class="teacher-say">״אחרי מה שעשינו היום — אתם מסכימים עם המשפט? למה?״</div>
-<p>אני לוקח 3–4 תשובות ולא מסכם במקומם מיד. בסוף אני סוגר במשפט:</p>
-<p style="font-size:22px;font-weight:900">מצוינות היא תהליך, לא תכונה שנולדים איתה.</p>
+<div class="teacher-say">״אחרי המשחק, המחקר ומקרה המבחן — מה זה אומר בעיניכם להיות טוב יותר ממי שהיית אתמול?״</div>
+<p><strong>משפט הסיום שלי:</strong> מצוינות היא לא תכונה שיש לך או אין לך. היא תהליך של שיפור — ולתהליך הזה אין כפתור אחד.</p>
+</section>
+
+<section class="card">
+<h2>📚 ביסוס מדעי למורה</h2>
+<p class="note">החלק הזה מיועד לך כהעמקה. אין צורך להקריא את שמות המאמרים בכיתה.</p>
+<div class="sources">
+<div class="source"><strong>Ericsson, K. A. (2020).</strong> Towards a science of the acquisition of expert performance in sports. <em>Journal of Sports Sciences, 38(2), 159–176.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/31718526/" target="_blank" rel="noopener">PubMed</a><br>שימוש בשיעור: ההבחנה בין חזרה רגילה לבין תרגול מכוון ומותאם לשיפור.</div>
+<div class="source"><strong>Macnamara, B. N., Moreau, D., & Hambrick, D. Z. (2016).</strong> The Relationship Between Deliberate Practice and Performance in Sports: A Meta-Analysis. <em>Perspectives on Psychological Science, 11(3), 333–350.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/27217246/" target="_blank" rel="noopener">PubMed</a><br>שימוש בשיעור: תרגול מכוון קשור לביצוע, אבל אינו מסביר לבדו את כל ההבדלים בין ספורטאים.</div>
+<div class="source"><strong>Zhou, Y., Shao, W. D., & Wang, L. (2021).</strong> Effects of Feedback on Students' Motor Skill Learning in Physical Education: A Systematic Review. <em>IJERPH, 18(12), 6281.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/34200657/" target="_blank" rel="noopener">PubMed</a><br>שימוש בשיעור: משוב הוא חלק מתהליך למידה יעיל ולא רק “עוד שעות אימון”.</div>
+<div class="source"><strong>Kleingeld, A., van Mierlo, H., & Arends, L. (2011).</strong> The effect of goal setting on group performance: a meta-analysis. <a href="https://pubmed.ncbi.nlm.nih.gov/21744940/" target="_blank" rel="noopener">PubMed</a><br>שימוש בשיעור: מטרות ספציפיות ומאתגרות יכולות לתרום לביצוע יותר ממטרות כלליות, אך ההשפעה תלויה בהקשר.</div>
+</div>
 </section>
 
 </main>
