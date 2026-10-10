@@ -167,3 +167,41 @@ test('English lesson 1 prep board includes the lesson vocabulary bank', async ()
     assert.match(html, new RegExp(word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
   }
 });
+
+test('energy game uses advanced mixed-format questions and keeps refresh', async () => {
+  const html = await read('nutrition-grade8-lesson1.html');
+  assert.match(html, /energyQuestionPool/);
+  assert.match(html, /שאלת חישוב/);
+  assert.match(html, /מי מהתלמידים צודק/);
+  assert.match(html, /איזה סדר נכון/);
+  assert.match(html, /יחידות אנרגיה לדקה/);
+  assert.match(html, /אי אפשר לדעת מהמידע הזה/);
+  assert.match(html, /refreshEnergyQuestion/);
+  assert.match(html, /רענן שאלה/);
+});
+
+test('food game uses varied portion, density and nutrition-quality questions and keeps refresh', async () => {
+  const html = await read('nutrition-grade8-lesson1.html');
+  assert.match(html, /צפיפות קלורית/);
+  assert.match(html, /100 גרם/);
+  assert.match(html, /חמאת בוטנים/);
+  assert.match(html, /שקדים/);
+  assert.match(html, /טחינה/);
+  assert.match(html, /אותו מספר קלוריות/);
+  assert.match(html, /קלוריות מודדות אנרגיה, לא איכות תזונתית/);
+  assert.match(html, /refreshFoodQuestion/);
+});
+
+test('grade 8 lesson 2 teaches metabolism with both approved interactive games', async () => {
+  const html = await read('nutrition-grade8-lesson2.html');
+  assert.match(html, /מטבוליזם/);
+  assert.match(html, /מי מוציא יותר במנוחה/);
+  assert.match(html, /מה קורה בזמן ואחרי אימון/);
+  assert.match(html, /20 שאלות/);
+  assert.match(html, /מיתוסים על מטבוליזם/);
+  assert.match(html, /מסת שריר/);
+  assert.match(html, /NEAT/);
+  assert.match(html, /Afterburn/);
+  assert.match(html, /ביסוס מדעי למורה/);
+  assert.match(html, /site-nav\.js/);
+});
