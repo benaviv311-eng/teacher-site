@@ -34,3 +34,14 @@ test('English lesson 2 is writing-led and removes the Maya reading section', asy
   assert.match(html, /Write at least six sentences/i);
   assert.match(html, /פסקה קצרה/);
 });
+
+test('English lesson 2 includes an independent full-day schedule writing task', async () => {
+  const html = await read('english-lesson2.html');
+
+  assert.match(html, /My Full Day — Write it by yourself/i);
+  assert.match(html, /Write your full daily routine from morning to night/i);
+  assert.match(html, /Write at least 8 sentences/i);
+  assert.match(html, /Use your own real schedule/i);
+  assert.match(html, /first.*then.*after school.*in the evening.*finally/is);
+  assert.match(html, /בלי משפטים להשלמה/);
+});
