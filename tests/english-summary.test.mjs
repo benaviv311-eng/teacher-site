@@ -45,3 +45,15 @@ test('English lesson 2 includes an independent full-day schedule writing task', 
   assert.match(html, /first.*then.*after school.*in the evening.*finally/is);
   assert.match(html, /בלי משפטים להשלמה/);
 });
+
+test('English lesson 2 adds three morning routine expressions to the vocabulary bank and practice', async () => {
+  const html = await read('english-lesson2.html');
+
+  assert.match(html, /13<\/b><span>ביטויי שגרה/);
+  assert.match(html, /brush my teeth — מצחצח שיניים/);
+  assert.match(html, /wash my face — שוטף פנים/);
+  assert.match(html, /drink coffee — שותה קפה/);
+  assert.match(html, /I brush my teeth in the morning\./);
+  assert.match(html, /I wash my face in the morning\./);
+  assert.match(html, /I drink coffee in the morning\./);
+});
