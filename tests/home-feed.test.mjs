@@ -130,7 +130,7 @@ test('English lesson 1 lives on its own page with teacher and student guidance',
   assert.match(html, /site-nav\.js/);
 });
 
-test('English lesson 2 lives on its own page with routine vocabulary, game and exit ticket', async () => {
+test('English lesson 2 lives on its own page with routine vocabulary, writing practice and exit ticket', async () => {
   const html = await read('english-lesson2.html');
   assert.match(html, /שיעור 2 — My Daily Routine/);
   assert.match(html, /Today I can talk about my daily routine in English/);
@@ -139,7 +139,7 @@ test('English lesson 2 lives on its own page with routine vocabulary, game and e
   assert.match(html, /eat breakfast/);
   assert.match(html, /do homework/);
   assert.match(html, /take a shower/);
-  assert.match(html, /Meet Maya/);
+  assert.doesNotMatch(html, /Input — Meet Maya|Hi, I’m Maya|הכן את Meet Maya/);
   assert.match(html, /Mime & Guess/);
   assert.match(html, /What time do you wake up\?/);
   assert.match(html, /Exit Ticket/);
