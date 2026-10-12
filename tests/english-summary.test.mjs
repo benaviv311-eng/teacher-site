@@ -20,3 +20,17 @@ test('English lessons end with three main things learned today', async () => {
   assert.match(lesson2, /לכתוב את הרוטינה האישית שלי באנגלית/);
   assert.match(lesson2, /לספר על היום שלי בלי לקרוא מהמחברת/);
 });
+
+test('English lesson 2 is writing-led and removes the Maya reading section', async () => {
+  const html = await read('english-lesson2.html');
+
+  assert.doesNotMatch(html, /Meet Maya|Hi, I’m Maya|הכן את Meet Maya/);
+  assert.match(html, /משימה 1 — השלמת משפטים/);
+  assert.match(html, /משימה 2 — בונים משפטים/);
+  assert.match(html, /משימה 3 — מוסיפים שעות/);
+  assert.match(html, /משימה 4 — מסדרים את היום/);
+  assert.match(html, /משימה 5 — הרוטינה שלי/);
+  assert.match(html, /and \/ then \/ after school \/ in the evening/i);
+  assert.match(html, /Write at least six sentences/i);
+  assert.match(html, /פסקה קצרה/);
+});
