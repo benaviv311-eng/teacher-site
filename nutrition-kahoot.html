@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kahoot — מדעי התזונה</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}.app{max-width:980px;margin:auto;padding:18px 16px 100px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px}.back{display:inline-block;text-decoration:none;color:#172033;background:#fff;border-radius:14px;padding:11px 14px;box-shadow:0 4px 18px #14213d12;font-weight:800}.hero{margin-top:18px;background:linear-gradient(135deg,#4c1d95,#7c3aed);color:#fff;border-radius:28px;padding:28px;box-shadow:0 14px 35px #6d28d922}.hero h1{margin:6px 0 8px;font-size:clamp(30px,5vw,46px)}.hero p{margin:0;line-height:1.65}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.toolbar button{border:0;border-radius:14px;padding:12px 16px;font-weight:900;cursor:pointer;background:#fff;color:#4c1d95}.game{background:#fff;border:1px solid #e8edf4;border-radius:24px;padding:22px;margin-top:20px;box-shadow:0 6px 24px #14213d0b}.status{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-weight:900}.progress{height:9px;background:#edf1f6;border-radius:999px;overflow:hidden;margin:14px 0 20px}.progress span{display:block;height:100%;background:#7c3aed;transition:width .2s}.question{font-size:clamp(24px,4vw,34px);font-weight:900;line-height:1.4;margin:12px 0 20px}.answers{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.answer{border:0;border-radius:20px;padding:20px;min-height:92px;font-size:18px;font-weight:900;cursor:pointer;background:#f5f3ff;color:#312e81}.answer.selected{outline:4px solid #a78bfa}.answer.correct{background:#dcfce7;color:#166534}.answer.wrong{background:#fee2e2;color:#991b1b}.feedback{display:none;margin-top:16px;border-radius:16px;padding:15px;font-weight:900;line-height:1.55}.feedback.show{display:block}.controls{display:flex;justify-content:space-between;gap:12px;margin-top:18px}.controls button{border:0;border-radius:14px;padding:13px 20px;font-weight:900;cursor:pointer}.primary{background:#172033;color:#fff}.secondary{background:#edf4ff;color:#205fc1}.summary{display:none;background:#fff;border-radius:24px;padding:24px;margin-top:20px}.summary.show{display:block}.score{font-size:42px;font-weight:900}.mini{font-size:13px;color:#667085}.badge{display:inline-block;background:#ede9fe;color:#5b21b6;border-radius:999px;padding:7px 11px;font-size:12px;font-weight:900;margin-bottom:8px}@media(max-width:680px){.answers{grid-template-columns:1fr}.hero{padding:22px}.app{padding:12px 11px 90px}}
+</style>
+</head>
+<body>
+<main class="app">
+<div class="top"><div><strong>☀️ בית ספר אור · מדעי התזונה</strong></div><a class="back" href="nutrition-science.html">← חזרה למדעי התזונה</a></div>
+<section class="hero"><span class="badge">🎮 משחקים</span><h1>Kahoot — מדעי התזונה</h1><p>קהוט מתעדכן שמרכז שאלות מהנושאים שכבר למדנו. אפשר לרענן את סדר השאלות ולהוסיף שאלות חדשות בהמשך.</p><div class="toolbar"><button id="refreshQuiz">🔄 רענן קהוט</button><button id="restartQuiz">↺ התחל מחדש</button></div></section>
+<section class="game" id="gameCard"><div class="status"><span id="counter">שאלה 1 מתוך 20</span><span id="score">ניקוד: 0</span></div><div class="progress"><span id="progressBar"></span></div><div class="question" id="question"></div><div class="answers" id="answers"></div><div class="feedback" id="feedback"></div><div class="controls"><button class="secondary" id="prevBtn">← הקודמת</button><button class="primary" id="nextBtn">הבאה →</button></div></section>
+<section class="summary" id="summary"><h2>🏆 סיימתם את הקהוט</h2><div class="score" id="finalScore"></div><p id="finalText"></p><button class="primary" id="playAgain">שחק שוב</button></section>
+<p class="mini">המשחק אינו מחובר לשרת Kahoot החיצוני — הוא בנוי באתר באותו עיקרון של שאלות בחירה מהירות.</p>
+</main>
+<script>
+const questions = [
+{question:'מהו מטבוליזם?',answers:['רק שריפת שומן','כלל התהליכים הכימיים בגוף','עיכול בלבד','קצב הלב'],correct:1,explanation:'מטבוליזם הוא כלל התהליכים הכימיים שמאפשרים לגוף לחיות, לבנות, לפרק ולווסת.'},
+{question:'האם הגוף משתמש באנרגיה גם בזמן שינה?',answers:['כן','לא','רק אחרי אימון','רק אחרי אוכל'],correct:0,explanation:'גם בשינה המוח, הלב, הנשימה ושאר מערכות הגוף ממשיכים לפעול.'},
+{question:'מהו BMR?',answers:['האנרגיה באימון','האנרגיה שהגוף צריך במנוחה','כמות הסוכר בדם','מהירות העיכול'],correct:1,explanation:'BMR הוא אומדן להוצאה האנרגטית הבסיסית בתנאי מנוחה מחמירים.'},
+{question:'מה צורך חלק גדול מהאנרגיה היומית שלנו?',answers:['פעילות בסיסית של הגוף','לעיסת מזון','שתיית מים','הזעה'],correct:0,explanation:'הגוף צורך הרבה אנרגיה רק כדי לקיים תפקודים בסיסיים.'},
+{question:'איזה אדם בדרך כלל יוציא יותר אנרגיה במנוחה?',answers:['אדם עם גוף גדול יותר','תמיד האדם הרזה ביותר','מי שאוכל פחות','אי אפשר לדעת בכלל'],correct:0,explanation:'גודל גוף הוא אחד הגורמים המרכזיים, לצד הרכב גוף, גיל, מין וגנטיקה.'},
+{question:'מהו NEAT?',answers:['אנרגיה משינה','פעילות יומיומית שאינה אימון','אנרגיית העיכול','אימון כוח'],correct:1,explanation:'NEAT כולל תנועה יומיומית כמו הליכה, עמידה, מדרגות וסידורים.'},
+{question:'מה יכול להיחשב NEAT?',answers:['הליכה במדרגות','שינה','צפייה בטלוויזיה','מדידת דופק'],correct:0,explanation:'הליכה במדרגות היא פעילות יומיומית שאינה אימון מובנה.'},
+{question:'מה קורה להוצאה האנרגטית כשזזים יותר במהלך היום?',answers:['לרוב עולה','תמיד יורדת','לא משתנה','נעצרת'],correct:0,explanation:'יותר תנועה בדרך כלל מגדילה את סך ההוצאה האנרגטית.'},
+{question:'האם שריר צורך אנרגיה גם במנוחה?',answers:['כן','לא','רק בזמן אימון','רק בזמן שינה'],correct:0,explanation:'שריר הוא רקמה פעילה מטבולית גם במנוחה.'},
+{question:'מה נכון לגבי שריר ומטבוליזם?',answers:['שריר יכול להעלות מעט את ההוצאה במנוחה','שריר מכפיל מיד את המטבוליזם','שריר לא צורך אנרגיה','שריר עוצר שריפת שומן'],correct:0,explanation:'יותר מסת שריר יכולה לתרום לעלייה מסוימת בהוצאה במנוחה, אך לא בצורה דרמטית.'},
+{question:'איזה רכיב מזון דורש יחסית יותר אנרגיה לעיכול?',answers:['חלבון','מים','ויטמינים','מלח'],correct:0,explanation:'לחלבון אפקט תרמי גבוה יותר ביחס לפחמימות ולשומן.'},
+{question:'מהו האפקט התרמי של המזון?',answers:['אנרגיה שהגוף מוציא בעיכול ועיבוד מזון','חום מהמזון עצמו','טמפרטורת המטבח','שריפת קלוריות בשמש'],correct:0,explanation:'גם העיכול, הספיגה והעיבוד של המזון דורשים אנרגיה.'},
+{question:'האם אימון יכול להשפיע על צריכת האנרגיה גם לאחר סיומו?',answers:['כן','אף פעם','רק אצל ספורטאים מקצועיים','רק בריצה'],correct:0,explanation:'לאחר מאמץ מסוים ההוצאה יכולה להישאר מוגברת לזמן מה.'},
+{question:'איך נקראת העלייה הזמנית בצריכת החמצן אחרי אימון?',answers:['EPOC','BMI','BMR','DNA'],correct:0,explanation:'EPOC מתאר צריכת חמצן מוגברת לאחר האימון כחלק מתהליכי ההתאוששות.'},
+{question:'מה נכון לגבי “Afterburn”?',answers:['הוא קיים אך לרוב אינו עצום','שורף אלפי קלוריות','נמשך תמיד שבוע','אינו קיים בכלל'],correct:0,explanation:'האפקט קיים, אבל ברוב המצבים התרומה שלו מוגבלת יחסית.'},
+{question:'מה יכול לקרות בדיאטה חריפה וממושכת?',answers:['הגוף עשוי להפחית חלק מההוצאה האנרגטית','המטבוליזם תמיד מוכפל','הגוף מפסיק להשתמש באנרגיה','אין שום הסתגלות'],correct:0,explanation:'הגוף יכול להסתגל למחסור ממושך באנרגיה ולצמצם חלק מההוצאה.'},
+{question:'איך נקראת התאמת הגוף למחסור ממושך באנרגיה?',answers:['הסתגלות מטבולית','נשימה אירובית','ספיגה','הידרציה'],correct:0,explanation:'הסתגלות מטבולית היא שינוי בהוצאה האנרגטית בתגובה למחסור ממושך.'},
+{question:'האם לאדם יש “מטבוליזם מהיר” או “איטי” בלבד?',answers:['לא, זה מורכב מגורמים רבים','כן, רק שני סוגים','נקבע רק לפי גובה','נקבע רק לפי אוכל'],correct:0,explanation:'מטבוליזם אינו מתג של מהיר או איטי; הוא מושפע מגורמים רבים.'},
+{question:'מה מהבאים משפיע על ההוצאה האנרגטית היומית?',answers:['גודל גוף, פעילות והרכב גוף','צבע העיניים','סוג הטלפון','כתב היד'],correct:0,explanation:'גודל והרכב הגוף ורמת הפעילות משפיעים באופן ממשי על ההוצאה האנרגטית.'},
+{question:'מה הדרך הטובה ביותר לחשוב על מטבוליזם?',answers:['מערכת דינמית שמושפעת מגורמים רבים','מתג מהיר/איטי','שריפת שומן בלבד','מספר קבוע שלא משתנה'],correct:0,explanation:'מטבוליזם הוא מערכת דינמית ומשתנה, לא מספר קבוע או מתג פשוט.'}
+];
+
+function shuffle(array){
+  const a=[...array];
+  for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
+  return a;
+}
+function shuffledQuestion(q){
+  const tagged=q.answers.map((text,i)=>({text,correct:i===q.correct}));
+  const mixed=shuffle(tagged);
+  return {...q,answers:mixed.map(x=>x.text),correct:mixed.findIndex(x=>x.correct)};
+}
+let quiz=[];let index=0;let score=0;let selected=null;
+function buildQuiz(){quiz=shuffle(questions).map(shuffledQuestion);index=0;score=0;selected=null;document.getElementById('summary').classList.remove('show');document.getElementById('gameCard').style.display='block';render();}
+function render(){
+  const q=quiz[index];
+  document.getElementById('counter').textContent=`שאלה ${index+1} מתוך ${quiz.length}`;
+  document.getElementById('score').textContent=`ניקוד: ${score}`;
+  document.getElementById('progressBar').style.width=`${((index+1)/quiz.length)*100}%`;
+  document.getElementById('question').textContent=q.question;
+  const box=document.getElementById('answers');box.innerHTML='';
+  q.answers.forEach((answer,i)=>{const b=document.createElement('button');b.className='answer';b.textContent=answer;b.onclick=()=>choose(i,b);box.appendChild(b);});
+  const feedback=document.getElementById('feedback');feedback.className='feedback';feedback.textContent='';selected=null;
+  document.getElementById('prevBtn').disabled=index===0;
+  document.getElementById('nextBtn').textContent=index===quiz.length-1?'סיום':'הבאה →';
+}
+function choose(i,button){
+  if(selected!==null)return;selected=i;const q=quiz[index];const buttons=[...document.querySelectorAll('.answer')];
+  buttons[q.correct].classList.add('correct');
+  const feedback=document.getElementById('feedback');
+  if(i===q.correct){score+=100;feedback.textContent=`✅ נכון! ${q.explanation}`;}else{button.classList.add('wrong');feedback.textContent=`❌ לא הפעם. ${q.explanation}`;}
+  feedback.classList.add('show');document.getElementById('score').textContent=`ניקוד: ${score}`;
+}
+function finish(){document.getElementById('gameCard').style.display='none';const s=document.getElementById('summary');s.classList.add('show');document.getElementById('finalScore').textContent=`${score} / ${quiz.length*100}`;document.getElementById('finalText').textContent=score>=1600?'שליטה מצוינת בחומר!':score>=1200?'יפה מאוד — יש בסיס טוב.':'כדאי לעבור שוב על המושגים ולנסות עוד סיבוב.';}
+document.getElementById('nextBtn').onclick=()=>{if(index===quiz.length-1){finish();return;}index++;render();};
+document.getElementById('prevBtn').onclick=()=>{if(index>0){index--;render();}};
+document.getElementById('refreshQuiz').onclick=buildQuiz;
+document.getElementById('restartQuiz').onclick=buildQuiz;
+document.getElementById('playAgain').onclick=buildQuiz;
+buildQuiz();
+</script>
+<script src="site-nav.js"></script>
+</body>
+</html>
