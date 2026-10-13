@@ -14,3 +14,22 @@ test('metabolism lesson keeps both 20-question banks complete and myth answers b
   assert.equal((myths.match(/answer:0/g) ?? []).length, 10, 'myth quiz should contain 10 true answers');
   assert.equal((myths.match(/answer:1/g) ?? []).length, 10, 'myth quiz should contain 10 false answers');
 });
+
+test('metabolism lesson opens with a board hook and adds discussion questions, timings, surprising data and real foods', async () => {
+  const html = await read('nutrition-grade8-lesson2.html');
+  assert.match(html, /היום נגלה 3 דברים/);
+  assert.match(html, /אם אני לא אוכל כמה שעות/);
+  assert.match(html, /מה אתם אומרים/);
+  assert.match(html, /20–30%/);
+  assert.match(html, /5–10%/);
+  assert.match(html, /0–3%/);
+  assert.match(html, /3–4 שעות/);
+  assert.match(html, /1–4 שעות לפני/);
+  assert.match(html, /אין חלון קסם/);
+  for (const food of ['ביצה','יוגורט','טונה','עדשים','טחינה','שיבולת שועל','בננה']) {
+    assert.match(html, new RegExp(food));
+  }
+  assert.match(html, /אין מאכל אחד שמאיץ את המטבוליזם/);
+  assert.match(html, /קילו שריר/);
+  assert.match(html, /13 קק״ל/);
+});
