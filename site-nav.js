@@ -30,6 +30,14 @@
     document.head.appendChild(style);
   }
 
+  if (current.startsWith('nutrition-grade8-') && !document.getElementById('nutrition-practical-loader')) {
+    const practical = document.createElement('script');
+    practical.id = 'nutrition-practical-loader';
+    practical.src = 'nutrition-practical.js';
+    practical.defer = true;
+    document.body.appendChild(practical);
+  }
+
   const nav = document.createElement('nav');
   nav.className = 'global-nav';
   nav.setAttribute('aria-label','ניווט ראשי');
