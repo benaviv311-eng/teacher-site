@@ -34,7 +34,8 @@ test('English lesson 2 starts with verb discovery and moves into harder routine 
   assert.match(html, /Put My Day Together/i);
   assert.match(html, /מסדרים את היום/);
   assert.doesNotMatch(html, /משימה 3 — מוסיפים שעות/);
-  assert.doesNotMatch(html, /Mime & Guess/);
+  assert.doesNotMatch(html, /<h3>Mime & Guess/);
+  assert.doesNotMatch(html, /ממחיזים ומנחשים/);
 });
 
 test('English lesson 2 reveals the vocabulary only after students try to retrieve the verbs', async () => {
