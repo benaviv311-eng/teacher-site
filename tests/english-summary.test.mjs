@@ -21,18 +21,32 @@ test('English lessons end with three main things learned today', async () => {
   assert.match(lesson2, /לספר על היום שלי בלי לקרוא מהמחברת/);
 });
 
-test('English lesson 2 is writing-led and removes the Maya reading section', async () => {
+test('English lesson 2 starts with verb discovery and moves into harder routine challenges', async () => {
   const html = await read('english-lesson2.html');
 
   assert.doesNotMatch(html, /Meet Maya|Hi, I’m Maya|הכן את Meet Maya/);
-  assert.match(html, /משימה 1 — השלמת משפטים/);
-  assert.match(html, /משימה 2 — בונים משפטים/);
-  assert.match(html, /משימה 3 — מוסיפים שעות/);
-  assert.match(html, /משימה 4 — מסדרים את היום/);
-  assert.match(html, /משימה 5 — הרוטינה שלי/);
-  assert.match(html, /and \/ then \/ after school \/ in the evening/i);
-  assert.match(html, /Write at least six sentences/i);
-  assert.match(html, /פסקה קצרה/);
+  assert.match(html, /Routine Clues/i);
+  assert.match(html, /What do you do\?/i);
+  assert.match(html, /תגידו את הפעולה באנגלית/);
+  assert.match(html, /Memory Write/i);
+  assert.match(html, /כתבו מהזיכרון/);
+  assert.match(html, /Crazy Routine/i);
+  assert.match(html, /Put My Day Together/i);
+  assert.match(html, /מסדרים את היום/);
+  assert.doesNotMatch(html, /משימה 3 — מוסיפים שעות/);
+  assert.doesNotMatch(html, /Mime & Guess/);
+});
+
+test('English lesson 2 reveals the vocabulary only after students try to retrieve the verbs', async () => {
+  const html = await read('english-lesson2.html');
+
+  assert.match(html, /לא כותבים את ה־Vocabulary Bank מראש/);
+  assert.match(html, /רק אחרי שהם ניסו/);
+  assert.match(html, /REVEAL THE VERBS/i);
+  assert.match(html, /wake up — להתעורר/);
+  assert.match(html, /brush my teeth — מצחצח שיניים/);
+  assert.match(html, /wash my face — שוטף פנים/);
+  assert.match(html, /drink coffee — שותה קפה/);
 });
 
 test('English lesson 2 includes an independent full-day schedule writing task', async () => {
@@ -46,14 +60,25 @@ test('English lesson 2 includes an independent full-day schedule writing task', 
   assert.match(html, /בלי משפטים להשלמה/);
 });
 
-test('English lesson 2 adds three morning routine expressions to the vocabulary bank and practice', async () => {
+test('English lesson 2 keeps all thirteen routine expressions available after the reveal', async () => {
   const html = await read('english-lesson2.html');
 
   assert.match(html, /13<\/b><span>ביטויי שגרה/);
-  assert.match(html, /brush my teeth — מצחצח שיניים/);
-  assert.match(html, /wash my face — שוטף פנים/);
-  assert.match(html, /drink coffee — שותה קפה/);
-  assert.match(html, /I brush my teeth in the morning\./);
-  assert.match(html, /I wash my face in the morning\./);
-  assert.match(html, /I drink coffee in the morning\./);
+  for (const phrase of [
+    'wake up',
+    'brush my teeth',
+    'wash my face',
+    'get dressed',
+    'drink coffee',
+    'eat breakfast',
+    'go to school',
+    'come home',
+    'eat lunch',
+    'do homework',
+    'practice',
+    'take a shower',
+    'go to bed'
+  ]) {
+    assert.match(html, new RegExp(phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+  }
 });
