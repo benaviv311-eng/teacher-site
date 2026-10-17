@@ -8,8 +8,9 @@ const read = (path) => readFile(new URL(`../${path}`, import.meta.url), 'utf8');
 test('English lessons end with three main things learned today', async () => {
   const lesson1 = await read('english-lesson1.html');
   const lesson2 = await read('english-lesson2.html');
+  const lesson3 = await read('english-lesson3.html');
 
-  for (const html of [lesson1, lesson2]) {
+  for (const html of [lesson1, lesson2, lesson3]) {
     assert.match(html, /3 דברים שלמדנו היום/);
   }
 
@@ -20,6 +21,10 @@ test('English lessons end with three main things learned today', async () => {
   assert.match(lesson2, /להשתמש בביטויים של שגרת יום/);
   assert.match(lesson2, /לכתוב את הרוטינה האישית שלי באנגלית/);
   assert.match(lesson2, /לספר על היום שלי בלי לקרוא מהמחברת/);
+
+  assert.match(lesson3, /להשתמש באוצר מילים של תחביבים וזמן פנוי/);
+  assert.match(lesson3, /לומר מה אני אוהב, מאוד אוהב ולא אוהב לעשות באנגלית/);
+  assert.match(lesson3, /לכתוב ולספר על הזמן הפנוי שלי בכמה משפטים/);
 });
 
 test('English lesson 2 starts with verb discovery and moves into harder routine challenges', async () => {
@@ -92,4 +97,55 @@ test('English library exposes lesson 3 as an active lesson page', async () => {
   assert.equal(existsSync(lesson3Url), true);
   assert.match(library, /href="english-lesson3\.html"/);
   assert.doesNotMatch(library, /שיעור 3 · בקרוב/);
+});
+
+test('English lesson 3 follows the approved hobbies and free-time lesson flow', async () => {
+  const html = await read('english-lesson3.html');
+
+  assert.match(html, /Hobbies & Free Time/i);
+  assert.match(html, /Today I can talk and write about my hobbies and free time in English/i);
+  assert.match(html, /Write 3 activities you know in English/i);
+  assert.match(html, /Don't use the Vocabulary Bank yet/i);
+  assert.match(html, /Vocabulary Bank/i);
+  assert.match(html, /Guess the Hobby/i);
+  assert.match(html, /Like \/ Love \/ Don't Like/i);
+  assert.match(html, /Spot the Mistake/i);
+  assert.match(html, /My Free-Time Profile/i);
+  assert.match(html, /Guess My Hobby/i);
+  assert.match(html, /My Free Time — Independent Writing/i);
+  assert.match(html, /Pair Share \+ Exit Ticket/i);
+  assert.match(html, /like \/ love \/ don't like \+ verb-ing/i);
+  assert.match(html, /Write 6–8 sentences about your free time/i);
+  assert.match(html, /3 different activities/i);
+  assert.match(html, /1 sentence with love/i);
+  assert.match(html, /1 sentence with don't like/i);
+  assert.match(html, /1 sentence with In my free time/i);
+});
+
+test('English lesson 3 keeps the approved vocabulary and Guess My Hobby scoring', async () => {
+  const html = await read('english-lesson3.html');
+
+  for (const phrase of [
+    'play football',
+    'play basketball',
+    'play video games',
+    'listen to music',
+    'watch TV',
+    'read',
+    'draw',
+    'dance',
+    'ride a bike',
+    'hang out with friends',
+    'play an instrument',
+    'exercise'
+  ]) {
+    assert.match(html, new RegExp(phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i'));
+  }
+
+  assert.match(html, /אחרי רמז 1.*3 נקודות/is);
+  assert.match(html, /אחרי רמז 2.*2 נקודות/is);
+  assert.match(html, /אחרי רמז 3.*נקודה אחת/is);
+  assert.match(html, /You need a ball/);
+  assert.match(html, /You play with other people/);
+  assert.match(html, /You can score goals/);
 });
