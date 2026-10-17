@@ -19,3 +19,27 @@ test('sports excellence lesson 1 is a full classroom lesson with reflection and 
   assert.match(html, /משוב/);
   assert.match(html, /site-nav\.js/);
 });
+
+test('sports excellence lesson 2 is a complete time-machine classroom simulation', async () => {
+  const html = await read('sports-excellence-lesson2.html');
+  assert.match(html, /מכונת הזמן של האלוף/);
+  assert.match(html, /נועם/);
+  assert.match(html, /גיל 13/);
+  assert.match(html, /גיל 14/);
+  assert.match(html, /גיל 15/);
+  assert.match(html, /גיל 16/);
+  assert.match(html, /גיל 17/);
+  assert.match(html, /גיל 18/);
+  assert.match(html, /זמן/);
+  assert.match(html, /קושי/);
+  assert.match(html, /משוב/);
+  assert.match(html, /תיקון/);
+  assert.match(html, /חיבור אישי/);
+  assert.match(html, /site-nav\.js/);
+});
+
+test('sports excellence library links to lesson 2', async () => {
+  const html = await read('sports-excellence.html');
+  assert.match(html, /sports-excellence-lesson2\.html/);
+  assert.match(html, /מכונת הזמן של האלוף/);
+});
