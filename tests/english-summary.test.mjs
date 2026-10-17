@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { existsSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 
 const read = (path) => readFile(new URL(`../${path}`, import.meta.url), 'utf8');
@@ -82,4 +83,13 @@ test('English lesson 2 keeps all thirteen routine expressions available after th
   ]) {
     assert.match(html, new RegExp(phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
   }
+});
+
+test('English library exposes lesson 3 as an active lesson page', async () => {
+  const library = await read('english.html');
+  const lesson3Url = new URL('../english-lesson3.html', import.meta.url);
+
+  assert.equal(existsSync(lesson3Url), true);
+  assert.match(library, /href="english-lesson3\.html"/);
+  assert.doesNotMatch(library, /שיעור 3 · בקרוב/);
 });
