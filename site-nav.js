@@ -30,12 +30,21 @@
     document.head.appendChild(style);
   }
 
-  if (current.startsWith('nutrition-grade8-') && !document.getElementById('nutrition-practical-loader')) {
-    const practical = document.createElement('script');
-    practical.id = 'nutrition-practical-loader';
-    practical.src = 'nutrition-practical.js';
-    practical.defer = true;
-    document.body.appendChild(practical);
+  if (current.startsWith('nutrition-grade8-')) {
+    if (!document.getElementById('nutrition-concepts-loader')) {
+      const concepts = document.createElement('script');
+      concepts.id = 'nutrition-concepts-loader';
+      concepts.src = 'nutrition-concepts.js';
+      concepts.defer = true;
+      document.body.appendChild(concepts);
+    }
+    if (!document.getElementById('nutrition-practical-loader')) {
+      const practical = document.createElement('script');
+      practical.id = 'nutrition-practical-loader';
+      practical.src = 'nutrition-practical.js';
+      practical.defer = true;
+      document.body.appendChild(practical);
+    }
   }
 
   const nav = document.createElement('nav');
