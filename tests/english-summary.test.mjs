@@ -149,3 +149,19 @@ test('English lesson 3 keeps the approved vocabulary and Guess My Hobby scoring'
   assert.match(html, /You play with other people/);
   assert.match(html, /You can score goals/);
 });
+
+
+test('English lesson 3 shows a teacher answer beside every question-based activity', async () => {
+  const html = await read('english-lesson3.html');
+  const answerBoxes = html.match(/class="teacher-answer"/g) ?? [];
+
+  assert.equal(answerBoxes.length, 9);
+  assert.match(html, /כל 3 פעילויות נכונות מתקבלות/);
+  assert.match(html, /אין תשובה אחת נכונה/);
+  assert.match(html, /1\. play football.*2\. listen to music.*3\. draw.*4\. play video games.*5\. ride a bike.*6\. read/is);
+  assert.match(html, /1\. Correct.*2\. Incorrect.*listening to music.*4\. Incorrect.*playing video games.*6\. Incorrect.*riding a bike/is);
+  assert.match(html, /Are you writing about me\?.*No.*Who are you writing about\?.*Yourself.*How many sentences\?.*Six/is);
+  assert.match(html, /Example answer: playing football/i);
+  assert.match(html, /How many sentences\?.*Six to eight.*How many different activities\?.*At least three/is);
+  assert.match(html, /I love listening to music\..*I don't like reading\./is);
+});
