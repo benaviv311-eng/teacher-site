@@ -49,3 +49,27 @@ test('lesson 3 teaches macronutrient roles with the approved interactive structu
   assert.match(html, /ביסוס מדעי למורה/);
   assert.match(html, /site-nav\.js/);
 });
+
+test('lesson 3 uses the no-equipment plate draft as the central classroom game', async () => {
+  const html = await read('nutrition-grade8-lesson3.html');
+  assert.match(html, /דראפט הצלחת/);
+  assert.match(html, /לחם/);
+  assert.match(html, /אורז/);
+  assert.match(html, /בננה/);
+  assert.match(html, /ביצה/);
+  assert.match(html, /יוגורט/);
+  assert.match(html, /טונה/);
+  assert.match(html, /עדשים/);
+  assert.match(html, /טחינה/);
+  assert.match(html, /אבוקדו/);
+  assert.match(html, /ירקות/);
+  assert.match(html, /אגוזים/);
+  assert.match(html, /60 שניות/);
+  assert.match(html, /האימון מתחיל בעוד 15 דקות/);
+  assert.match(html, /עכשיו חזרתם מאימון/);
+  assert.match(html, /זו ארוחת בוקר לפני בית ספר/);
+  assert.match(html, /להחליף מזון אחד בלבד/);
+  assert.match(html, /1 נקודה/);
+  assert.match(html, /נקודת בונוס/);
+  assert.doesNotMatch(html, /משחק תנועה — ארבע פינות/);
+});
