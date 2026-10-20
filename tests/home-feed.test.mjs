@@ -66,7 +66,7 @@ test('food quiz mixes everyday nutritious foods with treats and supports refresh
 
 test('health lessons page lists the sleep lesson as lesson 1 under its topic', async () => {
   const html = await read('lessons.html');
-  assert.match(html, /שינה ואורח חיים בריא/);
+  assert.match(html, /אורח חיים בריא והקשר בין ספורט להצלחה/);
   assert.match(html, /שיעור 1/);
   assert.match(html, /lesson-sleep\.html/);
   assert.match(html, /שינה: הבסיס לתפקוד היומיומי/);
