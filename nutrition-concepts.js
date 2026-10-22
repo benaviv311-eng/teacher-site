@@ -56,28 +56,32 @@
     ],
     'nutrition-grade8-lesson3.html': [
       {
-        term: 'גלוקוז',
-        prompt: 'למה הגוף והמוח צריכים את המולקולה הזאת?',
-        definition: 'גלוקוז הוא סוכר פשוט שהתאים יכולים להשתמש בו כמקור אנרגיה.',
-        example: 'פחמימות יכולות להתפרק לגלוקוז, שנכנס למסלולים שמייצרים אנרגיה זמינה לתאים.'
+        term: 'פחמימה',
+        prompt: 'מה היא עושה בגוף — ולמה ספורטאים מדברים עליה כל כך הרבה?',
+        definition: 'פחמימות הן משפחה של רכיבי מזון שהגוף יכול לפרק, בין היתר, לגלוקוז — מקור אנרגיה חשוב לתאים.',
+        example: 'לחם, אורז, תפוח אדמה, שיבולת שועל ופירות הם דוגמאות למקורות פחמימה.',
+        importance: 'היא עוזרת לי להבין מאיפה מגיע דלק לפעילות ואיך הגוף שומר חלק ממנו כגליקוגן.'
       },
       {
-        term: 'גליקוגן',
-        prompt: 'איפה הגוף שומר חלק מהפחמימות לשימוש מאוחר יותר?',
-        definition: 'גליקוגן הוא צורת האחסון של גלוקוז בעיקר בכבד ובשרירים.',
-        example: 'בפעילות גופנית השריר יכול להשתמש בגליקוגן כמקור לפחמימות זמינות.'
+        term: 'חלבון',
+        prompt: 'האם התפקיד שלו הוא רק לבנות שריר?',
+        definition: 'חלבון בנוי מחומצות אמינו ומשמש לבנייה, תחזוקה ותיקון של רקמות וגם ליצירת חלבונים ואנזימים רבים בגוף.',
+        example: 'ביצה, יוגורט, דג, טופו, עדשים ושעועית יכולים לספק חלבון.',
+        importance: 'הוא עוזר לי להבין התאוששות ובנייה — בלי לחשוב שכל חלבון שאוכלים הופך מיד לשריר.'
       },
       {
-        term: 'חומצות אמינו',
-        prompt: 'מהן “אבני הבניין” שמהן הגוף בונה חלבונים?',
-        definition: 'חומצות אמינו הן יחידות הבניין שמהן הגוף מרכיב חלבונים.',
-        example: 'הגוף משתמש בחומצות אמינו לבנייה ולתיקון של רקמות וגם ליצירת אנזימים וחלבונים נוספים.'
+        term: 'שומן',
+        prompt: 'למה הגוף צריך אותו גם אם יש לו פחמימות לאנרגיה?',
+        definition: 'שומן הוא מקור אנרגיה מרוכז, חלק ממבנה התאים ומסייע בספיגת ויטמינים מסיסי שומן.',
+        example: 'טחינה, אבוקדו, אגוזים, זרעים ושמן זית הם דוגמאות למקורות שומן.',
+        importance: 'הוא עוזר לי לזכור ששומן אינו “אויב” ושיש לו תפקידים חשובים מעבר לאנרגיה.'
       },
       {
         term: 'סיבים',
-        prompt: 'למה משהו שלא מתעכל כמו שאר הפחמימות עדיין חשוב?',
-        definition: 'סיבים הם פחמימות שאינן מתעכלות במעי הדק כמו פחמימות אחרות; הם תומכים בתפקוד מערכת העיכול וחלקם משמשים מצע לחיידקי המעי.',
-        example: 'ירקות, פירות, קטניות ודגנים מלאים הם מקורות נפוצים לסיבים.'
+        prompt: 'למה משהו שלא מתעכל כמו שאר הפחמימות עדיין חשוב כל כך?',
+        definition: 'סיבים הם סוגי פחמימות שאינם מתעכלים במעי הדק כמו פחמימות אחרות ותומכים בתפקוד מערכת העיכול ובסביבת המעי.',
+        example: 'ירקות, פירות, קטניות ודגנים מלאים הם מקורות נפוצים לסיבים.',
+        importance: 'הם עוזרים לי להבין למה פרי שלם ומיץ אינם בדיוק אותו דבר ולמה חשוב מגוון מזונות מן הצומח.'
       }
     ]
   };
@@ -92,7 +96,7 @@
     .concept-loop h2{margin:0 0 8px}.concept-loop p{line-height:1.65}.concept-loop-kicker{display:inline-block;background:#e0f2fe;color:#075985;border-radius:999px;padding:7px 11px;font-size:12px;font-weight:900;margin-bottom:8px}
     .concept-loop-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:15px}.concept-term{background:#111827;color:#fff;border-radius:18px;padding:18px 12px;text-align:center;min-height:105px;display:flex;flex-direction:column;justify-content:center;gap:8px}.concept-term strong{font-size:21px}.concept-term small{color:#cbd5e1;line-height:1.45}
     .concept-loop-instruction{background:#fef3c7;border:1px solid #fde68a;color:#78350f;border-radius:16px;padding:13px 15px;font-weight:800;line-height:1.6;margin-top:14px}
-    .concept-recap-list{display:grid;gap:10px;margin-top:14px}.concept-recap{border:1px solid #dbeafe;border-radius:17px;background:#f8fbff;overflow:hidden}.concept-recap summary{cursor:pointer;list-style:none;padding:15px 17px;font-weight:900;font-size:18px}.concept-recap summary::-webkit-details-marker{display:none}.concept-recap summary:after{content:'גלה הגדרה';float:left;background:#1d4ed8;color:#fff;border-radius:9px;padding:5px 8px;font-size:11px}.concept-recap[open] summary:after{content:'הסתר'}.concept-recap-body{padding:0 17px 16px;line-height:1.7}.concept-example{margin-top:8px;background:#ecfdf3;border-radius:12px;padding:10px 12px;color:#166534}
+    .concept-recap-list{display:grid;gap:10px;margin-top:14px}.concept-recap{border:1px solid #dbeafe;border-radius:17px;background:#f8fbff;overflow:hidden}.concept-recap summary{cursor:pointer;list-style:none;padding:15px 17px;font-weight:900;font-size:18px}.concept-recap summary::-webkit-details-marker{display:none}.concept-recap summary:after{content:'גלה הגדרה';float:left;background:#1d4ed8;color:#fff;border-radius:9px;padding:5px 8px;font-size:11px}.concept-recap[open] summary:after{content:'הסתר'}.concept-recap-body{padding:0 17px 16px;line-height:1.7}.concept-example{margin-top:8px;background:#ecfdf3;border-radius:12px;padding:10px 12px;color:#166534}.concept-importance{margin-top:8px;background:#eff6ff;border-radius:12px;padding:10px 12px;color:#1e3a8a}
     @media(max-width:760px){.concept-loop-grid{grid-template-columns:1fr 1fr}}@media(max-width:480px){.concept-loop-grid{grid-template-columns:1fr}}
   `;
   document.head.appendChild(style);
@@ -118,7 +122,7 @@
         ${concepts.map(c => `
           <details class="concept-recap">
             <summary>${c.term}</summary>
-            <div class="concept-recap-body"><strong>הגדרה:</strong> ${c.definition}<div class="concept-example"><strong>דוגמה:</strong> ${c.example}</div></div>
+            <div class="concept-recap-body"><strong>הגדרה:</strong> ${c.definition}<div class="concept-example"><strong>דוגמה:</strong> ${c.example}</div>${c.importance ? `<div class="concept-importance"><strong>למה חשוב לי:</strong> ${c.importance}</div>` : ''}</div>
           </details>
         `).join('')}
       </div>
