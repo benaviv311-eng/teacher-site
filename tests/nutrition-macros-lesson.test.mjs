@@ -13,7 +13,7 @@ test('nutrition library and practical module expose grade 8 lesson 3', async () 
   const library = await read('nutrition-science.html');
   const practical = await read('nutrition-practical.js');
   assert.match(library, /nutrition-grade8-lesson3\.html/);
-  assert.match(library, /חלבון, פחמימה ושומן/);
+  assert.match(library, /ארבעת השחקנים בצלחת/);
   assert.match(practical, /nutrition-grade8-lesson3\.html/);
 });
 
@@ -27,7 +27,7 @@ test('lesson 3 teaches macronutrient roles with the approved interactive structu
   assert.match(html, /מה אתם אומרים\?/);
   assert.equal((html.match(/class="hook-question"/g) ?? []).length, 5);
 
-  for (const idea of ['פחמימות — הדלק', 'חלבון — הבנייה', 'שומן — הרבה יותר מאנרגיה', 'סיבים — השחקן הרביעי']) {
+  for (const idea of ['פרק 1 · פחמימה', 'פרק 2 · חלבון', 'פרק 3 · שומן', 'פרק 4 · סיבים']) {
     assert.match(html, new RegExp(idea));
   }
 
@@ -71,5 +71,5 @@ test('lesson 3 uses the no-equipment plate draft as the central classroom game',
   assert.match(html, /להחליף מזון אחד בלבד/);
   assert.match(html, /1 נקודה/);
   assert.match(html, /נקודת בונוס/);
-  assert.doesNotMatch(html, /משחק תנועה — ארבע פינות/);
+  assert.match(html, /ארבע פינות/);
 });
