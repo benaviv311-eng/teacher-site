@@ -36,7 +36,7 @@ test('lesson 3 teaches macronutrient roles with the approved interactive structu
   assert.match(html, /תלמיד אקראי/);
   assert.match(html, /שינוי מצב/);
 
-  assert.match(html, /4 שאלות לפני שסיימתי לבנות ארוחה/);
+  assert.match(html, /4 שאלות כשאני מסתכל על ארוחה/);
   assert.match(html, /דלק\?/);
   assert.match(html, /בנייה\?/);
   assert.match(html, /צבע\?/);
