@@ -31,11 +31,10 @@ test('lesson 3 teaches macronutrient roles with the approved interactive structu
     assert.match(html, new RegExp(idea));
   }
 
-  assert.match(html, /מי חסר בצלחת/);
-  assert.match(html, /אורז/);
-  assert.match(html, /חביתה/);
-  assert.match(html, /טחינה/);
-  assert.match(html, /אין “ארוחה רעה”|אין ארוחה רעה/);
+  assert.match(html, /זירת ההחלטות/);
+  assert.match(html, /כולם מצביעים/);
+  assert.match(html, /תלמיד אקראי/);
+  assert.match(html, /שינוי מצב/);
 
   assert.match(html, /4 שאלות לפני שסיימתי לבנות ארוחה/);
   assert.match(html, /דלק\?/);
@@ -50,26 +49,22 @@ test('lesson 3 teaches macronutrient roles with the approved interactive structu
   assert.match(html, /site-nav\.js/);
 });
 
-test('lesson 3 uses the no-equipment plate draft as the central classroom game', async () => {
+test('lesson 3 uses the decision arena as the central participation game', async () => {
   const html = await read('nutrition-grade8-lesson3.html');
-  assert.match(html, /דראפט הצלחת/);
-  assert.match(html, /לחם/);
-  assert.match(html, /אורז/);
-  assert.match(html, /בננה/);
-  assert.match(html, /ביצה/);
-  assert.match(html, /יוגורט/);
-  assert.match(html, /טונה/);
+  assert.match(html, /זירת ההחלטות/);
+  assert.match(html, /כולם מצביעים/);
+  assert.match(html, /עוברים לפינה/);
+  assert.match(html, /תלמיד אקראי/);
+  assert.match(html, /גניבת נקודה/);
+  assert.match(html, /שינוי מצב/);
+  assert.match(html, /מותר להחליף/);
+  assert.match(html, /אין נקודה על דעת הרוב/);
+  assert.match(html, /עוד 15 דקות מתחיל אימון/);
+  assert.match(html, /סיימתם אימון של 90 דקות/);
+  assert.match(html, /תפוח שלם מול מיץ תפוחים/);
+  assert.match(html, /יום בלי אימון/);
   assert.match(html, /עדשים/);
-  assert.match(html, /טחינה/);
-  assert.match(html, /אבוקדו/);
-  assert.match(html, /ירקות/);
-  assert.match(html, /אגוזים/);
-  assert.match(html, /60 שניות/);
-  assert.match(html, /האימון מתחיל בעוד 15 דקות/);
-  assert.match(html, /עכשיו חזרתם מאימון/);
-  assert.match(html, /זו ארוחת בוקר לפני בית ספר/);
-  assert.match(html, /להחליף מזון אחד בלבד/);
-  assert.match(html, /1 נקודה/);
-  assert.match(html, /נקודת בונוס/);
-  assert.match(html, /ארבע פינות/);
+  assert.match(html, /טחינה ואבוקדו/);
+  assert.doesNotMatch(html, /דראפט הצלחת/);
+  assert.doesNotMatch(html, /מי חסר בצלחת/);
 });
