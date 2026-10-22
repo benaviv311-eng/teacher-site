@@ -23,6 +23,8 @@ test('lesson 3 follows the approved four-core-concepts lesson structure', async 
   assert.match(html, /חיבור לאימון/);
   assert.match(html, /מיני־אתגר|מיני-אתגר/);
 
+  assert.match(html, /ארבע פינות/);
+  assert.match(html, /לאיזה מושג זה שייך/);
   assert.match(html, /דראפט הצלחת|הרכבת צלחת/);
   assert.match(html, /לפני אימון/);
   assert.match(html, /אחרי אימון/);
