@@ -25,7 +25,7 @@ test('concept loop defines four lesson-specific concepts for lessons 1-3', async
   for (const term of [
     'קלוריה', 'צפיפות אנרגטית', 'הוצאה אנרגטית', 'מאזן אנרגיה',
     'מטבוליזם', 'הוצאה אנרגטית במנוחה', 'NEAT', 'האפקט התרמי של המזון',
-    'גלוקוז', 'גליקוגן', 'חומצות אמינו', 'סיבים'
+    'פחמימה', 'חלבון', 'שומן', 'סיבים'
   ]) {
     assert.match(js, new RegExp(term));
   }
