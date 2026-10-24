@@ -165,3 +165,76 @@ test('English lesson 3 shows a teacher answer beside every question-based activi
   assert.match(html, /How many sentences\?.*Six to eight.*How many different activities\?.*At least three/is);
   assert.match(html, /I love listening to music\..*I don't like reading\./is);
 });
+
+
+test('English library exposes lesson 4 as an active School Life lesson', async () => {
+  const library = await read('english.html');
+  const lesson4Url = new URL('../english-lesson4.html', import.meta.url);
+
+  assert.equal(existsSync(lesson4Url), true);
+  assert.match(library, /href="english-lesson4\.html"/);
+  assert.match(library, /School Life/i);
+});
+
+test('English lesson 4 uses one-column progressive School Life flow', async () => {
+  const html = await read('english-lesson4.html');
+  const stages = html.match(/<article class="stage">/g) ?? [];
+  const columns = html.match(/class="lesson-column"/g) ?? [];
+
+  assert.equal(stages.length, 9);
+  assert.equal(columns.length, 9);
+  assert.doesNotMatch(html, /class="two"/);
+  assert.match(html, /Write 3 school subjects you know in English/i);
+  assert.match(html, /Vocabulary Bank/i);
+  assert.match(html, /Match the Subject/i);
+  assert.match(html, /Choose Your Subjects/i);
+  assert.match(html, /WHY\?/i);
+  assert.match(html, /Build My School Day/i);
+  assert.match(html, /Guess the Subject/i);
+  assert.match(html, /My School Day — Independent Writing/i);
+  assert.match(html, /Pair Share \+ Exit Ticket/i);
+});
+
+test('English lesson 4 keeps teacher answers directly with question activities', async () => {
+  const html = await read('english-lesson4.html');
+  const answerBoxes = html.match(/class="teacher-answer"/g) ?? [];
+
+  assert.equal(answerBoxes.length, 8);
+  assert.match(html, /Math.*History.*PE.*Art.*Geography.*Science/is);
+  assert.match(html, /אין תשובה אחת נכונה/);
+  assert.match(html, /I like PE because it is fun\./i);
+  assert.match(html, /My school starts at 8:00\./i);
+  assert.match(html, /Example answer: Math/i);
+  assert.match(html, /Six to eight/i);
+  assert.match(html, /My favorite subject is PE because it is fun\./i);
+});
+
+test('English lesson 4 teaches the approved subject and because vocabulary', async () => {
+  const html = await read('english-lesson4.html');
+
+  for (const phrase of [
+    'English',
+    'Math',
+    'Science',
+    'PE',
+    'History',
+    'Art',
+    'Music',
+    'Geography',
+    'Hebrew',
+    'Computer Science',
+    'fun',
+    'interesting',
+    'easy',
+    'difficult',
+    'boring'
+  ]) {
+    assert.match(html, new RegExp(phrase.replace(/[.*+?^\${}()|[\]\\]/g, '\\$&'), 'i'));
+  }
+
+  assert.match(html, /because = כי/i);
+  assert.match(html, /I like PE because it is fun\./i);
+  assert.match(html, /I don't like Math because it is difficult\./i);
+  assert.match(html, /רמז 1 = 3 נקודות.*רמז 2 = 2 נקודות.*רמז 3 = נקודה אחת/is);
+  assert.match(html, /3 דברים שלמדנו היום/);
+});
