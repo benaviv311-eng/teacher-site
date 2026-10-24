@@ -54,3 +54,17 @@ test('nutrition library names lesson 3 as the four players on the plate', async 
   const library = await read('nutrition-science.html');
   assert.match(library, /ארבעת השחקנים בצלחת/);
 });
+
+
+test('lesson 3 is truly single-column and keeps every student active throughout the lesson', async () => {
+  const html = await read('nutrition-grade8-lesson3.html');
+
+  assert.match(html, /data-layout="single-column"/);
+  assert.doesNotMatch(html, /\.station,\.rule-grid\{grid-template-columns:1fr 1fr\}/);
+  assert.match(html, /body \.concept-loop-grid\{grid-template-columns:1fr!important\}/);
+
+  assert.equal((html.match(/class="participation-stop"/g) ?? []).length, 4);
+  assert.match(html, /כולם מצביעים/);
+  assert.match(html, /שיחה בזוגות/);
+  assert.match(html, /תלמיד אקראי/);
+});
