@@ -99,27 +99,32 @@ test('English library exposes lesson 3 as an active lesson page', async () => {
   assert.doesNotMatch(library, /שיעור 3 · בקרוב/);
 });
 
-test('English lesson 3 follows the approved hobbies and free-time lesson flow', async () => {
+test('English lesson 3 follows the progressive hobbies and free-time lesson flow', async () => {
   const html = await read('english-lesson3.html');
+  const stages = html.match(/<article class="stage">/g) ?? [];
+  const columns = html.match(/class="lesson-column"/g) ?? [];
 
+  assert.equal(stages.length, 9);
+  assert.equal(columns.length, 9);
+  assert.doesNotMatch(html, /class="two"/);
   assert.match(html, /Hobbies & Free Time/i);
   assert.match(html, /Today I can talk and write about my hobbies and free time in English/i);
   assert.match(html, /Write 3 activities you know in English/i);
   assert.match(html, /Don't use the Vocabulary Bank yet/i);
   assert.match(html, /Vocabulary Bank/i);
   assert.match(html, /Guess the Hobby/i);
-  assert.match(html, /Like \/ Love \/ Don't Like/i);
-  assert.match(html, /Spot the Mistake/i);
-  assert.match(html, /My Free-Time Profile/i);
+  assert.match(html, /Choose Your Hobbies/i);
+  assert.match(html, /Turn It Into a Sentence/i);
+  assert.match(html, /Make It Better/i);
   assert.match(html, /Guess My Hobby/i);
   assert.match(html, /My Free Time — Independent Writing/i);
   assert.match(html, /Pair Share \+ Exit Ticket/i);
   assert.match(html, /like \/ love \/ don't like \+ verb-ing/i);
+  assert.match(html, /with my friends/i);
+  assert.match(html, /after school/i);
+  assert.match(html, /on the weekend/i);
+  assert.match(html, /In my free time/i);
   assert.match(html, /Write 6–8 sentences about your free time/i);
-  assert.match(html, /3 different activities/i);
-  assert.match(html, /1 sentence with love/i);
-  assert.match(html, /1 sentence with don't like/i);
-  assert.match(html, /1 sentence with In my free time/i);
 });
 
 test('English lesson 3 keeps the approved vocabulary and Guess My Hobby scoring', async () => {
@@ -151,7 +156,7 @@ test('English lesson 3 keeps the approved vocabulary and Guess My Hobby scoring'
 });
 
 
-test('English lesson 3 shows a teacher answer beside every question-based activity', async () => {
+test('English lesson 3 keeps teacher answers directly under each activity', async () => {
   const html = await read('english-lesson3.html');
   const answerBoxes = html.match(/class="teacher-answer"/g) ?? [];
 
@@ -159,13 +164,15 @@ test('English lesson 3 shows a teacher answer beside every question-based activi
   assert.match(html, /כל 3 פעילויות נכונות מתקבלות/);
   assert.match(html, /אין תשובה אחת נכונה/);
   assert.match(html, /1\. play football.*2\. listen to music.*3\. draw.*4\. play video games.*5\. ride a bike.*6\. read/is);
-  assert.match(html, /1\. Correct.*2\. Incorrect.*listening to music.*4\. Incorrect.*playing video games.*6\. Incorrect.*riding a bike/is);
-  assert.match(html, /Are you writing about me\?.*No.*Who are you writing about\?.*Yourself.*How many sentences\?.*Six/is);
+  assert.match(html, /A hobby I like.*A hobby I love.*A hobby I don't like/is);
+  assert.match(html, /football.*I like playing football/is);
+  assert.match(html, /music.*I love listening to music/is);
+  assert.match(html, /I like playing football with my friends\./i);
+  assert.match(html, /In my free time, I love listening to music\./i);
   assert.match(html, /Example answer: playing football/i);
   assert.match(html, /How many sentences\?.*Six to eight.*How many different activities\?.*At least three/is);
-  assert.match(html, /I love listening to music\..*I don't like reading\./is);
+  assert.match(html, /One thing I love doing is.*One thing I don't like doing is/is);
 });
-
 
 test('English library exposes lesson 4 as an active School Life lesson', async () => {
   const library = await read('english.html');
