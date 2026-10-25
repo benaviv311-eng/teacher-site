@@ -238,3 +238,45 @@ test('English lesson 4 teaches the approved subject and because vocabulary', asy
   assert.match(html, /רמז 1 = 3 נקודות.*רמז 2 = 2 נקודות.*רמז 3 = נקודה אחת/is);
   assert.match(html, /3 דברים שלמדנו היום/);
 });
+
+
+test('English library exposes a test-prep page for lessons 1 to 4', async () => {
+  const library = await read('english.html');
+  const prepUrl = new URL('../english-test-prep.html', import.meta.url);
+
+  assert.equal(existsSync(prepUrl), true);
+  assert.match(library, /href="english-test-prep\.html"/);
+  assert.match(library, /הכנה לבוחן/);
+});
+
+test('English test-prep page reviews lessons 1 to 4 in one column', async () => {
+  const html = await read('english-test-prep.html');
+
+  assert.match(html, /Lessons 1–4/i);
+  assert.match(html, /Memory Dump/i);
+  assert.match(html, /Vocabulary Rescue/i);
+  assert.match(html, /Build It/i);
+  assert.match(html, /Fix It/i);
+  assert.match(html, /From Question to Answer/i);
+  assert.match(html, /Challenge Round/i);
+  assert.match(html, /Mini Test/i);
+  assert.match(html, /Introducing Myself/i);
+  assert.match(html, /My Daily Routine/i);
+  assert.match(html, /Hobbies & Free Time/i);
+  assert.match(html, /School Life/i);
+  assert.doesNotMatch(html, /class="two"/);
+});
+
+test('English test-prep page includes study material and teacher answers', async () => {
+  const html = await read('english-test-prep.html');
+
+  assert.match(html, /My name is/i);
+  assert.match(html, /wake up/i);
+  assert.match(html, /I like \/ love \/ don't like \+ verb-ing/i);
+  assert.match(html, /because/i);
+  assert.match(html, /What's your name\?/i);
+  assert.match(html, /What do you do after school\?/i);
+  assert.match(html, /What is your favorite subject\? Why\?/i);
+  assert.match(html, /Checklist/i);
+  assert.match(html, /teacher-answer/);
+});
