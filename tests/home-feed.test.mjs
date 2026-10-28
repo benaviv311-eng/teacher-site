@@ -79,12 +79,13 @@ test('health lessons page body does not list enrichment tools as lessons', async
   assert.doesNotMatch(html, /<h3>בונה תפריט<\/h3>/);
 });
 
-test('sleep lesson has an icon-only fixed home button on the left', async () => {
+test('sleep lesson uses the current shared navigation with a home destination', async () => {
   const html = await read('lesson-sleep.html');
-  assert.match(html, /class="home-fixed"/);
-  assert.match(html, /href="index\.html"/);
-  assert.match(html, /\.home-fixed\{position:fixed;top:12px;left:14px/);
-  assert.match(html, /aria-label="בית"/);
+  const nav = await read('site-nav.js');
+  assert.match(html, /site-nav\.js/);
+  assert.match(nav, /href="index\.html"/);
+  assert.match(nav, /global-nav/);
+  assert.match(nav, />בית</);
 });
 
 test('central feed data mixes content from multiple site areas', async () => {
