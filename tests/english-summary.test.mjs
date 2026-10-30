@@ -287,3 +287,89 @@ test('English test-prep page includes study material and teacher answers', async
   assert.match(html, /Checklist/i);
   assert.match(html, /teacher-answer/);
 });
+
+
+test('English library exposes lesson 5 as an active My Family lesson', async () => {
+  const library = await read('english.html');
+  const lesson5Url = new URL('../english-lesson5.html', import.meta.url);
+
+  assert.equal(existsSync(lesson5Url), true);
+  assert.match(library, /href="english-lesson5\.html"/);
+  assert.match(library, /My Family/i);
+});
+
+test('English lesson 5 follows the approved family lesson flow in one column', async () => {
+  const html = await read('english-lesson5.html');
+  const stages = html.match(/<article class="stage">/g) ?? [];
+  const columns = html.match(/class="lesson-column"/g) ?? [];
+
+  assert.equal(stages.length, 8);
+  assert.equal(columns.length, 8);
+  assert.doesNotMatch(html, /class="two"/);
+  assert.match(html, /Reading Comprehension/i);
+  assert.match(html, /Family Relationships/i);
+  assert.match(html, /Act & Guess/i);
+  assert.match(html, /Family Questions/i);
+  assert.match(html, /Things We Do Together/i);
+  assert.match(html, /Describe a Family Member/i);
+  assert.match(html, /Pair Interview/i);
+  assert.match(html, /Exit Ticket/i);
+});
+
+test('English lesson 5 starts with the approved family reading and comprehension questions', async () => {
+  const html = await read('english-lesson5.html');
+
+  assert.match(html, /My name is Daniel, and I live with my parents and my younger sister, Maya\./);
+  assert.match(html, /My grandmother lives near us\./);
+  assert.match(html, /My family is very different, but we enjoy spending time together\./);
+  assert.match(html, /Who is Maya\?/);
+  assert.match(html, /What does Daniel do with his father\?/);
+  assert.match(html, /Why does Daniel say Maya is funny\?/);
+  assert.match(html, /Who is described as helpful\?/);
+  assert.match(html, /What can we understand about Tom\?/);
+  assert.match(html, /Which sentence is NOT true\?/);
+  assert.match(html, /What is the main idea of the text\?/);
+  assert.match(html, /1-B.*2-C.*3-B.*4-A.*5-C.*6-C.*7-B/is);
+});
+
+test('English lesson 5 teaches family relationships through oral relationship clues', async () => {
+  const html = await read('english-lesson5.html');
+
+  for (const phrase of ['mother','father','brother','sister','parents','grandmother','grandfather','aunt','uncle','cousin']) {
+    assert.match(html, new RegExp(phrase, 'i'));
+  }
+
+  assert.match(html, /My mother's mother is my/);
+  assert.match(html, /My father's father is my/);
+  assert.match(html, /My mother's brother is my/);
+  assert.match(html, /My father's sister is my/);
+  assert.match(html, /My aunt's son is my/);
+});
+
+test('English lesson 5 includes physical and personality adjectives in Act & Guess', async () => {
+  const html = await read('english-lesson5.html');
+
+  for (const word of ['tall','short','fat','thin','strong','weak','young','old','funny','kind','friendly','quiet','active','helpful','patient']) {
+    assert.match(html, new RegExp(word, 'i'));
+  }
+
+  assert.match(html, /show or say one English word to one student/i);
+  assert.match(html, /act it out without speaking/i);
+  assert.match(html, /guess.*in English/is);
+});
+
+test('English lesson 5 moves from teacher questions to activities and independent family description', async () => {
+  const html = await read('english-lesson5.html');
+  const answerBoxes = html.match(/class="teacher-answer"/g) ?? [];
+
+  assert.equal(answerBoxes.length, 8);
+  assert.match(html, /Do you have a brother\?/);
+  assert.match(html, /Who is tall in your family\?/);
+  assert.match(html, /Who do you watch TV with\?/);
+  assert.match(html, /watch TV.*play games.*cook.*eat together.*go for a walk.*listen to music.*travel.*play football/is);
+  assert.match(html, /This is my brother\./);
+  assert.match(html, /He is tall and strong\./);
+  assert.match(html, /We play football together\./);
+  assert.match(html, /Write 5 sentences about one family member/i);
+  assert.match(html, /3 דברים שלמדנו היום/);
+});
