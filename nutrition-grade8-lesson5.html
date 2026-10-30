@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>מדעי התזונה | כיתה ח׳ | שיעור 5 — ויטמינים ומינרלים</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
+.app{max-width:940px;margin:auto;padding:18px 16px 110px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.brand{font-size:22px;font-weight:900}.back{display:inline-block;text-decoration:none;color:#172033;background:#fff;border-radius:14px;padding:11px 14px;box-shadow:0 4px 18px #14213d12;font-weight:800}
+.hero{margin-top:18px;background:linear-gradient(135deg,#4c1d95,#7c3aed);color:#fff;border-radius:28px;padding:28px;box-shadow:0 14px 35px #6d28d922}
+.hero small{opacity:.9;font-weight:800}.hero h1{margin:7px 0 8px;font-size:clamp(30px,5vw,46px)}.hero p{margin:0;line-height:1.7;max-width:820px}
+.section,.teacher,.game,.science,.protocol{background:#fff;border:1px solid #e8edf4;border-radius:24px;padding:22px;margin-top:20px;box-shadow:0 6px 24px #14213d0b}
+.section h2,.teacher h2,.game h2,.science h2,.protocol h2{margin:0 0 10px}
+.section-label{display:inline-block;background:#ede9fe;color:#5b21b6;border-radius:999px;padding:7px 11px;font-size:12px;font-weight:900;margin-bottom:8px}
+.board-plan{background:#111827;color:#fff;border-radius:22px;padding:22px;margin-top:18px;box-shadow:inset 0 0 0 2px #ffffff18}
+.board-plan h2{margin:0 0 12px}.board-plan ol{margin:10px 0 18px;padding-right:24px;line-height:1.9;font-weight:800}
+.hook{background:#fef3c7;color:#78350f;border-radius:16px;padding:15px;font-size:20px;font-weight:900;line-height:1.55}
+.teacher blockquote{margin:14px 0 0;background:#f5f3ff;border-right:5px solid #7c3aed;border-radius:14px;padding:16px 18px;line-height:1.75;font-weight:700}
+.note{background:#eff6ff;border:1px solid #bfdbfe;border-radius:16px;padding:14px 16px;line-height:1.7;margin-top:12px}
+.warning{background:#fff7ed;border:1px solid #fed7aa;border-radius:16px;padding:14px 16px;line-height:1.7;margin-top:12px}
+.message{margin-top:14px;background:linear-gradient(135deg,#f5f3ff,#faf5ff);border:1px solid #ddd6fe;border-radius:18px;padding:16px;font-size:18px;font-weight:900;line-height:1.6}
+.single-list{display:grid;grid-template-columns:1fr;gap:10px;margin-top:14px}
+.card{background:#fbfcfe;border:1px solid #e5eaf1;border-radius:18px;padding:16px;line-height:1.7}.card strong{font-size:18px}
+.participation{margin-top:12px;background:#f5f3ff;border:2px solid #ddd6fe;border-radius:17px;padding:14px 16px;line-height:1.7}
+.participation strong{display:block;font-size:17px;margin-bottom:4px}
+.foods{display:grid;grid-template-columns:1fr;gap:10px;margin-top:14px}.food{background:#f8fafc;border:1px solid #e5eaf1;border-radius:16px;padding:14px;line-height:1.6}.food b{display:block;font-size:18px;margin-bottom:4px}
+.fact{background:#ecfdf3;border:1px solid #bbf7d0;border-radius:18px;padding:16px;margin-top:14px;line-height:1.7}
+.dilemma-question{border:1px solid #ddd6fe;border-radius:18px;background:#faf8ff;overflow:hidden;margin-top:12px}
+.dilemma-question summary{cursor:pointer;list-style:none;padding:16px 18px;font-weight:900;font-size:17px}
+.dilemma-question summary::-webkit-details-marker{display:none}
+.dilemma-question summary:after{content:'חשיפה למורה';float:left;background:#6d28d9;color:#fff;border-radius:10px;padding:5px 9px;font-size:11px}
+.dilemma-question[open] summary:after{content:'הסתר תשובה'}
+.dilemma-options{display:grid;grid-template-columns:1fr;gap:8px;padding:0 18px 14px}.dilemma-options div{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:11px 13px;font-weight:800;line-height:1.55}
+.dilemma-answer{background:#ecfdf3;color:#166534;margin:0 18px 17px;border-radius:13px;padding:13px 14px;font-weight:800;line-height:1.65}
+.pace{background:#fff7ed;border:1px solid #fed7aa;border-radius:16px;padding:14px 16px;margin-top:12px;line-height:1.65;font-weight:700}
+.day-builder{background:#f0fdf4;border:2px solid #bbf7d0;border-radius:22px;padding:20px;margin-top:15px}.day-builder h3{margin-top:0}
+.day-grid{display:grid;grid-template-columns:1fr;gap:10px}.day-grid div{background:#fff;border:1px solid #d1fae5;border-radius:16px;padding:14px;line-height:1.6}.day-grid b{display:block;font-size:18px;margin-bottom:4px}
+.exit{background:linear-gradient(135deg,#172033,#334155);color:#fff;border-radius:24px;padding:22px;margin-top:20px}.exit h2{margin-top:0}.exit p{line-height:1.7}
+.science a{color:#5b21b6;font-weight:800}.science li{margin:9px 0;line-height:1.6}.mini{font-size:13px;color:#667085;line-height:1.55;margin-top:12px}
+body .concept-loop-grid{grid-template-columns:1fr!important}
+@media(max-width:800px){.hero{padding:22px}.app{padding:12px 11px 100px}}
+</style>
+</head>
+<body>
+<main class="app" data-layout="single-column">
+<div class="top"><div class="brand">☀️ בית ספר אור</div><a class="back" href="nutrition-science.html">← מדעי התזונה</a></div>
+
+<section class="hero">
+<small>מדעי התזונה · כיתה ח׳ · שיעור 5 · 90 דקות</small>
+<h1>ויטמינים ומינרלים — הדברים הקטנים שהגוף לא יכול בלעדיהם</h1>
+<p><strong>🩸 ברזל · 🦴 סידן · ☀️ ויטמין D · 🧬 B12.</strong> המאקרו נותנים אנרגיה וחומרי גלם; היום בודקים איך מיקרונוטריינטים מאפשרים למערכות הדם, העצם, השריר והעצבים לעבוד.</p>
+</section>
+
+<section class="board-plan">
+<h2>🧑‍🏫 מהלך 90 דקות</h2>
+<ol>
+<li>פתיחה ושאלת מפתח — 7 דקות</li>
+<li>ברזל + דילמות — 18 דקות</li>
+<li>סידן + דילמות — 17 דקות</li>
+<li>ויטמין D + דילמות — 17 דקות</li>
+<li>B12 + דילמות — 17 דקות</li>
+<li>משימה משולבת: בונים יום — 10 דקות</li>
+<li>סיכום וכרטיס יציאה — 4 דקות</li>
+</ol>
+<div class="hook">❓ אם אני אוכל מספיק חלבון ופחמימות — למה אני עדיין יכול להרגיש חלש או לתפקד פחות טוב?</div>
+<div class="pace">💡 בכל מושג יש 10 דילמות. אפשר להשתמש בכולן בקצב מהיר או לבחור 5–6 בשיעור ולשמור את השאר לחזרה, בוחן או שיעור המשך.</div>
+</section>
+
+<section class="teacher">
+<span class="section-label">פתיחה</span>
+<h2>🎤 לפני ההסבר — מי חסר בתמונה?</h2>
+<blockquote>“ספורטאי אוכל מספיק, יש לו פחמימות לפני אימון וחלבון אחרי אימון. האם זה אומר בוודאות שהתזונה שלו מספקת לגוף את כל מה שהוא צריך?”</blockquote>
+<div class="participation"><strong>כולם מצביעים: כן / לא / תלוי</strong>אל תפתור מיד. בקש מתלמיד אחד להסביר “כן” ומתלמיד אחר להסביר “לא”. אחר כך הצג את ארבעת המושגים.</div>
+<div class="note"><strong>כיוון למורה:</strong> המטרה היא להרחיב את החשיבה: אנרגיה ומאקרו חשובים, אבל הגוף זקוק גם לוויטמינים ומינרלים לתהליכים כמו הובלת חמצן, בניית עצם ותפקוד מערכת העצבים.</div>
+</section>
+
+<section class="section concept-block" data-concept="iron">
+<span class="section-label">מושג 1 · ברזל</span>
+<h2>🩸 ברזל — לא “נותן אנרגיה”, אבל עוזר למערכת שמובילה חמצן</h2>
+<p>ברזל הוא מינרל שהגוף צריך ליצירת <strong>המוגלובין</strong> בתאי הדם האדומים ולמיוגלובין בשריר. לכן הוא קשור להובלת חמצן וליכולת של הגוף לתפקד בזמן מאמץ.</p>
+<div class="fact"><strong>כמות יומית מומלצת לפי NIH:</strong> בגיל 9–13 כ־8 מ״ג; בגיל 14–18 כ־11 מ״ג לבנים וכ־15 מ״ג לבנות. אלה ערכי ייחוס כלליים, לא תפריט אישי.</div>
+
+<h3>🥗 מאיפה מקבלים ברזל?</h3>
+<div class="foods">
+<div class="food"><b>🥩 בשר · 🐟 דגים · 🍗 עוף</b>מכילים ברזל מסוג heme, שנספג בדרך כלל ביעילות גבוהה יותר.</div>
+<div class="food"><b>🫘 עדשים · שעועית · אפונה</b>מקורות צמחיים לברזל מסוג non-heme.</div>
+<div class="food"><b>🥣 דגני בוקר / לחמים מועשרים</b>יכולים להיות מקור משמעותי אם הוסף להם ברזל — בודקים תווית.</div>
+<div class="food"><b>🍊 פלפל, עגבנייה, ברוקולי, הדרים</b>ויטמין C יכול לשפר את ספיגת הברזל מהצומח.</div>
+</div>
+<div class="warning"><strong>מה קורה כשחסר?</strong> מחסור בברזל עלול לתרום לעייפות, חולשה וירידה בתפקוד; אבל עייפות לבדה אינה אבחנה. לא מתחילים תוסף ברזל “ליתר ביטחון” בלי סיבה מתאימה.</div>
+<div class="message">משפט מפתח: <strong>מה שנמצא באוכל ומה שהגוף מצליח לספוג אינם תמיד אותו דבר.</strong></div>
+
+<h3>🎯 10 דילמות — ברזל</h3>
+<details class="dilemma-question"><summary>1. נועה אוכלת עדשים. איזה תוספת הכי תעזור לספיגת הברזל?</summary><div class="dilemma-options"><div>א. פלפל אדום ותפוז</div><div>ב. תה</div><div>ג. עוד כוס מים</div></div><div class="dilemma-answer">✅ א. ויטמין C משפר ספיגה של ברזל non-heme מהצומח.</div></details>
+<details class="dilemma-question"><summary>2. שחקנית מתעייפת מהר לאחרונה. מה המסקנה הטובה ביותר?</summary><div class="dilemma-options"><div>א. בטוח חסר לה ברזל</div><div>ב. ברזל הוא אפשרות, אבל אי אפשר לאבחן לפי עייפות בלבד</div><div>ג. זה מוכיח שהיא לא בכושר</div></div><div class="dilemma-answer">✅ ב. עייפות יכולה להופיע במחסור בברזל, אבל יש לה סיבות רבות.</div></details>
+<details class="dilemma-question"><summary>3. מי מקבל ברזל שנספג בדרך כלל ביעילות גבוהה יותר?</summary><div class="dilemma-options"><div>א. מי שאוכל מקור heme כמו בשר או דג</div><div>ב. מי שאוכל תפוח</div><div>ג. כל מקורות הברזל נספגים בדיוק אותו דבר</div></div><div class="dilemma-answer">✅ א. ברזל heme ממזון מן החי נספג בדרך כלל טוב יותר מברזל non-heme.</div></details>
+<details class="dilemma-question"><summary>4. למה ערך הייחוס לברזל גבוה יותר אצל בנות 14–18 מאשר אצל בנים באותו גיל?</summary><div class="dilemma-options"><div>א. בגלל אובדן דם במחזור החודשי</div><div>ב. כי בנות עושות פחות ספורט</div><div>ג. כי ברזל קשור רק לגובה</div></div><div class="dilemma-answer">✅ א. איבוד דם במחזור החודשי מעלה את צורכי הברזל הממוצעים בקבוצה זו.</div></details>
+<details class="dilemma-question"><summary>5. “אני אוכל תרד, אז בטוח אין לי מחסור בברזל.” מה נכון?</summary><div class="dilemma-options"><div>א. נכון — מזון אחד מבטיח הכול</div><div>ב. לא נכון — בתרד אין בכלל ברזל</div><div>ג. לא נכון — מקור אחד לא מספר מה מצב הברזל בגוף</div></div><div class="dilemma-answer">✅ ג. תרד מכיל ברזל, אבל הכמות, הספיגה וכלל התזונה קובעים יותר ממזון יחיד.</div></details>
+<details class="dilemma-question"><summary>6. תלמיד רוצה להיות “בטוח” שלא יחסר לו ברזל. מה הכי חכם?</summary><div class="dilemma-options"><div>א. לקחת תוסף ברזל לבד</div><div>ב. לאכול תזונה מגוונת ולבדוק אם יש חשד אמיתי למחסור</div><div>ג. להכפיל את כמות הבשר בכל ארוחה</div></div><div class="dilemma-answer">✅ ב. תוספי ברזל אינם משהו שלוקחים אוטומטית.</div></details>
+<details class="dilemma-question"><summary>7. דגני בוקר מסוימים יכולים לספק הרבה ברזל. למה?</summary><div class="dilemma-options"><div>א. כי כל דגן עשיר טבעית בברזל</div><div>ב. כי חלקם מועשרים בברזל</div><div>ג. כי חלב מוסיף ברזל לדגנים</div></div><div class="dilemma-answer">✅ ב. “מועשר” אומר שהוסיפו לרכיב המזון ויטמין או מינרל.</div></details>
+<details class="dilemma-question"><summary>8. תלמיד טבעוני רוצה לשפר את צריכת הברזל. איזה כיוון הכי הגיוני?</summary><div class="dilemma-options"><div>א. קטניות ומזונות מועשרים יחד עם מקורות ויטמין C</div><div>ב. רק פירות</div><div>ג. אין אפשרות לקבל ברזל בלי בשר</div></div><div class="dilemma-answer">✅ א. אפשר לקבל ברזל מהצומח, וחשוב לחשוב גם על הספיגה.</div></details>
+<details class="dilemma-question"><summary>9. מה מסביר הכי טוב את הקשר בין ברזל לספורט?</summary><div class="dilemma-options"><div>א. ברזל הוא דלק שהשריר שורף</div><div>ב. ברזל משתתף בחלבונים שמעבירים ומאחסנים חמצן</div><div>ג. ברזל הופך חלבון לשריר</div></div><div class="dilemma-answer">✅ ב. ברזל אינו מקור קלורי; הוא חלק ממערכות חשובות להובלת חמצן.</div></details>
+<details class="dilemma-question"><summary>10. מי מבין ברזל בצורה הטובה ביותר?</summary><div class="dilemma-options"><div>א. “העיקר כמה ברזל כתוב שיש באוכל”</div><div>ב. “העיקר אם הוא הגיע מבשר”</div><div>ג. “צריך לחשוב על המקור, הכמות, הספיגה וכלל התזונה”</div></div><div class="dilemma-answer">✅ ג. זו בדיוק החשיבה שאנחנו רוצים לקחת מהחלק הזה.</div></details>
+</section>
+
+<section class="section concept-block" data-concept="calcium">
+<span class="section-label">מושג 2 · סידן</span>
+<h2>🦴 סידן — לא רק עצמות</h2>
+<p>כמעט כל הסידן בגוף נמצא בעצמות ובשיניים, אבל הגוף צריך סידן גם להתכווצות שרירים, להעברת מסרים עצביים ולתהליכים נוספים.</p>
+<div class="fact"><strong>בגיל 9–18:</strong> ערך הייחוס הוא כ־<strong>1,300 מ״ג סידן ביום</strong>. גיל ההתבגרות הוא תקופה חשובה במיוחד בבניית מסת עצם.</div>
+
+<h3>🥗 מאיפה מקבלים סידן?</h3>
+<div class="foods">
+<div class="food"><b>🥛 חלב · יוגורט · גבינה</b>מקורות עשירים ונפוצים לסידן.</div>
+<div class="food"><b>🥤 משקאות צמחיים מועשרים</b>חלק ממשקאות הסויה/שקדים/שיבולת שועל מועשרים בסידן — חייבים לבדוק תווית.</div>
+<div class="food"><b>◻️ טופו מועשר/מיוצר עם סידן</b>יכול להיות מקור טוב, אך לא כל טופו זהה.</div>
+<div class="food"><b>🐟 סרדינים או סלמון משומר עם עצמות</b>העצמות הרכות והאכילות הן מקור לסידן.</div>
+<div class="food"><b>🥦 ברוקולי, קייל ובוק צ'וי</b>מספקים סידן, אך הכמות והספיגה משתנות בין מזונות.</div>
+</div>
+<div class="warning"><strong>מה קורה כשצריכת הסידן נמוכה לאורך זמן?</strong> העצם היא מאגר סידן. צריכה נמוכה אינה חייבת לגרום לכאב מיידי, ולכן אי אפשר “להרגיש” אם היום אכלנו מספיק סידן.</div>
+<div class="message">משפט מפתח: <strong>עצם חזקה נבנית לאורך זמן — לא בארוחה אחת ולא בזכות מזון אחד.</strong></div>
+
+<h3>🎯 10 דילמות — סידן</h3>
+<details class="dilemma-question"><summary>1. איפה נמצא רוב הסידן בגוף?</summary><div class="dilemma-options"><div>א. בשרירים</div><div>ב. בעצמות ובשיניים</div><div>ג. בדם</div></div><div class="dilemma-answer">✅ ב. כמעט כל הסידן בגוף מאוחסן בעצמות ובשיניים.</div></details>
+<details class="dilemma-question"><summary>2. למה הסידן חשוב במיוחד בגיל ההתבגרות?</summary><div class="dilemma-options"><div>א. זו תקופה משמעותית בבניית מסת עצם</div><div>ב. אחרי גיל 12 הגוף מפסיק להשתמש בסידן</div><div>ג. סידן חשוב רק למי שמתאמן</div></div><div class="dilemma-answer">✅ א. זה חלון זמן חשוב לצבירת מסת עצם.</div></details>
+<details class="dilemma-question"><summary>3. תלמיד לא אוכל מוצרי חלב. האם אין לו דרך לקבל סידן?</summary><div class="dilemma-options"><div>א. נכון — סידן קיים רק בחלב</div><div>ב. לא — יש גם מזונות מועשרים, טופו מתאים, דגים עם עצמות וירקות מסוימים</div><div>ג. רק תוסף יכול לפתור את זה</div></div><div class="dilemma-answer">✅ ב. מוצרי חלב הם מקור חשוב, אבל לא היחיד.</div></details>
+<details class="dilemma-question"><summary>4. מה הבחירה הטובה ביותר למשקה צמחי אם מחפשים סידן?</summary><div class="dilemma-options"><div>א. לבחור לפי צבע האריזה</div><div>ב. לבדוק בתווית אם הוא מועשר וכמה סידן יש בו</div><div>ג. כל משקה צמחי מכיל אותה כמות סידן</div></div><div class="dilemma-answer">✅ ב. “צמחי” לא אומר אוטומטית “עשיר בסידן”.</div></details>
+<details class="dilemma-question"><summary>5. איזה זוג מושגים עובד יחד במיוחד בבריאות העצם?</summary><div class="dilemma-options"><div>א. סידן וויטמין D</div><div>ב. סידן וויטמין C בלבד</div><div>ג. סידן וברזל בלבד</div></div><div class="dilemma-answer">✅ א. ויטמין D מסייע לגוף לספוג סידן.</div></details>
+<details class="dilemma-question"><summary>6. תלמיד עושה הרבה קפיצות וריצה. האם זה לבדו מבטיח עצמות חזקות?</summary><div class="dilemma-options"><div>א. כן, תזונה כבר לא משנה</div><div>ב. לא — פעילות ותזונה מתאימה עובדות יחד</div><div>ג. פעילות דווקא מחלישה עצם</div></div><div class="dilemma-answer">✅ ב. עומס מכני מתאים חשוב לעצם, אבל הגוף עדיין זקוק לחומרי גלם.</div></details>
+<details class="dilemma-question"><summary>7. מי כנראה מספק יותר סידן בארוחה טיפוסית?</summary><div class="dilemma-options"><div>א. יוגורט</div><div>ב. שמן זית</div><div>ג. תפוח</div></div><div class="dilemma-answer">✅ א. יוגורט הוא מקור עשיר יחסית בסידן.</div></details>
+<details class="dilemma-question"><summary>8. “אם חסר לי סידן, העצמות מיד יכאבו.” מה נכון?</summary><div class="dilemma-options"><div>א. תמיד נכון</div><div>ב. לא — צריכה נמוכה יכולה להתקיים בלי סימן מיידי</div><div>ג. נכון רק אחרי אימון</div></div><div class="dilemma-answer">✅ ב. זו אחת הסיבות שחשוב לחשוב על הרגלים לאורך זמן.</div></details>
+<details class="dilemma-question"><summary>9. תלמיד רוצה לקחת תוסף סידן רק כי הוא מתאמן. מה הכי נכון?</summary><div class="dilemma-options"><div>א. כל ספורטאי חייב תוסף</div><div>ב. קודם בודקים אם התזונה מספקת מקורות מתאימים; תוסף אינו ברירת מחדל</div><div>ג. עדיף לקחת כמה שיותר</div></div><div class="dilemma-answer">✅ ב. תוספים אינם אוטומטיים רק בגלל פעילות גופנית.</div></details>
+<details class="dilemma-question"><summary>10. איזו אסטרטגיה הכי שלמה לעצמות?</summary><div class="dilemma-options"><div>א. רק סידן</div><div>ב. רק פעילות גופנית</div><div>ג. סידן, ויטמין D, תזונה מספקת ופעילות מתאימה</div></div><div class="dilemma-answer">✅ ג. עצם היא מערכת שמגיבה למכלול, לא לרכיב בודד.</div></details>
+</section>
+
+<section class="section concept-block" data-concept="vitamin-d">
+<span class="section-label">מושג 3 · ויטמין D</span>
+<h2>☀️ ויטמין D — הגשר בין הסידן לעצם</h2>
+<p>ויטמין D עוזר לגוף לספוג סידן. הוא קשור גם לתפקוד שרירים, עצבים ומערכת החיסון. בניגוד לרוב הוויטמינים, הגוף יכול לייצר אותו בעור בעקבות חשיפה לקרינת שמש מתאימה.</p>
+<div class="fact"><strong>בגיל 1–18:</strong> ערך הייחוס הוא כ־<strong>15 מק״ג = 600 IU ביום</strong>.</div>
+
+<h3>🥗 מאיפה מקבלים ויטמין D?</h3>
+<div class="foods">
+<div class="food"><b>🐟 סלמון, פורל, טונה, מקרל</b>דגים שמנים הם מהמקורות הטבעיים הבולטים.</div>
+<div class="food"><b>🥛 מזונות מועשרים</b>חלב, חלק מהמשקאות הצמחיים, דגני בוקר ומוצרים אחרים עשויים להיות מועשרים — בודקים תווית.</div>
+<div class="food"><b>🥚 חלמון ביצה</b>מכיל כמות קטנה יחסית.</div>
+<div class="food"><b>☀️ שמש</b>העור יכול לייצר ויטמין D בחשיפה לשמש, אבל הייצור מושפע מעונה, שעה, צבע עור, לבוש, הגנה מהשמש ועוד. לא משתמשים בנושא ויטמין D כתירוץ לחשיפה לא מוגנת.</div>
+</div>
+<div class="warning"><strong>מה קורה כשחסר?</strong> מחסור משמעותי לאורך זמן יכול לפגוע במינרליזציה של העצם. אי אפשר לדעת את מצב הוויטמין לפי “אני הרבה בחוץ” בלבד.</div>
+<div class="message">משפט מפתח: <strong>שמש היא מקור אפשרי — לא בדיקת דם ולא תעודת ביטוח.</strong></div>
+
+<h3>🎯 10 דילמות — ויטמין D</h3>
+<details class="dilemma-question"><summary>1. למה ויטמין D מופיע מיד אחרי סידן?</summary><div class="dilemma-options"><div>א. הוא עוזר לגוף לספוג סידן</div><div>ב. הוא הופך סידן לחלבון</div><div>ג. שניהם אותו חומר</div></div><div class="dilemma-answer">✅ א. ויטמין D מסייע בספיגת סידן.</div></details>
+<details class="dilemma-question"><summary>2. איזה מזון הוא מקור טבעי בולט לוויטמין D?</summary><div class="dilemma-options"><div>א. סלמון</div><div>ב. אורז לבן</div><div>ג. מלפפון</div></div><div class="dilemma-answer">✅ א. דגים שמנים הם מהמקורות הטבעיים הטובים ביותר.</div></details>
+<details class="dilemma-question"><summary>3. “אני משחק כל יום בחוץ, אז בטוח אין לי מחסור בוויטמין D.”</summary><div class="dilemma-options"><div>א. נכון תמיד</div><div>ב. לא בהכרח — הרבה גורמים משפיעים על הייצור בעור</div><div>ג. נכון רק בקיץ</div></div><div class="dilemma-answer">✅ ב. אי אפשר לקבוע סטטוס ויטמין D רק לפי זמן בחוץ.</div></details>
+<details class="dilemma-question"><summary>4. האם יש ייצור ויטמין D בעור דרך חלון זכוכית?</summary><div class="dilemma-options"><div>א. באותה יעילות כמו בחוץ</div><div>ב. לא באופן משמעותי, כי הקרינה הרלוונטית נחסמת בזכוכית</div><div>ג. רק אם החלון פתוח למחצה</div></div><div class="dilemma-answer">✅ ב. NIH מציין שהעור אינו מייצר ויטמין D מאור שמש דרך חלון.</div></details>
+<details class="dilemma-question"><summary>5. מה נכון לגבי שמש וויטמין D?</summary><div class="dilemma-options"><div>א. כדאי לוותר על הגנה מהשמש כדי לקבל יותר ויטמין D</div><div>ב. הגנה מהשמש עדיין חשובה; לא רודפים אחרי ויטמין D בחשיפה מסוכנת</div><div>ג. שמש אינה קשורה כלל לוויטמין D</div></div><div class="dilemma-answer">✅ ב. לא הופכים תזונה לתירוץ לחשיפה לא מוגנת לקרינת UV.</div></details>
+<details class="dilemma-question"><summary>6. תלמיד מחפש ויטמין D במשקה צמחי. מה עליו לעשות?</summary><div class="dilemma-options"><div>א. להניח שכל משקה צמחי מכיל אותו</div><div>ב. לבדוק בתווית אם המוצר מועשר</div><div>ג. לבחור את המשקה המתוק ביותר</div></div><div class="dilemma-answer">✅ ב. העשרה משתנה בין מוצרים.</div></details>
+<details class="dilemma-question"><summary>7. אם אדם אוכל הרבה סידן אבל חסר לו ויטמין D משמעותית, למה זה רלוונטי?</summary><div class="dilemma-options"><div>א. ויטמין D משפיע על ספיגת סידן</div><div>ב. הסידן הופך לברזל</div><div>ג. אין קשר בין השניים</div></div><div class="dilemma-answer">✅ א. זו דוגמה לכך שלא מספיק לשאול רק “מה נכנס לפה”.</div></details>
+<details class="dilemma-question"><summary>8. “יש מעט מקורות טבעיים לוויטמין D במזון.” מה המשמעות?</summary><div class="dilemma-options"><div>א. מזונות מועשרים יכולים להיות חשובים</div><div>ב. אין שום דרך לקבל ויטמין D מאוכל</div><div>ג. צריך לקחת תוסף בכל מצב</div></div><div class="dilemma-answer">✅ א. העשרה היא דרך משמעותית לקבל ויטמין D במזונות מסוימים.</div></details>
+<details class="dilemma-question"><summary>9. תלמיד חושש שיש לו מחסור. מה הכי נכון?</summary><div class="dilemma-options"><div>א. לאבחן לפי עייפות בלבד</div><div>ב. לקחת מינון גבוה בלי לבדוק</div><div>ג. לפנות להערכה מתאימה אם יש סיבה לחשד</div></div><div class="dilemma-answer">✅ ג. תסמינים אינם ספציפיים, ותוספים במינון גבוה אינם משחק.</div></details>
+<details class="dilemma-question"><summary>10. מי מסביר הכי טוב ויטמין D?</summary><div class="dilemma-options"><div>א. “זה רק ויטמין של שמש”</div><div>ב. “זה ויטמין שעוזר לספיגת סידן, ויש לו מקורות מזון ושמש”</div><div>ג. “אם אוכלים סידן לא צריך ויטמין D”</div></div><div class="dilemma-answer">✅ ב. זו התמונה השלמה יותר.</div></details>
+</section>
+
+<section class="section concept-block" data-concept="b12">
+<span class="section-label">מושג 4 · B12</span>
+<h2>🧬 ויטמין B12 — דם, עצבים ו-DNA</h2>
+<p>ויטמין B12 נחוץ ליצירת תאי דם אדומים תקינים, לתפקוד מערכת העצבים וליצירת DNA. הגוף יודע לאגור B12 בכמות משמעותית, ולכן מחסור יכול להתפתח לאט ולא תמיד מורגש מיד.</p>
+<div class="fact"><strong>ערכי ייחוס:</strong> גיל 9–13 כ־<strong>1.8 מק״ג ביום</strong>; גיל 14–18 כ־<strong>2.4 מק״ג ביום</strong>.</div>
+
+<h3>🥗 מאיפה מקבלים B12?</h3>
+<div class="foods">
+<div class="food"><b>🐟 דגים · 🥩 בשר · 🍗 עוף</b>מקורות טבעיים ל-B12.</div>
+<div class="food"><b>🥚 ביצים · 🥛 חלב ומוצריו</b>מכילים B12 באופן טבעי.</div>
+<div class="food"><b>🥣 מזונות מועשרים</b>חלק מדגני הבוקר, שמרים תזונתיים ומוצרים אחרים יכולים להכיל B12 שהוסף להם.</div>
+<div class="food"><b>🌱 מזון צמחי לא מועשר</b>אינו נחשב מקור טבעי אמין ל-B12.</div>
+</div>
+<div class="warning"><strong>מי צריך לשים לב במיוחד?</strong> מי שאוכל מעט או בכלל לא מזון מן החי צריך לוודא שיש מקור אמין ל-B12, למשל מזון מועשר או תוסף בהתאם לצורך. מחסור עלול לגרום לאנמיה ולפגיעה עצבית; תסמינים עצביים יכולים להופיע גם בלי אנמיה.</div>
+<div class="message">משפט מפתח: <strong>“צמחי” לא אומר שיש B12 — צריך לחפש מקור אמין.</strong></div>
+
+<h3>🎯 10 דילמות — B12</h3>
+<details class="dilemma-question"><summary>1. מהו אחד התפקידים המרכזיים של B12?</summary><div class="dilemma-options"><div>א. שמירה על תאי דם ועצבים ויצירת DNA</div><div>ב. קירור הגוף בזיעה</div><div>ג. בניית עצם בלבד</div></div><div class="dilemma-answer">✅ א. B12 חשוב לדם, מערכת העצבים ו-DNA.</div></details>
+<details class="dilemma-question"><summary>2. איזה מזון מכיל B12 באופן טבעי?</summary><div class="dilemma-options"><div>א. דג</div><div>ב. בננה</div><div>ג. אורז</div></div><div class="dilemma-answer">✅ א. מזונות מן החי הם המקורות הטבעיים העיקריים ל-B12.</div></details>
+<details class="dilemma-question"><summary>3. טבעוני רוצה מקור אמין ל-B12. מה האפשרות הטובה ביותר?</summary><div class="dilemma-options"><div>א. להסתמך על ירקות ירוקים</div><div>ב. מזון מועשר או תוסף מתאים</div><div>ג. לשתות יותר מים</div></div><div class="dilemma-answer">✅ ב. בתזונה טבעונית צריך מקור אמין של B12 שאינו תלוי במזון צמחי טבעי.</div></details>
+<details class="dilemma-question"><summary>4. מוצר צמחי כתוב עליו “עשיר בחלבון”. האם זה אומר שיש בו B12?</summary><div class="dilemma-options"><div>א. כן תמיד</div><div>ב. לא — צריך לבדוק אם הוא מועשר ב-B12</div><div>ג. B12 וחלבון הם אותו דבר</div></div><div class="dilemma-answer">✅ ב. כמות חלבון אינה מספרת לנו אם יש B12.</div></details>
+<details class="dilemma-question"><summary>5. למה מחסור ב-B12 יכול להופיע רק אחרי זמן רב?</summary><div class="dilemma-options"><div>א. הגוף אוגר B12</div><div>ב. B12 נוצר בשריר</div><div>ג. הגוף לא משתמש ב-B12 בכלל</div></div><div class="dilemma-answer">✅ א. מאגרי הגוף יכולים להספיק לזמן רב, ולכן מחסור תזונתי לא תמיד מורגש מיד.</div></details>
+<details class="dilemma-question"><summary>6. “אם אין אנמיה, B12 בטוח תקין.” מה נכון?</summary><div class="dilemma-options"><div>א. נכון תמיד</div><div>ב. לא — סימנים עצביים יכולים להופיע גם בלי אנמיה</div><div>ג. B12 אינו קשור לעצבים</div></div><div class="dilemma-answer">✅ ב. לכן לא מצמצמים את B12 רק לספירת דם.</div></details>
+<details class="dilemma-question"><summary>7. איך יודעים אם דגני בוקר הם מקור ל-B12?</summary><div class="dilemma-options"><div>א. לפי הצבע שלהם</div><div>ב. בודקים ברשימת הרכיבים/טבלה אם הוסף B12</div><div>ג. כל דגני הבוקר מכילים B12</div></div><div class="dilemma-answer">✅ ב. זו בדיוק המשמעות של קריאת תווית והבנת “מועשר”.</div></details>
+<details class="dilemma-question"><summary>8. מי נמצא בסיכון תזונתי גבוה יותר למחסור ב-B12?</summary><div class="dilemma-options"><div>א. אדם שלא אוכל מזון מן החי ואין לו מקור מועשר</div><div>ב. אדם שאוכל דגים, ביצים ומוצרי חלב באופן קבוע</div><div>ג. מי ששותה הרבה מים</div></div><div class="dilemma-answer">✅ א. ללא מקור אמין, תזונה טבעונית עלולה להיות דלה ב-B12.</div></details>
+<details class="dilemma-question"><summary>9. “אני מרגיש מצוין, אז בטוח אין לי מחסור ב-B12.”</summary><div class="dilemma-options"><div>א. נכון — מחסור תמיד מורגש מיד</div><div>ב. לא בהכרח — התפתחות מחסור יכולה להיות איטית</div><div>ג. נכון רק אם מתאמנים</div></div><div class="dilemma-answer">✅ ב. התחושה לבד אינה בדיקה אמינה של סטטוס B12.</div></details>
+<details class="dilemma-question"><summary>10. מי מבין B12 בצורה הטובה ביותר?</summary><div class="dilemma-options"><div>א. “טבעוני צריך לחשוב על מקור אמין ל-B12”</div><div>ב. “כל אוכל בריא מכיל B12”</div><div>ג. “אם יש מספיק חלבון יש בהכרח מספיק B12”</div></div><div class="dilemma-answer">✅ א. B12 הוא דוגמה טובה לכך ש“תזונה בריאה” עדיין דורשת ידע ספציפי.</div></details>
+</section>
+
+<section class="game">
+<span class="section-label">יישום משולב</span>
+<h2>🕵️ ארבעה תיקים — איזה מידע חסר?</h2>
+<p>מחלקים את הכיתה ל־4 קבוצות. כל קבוצה מקבלת מצב. אסור “לאבחן”; צריך לזהות איזה מושג רלוונטי ואיזה מידע נוסף צריך.</p>
+<div class="single-list">
+<div class="card"><strong>תיק א׳:</strong> שחקנית מתעייפת מהר יותר בתקופה האחרונה.<br><strong>כיוון:</strong> ברזל יכול להיות רלוונטי, אבל צריך לחשוב גם על שינה, אכילה, עומס, מחלה ועוד.</div>
+<div class="card"><strong>תיק ב׳:</strong> נער לא אוכל מוצרי חלב וכמעט לא בודק אם תחליפי החלב שלו מועשרים.<br><strong>כיוון:</strong> סידן וויטמין D רלוונטיים; לבדוק תוויות ומקורות אחרים.</div>
+<div class="card"><strong>תיק ג׳:</strong> תלמיד אומר: “אני כל יום בחוץ, אז ויטמין D בטוח מסודר.”<br><strong>כיוון:</strong> אי אפשר לדעת סטטוס לפי זמן בחוץ בלבד.</div>
+<div class="card"><strong>תיק ד׳:</strong> תלמיד טבעוני אוכל קטניות, דגנים, ירקות ופירות אבל לא מזון מועשר.<br><strong>כיוון:</strong> B12 הוא נקודה שחייבים לזהות.</div>
+</div>
+</section>
+
+<section class="game">
+<span class="section-label">הרכבת יום</span>
+<h2>🍽️ בונים יום שמכסה את ארבעת הצרכים</h2>
+<p>לא בונים “תפריט מושלם” ולא סופרים קלוריות. בונים יום שבו אפשר להצביע על <strong>מקור אמין</strong> לכל אחד מארבעת המושגים.</p>
+<div class="day-builder">
+<h3>הקבוצה חייבת לסמן:</h3>
+<div class="day-grid">
+<div><b>🩸 ברזל</b>מאיפה הגיע? ומה יכול לעזור לספיגה אם המקור צמחי?</div>
+<div><b>🦴 סידן</b>איפה יש מקור ברור ומשמעותי?</div>
+<div><b>☀️ ויטמין D</b>מזון טבעי או מזון מועשר — ומה אי אפשר לדעת רק מהצלחת?</div>
+<div><b>🧬 B12</b>מהו המקור האמין?</div>
+</div>
+</div>
+<p><strong>מאגר אפשרי:</strong> עדשים, שעועית, פלפל, תפוז, דג, ביצה, יוגורט, חלב, משקה סויה מועשר, טופו עם סידן, דגני בוקר מועשרים, לחם, אורז, ירקות, פירות.</p>
+<div class="participation"><strong>הניקוד הוא על ההסבר:</strong> “בחרנו ___ כי הוא מספק ___; בדקנו בתווית ___; ואת ___ אי אפשר להסיק רק מהארוחה.”</div>
+</section>
+
+<section class="protocol">
+<span class="section-label">מידע פרקטי לחיים</span>
+<h2>🏷️ שלושה דברים שהתלמיד צריך לדעת לעשות אחרי השיעור</h2>
+<div class="single-list">
+<div class="card"><strong>1. לזהות “מועשר”.</strong><br>לא להניח שכל משקה צמחי או דגני בוקר מכילים את אותם ויטמינים ומינרלים. בודקים תווית.</div>
+<div class="card"><strong>2. לחשוב על ספיגה.</strong><br>למשל, מקור ברזל צמחי + ויטמין C הוא שילוב שונה ממקור ברזל לבדו.</div>
+<div class="card"><strong>3. לא לאבחן לפי תחושה.</strong><br>עייפות, חולשה או כאבים יכולים להיות קשורים להרבה דברים. תזונה נותנת כיווני חשיבה, לא אבחנה רפואית.</div>
+</div>
+</section>
+
+<section class="exit">
+<h2>🚪 סגירת השיעור</h2>
+<p><strong>חוזרים לארבעת המושגים:</strong><br>
+🩸 ברזל — קשור להובלת חמצן.<br>
+🦴 סידן — מרכיב מרכזי בעצמות וגם חשוב לשריר ולעצב.<br>
+☀️ ויטמין D — מסייע לספיגת סידן ומגיע ממעט מזונות, העשרה וייצור בעור.<br>
+🧬 B12 — חשוב לדם, לעצבים ול-DNA.<br><br>
+<strong>משפט הסיום:</strong> המאקרו נותנים לנו אנרגיה וחומרי גלם — המיקרונוטריינטים עוזרים למערכות להשתמש בהם ולתפקד.<br><br>
+<strong>כרטיס יציאה:</strong> בחרו אחד מארבעת המושגים: כתבו מקור מזון אחד, תפקיד אחד, ודבר אחד שלא כדאי להסיק רק לפי תחושה.</p>
+</section>
+
+<section class="science">
+<h2>🔬 ביסוס מדעי למורה</h2>
+<ul>
+<li><strong>ברזל:</strong> תפקיד בהמוגלובין/מיוגלובין, מקורות heme ו-non-heme, ויטמין C וספיגה, וערכי הייחוס לגיל ההתבגרות. <a href="https://ods.od.nih.gov/factsheets/Iron-Consumer/" target="_blank" rel="noopener">NIH ODS — Iron</a>.</li>
+<li><strong>סידן:</strong> רוב הסידן בגוף נמצא בעצמות ובשיניים; הוא חשוב גם לשרירים ולעצבים. בגיל 9–18 ערך הייחוס הוא 1,300 מ״ג ליום. <a href="https://ods.od.nih.gov/factsheets/Calcium-Consumer/" target="_blank" rel="noopener">NIH ODS — Calcium</a>.</li>
+<li><strong>ויטמין D:</strong> מסייע בספיגת סידן; בגיל 1–18 ערך הייחוס הוא 15 מק״ג (600 IU). דגים שמנים ומזונות מועשרים הם מקורות מרכזיים. <a href="https://ods.od.nih.gov/factsheets/VitaminD-Consumer/" target="_blank" rel="noopener">NIH ODS — Vitamin D</a>.</li>
+<li><strong>B12:</strong> חשוב לדם, מערכת העצבים ו-DNA. נמצא טבעית במזונות מן החי; מזונות צמחיים מספקים B12 רק אם הועשרו. <a href="https://ods.od.nih.gov/factsheets/VitaminB12-Consumer/" target="_blank" rel="noopener">NIH ODS — Vitamin B12</a>.</li>
+</ul>
+<p class="mini">הערת בטיחות: השיעור עוסק בהבנת תזונה ולא באבחון חסרים. בדיקות דם, טיפול ותוספים שייכים להערכה רפואית/תזונתית מתאימה ולא למשחק ניחושים בכיתה.</p>
+</section>
+</main>
+<script src="site-nav.js"></script>
+</body>
+</html>
