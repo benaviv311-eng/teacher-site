@@ -373,3 +373,51 @@ test('English lesson 5 moves from teacher questions to activities and independen
   assert.match(html, /Write 5 sentences about one family member/i);
   assert.match(html, /3 דברים שלמדנו היום/);
 });
+
+
+test('English library exposes assessments and classwork inside the English page', async () => {
+  const library = await read('english.html');
+
+  assert.match(library, /בחינות ועבודות כיתה/);
+  assert.match(library, /href="english-test1\.html"/);
+  assert.match(library, /href="english-review-1-4\.html"/);
+  assert.match(library, /href="english-classwork5\.html"/);
+  assert.match(library, /מבחן 1/);
+  assert.match(library, /דף חזרה.*1–4/is);
+  assert.match(library, /עבודת כיתה 5/);
+});
+
+test('English test 1 is printable and keeps word banks shuffled away from answer order', async () => {
+  const html = await read('english-test1.html');
+
+  assert.match(html, /English Test 1/i);
+  assert.match(html, /window\.print\(\)/);
+  assert.match(html, /WORD BANK: music \| school \| eat/i);
+  assert.match(html, /WORD BANK: home \| close \| read/i);
+  assert.doesNotMatch(html, /WORD BANK: school \| eat \| music/i);
+  assert.match(html, /What's your name\?/i);
+  assert.match(html, /Opposites/i);
+});
+
+test('English review 1 to 4 is printable and uses shuffled word banks', async () => {
+  const html = await read('english-review-1-4.html');
+
+  assert.match(html, /English Review Worksheet/i);
+  assert.match(html, /Lessons 1–4/i);
+  assert.match(html, /window\.print\(\)/);
+  assert.match(html, /WORD BANK: music \| teacher \| open \| breakfast \| home \| swim \| school \| football \| write \| eat/i);
+  assert.match(html, /WORD BANK: friend \| park \| water \| read \| pencil \| English \| run \| door \| sleep \| drink/i);
+  assert.doesNotMatch(html, /WORD BANK: school \| eat \| music \| swim/i);
+});
+
+test('English classwork 5 publishes the expanded My Family practice with shuffled banks', async () => {
+  const html = await read('english-classwork5.html');
+
+  assert.match(html, /Classwork 5 - My Family/i);
+  assert.match(html, /Expanded classroom practice/i);
+  assert.match(html, /window\.print\(\)/);
+  assert.match(html, /cousin \| quiet \| listen \| parents \| strong \| sister \| helpful/i);
+  assert.match(html, /patient \| family \| movies \| brother \| active \| aunt \| travel/i);
+  assert.match(html, /14\. After school, we .* to music in the car/i);
+  assert.match(html, /Teacher Key/i);
+});
