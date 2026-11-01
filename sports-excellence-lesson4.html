@@ -66,17 +66,34 @@ footer{padding:18px;text-align:center;font-size:13px;color:#64748b}
 a:focus-visible,button:focus-visible{outline:3px solid #f59e0b;outline-offset:2px}
 @media(max-width:720px){.wrap{padding:10px 10px 80px}.card{padding:17px}.hero{padding:22px}.words{grid-template-columns:repeat(2,1fr)}.principles,.choice-cards,.triad{grid-template-columns:1fr}.timeline{grid-template-columns:repeat(3,1fr)}.top strong{display:none}.scoreboard .country{font-size:13px}}
 @media print{body{background:#fff}.wrap{max-width:none;padding:0}.top,.nav,.print-action,.timeline{display:none!important}.card,.hero{break-inside:avoid;box-shadow:none}.card{border-color:#cbd5e1}.teacher-answer{background:#eef9f1!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}.hero{background:#e4f2f5!important;color:#0f172a!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+
+/* Classroom slide remote: remains on teacher page only */
+.presenter-control{position:fixed;bottom:16px;left:16px;z-index:90;width:min(315px,calc(100vw - 32px));direction:rtl;font-family:Arial,system-ui,sans-serif;border-radius:16px;background:#132d4a;color:#fff;box-shadow:0 14px 46px #0b142f90;border:1px solid #50a8b780;overflow:hidden}
+.presenter-control summary{padding:11px 15px;cursor:pointer;display:flex;align-items:center;gap:9px;list-style:none;font-size:15px;font-weight:900;background:#174463}
+.presenter-control summary::-webkit-details-marker{display:none}
+.presenter-control summary .presenter-index{margin-right:auto;color:#78f0e2;font-weight:900;direction:ltr}
+.presenter-body{padding:13px;display:grid;gap:11px}
+.presenter-body p{margin:0;font-size:13px;color:#d4e7f8;line-height:1.5}
+.presenter-body .current-title{color:#fff;font-weight:900;font-size:15px}
+.presenter-buttons{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.presenter-body button,.presenter-body a{min-height:37px;border:1px solid #5b829f;color:#fff;border-radius:10px;background:#285477;padding:7px 10px;text-decoration:none;font:bold 13px Arial,system-ui,sans-serif;cursor:pointer;display:grid;place-items:center;text-align:center}
+.presenter-body button:disabled{opacity:.42;cursor:default}
+.presenter-body .open-display{background:#0b8d87;border-color:#5eead4}
+.presenter-body select{width:100%;background:#102b45;border:1px solid #668baa;color:#fff;padding:9px;border-radius:9px;font-size:13px}
+.presenter-body label{font-size:12px;color:#bad8e8;display:grid;gap:5px}
+.top .presentation-top-link{background:#0f766e;color:#fff}
+@media print{.presenter-control,.presentation-top-link{display:none!important}}
 </style>
 </head>
 <body>
 <main class="wrap">
-<div class="top"><a href="sports-excellence.html">↩ חזרה לקורס</a><a href="index.html" aria-label="בית">⌂ בית</a><button type="button" class="print-action" onclick="window.print()">🖨 הדפסה למורה</button><strong>☀️ בית ספר אור</strong></div>
+<div class="top"><a href="sports-excellence.html">↩ חזרה לקורס</a><a class="presentation-top-link" target="_blank" rel="noopener" href="sports-excellence-lesson4-slides.html" data-open-presentation>▶ מצגת לכיתה</a><a href="index.html" aria-label="בית">⌂ בית</a><button type="button" class="print-action" onclick="window.print()">🖨 הדפסה למורה</button><strong>☀️ בית ספר אור</strong></div>
 <header class="hero"><small>מצוינות וספורט · שיעור 4 · כיתות ז׳–ח׳</small><h1>מה הופך קבוצה לקבוצה מנצחת?</h1><p>אמון, תקשורת, תפקיד ואחריות: סיפור אמיתי מהאולימפיאדה, שפת האימון של Nick Winkelman, ניתוח פסק זמן ודילמות על היחיד מול הקבוצה.</p><div class="meta"><span>50 דקות</span><span>6 חלקים</span><span>שאלות עם פתרונות גלויים למורה</span><span>ללא ציוד מיוחד</span></div></header>
 <section class="card" id="prep"><span class="time">לפני שהתלמידים נכנסים</span><h2>ארבע המילים על הלוח — לפני תחילת השיעור</h2>
 <div class="words"><div>🤝 אמון</div><div>💬 תקשורת</div><div>🎯 תפקיד</div><div>✅ אחריות</div></div>
 <p><strong>חשוב:</strong> כותבים את ארבע המילים על הלוח לפני שהכיתה נכנסת. לא מציגים אותן לראשונה בחלק 2. חוזרים אליהן בכל דיון ובסיום השיעור.</p>
 <div class="equip"><span>לוח וטוש</span><span>מסך להצגת השאלות</span><span>אין צורך במשחק או ציוד ספורט</span></div>
-<nav class="nav" aria-label="ניווט בין חלקי השיעור"><a href="#open">1 · פתיחה</a><a href="#language">2 · שפת האימון</a><a href="#timeout">3 · פסק זמן</a><a href="#talent">4 · קבוצות מוכשרות</a><a href="#dilemmas">5 · דילמות</a><a href="#closing">6 · סיכום</a><a href="#teacher-timing">לוח זמנים</a><a href="#sources">מקורות</a></nav>
+<nav class="nav" aria-label="ניווט בין חלקי השיעור"><a href="#open">1 · פתיחה</a><a href="#language">2 · שפת האימון</a><a href="#timeout">3 · פסק זמן</a><a href="#talent">4 · קבוצות מוכשרות</a><a href="#dilemmas">5 · דילמות</a><a href="#closing">6 · סיכום</a><a href="#teacher-timing">לוח זמנים</a><a href="#sources">מקורות</a><a href="sports-excellence-lesson4-slides.html" target="_blank" rel="noopener" data-open-presentation>🎬 מצגת לכיתה</a></nav>
 <div class="callout"><b>איך להפעיל את העמוד:</b> בכל שאלה יש שלוש תשובות אפשריות. מקריאים לתלמידים את השאלה והאפשרויות; מתחת מוצגות תמיד התשובה הנכונה, ההסבר עבורך ושאלת המשך. <strong>אין לחיצה ואין בדיקת ציון.</strong> את השאלות בוחרים מתוך המאגר לפי הזמן.</div>
 </section>
 
@@ -267,6 +284,55 @@ a:focus-visible,button:focus-visible{outline:3px solid #f59e0b;outline-offset:2p
 </ul>
 <p class="note">התסריטים, השאלות, הדוגמאות והמסרים נוסחו לצורכי הוראה ואינם ציטוטים מהספר. ההשוואה בין שתי שיטות ההדרכה נועדה לדיון — לא כהוכחה שהוראה אחת עדיפה בכל מצב.</p></section>
 <footer><a href="sports-excellence.html">↩ חזרה לכל שיעורי מצוינות וספורט</a> · בית ספר אור</footer>
+<details class="presenter-control" id="presenterControl" open>
+  <summary>🎬 שליטה במצגת <span class="presenter-index" id="teacherSlideIndex">01 / 16</span></summary>
+  <div class="presenter-body">
+    <p>המצגת נפתחת בחלון נפרד למקרן. כאן נשארים התשובות וקווי ההנחיה שלך.</p>
+    <div class="current-title" id="teacherSlideTitle">מה הופך קבוצה לקבוצה מנצחת?</div>
+    <div class="presenter-buttons"><button type="button" id="teacherPrev">הקודמת</button><button type="button" id="teacherNext">הבאה ←</button></div>
+    <label>מעבר ישיר לשקופית
+      <select id="teacherSlideSelect" aria-label="בחירת שקופית במצגת">
+        <option value="0">01 · שער</option>
+        <option value="1">02 · ארבע מילים</option>
+        <option value="2">03 · מי ינצח? אתונה 2004</option>
+        <option value="3">04 · חשיפת התוצאה</option>
+        <option value="4">05 · שני מאמנים</option>
+        <option value="5">06 · שלוש דרכים לתת הוראה</option>
+        <option value="6">07 · שאלת עומס בהוראות</option>
+        <option value="7">08 · שאלת עידוד ומשוב</option>
+        <option value="8">09 · פסק זמן 23:23</option>
+        <option value="9">10 · מה המאמן יאמר?</option>
+        <option value="10">11 · אתם המאמנים</option>
+        <option value="11">12 · כישרון מול עבודת צוות</option>
+        <option value="12">13 · הזריקה האחרונה</option>
+        <option value="13">14 · השחקנית החדשה</option>
+        <option value="14">15 · העבודה הקבוצתית</option>
+        <option value="15">16 · סיכום</option>
+      </select>
+    </label>
+    <a href="sports-excellence-lesson4-slides.html" target="_blank" rel="noopener" class="open-display" data-open-presentation>🖥️ פתח מצגת בחלון נפרד</a>
+    <p>במסך הכיתה השתמש במצב מסך מלא (F). להעברת שקופית דרך עמוד זה השתמש בכפתורי הקודם/הבא.</p>
+  </div>
+</details>
 </main>
+<script>
+(function(){
+ const key='beitor-lesson4-slide-state-v1',topic='beitor-lesson4-slide-channel-v1';
+ const names=['מה הופך קבוצה לקבוצה מנצחת?','ארבע מילים','מי לדעתכם ניצח?','הפתעה בחצי הגמר','שני מאמנים. אותה משימה.','שלוש דרכים לתת הוראה','האם יותר מידע עוזר יותר?','״אלוף!״ — עידוד או משוב?','23:23 — הכול על הכף','30 שניות למאמן','אתם המאמנים','כוכבים או קבוצה?','הזריקה האחרונה','השחקנית החדשה','העבודה הקבוצתית','מה הופך קבוצה למנצחת?'];
+ const label=document.getElementById('teacherSlideIndex'),title=document.getElementById('teacherSlideTitle'),select=document.getElementById('teacherSlideSelect');
+ let current=0,ch=null;try{if('BroadcastChannel' in window)ch=new BroadcastChannel(topic)}catch(e){}
+ const clamp=n=>Math.max(0,Math.min(15,Number.isFinite(Number(n))?Math.trunc(Number(n)):0));
+ function update(n,notify=true){current=clamp(n);label.textContent=String(current+1).padStart(2,'0')+' / 16';title.textContent=names[current];select.value=String(current);document.getElementById('teacherPrev').disabled=current===0;document.getElementById('teacherNext').disabled=current===15;
+ if(notify){const state={slide:current,time:Date.now(),source:'teacher'};try{localStorage.setItem(key,JSON.stringify(state))}catch(e){}try{ch&&ch.postMessage(state)}catch(e){}}}
+ document.getElementById('teacherPrev').addEventListener('click',()=>update(current-1));
+ document.getElementById('teacherNext').addEventListener('click',()=>update(current+1));
+ select.addEventListener('change',()=>update(select.value));
+ document.querySelectorAll('[data-open-presentation]').forEach(link=>link.addEventListener('click',()=>update(0)));
+ function accept(s){if(s&&Number.isFinite(Number(s.slide)))update(s.slide,false)}
+ if(ch)ch.onmessage=e=>accept(e.data);
+ window.addEventListener('storage',e=>{if(e.key===key&&e.newValue){try{accept(JSON.parse(e.newValue))}catch(err){}}});
+ try{const state=JSON.parse(localStorage.getItem(key)||'null');if(state&&Number.isFinite(Number(state.slide)))update(state.slide,false);else update(0,false)}catch(e){update(0,false)}
+})();
+</script>
 <script src="site-nav.js"></script>
 </body></html>
