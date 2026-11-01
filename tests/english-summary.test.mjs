@@ -392,8 +392,8 @@ test('English test 1 is printable and keeps word banks shuffled away from answer
 
   assert.match(html, /English Test 1/i);
   assert.match(html, /window\.print\(\)/);
-  assert.match(html, /WORD BANK: music \| school \| eat/i);
-  assert.match(html, /WORD BANK: home \| close \| read/i);
+  assert.match(html, /WORD BANK: eat \\| music \\| school/i);
+  assert.match(html, /WORD BANK: close \\| read \\| home/i);
   assert.doesNotMatch(html, /WORD BANK: school \| eat \| music/i);
   assert.match(html, /What's your name\?/i);
   assert.match(html, /Opposites/i);
