@@ -3,62 +3,273 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>שיעור 2 — הרגלים והעובר ושב</title>
+<title>שיעור 2 — מעבדת ההרגלים</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#172033}.wrap{max-width:880px;margin:auto;padding:16px 14px 90px}.top{position:sticky;top:0;z-index:20;display:flex;justify-content:flex-start;align-items:center;gap:8px;min-height:48px;padding:6px 0;background:#f4f7fbee;backdrop-filter:blur(10px)}.back,.home{width:38px;height:38px;border-radius:12px;background:#fff;color:#245fc0;display:grid;place-items:center;text-decoration:none;font-size:20px;box-shadow:0 4px 16px #14213d18}.hero{margin-top:16px;background:linear-gradient(135deg,#0f766e,#2563eb);color:#fff;padding:26px;border-radius:28px;box-shadow:0 14px 36px #0f766e2b}.hero small{opacity:.9}.hero h1{margin:8px 0 10px;font-size:clamp(30px,7vw,46px)}.hero p{line-height:1.7;margin:0}.card{background:#fff;border-radius:24px;padding:22px;margin:14px 0;box-shadow:0 6px 24px #14213d0b;border:1px solid #edf1f7}.card h2{margin:0 0 12px;font-size:23px}.card h3{margin:18px 0 8px;font-size:18px;color:#0f766e}.card p,.card li{line-height:1.75;color:#344054}.board{font-size:24px;font-weight:900;line-height:1.55;color:#0f766e;background:#ecfdf5;padding:16px;border-radius:18px;margin:12px 0}.source{font-size:13px;color:#667085;margin-top:-4px}.source a{color:#245fc0}.quote{font-weight:900;font-size:18px;color:#172033;background:#f8fafc;border-right:4px solid #0f766e;padding:14px 16px;border-radius:14px;margin:14px 0}.steps{display:grid;gap:9px;margin-top:12px}.step{background:#f8fafc;padding:12px 14px;border-radius:14px;font-weight:800}.flow{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.pill{background:#ecfdf5;color:#0f766e;padding:9px 12px;border-radius:999px;font-weight:900}.time{font-size:12px;font-weight:900;background:#dbeafe;color:#1d4ed8;padding:6px 9px;border-radius:999px;display:inline-block;margin-bottom:10px}.summary{background:#172033;color:#fff}.summary p,.summary li{color:#fff}.summary .quote{background:#ffffff12;color:#fff;border-right-color:#34d399}.equipment{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:12px}.equipment div{background:#f8fafc;border-radius:14px;padding:11px 13px;font-weight:800}.tiny{font-size:13px;color:#667085}.research{background:#f0fdf4;border-right:4px solid #16a34a;padding:13px 15px;border-radius:14px;margin:12px 0;line-height:1.7}.teacher-note{background:#fff7ed;border-right:4px solid #f59e0b;padding:13px 15px;border-radius:14px;margin:12px 0;line-height:1.7}.mini-task{background:#eff6ff;border:1px solid #bfdbfe;padding:14px 16px;border-radius:16px;margin:12px 0}.game-card{border:2px solid #dbeafe;background:linear-gradient(180deg,#fff,#f8fbff)}.game-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.game-number{font-size:14px;font-weight:900;background:#172033;color:#fff;padding:8px 12px;border-radius:999px}.game-topic{font-size:13px;font-weight:900;color:#0f766e;background:#ecfdf5;padding:8px 12px;border-radius:999px}.game-question{font-size:24px;font-weight:900;line-height:1.45;margin:16px 0}.data-list{display:grid;gap:10px;margin:16px 0}.data-item{display:flex;align-items:flex-start;gap:10px;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:13px 14px;font-weight:800;line-height:1.5}.data-num{min-width:30px;height:30px;border-radius:10px;background:#172033;color:#fff;display:grid;place-items:center;font-weight:900}.game-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}.btn{border:0;border-radius:14px;padding:12px 16px;font-family:inherit;font-weight:900;font-size:15px;cursor:pointer}.btn-primary{background:#2563eb;color:#fff}.btn-reveal{background:#0f766e;color:#fff}.btn-light{background:#eef2f7;color:#172033}.btn:disabled{opacity:.45;cursor:not-allowed}.answer{display:none;margin-top:18px}.answer.show{display:block}.answer-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.answer-box{border-radius:18px;padding:14px}.answer-box h4{margin:0 0 8px;font-size:17px}.answer-box p{margin:0;line-height:1.6}.deposit{background:#ecfdf5;border:1px solid #a7f3d0}.withdraw{background:#fef2f2;border:1px solid #fecaca}.depends{background:#fffbeb;border:1px solid #fde68a}.depends-note{margin-top:10px;background:#fff7ed;border-right:4px solid #f59e0b;padding:12px 14px;border-radius:12px;line-height:1.65}.progress{font-weight:900;color:#475467}.game-note{font-size:13px;color:#667085;margin-top:8px}.shuffle-note{background:#eff6ff;border-right:4px solid #2563eb;padding:12px 14px;border-radius:12px;margin:12px 0;color:#1e3a8a;font-weight:700;line-height:1.6}@media(max-width:620px){.wrap{padding-left:11px;padding-right:11px}.card{padding:18px}.hero{padding:22px}.equipment{grid-template-columns:1fr}.answer-grid{grid-template-columns:1fr}.game-question{font-size:21px}.game-actions .btn{flex:1}}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#172033}.wrap{max-width:880px;margin:auto;padding:16px 14px 90px}.top{position:sticky;top:0;z-index:20;display:flex;justify-content:flex-start;align-items:center;gap:8px;min-height:48px;padding:6px 0;background:#f4f7fbee;backdrop-filter:blur(10px)}.back,.home{width:38px;height:38px;border-radius:12px;background:#fff;color:#245fc0;display:grid;place-items:center;text-decoration:none;font-size:20px;box-shadow:0 4px 16px #14213d18}.hero{margin-top:16px;background:linear-gradient(135deg,#0f766e,#2563eb);color:#fff;padding:26px;border-radius:28px;box-shadow:0 14px 36px #0f766e2b}.hero small{opacity:.9}.hero h1{margin:8px 0 10px;font-size:clamp(30px,7vw,46px)}.hero p{line-height:1.7;margin:0}.card{background:#fff;border-radius:24px;padding:22px;margin:14px 0;box-shadow:0 6px 24px #14213d0b;border:1px solid #edf1f7}.card h2{margin:0 0 12px;font-size:23px}.card h3{margin:18px 0 8px;font-size:18px;color:#0f766e}.card p,.card li{line-height:1.75;color:#344054}.board{font-size:23px;font-weight:900;line-height:1.55;color:#0f766e;background:#ecfdf5;padding:16px;border-radius:18px;margin:12px 0}.quote{font-weight:900;font-size:18px;color:#172033;background:#f8fafc;border-right:4px solid #0f766e;padding:14px 16px;border-radius:14px;margin:14px 0}.time{font-size:12px;font-weight:900;background:#dbeafe;color:#1d4ed8;padding:6px 9px;border-radius:999px;display:inline-block;margin-bottom:10px}.teacher-note{background:#fff7ed;border-right:4px solid #f59e0b;padding:13px 15px;border-radius:14px;margin:12px 0;line-height:1.7}.research{background:#f0fdf4;border-right:4px solid #16a34a;padding:13px 15px;border-radius:14px;margin:12px 0;line-height:1.7}.life{background:#eff6ff;border-right:4px solid #2563eb;padding:13px 15px;border-radius:14px;margin:12px 0;line-height:1.7}.question{background:#faf5ff;border-right:4px solid #9333ea;padding:13px 15px;border-radius:14px;margin:12px 0;line-height:1.7}.steps{display:grid;gap:9px;margin-top:12px}.step{background:#f8fafc;padding:12px 14px;border-radius:14px;font-weight:800;line-height:1.65}.equipment{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:12px}.equipment div{background:#f8fafc;border-radius:14px;padding:11px 13px;font-weight:800}.summary{background:#172033;color:#fff}.summary p,.summary li,.summary h2,.summary h3{color:#fff}.summary .quote{background:#ffffff12;color:#fff;border-right-color:#34d399}.tiny{font-size:13px;color:#667085}.source{font-size:13px;color:#667085}.source a{color:#245fc0}.check{display:grid;gap:8px;margin-top:12px}.check div{background:#f8fafc;border-radius:12px;padding:10px 12px}.flow{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.pill{background:#ecfdf5;color:#0f766e;padding:9px 12px;border-radius:999px;font-weight:900}@media(max-width:620px){.wrap{padding-left:11px;padding-right:11px}.card{padding:18px}.hero{padding:22px}.equipment{grid-template-columns:1fr}.board{font-size:20px}}
 </style>
 </head>
 <body>
 <main class="wrap">
 <div class="top"><a class="back" href="lessons.html" aria-label="חזרה לשיעורים">↩</a><a class="home" href="index.html" aria-label="בית">🏠</a><b>☀️ בית ספר אור</b></div>
-<section class="hero"><small>אורח חיים בריא והקשר בין ספורט להצלחה • שיעור 2</small><h1>הרגלים והעובר ושב</h1><p>איך פעולות חוזרות הופכות להרגלים, איך הן מצטברות לאורך זמן, ואיך להבין מה מקדם אותנו ומה מעכב אותנו.</p></section>
-<section class="card"><h2>מטרת השיעור</h2><p>להבין שהגוף והתפקוד שלנו אינם תוצאה של פעולה אחת, אלא של הצטברות של בחירות והרגלים לאורך זמן.</p><ul><li>להבדיל בין פעולה חד־פעמית להרגל.</li><li>להבין איך הרגל נוצר ולמה הוא נעשה אוטומטי.</li><li>להשתמש במודל ה״עובר ושב״ כדי לחשוב על בחירות.</li><li>להבין שפעולה טובה בתחום אחד לא מוחקת פעולה פחות טובה בתחום אחר.</li><li>לזהות מה מקדם אותי למטרה ומה מעכב אותי.</li></ul></section>
-<section class="card"><h2>ציוד נדרש</h2><div class="equipment"><div>לוח וטושים</div><div>20 כרטיסי ״העובר ושב״ לכל קבוצה</div><div>עט / עיפרון לכל קבוצה</div><div>האתר פתוח להצגת השאלות</div><div>דפי ניקוד / טבלה על הלוח (אופציונלי)</div><div>צנצנת + מטבעות / חרוזים (אופציונלי)</div><div>פתקים קטנים</div><div>טיימר (אופציונלי)</div></div></section>
-<section class="card"><h2>על הלוח לפני שהתלמידים נכנסים</h2><div class="board">״אנחנו מה שאנחנו עושים שוב ושוב. מצוינות, אם כן, אינה פעולה אלא הרגל.״</div><p class="source"><b>ויל דוראנט</b>, <i>The Story of Philosophy</i> (1926), בפרק על אריסטו — תרגום חופשי לעברית.</p><p><b>שאלה:</b> מהו הרגל אחד שאתם עושים כל יום בלי לחשוב עליו?</p></section>
-<section class="card game-card" id="checkingGame"><span class="time">12–15 דקות</span><h2>1. משחק פתיחה — העובר ושב</h2><p>כל קבוצה מקבלת 20 כרטיסים פיזיים ממוספרים 1–20. בכל כרטיס יש מקום לכתוב תחת <b>הפקדה / משיכה / תלוי</b>.</p><div class="shuffle-note">מספר הכרטיס אינו קשור לנושא או לרמת הקושי. בתחילת משחק חדש, 20 השאלות מתערבבות ונקשרות מחדש לכרטיסים 1–20.</div><p><b>מה עושים?</b> מציגים שאלה באתר. בכל שאלה יש 6 נתונים מוכנים. הקבוצות ממיינות את ששת הנתונים בכרטיס המתאים. כשהזמן נגמר, לוחצים על <b>״חשיפת תשובות״</b> ומשווים.</p><div class="game-head"><span class="game-number" id="cardNumber">כרטיס 1</span><span class="game-topic" id="topic">שינה</span></div><div class="game-question" id="questionTitle">מיינו את 6 הנתונים בכרטיס.</div><div class="data-list" id="dataList"></div><div class="game-actions"><button class="btn btn-reveal" id="revealBtn" type="button">👁️ חשיפת תשובות</button><button class="btn btn-light" id="prevBtn" type="button">→ הקודם</button><button class="btn btn-primary" id="nextBtn" type="button">הבא ←</button><button class="btn btn-light" id="shuffleBtn" type="button">🔀 משחק חדש</button></div><p class="progress" id="progress">כרטיס 1 מתוך 20</p><p class="game-note">אפשר לתת לקבוצות 45–90 שניות לכל כרטיס, לפי רמת הכיתה.</p><div class="answer" id="answerBox"><div class="answer-grid"><div class="answer-box deposit"><h4>➕ הפקדה</h4><p id="depositAnswer"></p></div><div class="answer-box withdraw"><h4>➖ משיכה</h4><p id="withdrawAnswer"></p></div><div class="answer-box depends"><h4>❓ תלוי</h4><p id="dependsAnswer"></p></div></div><div class="depends-note" id="dependsNote"></div></div></section>
-<section class="card"><div class="quote">הפקדות + משיכות + מצבים שתלויים בהקשר = התמונה הכוללת</div><p>אחרי כמה כרטיסים לעצור ולשאול: <b>״למה בכלל קיימת קטגוריית תלוי?״</b></p><p>להדגיש: העובר ושב הוא <b>מודל חשיבה</b>, לא מחשבון אמיתי של הגוף. אין באמת ״שינה = +10״ או ״ממתק = –4״.</p><p><b>משפט מעבר:</b> ״אם הפעולות שלנו מצטברות — מתי פעולה שחוזרת על עצמה כבר הופכת להרגל?״</p></section>
-<section class="card"><span class="time">10–12 דקות</span><h2>2. איך נוצר הרגל? — החלק המדעי</h2><h3>א. הרגל הוא לא רק משהו שעושים הרבה</h3><p>״הרגל נוצר כשאנחנו חוזרים על פעולה שוב ושוב בתוך הקשר דומה. עם הזמן, המוח מתחיל לקשר בין <b>המצב</b> לבין <b>התגובה</b>, ולכן הפעולה יכולה להפוך ליותר אוטומטית.״</p><div class="board">טריגר / הקשר → פעולה → תוצאה</div><p><b>דוגמה:</b> אני נכנס למיטה → רואה את הטלפון → פותח אותו. <b>דוגמה:</b> אני מסיים ארוחת ערב → מחפש משהו מתוק. <b>דוגמה:</b> אני חוזר מבית הספר → פותח מחשב.</p><div class="research"><b>מה המחקר אומר?</b> Wood & Neal מתארים הרגלים כקשרים שנלמדים בהדרגה בין הקשר חוזר לבין תגובה. כשההרגל מתחזק, עצם ההקשר יכול להתחיל לעורר את הפעולה.</div><p class="source">מקור: Wood, W. & Neal, D.T. (2007), <i>Psychological Review</i>, 114(4), 843–863. DOI: 10.1037/0033-295X.114.4.843.</p><div class="mini-task"><b>שאלה לכיתה:</b> ״איזה דבר אתם עושים לפעמים כמעט לפני שהחלטתם לעשות אותו?״</div><h3>ב. מיתוס 21 הימים</h3><p>לשאול: <b>״כמה זמן לוקח ליצור הרגל? 7 ימים? 21? חודש?״</b></p><p>התשובה: <b>אין מספר קסם.</b> במחקר של Lally ועמיתיה, הזמן להגיע ל־95% מרמת האוטומטיות המשוערת נע בין <b>18 ל־254 ימים</b>. כלומר, הרגלים שונים ואנשים שונים מתקדמים בקצב שונה מאוד.</p><div class="board">21 ימים ≠ חוק</div><p>לשתות כוס מים אחרי ארוחת בוקר ולהתחיל להתאמן שעה ביום הם לא אותו הרגל. גם שני אנשים לא בהכרח יבנו את אותו הרגל באותה מהירות.</p><div class="research"><b>ידע מיוחד:</b> באותו מחקר, פספוס חד־פעמי של ההזדמנות לבצע את ההרגל לא פגע באופן מהותי בתהליך יצירת ההרגל. פספסת יום? זה לא אומר שהכול התאפס.</div><p class="source">מקור: Lally, P. et al. (2010), <i>European Journal of Social Psychology</i>, 40, 998–1009. DOI: 10.1002/ejsp.674.</p><h3>ג. למה ״פשוט תחליט״ לא תמיד מספיק?</h3><p>״אני יכול באמת לרצות ללמוד בלי לבדוק הודעות — ובכל זאת היד נמשכת לטלפון. למה? כי הרצון החדש מתחרה בהרגל שנבנה בתוך סביבה מוכרת.״</p><div class="steps"><div class="step">טלפון על השולחן → התראה → יד לטלפון → פתיחה</div><div class="step">בקבוק כבר על השולחן → סיום ארוחה → מילוי ושתייה</div><div class="step">בגדי אימון מוכנים → חוזר הביתה → קל יותר לצאת</div></div><div class="quote">כוח רצון הוא לא הכלי היחיד. אפשר לשנות גם את הסביבה.</div><h3>ד. משנים את המסלול, לא רק נלחמים בעצמנו</h3><p>במקום לנסות לנצח בכל פעם את אותו טריגר, אפשר לשנות את מה שקורה אחריו.</p><div class="board">טריגר ישן → פעולה חדשה</div><p><b>ישן:</b> חוזר מבית הספר → ישר למיטה עם הטלפון.</p><p><b>חדש:</b> חוזר מבית הספר → מניח תיק → שותה → אוכל → ורק אחר כך טלפון.</p><div class="teacher-note"><b>למורה:</b> המטרה אינה לומר שהטלפון ״רע״. המטרה היא להמחיש שהקשר קבוע יכול להפעיל תגובה קבועה, ושינוי הסביבה או סדר הפעולות יכול לעזור לשנות את הדפוס.</div><h3>ה. כלי מעשי — תוכנית ״אם–אז״</h3><div class="board">אם ________ → אז אני ________</div><p>״במקום להגיד: <b>אני אשתה יותר מים</b>, אני מגדיר מצב ברור: <b>אם סיימתי ארוחת בוקר → אני ממלא בקבוק.</b>״</p><p>״במקום: <b>אני אלך לישון מוקדם</b>, אפשר: <b>אם השעה 22:30 → הטלפון עובר להטענה מחוץ למיטה.</b>״</p><div class="research">לתוכניות כאלה קוראים <b>Implementation Intentions</b>. מטא־אנליזה של Gollwitzer & Sheeran בחנה תוכניות שמגדירות מראש מתי, איפה ואיך לפעול, ומצאה שהן יכולות לשפר את הסיכוי שמטרה תהפוך לפעולה.</div><p class="source">מקור: Gollwitzer, P.M. & Sheeran, P. (2006), <i>Advances in Experimental Social Psychology</i>, 38, 69–119. DOI: 10.1016/S0065-2601(06)38002-1.</p><div class="mini-task"><b>תרגיל של 60 שניות:</b> כל תלמיד משלים לעצמו: <b>אם __________ אז אני __________.</b> לא חייבים לשתף.</div><h3>ו. החיבור לעובר ושב</h3><p>״הפקדה חד־פעמית היא נחמדה. אבל אם היא הופכת להרגל — היא מתחילה להצטבר בלי שנצטרך לנהל מחדש את אותה החלטה בכל יום. אותו דבר בכיוון ההפוך: משיכה אחת לא הורסת את החשבון, אבל אם היא הופכת לברירת המחדל שלנו היא מצטברת.״</p><div class="board">פעולה → חזרה → הרגל → הצטברות</div><div class="quote">המטרה היא לא לקבל החלטה טובה פעם אחת — אלא לבנות סביבה שבה קל יותר לחזור עליה.</div></section>
-<section class="card"><span class="time">6 דקות</span><h2>3. משחק — פעולה או הרגל?</h2><p>אני מקריא מצב. התלמידים עונים: <b>פעולה</b> או <b>הרגל / דפוס</b>.</p><div class="steps"><div class="step">הלכתי לישון מאוחר אתמול בגלל חתונה → פעולה / אירוע</div><div class="step">אני הולך לישון כל יום באחת כי אני בטלפון → הרגל</div><div class="step">אכלתי גלידה בשבת → פעולה</div><div class="step">כל ערב אני אוכל מול המסך בלי לשים לב לכמות → הרגל</div><div class="step">לא התאמנתי היום כי אני חולה → פעולה</div><div class="step">אני תמיד מוותר על אימון כשקצת קשה → דפוס אפשרי</div></div><p>להדגיש שגם שתיית מים בבוקר, הכנת תיק בערב או שעת שינה קבועה הם הרגלים.</p><div class="quote">״הרגל הוא כלי. השאלה היא לא אם יש לי הרגלים — אלא לאן הם לוקחים אותי.״</div></section>
-<section class="card"><span class="time">6 דקות</span><h2>4. הרגלים מצטברים</h2><p>אם יש צנצנת ומטבעות, להכניס מטבע אחד ולומר: ״זה יום אחד״. להוסיף עוד ועוד.</p><p>״בהתחלה זה נראה כמעט כלום. אבל אחרי מספיק פעמים — יש פה כבר משהו משמעותי.״</p><p>דוגמה: לילה אחד עם חצי שעה פחות שינה אולי לא מרגיש דרמטי, אבל כשהדבר חוזר שוב ושוב הוא כבר דפוס.</p><p>אותו דבר בכיוון ההפוך: אימון אחד לא בונה גוף חדש, אבל אימונים שחוזרים לאורך חודשים יכולים לשנות אותנו.</p><div class="quote">״הרגל קטן יכול להיות כמעט בלתי מורגש היום — אבל משמעותי מאוד בעוד שנה.״</div></section>
-<section class="card"><span class="time">6 דקות</span><h2>5. מה מקדם אותי ומה מעכב אותי?</h2><p>לצייר על הלוח שני טורים:</p><div class="flow"><span class="pill">מקדם אותי</span><span class="pill">מעכב אותי</span></div><p>״עכשיו אני רוצה שנפסיק לשאול רק טוב או רע, ונתחיל לשאול: <b>האם זה מתאים למטרה שלי?</b>״</p><p><b>מטרה:</b> להגיע מרוכז יותר לבית הספר. טלפון עד 1:30 בלילה כנראה מעכב; הכנת תיק מראש יכולה לקדם.</p><p><b>מטרה:</b> להשתפר בספורט. אימון יכול לקדם; עוד אימון אולי; עוד ועוד אימונים בלי התאוששות כבר יכולים לעכב.</p><div class="quote">אותה פעולה יכולה להיות מועילה בכמות אחת ופחות מועילה בכמות אחרת.</div></section>
-<section class="card"><span class="time">5 דקות</span><h2>6. אתגר סיום — בונים חשבון</h2><p>כל קבוצה מקבלת דמות:</p><div class="board">דניאל בן 15. יש לו מחר מבחן. היום יש לו אימון. הוא ישן אתמול 5 שעות. הוא רוצה לשחק במחשב עם החברים. הוא גם צריך לאכול ולהתארגן למחר.</div><p>השאלה: <b>״איך הייתם בונים לו את הערב?״</b></p><p>אין תשובה אחת נכונה. הקבוצה מסבירה: מה היא בחרה לעשות? מה דחתה? מה הרוויחה? על מה ויתרה?</p><div class="quote">״אני לא מחפש ערב מושלם. אני רוצה לראות אם אתם יודעים להבין את המחיר של כל בחירה.״</div></section>
-<section class="card summary"><span class="time">3 דקות</span><h2>סיכום</h2><p>לחזור למשפט שעל הלוח ולשאול: <b>״מה ההרגל הקטן ביותר שאתם יכולים לשנות השבוע שייתן לכם הפקדה קבועה?״</b></p><p>אפשר שכל תלמיד יכתוב על פתק: <b>הרגל אחד שאני רוצה לשים לב אליו השבוע.</b></p><h3>שלושת המסרים המרכזיים</h3><ul><li>פעולה אחת לא מגדירה אותי — פעולות שחוזרות הופכות לדפוס.</li><li>פעולה טובה בתחום אחד לא נותנת פטור מהשאר, ופעולה פחות טובה אחת לא הורסת הכול.</li><li>לפני שאני שואל אם משהו טוב או רע — אני שואל אם הוא מקדם אותי למטרה שלי.</li></ul><div class="quote">״הגוף לא מסתכל על פעולה אחת. הוא מסכם את החשבון.״</div></section>
-<section class="card"><h2>צ'קליסט קצר למורה</h2><p>20 כרטיסים לכל קבוצה → משחק חדש / ערבוב → 6 נתונים בכל שאלה → הקבוצות ממיינות → חשיפת תשובות → דיון ב״תלוי״ → טריגר והקשר → אוטומטיות → מיתוס 21 הימים → פספוס אחד לא מאפס → שינוי סביבה → תוכנית אם–אז → פעולה או הרגל → המחשת הצטברות → מקדם / מעכב → אתגר דניאל → הרגל אחד לשבוע → הגוף מסכם את החשבון.</p></section>
+
+<section class="hero">
+<small>אורח חיים בריא והקשר בין ספורט להצלחה • שיעור 2</small>
+<h1>מעבדת ההרגלים — מי מנהל את מי?</h1>
+<p>איך חזרות הופכות תגובות לאוטומטיות יותר, למה אין מספר קסם ליצירת הרגל, ואיך בונים מערכת שעובדת גם ביום שאין חשק.</p>
+</section>
+
+<section class="card">
+<h2>מטרות השיעור</h2>
+<ul>
+<li>להבין כיצד חזרה יכולה להפוך פעולה לאוטומטית יותר.</li>
+<li>לזהות טריגר ותגובה בהרגל.</li>
+<li>להבין שאין מספר קסם של ימים ליצירת הרגל.</li>
+<li>להפוך מטרה כללית למערכת התנהגותית.</li>
+<li>לבנות תגובה חלופית להרגל שמפריע.</li>
+<li>להקטין הרגל לצעד ראשון שקל להתחיל.</li>
+<li>לצאת עם תוכנית הרגל אישית ומעשית.</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>ציוד</h2>
+<div class="equipment">
+<div>שני צבעים ברורים — כרטיסים או קונוסים</div>
+<div>לוח וטוש</div>
+<div>טיימר</div>
+<div>דפים או מחברות</div>
+<div>כלי כתיבה</div>
+</div>
+</section>
+
+<section class="card">
+<span class="time">4 דקות</span>
+<h2>1. מושגי בסיס</h2>
+<div class="board">טריגר → פעולה → חזרה → יותר אוטומטיות</div>
+<p><b>טריגר:</b> דבר שמתרחש לפני הפעולה ויכול לעורר אותה. לדוגמה: התראה בטלפון.</p>
+<p><b>פעולה:</b> מה שאני עושה. לדוגמה: פותח את הטלפון.</p>
+<p><b>חזרה:</b> אותו חיבור מתרחש שוב ושוב.</p>
+<p><b>אוטומטיות:</b> עם החזרות, הפעולה עשויה לדרוש פחות מחשבה והחלטה מודעת.</p>
+<div class="question"><b>שאלה:</b> תנו פעולה שאתם עושים לפעמים כמעט בלי לחשוב עליה.</div>
+<div class="teacher-note"><b>תשובות / קווים מנחים:</b> לפתוח טלפון כששומעים התראה, לחגור חגורה, לצחצח שיניים, ללכת למקום קבוע כשנכנסים לכיתה. בשלב הזה לא ממיינים ל״טוב״ או ״רע״.</div>
+<div class="life"><b>כלי לחיים:</b> לפני שמנסים לשנות התנהגות — קודם מזהים מה מפעיל אותה.</div>
+</section>
+
+<section class="card">
+<span class="time">7 דקות</span>
+<h2>2. פתיחה — Go / No-Go Reversal</h2>
+<p>קובעים שני צבעים. לדוגמה:</p>
+<div class="steps">
+<div class="step">ירוק = GO — נגיעה בקו / צעד קדימה / הרמת יד</div>
+<div class="step">אדום = NO-GO — לא זזים</div>
+</div>
+<p>מבצעים רצף מהיר. אחרי שהתגובה מתחילה לזרום, <b>מחליפים את הכללים:</b> ירוק = עצור, אדום = פעל.</p>
+<div class="question"><b>שאלה:</b> ידעתם שהכלל השתנה. אז למה בכל זאת לפעמים הגוף רצה לבצע את הכלל הישן?</div>
+<div class="teacher-note"><b>למורה:</b> זו המחשה של למידת קשר בין סימן לתגובה, עיכוב תגובה והפרעה של תגובה שתורגלה. לא לומר ש״יצרנו הרגל בשתי דקות״.</div>
+<div class="life"><b>כלי לחיים:</b> לדעת מה נכון לעשות לא תמיד מספיק כדי שהתגובה הישנה תיעלם מיד.</div>
+</section>
+
+<section class="card">
+<span class="time">9 דקות</span>
+<h2>3. מפרקים את ההתנסות + פבלוב</h2>
+<div class="question"><b>מה השתנה אחרי כמה חזרות?</b></div>
+<div class="teacher-note">התגובה נעשתה מהירה ומוכרת יותר ופחות דרשה חשיבה בכל פעם.</div>
+<div class="question"><b>למה טעינו אחרי היפוך הכלל למרות שהבנו אותו?</b></div>
+<div class="teacher-note">כי צריך גם לבצע תגובה חדשה וגם לעכב תגובה קודמת שכבר תורגלה.</div>
+<div class="question"><b>מה היה קשה יותר — ללמוד את הכלל הראשון או לשנות אותו?</b></div>
+<div class="teacher-note">שינוי יכול להיות קשה יותר כי לא רק לומדים חדש — גם מתמודדים עם תגובה קודמת. <b>ידע והתנהגות הם לא אותו דבר.</b></div>
+
+<h3>פבלוב — דוגמה קלאסית ללמידת קשרים</h3>
+<p>אוכל עורר תגובה טבעית. כאשר סימן הופיע שוב ושוב לפני האוכל, נלמד קשר בין האירועים, ובהמשך הסימן עצמו יכול היה לעורר תגובה.</p>
+<div class="question"><b>מה הקשר למה שעשינו?</b></div>
+<div class="teacher-note">מערכת הלמידה רגישה לדברים שמופיעים שוב ושוב יחד. רמזים יכולים לקבל משמעות ולהתחבר לתגובות.</div>
+<div class="teacher-note"><b>דיוק:</b> פבלוב חקר התניה קלאסית, לא יצירת הרגל במובן המודרני. משתמשים בו כדי להמחיש למידת קשרים.</div>
+<div class="life"><b>כלי לחיים:</b> כשאתה תופס את עצמך עושה משהו אוטומטית, שאל: <b>״מה קרה שנייה לפני?״</b></div>
+</section>
+
+<section class="card">
+<span class="time">8 דקות</span>
+<h2>4. מיתוס 21 הימים</h2>
+<p>כותבים בארבע פינות:</p>
+<div class="flow"><span class="pill">7 ימים</span><span class="pill">21 ימים</span><span class="pill">66 ימים</span><span class="pill">תלוי</span></div>
+<div class="question"><b>כמה זמן לוקח ליצור הרגל?</b></div>
+<div class="board">אין מספר קסם.</div>
+<p>במחקר של Lally ועמיתיה נמצאה שונות גדולה בין אנשים והתנהגויות. בקבוצה שבה ניתן היה להתאים את המודל, החציון היה בערך 66 ימים, והטווח היה כ־18–254 ימים.</p>
+<div class="question"><b>אז מחליפים את חוק 21 הימים בחוק 66 הימים?</b></div>
+<div class="teacher-note"><b>תשובה:</b> לא. 66 הוא לא מספר קסם חדש.</div>
+<div class="question"><b>למה לשתות כוס מים בבוקר ולהתחיל אימון ארוך כל יום לא בהכרח יהפכו להרגל באותו קצב?</b></div>
+<div class="teacher-note">מורכבות, מאמץ, זמן, הקשר, עקביות והבדלים בין אנשים.</div>
+<div class="question"><b>פספסתי יום — חזרתי לאפס?</b></div>
+<div class="teacher-note">לא. במחקר של Lally פספוס הזדמנות אחת לא פגע באופן מהותי בתהליך.</div>
+<div class="life"><b>כלי לחיים:</b> החלף ״פספסתי — הרסתי הכול״ ב־<b>״פספסתי — אני חוזר בהזדמנות הבאה״.</b></div>
+<div class="quote">בונים הרגל בחזרות — לא בספירת ימים.</div>
+</section>
+
+<section class="card">
+<span class="time">9 דקות</span>
+<h2>5. תן להרגל כתובת</h2>
+<p><b>א׳:</b> ״היום אני אלמד מתישהו.״<br><b>ב׳:</b> ״אחרי ארוחת ערב, ליד השולחן, אני לומד 10 דקות.״</p>
+<div class="question"><b>לאיזה משפט יש יותר סיכוי להפוך לפעולה ממשית?</b></div>
+<div class="teacher-note"><b>ב׳.</b> יש בו מתי, איפה, טריגר ופעולה ברורה.</div>
+
+<h3>מה הסביבה עושה?</h3>
+<p><b>מצב א׳:</b> רוצה לקרוא לפני השינה; הספר בארון והטלפון על הכרית.</p>
+<p><b>מצב ב׳:</b> הספר על הכרית והטלפון נטען מחוץ לחדר.</p>
+<div class="question"><b>איזו סביבה עוזרת יותר לתוכנית?</b></div>
+<div class="teacher-note">מצב ב׳. הפעולה הרצויה ברורה ונגישה יותר, והפעולה שמפריעה דורשת יותר מאמץ.</div>
+<p>כאן אפשר לחבר ל־<i>Atomic Habits</i>: <b>Make it obvious</b> ו־<b>Make it easy</b>.</p>
+<div class="teacher-note"><b>דיוק:</b> אלה כלים יישומיים של James Clear, לא ״חוקי מוח״.</div>
+<div class="life"><b>כלי לחיים:</b><br><b>אחרי ש־_____ קורה, במקום/בזמן _____, אני עושה _____.</b></div>
+<div class="quote">אל תגיד רק מה אתה רוצה לעשות — תחליט מתי, איפה ואחרי מה.</div>
+</section>
+
+<section class="card">
+<span class="time">10 דקות</span>
+<h2>6. לא מוחקים — מחליפים</h2>
+<div class="board">משעמם לי → טלפון</div>
+<div class="question"><b>אם אני אומר רק ״אסור לי לפתוח טלפון״ — מה אני עושה כשהשעמום שוב מגיע?</b></div>
+<p>הטריגר עדיין קיים. לכן במקום:</p>
+<div class="board">טריגר → לא לעשות → ???</div>
+<p>בונים:</p>
+<div class="board">טריגר ישן → תגובה חדשה</div>
+
+<h3>פעילות — מצא תחליף</h3>
+<p><b>נכנסתי למיטה → גלילה.</b></p>
+<div class="teacher-note"><b>טריגר:</b> כניסה למיטה. <b>פעולה ישנה:</b> גלילה. <b>מה היא נותנת?</b> בידור/רגיעה. <b>חלופה:</b> קריאה קצרה, מוזיקה רגועה או פעולה אחרת שמתאימה למטרה.</div>
+<p><b>נתקלתי בשאלה קשה → יוטיוב.</b></p>
+<div class="teacher-note"><b>טריגר:</b> קושי. <b>תגובה ישנה:</b> בריחה מהמשימה. <b>מה היא נותנת?</b> הקלה מיידית. <b>חלופה:</b> שתי דקות הפסקה, בקשת עזרה או להתחיל מהשאלה הקלה ביותר.</div>
+<div class="life"><b>כלי לחיים:</b><br><b>כש־_____ קורה, במקום _____, אני אעשה _____.</b></div>
+<div class="teacher-note"><b>דיוק:</b> לא אומרים שההרגל הישן נמחק. בונים תגובה חלופית שמתחרה בו.</div>
+<div class="quote">אל תשאיר רק ״לא״ — תכין ״במקום״.</div>
+</section>
+
+<section class="card">
+<span class="time">8 דקות</span>
+<h2>7. מטרה מול מערכת</h2>
+<p><b>תלמיד א׳:</b> ״אני רוצה לקבל 90.״<br><b>תלמיד ב׳:</b> ״אחרי ארוחת ערב אני לומד 10 דקות.״</p>
+<div class="question"><b>מה ההבדל?</b></div>
+<div class="board">מטרה = לאן אני רוצה להגיע<br>מערכת = מה אני עושה שוב ושוב בדרך</div>
+
+<h3>מטרה או מערכת?</h3>
+<div class="steps">
+<div class="step">״אני רוצה להיות בכושר״ → מטרה</div>
+<div class="step">״בימים א׳, ג׳ וה׳ אני עושה 15 דקות פעילות אחרי שאני מגיע הביתה״ → מערכת</div>
+<div class="step">״אני רוצה להיות פחות בטלפון״ → מטרה</div>
+<div class="step">״כשאני מתחיל ללמוד, הטלפון עובר לחדר אחר״ → מערכת</div>
+</div>
+
+<div class="life"><b>כלי לחיים:</b><br><b>המטרה שלי:</b> _____<br><b>המערכת שלי:</b> אחרי ש־_____ אני _____.</div>
+<div class="teacher-note">לא לומר שמטרות אינן חשובות. המטרה נותנת כיוון; המערכת נותנת פעולה שאפשר לבצע היום.</div>
+</section>
+
+<section class="card">
+<span class="time">8 דקות</span>
+<h2>8. תתחיל קטן</h2>
+<p><b>א׳:</b> ״אני אלמד שעה בכל יום.״<br><b>ב׳:</b> ״אני פותח מחברת ומתחיל משאלה אחת.״</p>
+<div class="question"><b>מה קל יותר להתחיל ביום שאין לי כוח?</b></div>
+<p>המטרה אינה להסתפק תמיד בשאלה אחת. המטרה היא להקטין את <b>מחסום ההתחלה</b>.</p>
+
+<h3>פעילות — כווץ את ההרגל</h3>
+<div class="steps">
+<div class="step">להיכנס לכושר → אימון → הליכה → 5 דקות → ללבוש נעליים ולצאת</div>
+<div class="step">להשתפר במתמטיקה → 20 דקות → 5 דקות → לפתור שאלה אחת</div>
+<div class="step">לקרוא יותר → פרק → 5 עמודים → עמוד אחד</div>
+</div>
+<p>ב־<i>Atomic Habits</i> James Clear מציע את ״חוק שתי הדקות״ — להקטין הרגל לגרסה שקל מאוד להתחיל.</p>
+<div class="teacher-note"><b>דיוק:</b> שתי דקות אינן מספר מדעי. זה כלי פרקטי להפחתת החיכוך של ההתחלה.</div>
+<div class="life"><b>כלי לחיים — גרסת יום גרוע:</b><br><b>ביום רגיל:</b> _____<br><b>ביום גרוע:</b> _____</div>
+<div class="quote">אל תקטין את המטרה — תקטין את הצעד הראשון.</div>
+</section>
+
+<section class="card">
+<span class="time">8 דקות</span>
+<h2>9. למה שארצה לעשות את זה שוב?</h2>
+<p><b>א׳:</b> ״אני מתאמן כי בעוד שנים זה טוב לבריאות שלי.״</p>
+<p><b>ב׳:</b> ״אני עושה פעילות שאני נהנה ממנה, עם מוזיקה או חבר, וגם יודע שהיא טובה לבריאות שלי.״</p>
+<div class="question"><b>איזו פעולה יהיה קל יותר לרצות לבצע שוב מחר?</b></div>
+<div class="teacher-note">תוצאה עתידית חשובה לבחירת המטרה, אבל גם למה שקורה עכשיו יש השפעה על ההתמדה.</div>
+<p>״תגמול״ לא חייב להיות אוכל או פרס חיצוני. הוא יכול להיות הנאה, תחושת הצלחה, סימון ✓, פעילות עם חבר או לראות התקדמות.</p>
+<div class="life"><b>כלי לחיים:</b> שאל את עצמך — <b>״איך אני יכול להפוך את הפעולה הזאת לקצת יותר נעימה או מספקת עכשיו?״</b></div>
+<div class="quote">העתיד נותן סיבה. ההווה עוזר לנו לחזור.</div>
+</section>
+
+<section class="card">
+<span class="time">10 דקות</span>
+<h2>10. פותחים את המעבדה — בונים הרגל אמיתי</h2>
+<p>כל תלמיד בונה <b>תוכנית להרגל אחד בלבד</b>.</p>
+<div class="steps">
+<div class="step"><b>1. המטרה:</b> מה אני רוצה לשפר?</div>
+<div class="step"><b>2. הפעולה:</b> איזו פעולה קטנה מקדמת אותי?</div>
+<div class="step"><b>3. הטריגר:</b> מתי / אחרי מה היא תקרה?</div>
+<div class="step"><b>4. הכתובת:</b> איפה?</div>
+<div class="step"><b>5. המערכת:</b> אחרי ש־_____ אני _____.</div>
+<div class="step"><b>6. גרסת יום גרוע:</b> אם אין לי כוח, מה המינימום שלי?</div>
+<div class="step"><b>7. אם מחליפים הרגל:</b> במקום _____ אני _____.</div>
+<div class="step"><b>8. הסביבה:</b> מה אפשר להכין מראש כדי להקל?</div>
+<div class="step"><b>9. סיפוק מיידי:</b> איך אדע שסיימתי / איך אהפוך את הפעולה לנעימה יותר?</div>
+</div>
+</section>
+
+<section class="card">
+<span class="time">5 דקות</span>
+<h2>11. מבחן ההרגל</h2>
+<p>כל תלמיד בודק את התוכנית שלו:</p>
+<div class="check">
+<div>✓ האם היא ברורה?</div>
+<div>✓ האם יש טריגר?</div>
+<div>✓ האם הפעולה קטנה?</div>
+<div>✓ האם היא יכולה לקרות שוב ושוב?</div>
+<div>✓ האם הכנתי גרסה ליום קשה?</div>
+<div>✓ אם אני מחליף הרגל — האם יש פעולה חלופית?</div>
+<div>✓ האם הסביבה עוזרת לי?</div>
+<div>✓ האם יש משהו מספק בפעולה או מיד אחריה?</div>
+</div>
+<div class="quote">אם משהו לא עובד — משפרים את המערכת, לא פשוט מאשימים את עצמנו.</div>
+</section>
+
+<section class="card summary">
+<span class="time">5 דקות</span>
+<h2>12. סיכום</h2>
+<div class="quote">טריגר → פעולה → חזרה → יותר אוטומטיות</div>
+<ul>
+<li>אין מספר קסם.</li>
+<li>תן להרגל כתובת.</li>
+<li>לא רק מוחקים — בונים חלופה.</li>
+<li>מטרה צריכה מערכת.</li>
+<li>מתחילים קטן.</li>
+<li>הסביבה יכולה לעזור.</li>
+<li>כדאי לתת סיבה לחזור גם מחר.</li>
+</ul>
+<div class="question"><b>שאלת סיום:</b> אם הייתם צריכים לקחת מהשיעור כלל אחד בלבד — מה הייתם לוקחים?</div>
+<div class="teacher-note"><b>קווים מנחים:</b> אין תשובה אחת נכונה. חפשו אם התלמידים מזכירים התחלה קטנה, טריגר, חזרה אחרי פספוס, מערכת, החלפת התנהגות או שינוי סביבה.</div>
+<div class="quote">אל תחכה שההרגל הנכון יקרה — בנה את התנאים שיעזרו לו לקרות.</div>
+</section>
+
+<section class="card">
+<h2>הערות מדעיות למורה</h2>
+<div class="research"><b>הרגל ואוטומטיות:</b> מחקרי הרגלים מדגישים קשרים שנבנים בין הקשר/רמז לבין תגובה וחזרתיות בתוך הקשר דומה.</div>
+<div class="research"><b>21 / 66 ימים:</b> 66 ימים אינם חוק. במחקר Lally הייתה שונות גדולה מאוד בין אנשים והתנהגויות.</div>
+<div class="research"><b>Atomic Habits:</b> זהו מודל יישומי פופולרי. כלים כמו Make it obvious, Make it easy ו״חוק שתי הדקות״ שימושיים להוראה, אך אינם ״חוקי מוח״.</div>
+<div class="research"><b>תוכניות אם־אז:</b> Implementation intentions מגדירות מראש מתי ואיך נפעל, ויש להן בסיס מחקרי רחב בהשגת מטרות.</div>
+<div class="research"><b>שינוי הרגל:</b> לא מתארים את השינוי כמחיקה פשוטה של ההרגל הישן. תגובה ישנה יכולה לחזור כאשר הטריגרים הישנים חוזרים.</div>
+</section>
+
+<section class="card">
+<h2>מקורות למורה</h2>
+<p class="source">Lally, P. et al. (2010). <i>How are habits formed: Modelling habit formation in the real world.</i> European Journal of Social Psychology. DOI: 10.1002/ejsp.674.</p>
+<p class="source">Wood, W. & Neal, D. T. (2007). <i>A New Look at Habits and the Habit-Goal Interface.</i> Psychological Review, 114(4), 843–863.</p>
+<p class="source">Gardner, B. et al. — research on habit formation, context stability and automaticity.</p>
+<p class="source">Gollwitzer, P. M. & Sheeran, P. (2006). <i>Implementation Intentions and Goal Achievement.</i></p>
+<p class="source">James Clear, <i>Atomic Habits</i> — used here as a practical framework, not as a stand-alone scientific theory.</p>
+</section>
+
+<section class="card">
+<h2>תזמון מוצע</h2>
+<p>מושגים 4 → Go/No-Go 7 → פירוק + פבלוב 9 → מיתוס 21 הימים 8 → תן להרגל כתובת 9 → לא מוחקים, מחליפים 10 → מטרה מול מערכת 8 → תתחיל קטן 8 → תגמול מיידי 8 → בניית הרגל אישי 10 → מבחן ההרגל + סיכום 10.</p>
+<p><b>סה״כ:</b> כ־90 דקות כולל מעברים ושאלות.</p>
+</section>
+
 <p class="tiny">שיעור 2 בקורס אורח חיים בריא והקשר בין ספורט להצלחה.</p>
 </main>
-<script>
-const questionBank=[
-{topic:'שינה',items:['ישנתי 9 שעות בלילה.','נשארתי בטלפון עד 2:00 כשאני צריך לקום ב־7:00.','ישנתי שעתיים אחר הצהריים.','הלכתי לישון וקמתי בערך באותה שעה במשך השבוע.','שתיתי משקה אנרגיה בערב.','עשיתי אימון בערב.'],d:[1,4],w:[2,5],x:[3,6],note:'שנת צהריים תלויה בזמן, במשך ובשינה בלילה. אימון בערב תלוי בעוצמה, בשעה ובתגובה האישית.'},
-{topic:'ערב לפני מבחן',items:['הכנתי מראש תיק וכל מה שאני צריך למחר.','למדתי עד 3:00 בלילה למרות שאני קם ב־7:00.','לקחתי הפסקות קצרות בזמן הלמידה.','שתיתי משקה אנרגיה כדי להמשיך ללמוד.','למדתי עם חברים.','החלטתי ללמוד עוד שעה במקום ללכת לישון.'],d:[1,3],w:[2,4],x:[5,6],note:'למידה עם חברים יכולה לעזור או להסיח. שעה נוספת של למידה תלויה בכמה כבר למדת וכמה שינה היא תעלה לך.'},
-{topic:'שתייה במהלך היום',items:['לקחתי בקבוק מים לבית הספר.','לא שתיתי כמעט כל הבוקר.','שתיתי מים לאורך היום.','שתיתי כמות גדולה מאוד ממש רגע לפני אימון.','שתיתי משקה אנרגיה במקום מים.','שתיתי משקה ספורט אחרי פעילות ארוכה ומאומצת בחום.'],d:[1,3],w:[2,5],x:[4,6],note:'כמות גדולה בבת אחת תלויה בכמות ובמצב. משקה ספורט יכול להיות רלוונטי במאמץ ממושך או בחום, אך אינו נחוץ לכל פעילות.'},
-{topic:'פעילות גופנית',items:['יצאתי להליכה במקום לשבת כל אחר הצהריים.','לא עשיתי כמעט שום פעילות במשך שבועות.','התאמנתי קשה כל יום בלי זמן להתאושש.','עשיתי פעילות שאני נהנה ממנה.','הוספתי אימון שני באותו היום.','החלטתי להתאמן כשאני לא מרגיש טוב.'],d:[1,4],w:[2,3],x:[5,6],note:'אימון נוסף תלוי בעומס ובהתאוששות. אימון כשלא מרגישים טוב תלוי בסיבה ובחומרה.'},
-{topic:'אחרי אימון',items:['שתיתי מים אחרי האימון.','נשארתי ער עד 2:00 בלילה במשחק מחשב.','אכלתי ארוחה אחרי אימון קשה.','לא שתיתי כמעט כלום למרות שהזעתי הרבה.','עשיתי מתיחות.','שתיתי משקה ספורט.'],d:[1,3],w:[2,4],x:[5,6],note:'מתיחות יכולות להתאים במצבים מסוימים אך אינן פתרון קסם להתאוששות. הצורך במשקה ספורט תלוי במשך ובעוצמת הפעילות ובתנאים.'},
-{topic:'הטלפון שלי',items:['קבעתי שעה שבה אני מפסיק להשתמש בטלפון בלילה.','הודעות בטלפון מעירות אותי במהלך הלילה.','השתמשתי ביומן בטלפון כדי לתכנן את היום.','צפיתי בסרטון לימודי לפני השינה.','בזמן שיעורי הבית בדקתי הודעות כל כמה דקות.','שיחקתי בטלפון בערב.'],d:[1,3],w:[2,5],x:[4,6],note:'גם תוכן לימודי או משחק תלויים בזמן, במשך השימוש ובהשפעה על השינה או המשימות.'},
-{topic:'ארוחת בוקר',items:['אכלתי כי הייתי רעב לפני בית הספר.','שתיתי משקה אנרגיה במקום לאכול.','לא אכלתי ארוחת בוקר.','שתיתי מים בבוקר.','יצאתי בלי שום אוכל למרות שידעתי שלא אוכל שוב שעות רבות והייתי רעב.','אכלתי משהו מתוק בבוקר.'],d:[1,4],w:[2,5],x:[3,6],note:'לא כולם חייבים לאכול בדיוק באותה שעה. גם מזון מתוק צריך להיבחן לפי הכמות, ההקשר ושאר הארוחה.'},
-{topic:'נשנושים',items:['אכלתי משהו כי הייתי באמת רעב בין שתי ארוחות רחוקות.','אכלתי שוב ושוב מתוך שעמום למרות שכבר הייתי שבע.','אכלתי ממתק לפני אימון.','הכנתי משהו לאכול מראש ליום ארוך.','החלפתי ארוחה שלמה רק בחטיפים וממתקים.','אכלתי משהו מיד אחרי אימון.'],d:[1,4],w:[2,5],x:[3,6],note:'מזון לפני או אחרי פעילות תלוי בסוג, בכמות, בתזמון ובמה שהגוף צריך באותו מצב.'},
-{topic:'לחץ',items:['יצאתי לכמה דקות הליכה כדי להירגע.','דיברתי עם מישהו שאני סומך עליו.','נשארתי ער כל הלילה בגלל הלחץ.','השתמשתי במשקה אנרגיה כדי להתמודד עם העייפות.','לקחתי הפסקה מהמשימה.','הלכתי להתאמן כשאני לחוץ.'],d:[1,2],w:[3,4],x:[5,6],note:'הפסקה יכולה לעזור או להפוך לדחיינות. אימון יכול לעזור בהתמודדות עם לחץ, אבל תלוי בעומס ובמצב.'},
-{topic:'מנוחה והתאוששות',items:['ישנתי מספיק אחרי יום עמוס.','המשכתי להתאמן למרות כמה ימים של עייפות משמעותית וירידה בביצועים.','לקחתי יום מנוחה אחרי שבוע עמוס.','נשארתי במיטה יום שלם.','יצאתי לפעילות קלה ביום בלי אימון.','ביטלתי אימון כי לא התחשק לי.'],d:[1,3],w:[2],x:[4,5,6],note:'מנוחה, פעילות קלה ואפילו ביטול אימון אינם טובים או רעים אוטומטית — צריך להבין למה, כמה ומה מצב הגוף.'},
-{topic:'סוף השבוע',items:['הזזתי בכל סוף שבוע את שעת השינה בארבע שעות.','יצאתי לפעילות בחוץ.','הכנתי מראש דברים שאני צריך לשבוע הבא.','ישנתי יותר אחרי שבוע שבו ישנתי מעט מאוד.','שתיתי משקה אנרגיה מאוחר בלילה.','ביליתי עם חברים שאני נהנה להיות איתם.'],d:[2,3,6],w:[1,5],x:[4],note:'שינה נוספת יכולה לעזור לאחר חוסר שינה, אבל תלויה במשך, בתזמון ובהשפעה על שגרת השינה הבאה.'},
-{topic:'יום לימודים + אימון',items:['לקחתי איתי בקבוק מים.','לא אכלתי מהבוקר עד הערב למרות שהייתי רעב ויש לי אימון.','לקחתי כמה דקות לנוח בין בית הספר לאימון.','שתיתי משקה אנרגיה כדי ״לשרוד״ את האימון.','אכלתי משהו לפני האימון.','המשכתי להתאמן למרות סחרחורת משמעותית.'],d:[1,3],w:[2,4,6],x:[5],note:'מה אוכלים לפני אימון וכמה זמן לפניו תלוי בסוג המזון, באימון ובאדם.'},
-{topic:'אני רוצה להיות מרוכז יותר',items:['נתתי לעצמי מספיק זמן לישון.','כיביתי התראות בזמן למידה.','שתיתי קפאין מאוחר בלילה כדי ללמוד.','עשיתי לילה לבן לפני מבחן.','למדתי עם מוזיקה.','למדתי יחד עם חבר.'],d:[1,2],w:[3,4],x:[5,6],note:'מוזיקה ולמידה חברתית יכולות לעזור לאדם אחד ולהסיח אדם אחר.'},
-{topic:'אני רוצה להשתפר בספורט',items:['התאמנתי באופן עקבי לאורך זמן.','התאמנתי כל יום קשה בלי התאוששות.','ישנתי מספיק באופן קבוע.','שיניתי משהו באימון בעקבות משוב מהמאמן.','הוספתי אימון נוסף אחרי אימון קשה.','המשכתי להתאמן למרות כאב חד שהופיע בזמן התנועה.'],d:[1,3,4],w:[2,6],x:[5],note:'אימון נוסף יכול להיות מתאים או מיותר בהתאם לתוכנית, לעצימות ולהתאוששות.'},
-{topic:'חברים',items:['חברים הזמינו אותי לעשות איתם פעילות גופנית.','חברים לחצו עליי להישאר ער למרות שיש לי מבחן מוקדם.','אכלתי עם חברים במסעדה.','חבר הזכיר לי לקחת מים לאימון.','צחקנו על חבר שהחליט לנוח מאימון.','הצטרפתי לחוג ספורט בגלל חבר.'],d:[1,4],w:[2,5],x:[3,6],note:'אכילה במסעדה והצטרפות לספורט אינן חיוביות או שליליות בפני עצמן — ההקשר והתוצאה חשובים.'},
-{topic:'אבל זה בריא!',items:['שתיתי מים באופן קבוע במהלך היום.','עשיתי אימון קשה כל יום.','ישנתי 10 שעות.','כיביתי את המסך זמן מה לפני השינה.','אכלתי רק סלט אחרי אימון ארוך וקשה.','שתיתי משקה אנרגיה ללא סוכר.'],d:[1,4],w:[6],x:[2,3,5],note:'״אימון״, ״שינה״ ו״סלט״ נשמעים חיוביים, אבל כמות, צורך והקשר משנים את התמונה. ללא סוכר לא הופך משקה אנרגיה למומלץ לבני נוער.'},
-{topic:'השעה שלפני השינה',items:['הורדתי את רמת האור ועשיתי פעילות רגועה.','שתיתי קפה ב־22:00.','הכנתי את התיק למחר.','גללתי בטלפון במיטה במשך שעה.','עשיתי מקלחת.','סיימתי אימון קשה זמן קצר לפני השינה.'],d:[1,3],w:[2,4],x:[5,6],note:'מקלחת ואימון בערב יכולים להשפיע אחרת על אנשים שונים ותלויים בזמן ובעוצמה.'},
-{topic:'אני עייף היום',items:['הלכתי לישון מוקדם יותר כדי לתת לעצמי מספיק זמן לשינה.','שתיתי משקה אנרגיה.','יצאתי להליכה קלה.','עשיתי אימון קשה מאוד למרות עייפות קיצונית.','ישנתי שנת צהריים.','החלטתי לוותר היום על הפעילות שתכננתי.'],d:[1,3],w:[2,4],x:[5,6],note:'שנת צהריים או ויתור על פעילות יכולים להיות החלטה טובה או פחות טובה לפי הסיבה, הזמן והמצב.'},
-{topic:'יום שלם',items:['ישנתי 9 שעות.','לא שתיתי כמעט כלום עד אחר הצהריים.','עשיתי 45 דקות הליכה.','אכלתי משהו מתוק עם חברים.','הייתי בלחץ שעות בלי לקחת אפילו הפסקה קצרה.','אכלתי ארוחה מגוונת במהלך היום.'],d:[1,3,6],w:[2,5],x:[4],note:'דבר מתוק אינו ״משיכה״ אוטומטית. הכמות, התדירות, המטרה ושאר היום משפיעים על התמונה.'},
-{topic:'אליפות העובר ושב',items:['אחרי חמישה אימונים קשים לקחתי יום התאוששות.','למדתי עוד שעה למבחן ובגלל זה נשארו לי רק 7.5 שעות שינה.','אחרי לילה של 4 שעות שינה ישנתי 90 דקות בצהריים.','אחרי אימון של שעתיים בחום שתיתי משקה ספורט.','לפני המשחק שתיתי משקה אנרגיה.','אחרי שעות של ישיבה יצאתי להליכה קצרה.'],d:[1,6],w:[2,5],x:[3,4],note:'שנת צהריים יכולה לעזור אך אינה פשוט ״מוחקת״ את הלילה. משקה ספורט עשוי להיות רלוונטי במיוחד בפעילות ממושכת ואינטנסיבית ובתנאי חום.'}
-];
-let order=[];let current=0;
-function shuffledQuestions(){return [...Array(questionBank.length).keys()].sort(()=>Math.random()-.5)}
-function numsToText(arr){return arr.length?arr.join(', '):'—'}
-function render(){const q=questionBank[order[current]];document.getElementById('cardNumber').textContent=`כרטיס ${current+1}`;document.getElementById('topic').textContent=q.topic;document.getElementById('dataList').innerHTML=q.items.map((item,i)=>`<div class="data-item"><span class="data-num">${i+1}</span><span>${item}</span></div>`).join('');document.getElementById('depositAnswer').textContent=numsToText(q.d);document.getElementById('withdrawAnswer').textContent=numsToText(q.w);document.getElementById('dependsAnswer').textContent=numsToText(q.x);document.getElementById('dependsNote').innerHTML=`<b>למה ״תלוי״?</b> ${q.note}`;document.getElementById('answerBox').classList.remove('show');document.getElementById('revealBtn').textContent='👁️ חשיפת תשובות';document.getElementById('progress').textContent=`כרטיס ${current+1} מתוך ${questionBank.length}`;document.getElementById('prevBtn').disabled=current===0;document.getElementById('nextBtn').disabled=current===questionBank.length-1;}
-function newGame(){order=shuffledQuestions();current=0;render()}
-document.getElementById('revealBtn').addEventListener('click',()=>{const box=document.getElementById('answerBox');const show=!box.classList.contains('show');box.classList.toggle('show',show);document.getElementById('revealBtn').textContent=show?'🙈 הסתר תשובות':'👁️ חשיפת תשובות'});
-document.getElementById('nextBtn').addEventListener('click',()=>{if(current<questionBank.length-1){current++;render();document.getElementById('checkingGame').scrollIntoView({behavior:'smooth',block:'start'})}});
-document.getElementById('prevBtn').addEventListener('click',()=>{if(current>0){current--;render();document.getElementById('checkingGame').scrollIntoView({behavior:'smooth',block:'start'})}});
-document.getElementById('shuffleBtn').addEventListener('click',newGame);
-newGame();
-</script>
 </body>
 </html>
