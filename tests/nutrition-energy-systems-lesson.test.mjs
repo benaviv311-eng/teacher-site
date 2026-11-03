@@ -40,7 +40,7 @@ test('lesson 4 has five reveal hooks and 15 energy-system game questions', async
   assert.match(html, /היום נגלה 3 דברים/);
   assert.match(html, /מה אתם אומרים\?/);
   assert.equal((html.match(/class="hook-question"/g) ?? []).length, 5);
-  assert.equal((html.match(/class="energy-question"/g) ?? []).length, 15);
+  assert.equal((html.match(/class="energy-question(?: advanced)?"/g) ?? []).length, 15);
 });
 
 test('shared concept loop uses the four concepts chosen for lesson 4', async () => {
