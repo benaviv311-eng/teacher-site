@@ -9,9 +9,9 @@ const exists = async (path) => {
   catch { return false; }
 };
 
-test('grade 8 lesson 4 exists, is single-column, and covers hydration as four core concepts', async () => {
-  assert.equal(await exists('nutrition-grade8-lesson4.html'), true);
-  const html = await read('nutrition-grade8-lesson4.html');
+test('grade 8 lesson 5 exists, is single-column, and covers hydration as four core concepts', async () => {
+  assert.equal(await exists('nutrition-grade8-lesson5.html'), true);
+  const html = await read('nutrition-grade8-lesson5.html');
 
   assert.match(html, /data-layout="single-column"/);
   assert.match(html, /מים.*זיעה.*אלקטרוליטים.*התייבשות/s);
@@ -26,22 +26,22 @@ test('grade 8 lesson 4 exists, is single-column, and covers hydration as four co
   assert.match(html, /נוזלים.*פחמימה.*חלבון.*אלקטרוליטים/s);
 });
 
-test('lesson 4 contains ten three-choice myth questions with answer reveals', async () => {
-  const html = await read('nutrition-grade8-lesson4.html');
+test('lesson 5 contains ten three-choice myth questions with answer reveals', async () => {
+  const html = await read('nutrition-grade8-lesson5.html');
   assert.equal((html.match(/class="myth-question"/g) ?? []).length, 10);
   assert.equal((html.match(/class="myth-options"/g) ?? []).length, 10);
   assert.equal((html.match(/class="myth-answer"/g) ?? []).length, 10);
 });
 
-test('nutrition concepts and library expose lesson 4', async () => {
+test('nutrition concepts and library expose lesson 5', async () => {
   const concepts = await read('nutrition-concepts.js');
   const library = await read('nutrition-science.html');
 
-  assert.match(concepts, /nutrition-grade8-lesson4\.html/);
+  assert.match(concepts, /nutrition-grade8-lesson5\.html/);
   for (const term of ['מים', 'זיעה', 'אלקטרוליטים', 'התייבשות']) {
     assert.match(concepts, new RegExp(`term: '${term}'`));
   }
 
-  assert.match(library, /nutrition-grade8-lesson4\.html/);
+  assert.match(library, /nutrition-grade8-lesson5\.html/);
   assert.match(library, /מים.*זיעה.*אלקטרוליטים|שתייה.*זיעה/s);
 });
