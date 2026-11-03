@@ -9,9 +9,9 @@ const exists = async (path) => {
   catch { return false; }
 };
 
-test('grade 8 lesson 5 exists, is single-column, and teaches four micronutrients', async () => {
-  assert.equal(await exists('nutrition-grade8-lesson5.html'), true);
-  const html = await read('nutrition-grade8-lesson5.html');
+test('grade 8 lesson 6 exists, is single-column, and teaches four micronutrients', async () => {
+  assert.equal(await exists('nutrition-grade8-lesson6.html'), true);
+  const html = await read('nutrition-grade8-lesson6.html');
 
   assert.match(html, /data-layout="single-column"/);
   assert.match(html, /ברזל.*סידן.*ויטמין D.*B12/s);
@@ -22,8 +22,8 @@ test('grade 8 lesson 5 exists, is single-column, and teaches four micronutrients
   assert.match(html, /לא מאבחנים|לא לאבחן/);
 });
 
-test('lesson 5 contains forty three-choice dilemmas with hidden teacher answers', async () => {
-  const html = await read('nutrition-grade8-lesson5.html');
+test('lesson 6 contains forty three-choice dilemmas with hidden teacher answers', async () => {
+  const html = await read('nutrition-grade8-lesson6.html');
   assert.equal((html.match(/class="dilemma-question"/g) ?? []).length, 40);
   assert.equal((html.match(/class="dilemma-options"/g) ?? []).length, 40);
   assert.equal((html.match(/class="dilemma-answer"/g) ?? []).length, 40);
@@ -35,8 +35,8 @@ test('lesson 5 contains forty three-choice dilemmas with hidden teacher answers'
   }
 });
 
-test('lesson 5 gives food sources, deficiency context, and practical questions for every concept', async () => {
-  const html = await read('nutrition-grade8-lesson5.html');
+test('lesson 6 gives food sources, deficiency context, and practical questions for every concept', async () => {
+  const html = await read('nutrition-grade8-lesson6.html');
   for (const phrase of [
     'המוגלובין','ויטמין C','עדשים',
     'עצמות','1,300','יוגורט',
@@ -47,15 +47,15 @@ test('lesson 5 gives food sources, deficiency context, and practical questions f
   }
 });
 
-test('nutrition concepts and library expose lesson 5', async () => {
+test('nutrition concepts and library expose lesson 6', async () => {
   const concepts = await read('nutrition-concepts.js');
   const library = await read('nutrition-science.html');
 
-  assert.match(concepts, /nutrition-grade8-lesson5\.html/);
+  assert.match(concepts, /nutrition-grade8-lesson6\.html/);
   for (const term of ['ברזל', 'סידן', 'ויטמין D', 'B12']) {
     assert.match(concepts, new RegExp(`term: '${term}'`));
   }
 
-  assert.match(library, /nutrition-grade8-lesson5\.html/);
+  assert.match(library, /nutrition-grade8-lesson6\.html/);
   assert.match(library, /ויטמינים.*מינרלים|ברזל.*סידן/s);
 });
