@@ -26,6 +26,6 @@ test('linked game assets exist and use relative paths compatible with GitHub Pag
   }
   const html = read('english-scramble.html');
   assert.match(html, /href="english-games\.html"/);
-  assert.match(html, /src="english-scramble\.js"/);
+  assert.match(html, /src="english-scramble\.js\?v=946ccdd"/);
   assert.match(html, /href="english-scramble\.css"/);
 });

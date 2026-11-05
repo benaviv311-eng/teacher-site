@@ -62,9 +62,14 @@ test('standalone HTML loads the controller and provides responsive English game 
   const html = readFileSync(new URL('../english-scramble.html', import.meta.url), 'utf8');
   assert.match(html, /id="scrambleApp"/);
   assert.match(html, /english-scramble\.css/);
-  assert.match(html, /type="module" src="english-scramble\.js"/);
+  assert.match(html, /type="module" src="english-scramble\.js\?v=946ccdd"/);
   assert.match(html, /viewport/);
   assert.match(html, /href="english-games\.html"/);
+});
+
+test('the game module URL changes with the release so browsers do not reuse stale JavaScript', () => {
+  const html = readFileSync(new URL('../english-scramble.html', import.meta.url), 'utf8');
+  assert.match(html, /src="english-scramble\.js\?v=946ccdd"/);
 });
 
 test('setup offers both modes, all difficulty levels, and team-count choice', () => {
