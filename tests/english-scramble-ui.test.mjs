@@ -204,3 +204,14 @@ test('Reveal Answer displays the correct word with zero points and lets the next
   assert.equal(game.getState().turn, 1);
   assert.deepEqual(game.getState().scores, [0, 0]);
 });
+
+test('Give a Letter does not reveal the separate Hebrew translation hint', () => {
+  const { game, root } = harness();
+  game.startGame({ mode: 'solo', level: 'easy' });
+  game.giveLetter();
+  assert.doesNotMatch(root.innerHTML, /פירוש בעברית:/);
+  assert.match(root.innerHTML, /data-action="hint"[^>]*>💡 Hint/);
+  game.showHint();
+  assert.match(root.innerHTML, /פירוש בעברית:/);
+  assert.equal(game.getState().hintUsed, true);
+});

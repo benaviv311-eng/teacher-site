@@ -47,7 +47,7 @@ export function mountScramble(doc, clock = globalThis, random = Math.random) {
       mode, level, teamCount: Number(teamCount), words, turn: 0,
       tiles: shuffleLetters(words[0].word, random), selectedIds: [],
       scores: Array.from({ length: mode === 'teams' ? Number(teamCount) : 1 }, () => 0),
-      phase: 'playing', hintUsed: false, letterGiven: false, paused: false, secondsLeft: mode === 'teams' ? 45 : null,
+      phase: 'playing', hintUsed: false, translationShown: false, letterGiven: false, paused: false, secondsLeft: mode === 'teams' ? 45 : null,
       result: null, awarded: 0, message: '',
     };
     if (mode === 'teams') {
@@ -96,6 +96,7 @@ export function mountScramble(doc, clock = globalThis, random = Math.random) {
   function showHint() {
     if (!canEdit()) return;
     state.hintUsed = true;
+    state.translationShown = true;
     state.message = 'Use the clue to find the word.';
     render();
   }
@@ -154,6 +155,7 @@ export function mountScramble(doc, clock = globalThis, random = Math.random) {
     state.tiles = shuffleLetters(currentWord().word, random);
     state.selectedIds = [];
     state.hintUsed = false;
+    state.translationShown = false;
     state.letterGiven = false;
     state.paused = false;
     state.secondsLeft = state.mode === 'teams' ? 45 : null;
@@ -211,9 +213,9 @@ export function mountScramble(doc, clock = globalThis, random = Math.random) {
       ${scoreHTML()}
       ${isTeams ? `<div class="timer-row"><span class="timer-pill ${state.secondsLeft <= 10 ? 'is-urgent' : ''}" aria-label="Time remaining">⏱ <b data-timer>${timer}</b></span><button type="button" class="pause-button" data-action="pause" ${state.phase !== 'playing' ? 'disabled' : ''}>${state.paused ? '▶ Resume' : 'Ⅱ Pause'}</button></div>` : ''}
       <div class="puzzle-card"><div class="puzzle-top"><span class="puzzle-label">UNSCRAMBLE THE LETTERS</span><span class="word-length">${currentWord().word.length} letters</span></div><div class="free-clue"><span>CLUE</span>${escapeHTML(currentWord().clue)}</div>${tilesHTML()}<div class="puzzle-divider"><span>YOUR ANSWER</span></div>${answerHTML()}
-      ${state.hintUsed ? `<div class="hint-box" role="note">💡 פירוש בעברית: <span>${escapeHTML(currentWord().he)}</span></div>` : ''}
+      ${state.translationShown ? `<div class="hint-box" role="note">💡 פירוש בעברית: <span>${escapeHTML(currentWord().he)}</span></div>` : ''}
       <div class="feedback ${state.result === 'correct' ? 'is-correct' : state.result ? 'is-revealed' : ''}" role="status" aria-live="polite">${escapeHTML(state.message || (state.paused ? 'הזמן נעצר. לחצו Resume כדי להמשיך.' : 'Tap the letters in the right order.'))}</div>
-      ${state.phase === 'revealed' ? `<div class="reveal-box"><span>The word is</span><strong dir="ltr">${currentWord().word}</strong><small>${escapeHTML(currentWord().he)}</small></div><button type="button" class="start-button" data-action="next">${progress === total ? 'See Results' : 'Next Word'} <span>←</span></button>` : `<div class="action-grid"><button type="button" class="main-action" data-action="check" ${state.paused ? 'disabled' : ''}>✓ Check Answer</button><button type="button" class="soft-action" data-action="undo" ${state.paused ? 'disabled' : ''}>↶ Undo</button><button type="button" class="soft-action" data-action="clear" ${state.paused ? 'disabled' : ''}>✕ Clear</button><button type="button" class="soft-action" data-action="hint" ${state.paused || state.hintUsed ? 'disabled' : ''}>💡 Hint</button><button type="button" class="soft-action" data-action="letter" ${state.paused || state.letterGiven || state.selectedIds.length === currentWord().word.length ? 'disabled' : ''}>🔤 תן אות</button><button type="button" class="soft-action skip-action" data-action="reveal" style="grid-column:span 4" ${state.paused ? 'disabled' : ''}>👁️ גלה תשובה</button></div>`}</div>
+      ${state.phase === 'revealed' ? `<div class="reveal-box"><span>The word is</span><strong dir="ltr">${currentWord().word}</strong><small>${escapeHTML(currentWord().he)}</small></div><button type="button" class="start-button" data-action="next">${progress === total ? 'See Results' : 'Next Word'} <span>←</span></button>` : `<div class="action-grid"><button type="button" class="main-action" data-action="check" ${state.paused ? 'disabled' : ''}>✓ Check Answer</button><button type="button" class="soft-action" data-action="undo" ${state.paused ? 'disabled' : ''}>↶ Undo</button><button type="button" class="soft-action" data-action="clear" ${state.paused ? 'disabled' : ''}>✕ Clear</button><button type="button" class="soft-action" data-action="hint" ${state.paused || state.translationShown ? 'disabled' : ''}>💡 Hint</button><button type="button" class="soft-action" data-action="letter" ${state.paused || state.letterGiven || state.selectedIds.length === currentWord().word.length ? 'disabled' : ''}>🔤 תן אות</button><button type="button" class="soft-action skip-action" data-action="reveal" style="grid-column:span 4" ${state.paused ? 'disabled' : ''}>👁️ גלה תשובה</button></div>`}</div>
       <p class="keyboard-tip">⌨️ אפשר גם להקליד אותיות, למחוק ב־Backspace ולאשר ב־Enter.</p></section>`;
   }
 
