@@ -169,3 +169,38 @@ test('selecting setup options restores keyboard focus after rendering', () => {
   click('mode', 'teams');
   assert.equal(focusRestores(), 1);
 });
+
+test('Give a Letter places exactly one correct letter and limits the score to hint points', () => {
+  const { game, root } = harness();
+  game.startGame({ mode: 'solo', level: 'easy' });
+  assert.match(root.innerHTML, /data-action="letter"/);
+  const word = game.getState().words[0].word;
+  game.giveLetter();
+  assert.equal(game.getState().selectedIds.length, 1);
+  const chosenId = game.getState().selectedIds[0];
+  assert.equal(game.getState().tiles.find(tile => tile.id === chosenId).letter, word[0]);
+  assert.equal(game.getState().hintUsed, true);
+  game.giveLetter();
+  assert.equal(game.getState().selectedIds.length, 1, 'only one letter can be given per word');
+  for (const letter of word.slice(1)) {
+    const tile = game.getState().tiles.find(item => item.letter === letter && !game.getState().selectedIds.includes(item.id));
+    game.selectTile(tile.id);
+  }
+  game.submitAnswer();
+  assert.equal(game.getState().scores[0], 5);
+});
+
+test('Reveal Answer displays the correct word with zero points and lets the next team play', () => {
+  const { game, root } = harness();
+  game.startGame({ mode: 'teams', level: 'medium', teamCount: 2 });
+  assert.match(root.innerHTML, /data-action="reveal"/);
+  const word = game.getState().words[0].word;
+  game.revealAnswer();
+  assert.equal(game.getState().phase, 'revealed');
+  assert.equal(game.getState().result, 'revealed');
+  assert.deepEqual(game.getState().scores, [0, 0]);
+  assert.ok(root.innerHTML.includes(`>${word}</strong>`));
+  game.nextWord();
+  assert.equal(game.getState().turn, 1);
+  assert.deepEqual(game.getState().scores, [0, 0]);
+});

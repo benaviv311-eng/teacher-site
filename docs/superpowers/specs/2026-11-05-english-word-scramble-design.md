@@ -61,3 +61,9 @@ Add a playable English letter-unscrambling game to the existing Grade 7 English 
 
 - User accounts, saved leaderboards, teacher dashboards, analytics, grading, multiplayer networking, or modifying existing lessons.
 
+## Approved follow-up: letter reveal and answer reveal
+
+- **תן אות** fills the next correct letter into the current answer, once per word. It counts as a hint, so a correct solution is worth 5 rather than 10 points.
+- **גלה תשובה** reveals the correct word and its meaning, awards 0 points, and allows advancing to the next word or team.
+- The prior Skip action remains internally compatible; the visible control is labeled **גלה תשובה** to make its consequence clear.
+

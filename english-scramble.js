@@ -47,7 +47,7 @@ export function mountScramble(doc, clock = globalThis, random = Math.random) {
       mode, level, teamCount: Number(teamCount), words, turn: 0,
       tiles: shuffleLetters(words[0].word, random), selectedIds: [],
       scores: Array.from({ length: mode === 'teams' ? Number(teamCount) : 1 }, () => 0),
-      phase: 'playing', hintUsed: false, paused: false, secondsLeft: mode === 'teams' ? 45 : null,
+      phase: 'playing', hintUsed: false, letterGiven: false, paused: false, secondsLeft: mode === 'teams' ? 45 : null,
       result: null, awarded: 0, message: '',
     };
     if (mode === 'teams') {
@@ -100,6 +100,18 @@ export function mountScramble(doc, clock = globalThis, random = Math.random) {
     render();
   }
 
+  function giveLetter() {
+    if (!canEdit() || state.letterGiven || state.selectedIds.length >= currentWord().word.length) return;
+    const nextLetter = currentWord().word[state.selectedIds.length];
+    const tile = state.tiles.find(item => item.letter === nextLetter && !state.selectedIds.includes(item.id));
+    if (!tile) return;
+    state.selectedIds.push(tile.id);
+    state.letterGiven = true;
+    state.hintUsed = true;
+    state.message = 'גילינו אות אחת! המשיכו להרכיב את המילה.';
+    render();
+  }
+
   function reveal(result, message) {
     if (!canEdit()) return;
     state.phase = 'revealed';
@@ -126,6 +138,7 @@ export function mountScramble(doc, clock = globalThis, random = Math.random) {
   }
 
   function skipWord() { reveal('skipped', 'No points this time. Keep learning!'); }
+  function revealAnswer() { reveal('revealed', 'התשובה נחשפה · 0 נקודות'); }
 
   function finishGame() {
     if (!state) return;
@@ -141,6 +154,7 @@ export function mountScramble(doc, clock = globalThis, random = Math.random) {
     state.tiles = shuffleLetters(currentWord().word, random);
     state.selectedIds = [];
     state.hintUsed = false;
+    state.letterGiven = false;
     state.paused = false;
     state.secondsLeft = state.mode === 'teams' ? 45 : null;
     state.phase = 'playing';
@@ -199,7 +213,7 @@ export function mountScramble(doc, clock = globalThis, random = Math.random) {
       <div class="puzzle-card"><div class="puzzle-top"><span class="puzzle-label">UNSCRAMBLE THE LETTERS</span><span class="word-length">${currentWord().word.length} letters</span></div><div class="free-clue"><span>CLUE</span>${escapeHTML(currentWord().clue)}</div>${tilesHTML()}<div class="puzzle-divider"><span>YOUR ANSWER</span></div>${answerHTML()}
       ${state.hintUsed ? `<div class="hint-box" role="note">💡 פירוש בעברית: <span>${escapeHTML(currentWord().he)}</span></div>` : ''}
       <div class="feedback ${state.result === 'correct' ? 'is-correct' : state.result ? 'is-revealed' : ''}" role="status" aria-live="polite">${escapeHTML(state.message || (state.paused ? 'הזמן נעצר. לחצו Resume כדי להמשיך.' : 'Tap the letters in the right order.'))}</div>
-      ${state.phase === 'revealed' ? `<div class="reveal-box"><span>The word is</span><strong dir="ltr">${currentWord().word}</strong><small>${escapeHTML(currentWord().he)}</small></div><button type="button" class="start-button" data-action="next">${progress === total ? 'See Results' : 'Next Word'} <span>←</span></button>` : `<div class="action-grid"><button type="button" class="main-action" data-action="check" ${state.paused ? 'disabled' : ''}>✓ Check Answer</button><button type="button" class="soft-action" data-action="undo" ${state.paused ? 'disabled' : ''}>↶ Undo</button><button type="button" class="soft-action" data-action="clear" ${state.paused ? 'disabled' : ''}>✕ Clear</button><button type="button" class="soft-action" data-action="hint" ${state.paused || state.hintUsed ? 'disabled' : ''}>💡 Hint</button><button type="button" class="soft-action skip-action" data-action="skip" ${state.paused ? 'disabled' : ''}>Skip →</button></div>`}</div>
+      ${state.phase === 'revealed' ? `<div class="reveal-box"><span>The word is</span><strong dir="ltr">${currentWord().word}</strong><small>${escapeHTML(currentWord().he)}</small></div><button type="button" class="start-button" data-action="next">${progress === total ? 'See Results' : 'Next Word'} <span>←</span></button>` : `<div class="action-grid"><button type="button" class="main-action" data-action="check" ${state.paused ? 'disabled' : ''}>✓ Check Answer</button><button type="button" class="soft-action" data-action="undo" ${state.paused ? 'disabled' : ''}>↶ Undo</button><button type="button" class="soft-action" data-action="clear" ${state.paused ? 'disabled' : ''}>✕ Clear</button><button type="button" class="soft-action" data-action="hint" ${state.paused || state.hintUsed ? 'disabled' : ''}>💡 Hint</button><button type="button" class="soft-action" data-action="letter" ${state.paused || state.letterGiven || state.selectedIds.length === currentWord().word.length ? 'disabled' : ''}>🔤 תן אות</button><button type="button" class="soft-action skip-action" data-action="reveal" style="grid-column:span 4" ${state.paused ? 'disabled' : ''}>👁️ גלה תשובה</button></div>`}</div>
       <p class="keyboard-tip">⌨️ אפשר גם להקליד אותיות, למחוק ב־Backspace ולאשר ב־Enter.</p></section>`;
   }
 
@@ -250,8 +264,10 @@ export function mountScramble(doc, clock = globalThis, random = Math.random) {
     if (action === 'undo') undoTile();
     if (action === 'clear') clearTiles();
     if (action === 'hint') showHint();
+    if (action === 'letter') giveLetter();
     if (action === 'check') submitAnswer();
     if (action === 'skip') skipWord();
+    if (action === 'reveal') revealAnswer();
     if (action === 'next') nextWord();
     if (action === 'pause') togglePause();
     if (action === 'restart') resetToSetup();
@@ -277,8 +293,8 @@ export function mountScramble(doc, clock = globalThis, random = Math.random) {
   render();
   return {
     getState: () => state,
-    startGame, selectTile, undoTile, clearTiles, showHint, submitAnswer,
-    skipWord, nextWord, togglePause, finishGame,
+    startGame, selectTile, undoTile, clearTiles, showHint, giveLetter, submitAnswer,
+    skipWord, revealAnswer, nextWord, togglePause, finishGame,
   };
 }
 
