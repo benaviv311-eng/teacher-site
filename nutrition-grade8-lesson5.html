@@ -3,47 +3,33 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>מדעי התזונה | כיתה ח׳ | שיעור 5 — מים, זיעה ואלקטרוליטים</title>
+<title>מדעי התזונה | כיתה ח׳ | שיעור 5 — סוכר: מה באמת קורה בגוף?</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
-.app{max-width:940px;margin:auto;padding:18px 16px 110px}
-.top{display:flex;justify-content:space-between;align-items:center;gap:12px}
-.brand{font-size:22px;font-weight:900}.back{display:inline-block;text-decoration:none;color:#172033;background:#fff;border-radius:14px;padding:11px 14px;box-shadow:0 4px 18px #14213d12;font-weight:800}
-.hero{margin-top:18px;background:linear-gradient(135deg,#075985,#0ea5e9);color:#fff;border-radius:28px;padding:28px;box-shadow:0 14px 35px #0284c722}
-.hero small{opacity:.9;font-weight:800}.hero h1{margin:7px 0 8px;font-size:clamp(30px,5vw,46px)}.hero p{margin:0;line-height:1.7;max-width:820px}
-.section,.teacher,.game,.science,.protocol{background:#fff;border:1px solid #e8edf4;border-radius:24px;padding:22px;margin-top:20px;box-shadow:0 6px 24px #14213d0b}
-.section h2,.teacher h2,.game h2,.science h2,.protocol h2{margin:0 0 10px}
-.section-label{display:inline-block;background:#e0f2fe;color:#075985;border-radius:999px;padding:7px 11px;font-size:12px;font-weight:900;margin-bottom:8px}
-.board-plan{background:#111827;color:#fff;border-radius:22px;padding:22px;margin-top:18px;box-shadow:inset 0 0 0 2px #ffffff18}
-.board-plan h2{margin:0 0 12px}.board-plan ol{margin:10px 0 18px;padding-right:24px;line-height:1.9;font-weight:800}
-.hook{background:#fef3c7;color:#78350f;border-radius:16px;padding:15px;font-size:20px;font-weight:900;line-height:1.55}
-.teacher blockquote{margin:14px 0 0;background:#eff6ff;border-right:5px solid #0ea5e9;border-radius:14px;padding:16px 18px;line-height:1.75;font-weight:700}
-.note{background:#eff6ff;border:1px solid #bfdbfe;border-radius:16px;padding:14px 16px;line-height:1.7;margin-top:12px}
-.warning{background:#fff7ed;border:1px solid #fed7aa;border-radius:16px;padding:14px 16px;line-height:1.7;margin-top:12px}
-.message{margin-top:14px;background:linear-gradient(135deg,#ecfeff,#f0f9ff);border:1px solid #bae6fd;border-radius:18px;padding:16px;font-size:18px;font-weight:900;line-height:1.6}
-.single-list{display:grid;grid-template-columns:1fr;gap:10px;margin-top:14px}
-.card{background:#fbfcfe;border:1px solid #e5eaf1;border-radius:18px;padding:16px;line-height:1.7}.card strong{font-size:18px}
-.participation{margin-top:12px;background:#eef6ff;border:2px solid #bfdbfe;border-radius:17px;padding:14px 16px;line-height:1.7}
-.participation strong{display:block;font-size:17px;margin-bottom:4px}
-.case,.myth-question{border:1px solid #dbeafe;border-radius:18px;background:#f8fbff;overflow:hidden;margin-top:12px}
-.case summary,.myth-question summary{cursor:pointer;list-style:none;padding:16px 18px;font-weight:900;font-size:17px}
-.case summary::-webkit-details-marker,.myth-question summary::-webkit-details-marker{display:none}
-.case summary:after,.myth-question summary:after{content:'גלה';float:left;background:#075985;color:#fff;border-radius:10px;padding:5px 9px;font-size:12px}
-.case[open] summary:after,.myth-question[open] summary:after{content:'הסתר'}
-.case-body,.myth-answer{padding:0 18px 17px;line-height:1.7}
-.myth-options{display:grid;grid-template-columns:1fr;gap:8px;padding:0 18px 14px}.myth-options div{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:11px 13px;font-weight:800}
-.myth-answer{background:#ecfdf3;color:#166534;margin:0 18px 17px;border-radius:13px;padding:13px 14px;font-weight:800}
-.experiment{background:#ecfeff;border:1px solid #a5f3fc;border-radius:18px;padding:17px;margin-top:14px;line-height:1.7}
-.timeline{display:grid;grid-template-columns:1fr;gap:10px;margin-top:14px}.timeline .card{border-right:5px solid #38bdf8}
-.foods{display:grid;grid-template-columns:1fr;gap:10px;margin-top:14px}.food{background:#f8fafc;border:1px solid #e5eaf1;border-radius:16px;padding:14px;line-height:1.6}.food b{display:block;font-size:18px;margin-bottom:4px}
-.sodium-box{background:#fff7ed;border:1px solid #fed7aa;border-radius:18px;padding:17px;margin-top:14px;line-height:1.75}
-.recovery{background:#f0fdf4;border:2px solid #bbf7d0;border-radius:22px;padding:20px;margin-top:15px}.recovery h3{margin-top:0}
-.recovery-grid{display:grid;grid-template-columns:1fr;gap:10px}.recovery-grid div{background:#fff;border:1px solid #d1fae5;border-radius:16px;padding:14px;line-height:1.6}.recovery-grid b{display:block;font-size:18px;margin-bottom:4px}
-.exit{background:linear-gradient(135deg,#172033,#334155);color:#fff;border-radius:24px;padding:22px;margin-top:20px}.exit h2{margin-top:0}.exit p{line-height:1.7}
-.science a{color:#075985;font-weight:800}.science li{margin:9px 0;line-height:1.6}.mini{font-size:13px;color:#667085;line-height:1.55;margin-top:12px}
-body .concept-loop-grid{grid-template-columns:1fr!important}
-@media(max-width:800px){.hero{padding:22px}.app{padding:12px 11px 100px}}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,"Noto Sans Hebrew",sans-serif;background:linear-gradient(180deg,#fffaf5,#f6f8fc 35%,#eef6ff);color:#172033}
+.app{max-width:980px;margin:auto;padding:18px 16px 110px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px}.brand{font-size:22px;font-weight:900}.back{display:inline-block;text-decoration:none;color:#172033;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:11px 14px;box-shadow:0 4px 18px #14213d12;font-weight:800}
+.hero{margin-top:18px;background:linear-gradient(135deg,#7c2d12,#ea580c 52%,#f59e0b);color:#fff;border-radius:30px;padding:30px;box-shadow:0 16px 40px #c2410c25}.hero small{opacity:.92;font-weight:900}.hero h1{margin:7px 0 8px;font-size:clamp(32px,5vw,50px);line-height:1.08}.hero p{margin:0;line-height:1.7;max-width:840px;font-size:17px}
+.meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}.meta span{background:#ffffff19;border:1px solid #ffffff2f;border-radius:999px;padding:7px 11px;font-weight:900;font-size:13px}
+.route{position:sticky;top:6px;z-index:20;display:flex;gap:7px;overflow:auto;margin:14px 0;padding:8px;background:#fffffff0;border:1px solid #fed7aa;border-radius:16px;backdrop-filter:blur(10px);box-shadow:0 8px 22px #9a341210}.route a{white-space:nowrap;text-decoration:none;color:#9a3412;background:#fff7ed;border-radius:999px;padding:8px 11px;font-weight:900;font-size:13px}
+.section,.game,.science{background:#fff;border:1px solid #e8edf4;border-radius:24px;padding:22px;margin-top:20px;box-shadow:0 6px 24px #14213d0b}.section h2,.game h2,.science h2{margin:0 0 10px}.kicker{display:inline-block;background:#ffedd5;color:#9a3412;border-radius:999px;padding:7px 11px;font-size:12px;font-weight:900;margin-bottom:8px}
+.board-plan{background:#111827;color:#fff;border-radius:22px;padding:22px;margin-top:18px;box-shadow:inset 0 0 0 2px #ffffff18}.board-plan h2{margin:0 0 12px}.board-plan ol{margin:10px 0 18px;padding-right:24px;line-height:1.9;font-weight:800}.hook{background:#fef3c7;color:#78350f;border-radius:16px;padding:15px;font-size:21px;font-weight:900;line-height:1.55}
+.question-stack{display:grid;gap:10px;margin-top:14px}.class-q{border:1px solid #fed7aa;border-radius:17px;background:#fffaf5;padding:14px}.class-q strong{font-size:17px}.teacher-key{margin-top:9px;border-top:1px dashed #fdba74;padding-top:8px}.teacher-key summary{cursor:pointer;font-weight:900;color:#9a3412}.teacher-key div{padding-top:7px;line-height:1.7}
+.station-grid,.compare-grid,.sweet-grid,.label-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}.station,.compare,.sweet,.label-card{border:1px solid #e5e7eb;border-radius:18px;padding:16px;background:#fbfdff;line-height:1.65}.station b,.compare b,.sweet b{display:block;font-size:19px;margin-bottom:5px;color:#9a3412}
+.one-line{background:#fff7ed;border:1px solid #fed7aa;border-radius:16px;padding:14px 16px;font-weight:900;color:#9a3412;margin:14px 0}
+.label-card{background:#fff;border:2px solid #111827;color:#111827}.label-title{font-weight:900;font-size:20px;border-bottom:6px solid #111827;padding-bottom:6px;margin-bottom:8px}.label-row{display:flex;justify-content:space-between;gap:15px;border-bottom:1px solid #111827;padding:6px 0;font-weight:700}.label-row.em{font-size:20px;font-weight:900}.label-note{font-size:12px;color:#475569;margin-top:8px}
+.challenge{background:linear-gradient(135deg,#eff6ff,#fff7ed);border:1px solid #bfdbfe;border-radius:20px;padding:18px;margin-top:14px}.challenge h3{margin:0 0 8px}
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:14px}.step{background:#111827;color:#fff;border-radius:16px;padding:16px;text-align:center;font-weight:900}.step span{display:block;font-size:25px;margin-bottom:5px}
+.myth{background:#fef2f2;border:1px solid #fecaca;border-radius:16px;padding:15px;color:#991b1b;font-weight:800;margin-top:12px}
+.kiosk-intro{background:#111827;color:#fff;border-radius:20px;padding:18px;margin-top:12px}.kiosk-intro strong{color:#fbbf24}
+.kiosk-question{border:1px solid #dbeafe;border-radius:20px;background:#fbfdff;padding:17px;margin-top:14px}.kiosk-question h3{margin:0 0 10px;font-size:19px}.product-tag{display:inline-block;background:#e0f2fe;color:#075985;border-radius:999px;padding:5px 9px;font-weight:900;font-size:12px;margin-bottom:8px}
+.quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:8px}.quiz-option{border:1px solid #d6deea;background:#fff;border-radius:13px;padding:11px;text-align:right;font:inherit;font-weight:800;cursor:pointer}.quiz-option.selected{outline:3px solid #f59e0b;background:#fffbeb}.teacher-answer{margin-top:10px;border-radius:14px;background:#ecfdf5;border:1px solid #a7f3d0;padding:10px 12px}.teacher-answer summary{cursor:pointer;color:#166534;font-weight:900}.teacher-answer div{padding-top:7px;line-height:1.65}
+.calc{font-family:Arial,sans-serif;direction:ltr;text-align:left;background:#f8fafc;border:1px dashed #94a3b8;border-radius:12px;padding:10px;margin:8px 0;font-weight:900}
+.names{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.names span{background:#fff7ed;border:1px solid #fdba74;border-radius:999px;padding:7px 10px;font-weight:900;color:#9a3412}
+.exit{background:linear-gradient(135deg,#7c2d12,#ea580c);color:#fff;border-radius:24px;padding:22px;margin-top:20px}.exit h2{margin:0 0 8px}.exit ol{line-height:1.8}
+.sources a{color:#1d4ed8;font-weight:800}.sources li{margin:9px 0;line-height:1.55}.mini{font-size:13px;color:#64748b;line-height:1.55}
+@media(max-width:760px){.station-grid,.compare-grid,.sweet-grid,.label-grid,.quiz-options,.process{grid-template-columns:1fr}.hero{padding:23px}.section,.game,.science{padding:17px}.route{top:4px}}
 </style>
 </head>
 <body>
@@ -52,196 +38,204 @@ body .concept-loop-grid{grid-template-columns:1fr!important}
 
 <section class="hero">
 <small>מדעי התזונה · כיתה ח׳ · שיעור 5</small>
-<h1>מים, זיעה ואלקטרוליטים</h1>
-<p><strong>💧 מים · 💦 זיעה · ⚡ אלקטרוליטים · 🥵 התייבשות.</strong> לא מחפשים מספר קסם של בקבוקים. לומדים להבין את המצב: כמה, מתי, כמה חם, כמה זמן מתאמנים ומה הגוף מאבד.</p>
+<h1>🍬 סוכר: מה באמת קורה בגוף?</h1>
+<p>לא “סוכר טוב או רע”, אלא מה קורה מהרגע שאוכלים מתוק, איך גלוקוז ואינסולין נכנסים לתמונה, איך קוראים תווית בלי ליפול למלכודות — ומה באמת יש במשקאות ובמאכלים שהתלמידים פוגשים כל יום.</p>
+<div class="meta"><span>90 דקות</span><span>10 חלקים</span><span>10 שאלות × 4 אפשרויות</span><span>תשובות מוסתרות למורה</span></div>
 </section>
 
-<section class="board-plan">
-<h2>🧑‍🏫 לפני שהתלמידים נכנסים — זה על הלוח</h2>
+<nav class="route" aria-label="מסלול השיעור">
+<a href="#opening">פתיחה</a><a href="#journey">מסע הסוכר</a><a href="#label">תווית</a><a href="#fruit">קולה מול תפוח</a><a href="#sweeteners">דבש וסילאן</a><a href="#detectives">בלשי סוכר</a><a href="#natural">טבעי/מוסף</a><a href="#amount">כמה זה הרבה?</a><a href="#kiosk">מעבדת הקיוסק</a>
+</nav>
+
+<section class="board-plan" id="opening">
+<h2>1 · פתיחה — סוכר באמת נותן “בוסט”?</h2>
+<div class="hook">“אכלתי משהו מתוק — עכשיו תהיה לי יותר אנרגיה?”</div>
 <ol>
-<li>למה מים חשובים גם אם אין בהם אנרגיה?</li>
-<li>האם יותר זיעה = אימון טוב יותר?</li>
-<li>מתי מים מספיקים ומתי אלקטרוליטים נעשים רלוונטיים?</li>
-<li>איך הגוף מאותת שחסרים לו נוזלים?</li>
+<li>מעלים ניחושים בלבד — עדיין לא מסבירים.</li>
+<li>עוברים על 5 שאלות “מה אתם אומרים?”.</li>
+<li>רק אחר כך נכנסים למסע של הסוכר בגוף.</li>
 </ol>
-<div class="hook">❓ אם אני מזיע הרבה — מים תמיד מספיקים?</div>
+<div class="question-stack">
+<div class="class-q"><strong>1. אם אני עייף ואוכל שוקולד — אני באמת מקבל יותר אנרגיה?</strong><details class="teacher-key"><summary>תשובת מורה</summary><div>השוקולד מספק אנרגיה כימית, אבל התחושה של “ערנות” אינה תלויה רק בסוכר. היא מושפעת גם משינה, רעב, קפאין אם יש, כמות המזון והקשר.</div></details></div>
+<div class="class-q"><strong>2. האם כל הסוכר שאנחנו אוכלים מגיע ישר לדם?</strong><details class="teacher-key"><summary>תשובת מורה</summary><div>לא. קודם יש עיכול ופירוק, אחר כך ספיגה במעי הדק, והכבד ורקמות נוספות מעבדים ומשתמשים בחומרים שנספגו.</div></details></div>
+<div class="class-q"><strong>3. מה ההבדל בין סוכר במיץ לסוכר בפרי שלם?</strong><details class="teacher-key"><summary>תשובת מורה</summary><div>בפרי שלם יש מבנה מזון וסיבים, והוא דורש לעיסה. במיץ המבנה נשבר וחלק גדול מהסיבים איננו, ולכן קל יותר לצרוך כמות גדולה ומהירה.</div></details></div>
+<div class="class-q"><strong>4. למה שני אנשים יכולים להגיב אחרת לאותו מזון מתוק?</strong><details class="teacher-key"><summary>תשובת מורה</summary><div>התגובה מושפעת מכמות המזון, מה נאכל איתו, זמן מהארוחה הקודמת, פעילות, שינה והבדלים אישיים.</div></details></div>
+<div class="class-q"><strong>5. האם סוכר הוא “רע”, או שצריך לשאול שאלה טובה יותר?</strong><details class="teacher-key"><summary>תשובת מורה</summary><div>השאלה הטובה יותר היא כמה, באיזה מזון, באיזה הקשר ומה עוד מקבלים מהמזון. השיעור עוסק בהבנה ולא בתוויות של “טוב/רע”.</div></details></div>
+</div>
 </section>
 
-<section class="teacher">
-<span class="section-label">פתיחה</span>
-<h2>🎤 השאלה הראשונה</h2>
-<blockquote>“סיימתי אימון קשה והמשקל ירד בקילו. האם שרפתי קילו שומן?”</blockquote>
-<div class="participation"><strong>כולם בוחרים לפני שמדברים</strong>א. כן · ב. לא, זה כנראה בעיקר שינוי בנוזלים · ג. אי אפשר בכלל להשתנות במשקל אחרי אימון. בקש שני תלמידים להגן על תשובות שונות לפני החשיפה.</div>
-<div class="note"><strong>כיוון למורה:</strong> שינוי מהיר במשקל סביב אימון יכול לשקף במידה רבה שינוי בנוזלים. זה פותח את כל השיעור בלי לדבר על ירידה במשקל כמטרה.</div>
+<section class="section" id="journey">
+<span class="kicker">3 · המסע של הסוכר בגוף</span>
+<h2>🍫 מהפה ועד התא — ארבע תחנות</h2>
+<div class="process"><div class="step"><span>1</span>אוכלים ומעכלים</div><div class="step"><span>2</span>סופגים במעי הדק</div><div class="step"><span>3</span>מווסתים בעזרת הורמונים</div><div class="step"><span>4</span>משתמשים או מאחסנים</div></div>
+<div class="station-grid">
+<div class="station"><b>1 · פירוק</b>מערכת העיכול מפרקת פחמימות ליחידות קטנות יותר. עמילנים מתחילים להתפרק כבר בפה, והפירוק ממשיך במעי הדק.</div>
+<div class="station"><b>2 · ספיגה</b>סוכרים פשוטים, ובהם גלוקוז, נספגים דרך המעי הדק ומגיעים לדם. הדם מוביל אותם לכבד ולרקמות.</div>
+<div class="station"><b>3 · אינסולין</b>כשגלוקוז בדם עולה, הלבלב יכול להפריש אינסולין. האינסולין מסייע לוויסות הגלוקוז ומעודד קליטה ואחסון ברקמות מסוימות.</div>
+<div class="station"><b>4 · שימוש ואחסון</b>התאים יכולים להשתמש בגלוקוז להפקת ATP. חלק מהגלוקוז יכול להישמר כגליקוגן בכבד ובשרירים.</div>
+</div>
+<div class="one-line">המסר: הגוף לא “מקבל סוכר וזהו” — הוא מעכל, סופג, מווסת, משתמש ושומר.</div>
+<div class="question-stack">
+<div class="class-q"><strong>האם כל הסוכר שאכלנו הופך מיד ל־ATP?</strong><details class="teacher-key"><summary>תשובת מורה</summary><div>לא. קודם יש עיכול וספיגה; אחר כך הגלוקוז יכול לשמש לייצור אנרגיה, להיאגר או להשתלב במסלולים אחרים.</div></details></div>
+<div class="class-q"><strong>אם יש גלוקוז בדם, למה צריך אינסולין?</strong><details class="teacher-key"><summary>תשובת מורה</summary><div>אינסולין הוא אות הורמונלי מרכזי שמסייע לווסת את רמת הגלוקוז ומעודד קליטה ואחסון שלו ברקמות מסוימות.</div></details></div>
+</div>
+<div class="myth">מיתוס: “אינסולין הוא הורמון רע”. לא. אינסולין הוא הורמון חיוני לוויסות תקין של חומרי האנרגיה בגוף.</div>
 </section>
 
-<section class="section">
-<span class="section-label">מושג 1 · מים</span>
-<h2>💧 מים — לא נותנים קלוריות, אבל מאפשרים לגוף לעבוד</h2>
-<div class="single-list">
-<div class="card"><strong>למה צריך מים?</strong><br>מים הם חלק מנוזלי הגוף והדם, מאפשרים הובלת חומרים ומשתתפים בוויסות חום הגוף ובסביבה שבה מתרחשים תהליכים רבים.</div>
-<div class="experiment"><strong>🧪 ניסוי היד הרטובה</strong><br>מרטיבים מעט את גב כף יד אחת. היד השנייה נשארת יבשה. מנפנפים על שתיהן או משתמשים במאוורר. איזו יד מרגישה קרה יותר? מכאן מגיעים לרעיון של <strong>אידוי</strong>: כשהמים מתאדים מהעור, הם מסייעים בפיזור חום.</div>
+<section class="section" id="label">
+<span class="kicker">4 · אתגר תווית</span>
+<h2>🥤 כמה סוכר באמת יש פה?</h2>
+<p>לא מתחילים מנוסחה. מציגים לתלמידים תווית כמו על אריזה אמיתית ושואלים: <strong>כמה יש בכל מה שאני באמת שותה?</strong></p>
+<div class="label-grid">
+<div class="label-card">
+<div class="label-title">קוקה־קולה · בקבוק 500 מ״ל</div>
+<div class="label-row"><span>ל־100 מ״ל</span><span>סוכר 10.6 גרם</span></div>
+<div class="label-row em"><span>תכולת הבקבוק</span><span>500 מ״ל</span></div>
+<div class="label-note">נתון הסוכר: אתר קוקה־קולה ישראל.</div>
 </div>
-
-<h3>⏱️ כמות מול תזמון</h3>
-<p>השאלה היא לא רק <strong>כמה שתיתי</strong>, אלא גם <strong>מתי שתיתי ביחס לאימון</strong>.</p>
-<div class="timeline">
-<div class="card"><strong>לפני האימון</strong><br>עדיף להגיע לפעילות כשכבר שתינו לאורך היום, ולא לנסות להשלים הכול בחמש הדקות האחרונות.</div>
-<div class="card"><strong>במהלך האימון</strong><br>הצורך משתנה לפי משך, עצימות, חום, לחות וכמות הזיעה. אין מספר אחד שמתאים לכל ילד ולכל אימון.</div>
-<div class="card"><strong>אחרי האימון</strong><br>ממשיכים להחזיר נוזלים בהדרגה כחלק מהשתייה והאוכל הרגילים, לפי מה שאבד ומה צפוי בהמשך היום.</div>
+<div class="challenge">
+<h3>השאלה לכיתה</h3>
+<p><strong>כמה גרם סוכר יש בבקבוק כולו?</strong></p>
+<p>תנו להם לפתור. רק אחר כך פותחים:</p>
+<details class="teacher-key"><summary>תשובת מורה</summary><div><div class="calc">500 ÷ 100 × 10.6 = 53 g</div>בבקבוק יש 53 גרם סוכר. לפי ההמחשה המקובלת בסימון הישראלי של 4 גרם ≈ כפית, מדובר בכ־13 כפיות. המטרה היא להבין גודל מנה — לא להפחיד.</div></details>
 </div>
-
-<h3>🤔 מה קורה אם...</h3>
-<div class="single-list">
-<details class="case"><summary>כמעט לא שתיתי כל היום ואז שתיתי המון רגע לפני האימון?</summary><div class="case-body">לא מקבלים “איפוס” מיד. שתייה גדולה מאוד בבת אחת עלולה גם להיות לא נוחה. המסר: תזמון חשוב לצד הכמות.</div></details>
-<details class="case"><summary>אני מחכה עד שאני ממש צמא?</summary><div class="case-body">צמא הוא רמז חשוב, אבל לא כלי מדידה מושלם. עדיף לא להגיע לפעילות אחרי שעות של כמעט אפס שתייה.</div></details>
-<details class="case"><summary>האימון היום ארוך וחם בהרבה מהרגיל?</summary><div class="case-body">הצורך בנוזלים יכול לעלות, וככל שהפעילות ממושכת וההזעה גדולה יותר צריך לחשוב גם על מה שאבד בזיעה.</div></details>
-<details class="case"><summary>אני שותה כמות עצומה בזמן קצר?</summary><div class="case-body">יותר אינו תמיד טוב יותר. שתייה מוגזמת מאוד בזמן קצר עלולה להיות בעייתית; לא “דוחפים” מים ללא גבול.</div></details>
 </div>
-
-<h3>🍉 מים מגיעים גם מאוכל</h3>
-<div class="foods">
-<div class="food"><b>🍉 אבטיח · 🥒 מלפפון · 🍊 תפוז</b>מזונות עתירי מים שיכולים לתרום לנוזלים לאורך היום.</div>
-<div class="food"><b>🥛 חלב / יוגורט · 🥣 מרק</b>גם הם מכילים כמות משמעותית של מים וגם רכיבי תזונה נוספים.</div>
-<div class="food"><b>🍞 אפילו לחם ומזונות “יבשים” יחסית</b>מכילים מעט מים. המסר הוא שנוזלים מגיעים גם ממשקאות וגם ממזון.</div>
-</div>
-<div class="message">משפט לזכור: <strong>שתייה טובה = כמות שמתאימה למצב + תזמון שמתאים לפעילות.</strong></div>
 </section>
 
-<section class="game">
-<span class="section-label">מושג 2 · זיעה</span>
-<h2>💦 זיעה — מערכת קירור, לא ציון על האימון</h2>
-<p><strong>פתיחה:</strong> שני תלמידים עושים בדיוק אותו אימון. אחד ספוג זיעה והשני כמעט יבש. מי עבד קשה יותר? כולם בוחרים צד לפני ההסבר.</p>
-<div class="note">קצב הזעה משתנה בין אנשים ותלוי גם בתנאים כמו חום, לחות, בגדים והסתגלות לחום. יותר זיעה לא מוכיחה שהאימון היה טוב יותר.</div>
-
-<h3>🔥 10 שאלות מיתוסים — שלוש תשובות בכל שאלה</h3>
-<p>כולם מצביעים א/ב/ג לפני שפותחים. בכל שאלה תלמיד אקראי צריך להסביר את הבחירה.</p>
-
-<details class="myth-question"><summary>1. שני תלמידים עשו אותו אימון ואחד הזיע הרבה יותר. מה אפשר להסיק?</summary><div class="myth-options"><div>א. הוא בהכרח התאמן חזק יותר</div><div>ב. הוא בהכרח בכושר פחות טוב</div><div>ג. אי אפשר לדעת רק לפי כמות הזיעה</div></div><div class="myth-answer">✅ ג. קצב הזעה שונה בין אנשים ומושפע גם מהסביבה ומהגוף.</div></details>
-<details class="myth-question"><summary>2. ירדתי קילו מיד אחרי אימון חם. מה כנראה מסביר חלק גדול מהשינוי?</summary><div class="myth-options"><div>א. שרפתי קילו שומן</div><div>ב. איבדתי נוזלים בזיעה</div><div>ג. איבדתי קילו שריר</div></div><div class="myth-answer">✅ ב. שינוי מהיר סביב אימון יכול לשקף במידה רבה איבוד נוזלים.</div></details>
-<details class="myth-question"><summary>3. מה באמת מקרר אותנו כשאנחנו מזיעים?</summary><div class="myth-options"><div>א. עצם זה שהזיעה נמצאת על העור</div><div>ב. האידוי שלה מהעור</div><div>ג. המלח שנמצא בזיעה</div></div><div class="myth-answer">✅ ב. האידוי מסייע בפיזור חום מהגוף.</div></details>
-<details class="myth-question"><summary>4. למה פעילות ביום לח יכולה להרגיש קשה יותר?</summary><div class="myth-options"><div>א. הגוף מפסיק לייצר זיעה</div><div>ב. באוויר אין מספיק חמצן</div><div>ג. הזיעה מתאדה פחות ביעילות</div></div><div class="myth-answer">✅ ג. לחות גבוהה מקשה על אידוי הזיעה ועל פיזור החום.</div></details>
-<details class="myth-question"><summary>5. מה עדיף לפני אימון?</summary><div class="myth-options"><div>א. לא לשתות כל היום ואז בקבוק ענק רגע לפני</div><div>ב. לשתות לאורך היום ולהגיע כבר במצב טוב</div><div>ג. להימנע משתייה כדי לא להרגיש כבד</div></div><div class="myth-answer">✅ ב. תזמון השתייה חשוב לצד הכמות.</div></details>
-<details class="myth-question"><summary>6. אם אני לא צמא, זה אומר בוודאות שיש לי מספיק נוזלים?</summary><div class="myth-options"><div>א. כן, תמיד</div><div>ב. לא בהכרח</div><div>ג. רק אם לא הזעתי</div></div><div class="myth-answer">✅ ב. צמא הוא רמז שימושי, אבל לא מדידה מושלמת.</div></details>
-<details class="myth-question"><summary>7. מה קורה אם שותים כמות ענקית של מים בזמן קצר?</summary><div class="myth-options"><div>א. הגוף תמיד משתמש בכול</div><div>ב. ככל ששותים יותר זה תמיד טוב יותר</div><div>ג. זה יכול להיות מיותר, לא נוח ובמקרים קיצוניים גם מסוכן</div></div><div class="myth-answer">✅ ג. גם בשתייה אין יתרון ל“כמה שיותר”.</div></details>
-<details class="myth-question"><summary>8. ממה מורכבת זיעה?</summary><div class="myth-options"><div>א. רק מים</div><div>ב. מים ושומן</div><div>ג. בעיקר מים וגם מלחים כמו נתרן</div></div><div class="myth-answer">✅ ג. כאן מתחבר המושג הבא — אלקטרוליטים.</div></details>
-<details class="myth-question"><summary>9. אימון קצר ביום קר ואימון ארוך ביום חם דורשים אותה חשיבה על שתייה?</summary><div class="myth-options"><div>א. כן, תמיד אותה כמות</div><div>ב. לא — משך, חום והזעה משנים את הצורך</div><div>ג. רק סוג הספורט משנה</div></div><div class="myth-answer">✅ ב. ההקשר קובע.</div></details>
-<details class="myth-question"><summary>10. לבשתי עוד שתי שכבות כדי להזיע יותר. מה הרווחתי?</summary><div class="myth-options"><div>א. שרפתי יותר שומן בגלל הזיעה</div><div>ב. האימון הפך אוטומטית ליעיל יותר</div><div>ג. בעיקר הגדלתי את עומס החום ואת איבוד הנוזלים</div></div><div class="myth-answer">✅ ג. זיעה היא מנגנון קירור, לא מדד לשריפת שומן.</div></details>
+<section class="section" id="fruit">
+<span class="kicker">5 · אותה מילה, מזון אחר</span>
+<h2>🍎 למה קולה ותפוח הם לא אותו דבר?</h2>
+<p>השאלה: <strong>אם בשניהם יש סוכרים — למה הגוף לא “פוגש” אותם באותה צורה?</strong></p>
+<div class="compare-grid">
+<div class="compare"><b>🍎 תפוח שלם</b>סוכרים + מים + סיבים + מבנה של פרי + לעיסה.</div>
+<div class="compare"><b>🥤 משקה ממותק</b>סוכרים מומסים בנוזל, ללא מבנה של פרי, וקל לשתות כמות גדולה במהירות.</div>
+<div class="compare"><b>🍊 תפוז שלם</b>צריך לקלף, ללעוס ולאכול את מבנה הפרי.</div>
+<div class="compare"><b>🧃 מיץ</b>אפשר לשתות במהירות כמות שמקבילה לכמה פירות, ובדרך כלל יש בו פחות סיבים מפרי שלם.</div>
+</div>
+<div class="one-line">אותו סוג סוכר לא אומר אותו מזון. צריך להסתכל על כל ה“אריזה” שהסוכר מגיע בתוכה.</div>
 </section>
 
-<section class="section">
-<span class="section-label">מושג 3 · אלקטרוליטים</span>
-<h2>⚡ אלקטרוליטים — מה עוד אנחנו מאבדים בזיעה?</h2>
-<p>אלקטרוליטים הם מינרלים שבנוזלי הגוף נושאים מטען חשמלי. הם קשורים בין היתר לתפקוד עצבים ושרירים ולמאזן הנוזלים. בשיעור נתמקד במיוחד ב<strong>נתרן</strong>.</p>
-
-<h3>🧂 מלח ונתרן הם לא אותו דבר</h3>
-<div class="sodium-box">
-<strong>1 גרם מלח ≈ 400 מ״ג נתרן.</strong><br>
-WHO ממליץ למבוגרים על פחות מ־2,000 מ״ג נתרן ביום, שהם פחות מכ־5 גרם מלח. לילדים הכמות מותאמת כלפי מטה. לפי גבולות ייחוס אמריקאיים נפוצים: גיל 9–13 — עד כ־<strong>1,800 מ״ג</strong> נתרן ביום; מגיל 14 — עד כ־<strong>2,300 מ״ג</strong> ביום.<br>
-<strong>אלה גבולות עליונים, לא יעד שחייבים להגיע אליו.</strong>
+<section class="section" id="sweeteners">
+<span class="kicker">6 · טבעי ≠ קסם</span>
+<h2>🍯 סוכר, דבש, סילאן ומייפל</h2>
+<p>מציגים ארבעה מוצרים ושואלים: <strong>“מי הכי בריא?”</strong> — ואז עוצרים את האוטומט.</p>
+<div class="sweet-grid">
+<div class="sweet"><b>סוכר לבן</b>ממתיק שמורכב בעיקר מסוכרוז.</div>
+<div class="sweet"><b>דבש</b>מוצר טבעי שמכיל בעיקר סוכרים ומים, לצד רכיבים בכמויות קטנות.</div>
+<div class="sweet"><b>סילאן</b>יכול להיות 100% תמרים או מוצר עם תוספות — חייבים לקרוא רכיבים.</div>
+<div class="sweet"><b>מייפל</b>גם סירופ מייפל אמיתי הוא עדיין מקור מרוכז לסוכרים.</div>
 </div>
-
-<h3>🥪 איך מגיעים לכמות כזאת בלי “לשפוך מלח”?</h3>
-<p>נתרן מצטבר ממזונות יומיומיים. לחם, כריכים עם בשר מעובד, גבינות, מרקים, פיצה וחטיפים מלוחים הם בין המקורות הנפוצים.</p>
-<div class="card"><strong>דוגמה להמחשה — לא תפריט:</strong><br>בנתוני דוגמה של CDC, 2 פרוסות לחם יכולות להגיע יחד לכ־400 מ״ג נתרן, פרוסת גבינה לכ־310 מ״ג, 6 פרוסות דקות של הודו מעובד לכ־690 מ״ג וכפית חרדל לכ־120 מ״ג. כריך כזה לבדו מגיע לכ־<strong>1,520 מ״ג</strong> — עוד לפני שאר הארוחות. הערכים משתנים מאוד בין מוצרים, ולכן בכיתה בודקים את התווית האמיתית.</div>
-
-<h3>🌱 ומה אם אוכלים כמעט רק מזון טבעי?</h3>
-<div class="single-list">
-<div class="card"><strong>עדיין נכנס נתרן.</strong><br>חלב, יוגורט, ביצים, דגים, בשר וגם מזונות צמחיים מכילים נתרן טבעי בכמויות שונות.</div>
-<div class="card"><strong>אבל הכמות יכולה להיות נמוכה בהרבה.</strong><br>פירות, ירקות, דגנים וקטניות לא־מומלחים לרוב דלים יחסית בנתרן. לכן מי שאוכל כמעט רק מזון לא־מעובד וגם מזיע במשך שעות נמצא במצב שונה ממי שאוכל הרבה מזון מלוח ומעובד.</div>
+<div class="one-line">“טבעי” מתאר מקור — הוא לא ציון בריאות.</div>
+<div class="question-stack">
+<div class="class-q"><strong>אם כתוב “סילאן ללא תוספת סוכר” — האם אין בו סוכרים?</strong><details class="teacher-key"><summary>תשובת מורה</summary><div>לא. פירוש הדבר שלא הוסיפו סוכר נוסף; הסוכרים שמקורם בתמר עדיין קיימים.</div></details></div>
+<div class="class-q"><strong>שני מוצרים מכילים אותה כמות סוכר, אבל על אחד כתוב “100% טבעי”. האם הוא בהכרח בריא יותר?</strong><details class="teacher-key"><summary>תשובת מורה</summary><div>לא. צריך להסתכל על כל הרכב המזון, הכמות, הסיבים, החלבון, השומן ושאר הרכיבים.</div></details></div>
 </div>
-
-<h3>🥤 האם צריך משקה איזוטוני?</h3>
-<details class="case"><summary>אימון של 45 דקות באולם — מה חייבים לשתות?</summary><div class="case-body"><strong>בדרך כלל מים מספיקים.</strong> משקה ספורט אינו חובה רק מפני שעשינו ספורט.</div></details>
-<details class="case"><summary>פעילות ארוכה מאוד בחום, עם הרבה זיעה — עכשיו?</summary><div class="case-body">ככל שהפעילות ממושכת וההזעה משמעותית יותר, משקה שמספק גם נוזלים, פחמימות ואלקטרוליטים עשוי להיות רלוונטי יותר. עדיין מסתכלים על ההקשר ולא על המותג.</div></details>
-<div class="warning"><strong>משקה ספורט ≠ משקה אנרגיה.</strong> משקאות אנרגיה עם קפאין אינם פתרון להידרציה לילדים ובני נוער.</div>
-
-<h3>🍌 איך משיגים אלקטרוליטים מאוכל?</h3>
-<div class="foods">
-<div class="food"><b>🍌 בננה · 🥔 תפוח אדמה</b>מקורות מוכרים לאשלגן.</div>
-<div class="food"><b>🥛 חלב / יוגורט</b>מספקים בין היתר אשלגן, סידן וגם נתרן.</div>
-<div class="food"><b>🥣 מרק · 🥪 כריך</b>יכולים לספק נתרן, ולעיתים בכמות משמעותית.</div>
-<div class="food"><b>🫘 קטניות · 🥜 אגוזים וזרעים</b>יכולים לתרום אשלגן ומגנזיום.</div>
-</div>
-<div class="message">אלקטרוליטים אינם “מוצר ספורט”. הם מינרלים שנמצאים גם באוכל רגיל.</div>
-
-<h3>⚠️ ומה עם נתרן נמוך מדי בדם?</h3>
-<p><strong>היפונתרמיה</strong> היא מצב שבו ריכוז הנתרן בדם נמוך מדי. זה לא אומר “לא אכלתי מלח היום”. היא יכולה להתרחש מסיבות שונות, ובספורט ממושך במיוחד גם שילוב של איבוד נתרן ושתייה מופרזת של מים עלול להיות רלוונטי.</p>
-<div class="warning"><strong>סימנים אפשריים:</strong> כאב ראש, בחילה, חולשה, התכווצויות או בלבול. פרכוסים, ירידה בהכרה או חוסר תגובה הם סימני חירום. לא מאבחנים לפי תחושה ולא מטפלים לבד באמצעות “המון מלח”.</div>
 </section>
 
-<section class="section">
-<span class="section-label">מושג 4 · התייבשות</span>
-<h2>🥵 התייבשות — כשהגוף מאבד יותר נוזלים ממה שהוא מקבל</h2>
-<p>המטרה אינה להפחיד אלא לזהות רמזים מוקדם ולהגיב בצורה הגיונית.</p>
-<div class="single-list">
-<div class="card"><strong>רמזים אפשריים</strong><br>צמא, יובש בפה, פחות שתן או שתן כהה מהרגיל, כאב ראש, סחרחורת, עייפות, חולשה או התכווצויות יכולים להיות רמזים.</div>
-<div class="card"><strong>בזמן פעילות בחום</strong><br>אם מופיעים חולשה משמעותית, בחילה, סחרחורת או ירידה בתפקוד — מפסיקים את המאמץ, עוברים למקום קריר ומבקשים עזרה ממבוגר/אחראי.</div>
-<div class="card"><strong>סימני אזהרה משמעותיים</strong><br>בלבול, חוסר תגובה או אובדן הכרה דורשים עזרה רפואית דחופה.</div>
-</div>
-
-<h3>🤔 כאב ראש אחרי אימון = התייבשות?</h3>
-<div class="participation"><strong>בחרו: כן / לא / תלוי</strong>המטרה להגיע ל<strong>תלוי</strong>. סימנים כמו כאב ראש, בחילה וחולשה יכולים להופיע מסיבות שונות. הם רמזים לבדיקה, לא אבחנה אוטומטית.</div>
-
-<h3>🎯 מודל החשיבה לחיים</h3>
-<div class="single-list">
-<div class="card"><strong>1. מה עשיתי?</strong> כמה זמן, כמה קשה?</div>
-<div class="card"><strong>2. מה התנאים?</strong> חם? לח? אולם ממוזג?</div>
-<div class="card"><strong>3. מה היה לפני?</strong> שתיתי ואכלתי לאורך היום?</div>
-<div class="card"><strong>4. כמה הזעתי?</strong> מעט, הרבה, הרבה מאוד?</div>
-<div class="card"><strong>5. מה עכשיו?</strong> יש אוכל, מים, עוד אימון בהמשך?</div>
-</div>
-<div class="message">כמות + תזמון + תנאים + הזעה = החלטה טובה יותר.</div>
+<section class="section" id="detectives">
+<span class="kicker">7 · בלשי סוכר</span>
+<h2>🔎 איך סוכר מופיע ברשימת הרכיבים?</h2>
+<p>אם לא כתוב בדיוק “סוכר” — זה עדיין לא אומר שאין מקור לסוכר מוסף.</p>
+<div class="names"><span>סוכר</span><span>סוכרוז</span><span>גלוקוז</span><span>פרוקטוז</span><span>סירופ גלוקוז</span><span>סירופ תירס</span><span>דבש</span><span>סילאן</span><span>סירופ מייפל</span></div>
+<div class="challenge"><h3>מצא את המקור המתוק</h3>
+<p><strong>א:</strong> שיבולת שועל, אגוזים, דבש, שמן, קינמון.</p>
+<p><strong>ב:</strong> קמח, סירופ גלוקוז, שמן, קקאו.</p>
+<p><strong>ג:</strong> יוגורט, תותים, סוכר.</p>
+<details class="teacher-key"><summary>תשובת מורה</summary><div>בשלושתם יש מקור מתוק מוסף — פשוט בשם אחר. אבל עצם מציאת הסוכר עדיין לא אומרת שהמוצר “גרוע”; ממשיכים לבדוק כמות והרכב כולל.</div></details></div>
 </section>
 
-<section class="game">
-<span class="section-label">הרכבת צלחת — עם משימה אמיתית</span>
-<h2>🍽️ בנה התאוששות</h2>
-<p><strong>המצב:</strong> סיימתם אימון של שעה וחצי ביום חם. עכשיו אתם בבית. בנו ארוחה או נשנוש שנותנים לגוף כמה תפקידים — ולא “מאכל קסם”.</p>
-<div class="recovery">
-<h3>הקבוצה חייבת למצוא:</h3>
-<div class="recovery-grid">
-<div><b>💧 נוזלים</b>מה מחזיר מים?</div>
-<div><b>🍞 פחמימה</b>מה מספק מקור אנרגיה ועוזר בחידוש מאגרים?</div>
-<div><b>🥚 חלבון</b>מה נותן חומרי גלם להתאוששות?</div>
-<div><b>⚡ אלקטרוליטים</b>מאיפה מגיעים מינרלים — גם בלי בקבוק “ספורט”?</div>
+<section class="section" id="natural">
+<span class="kicker">8 · טבעי מול מוסף</span>
+<h2>🥛 סוכר מוסף מול סוכר שנמצא טבעית במזון</h2>
+<div class="compare-grid">
+<div class="compare"><b>חלב</b>מכיל לקטוז באופן טבעי.</div>
+<div class="compare"><b>פרי</b>מכיל סוכרים כחלק טבעי מהפרי.</div>
+<div class="compare"><b>יוגורט טבעי</b>יכול להכיל לקטוז שמקורו בחלב.</div>
+<div class="compare"><b>משקה קל רגיל</b>הסוכר שבו בדרך כלל נוסף במהלך הייצור.</div>
 </div>
-</div>
-<p><strong>מאגר אפשרי:</strong> מים, חלב, יוגורט, לחם, אורז, ביצה, טונה, גבינה, בננה, תפוח אדמה, עגבנייה, אבטיח, מרק, טחינה ואגוזים.</p>
-<div class="participation"><strong>החוק:</strong> אין צלחת אחת נכונה. הניקוד הוא על ההסבר: “בחרנו ___ כי הוא נותן ___”. קבוצה אחרת יכולה להציע שינוי ולהסביר למה.</div>
+<div class="class-q"><strong>לשני מוצרים כתוב 8 גרם “סוכרים”. האם זה אומר שהם אותה בחירה?</strong><details class="teacher-key"><summary>תשובת מורה</summary><div>לא. “סך סוכרים” הוא רק נתון אחד. צריך לבדוק אם הסוכר טבעי או מוסף, מה גודל המנה ומה עוד יש במוצר.</div></details></div>
+<div class="one-line">סוכר הוא נתון אחד — המזון הוא התמונה כולה.</div>
 </section>
 
-<section class="protocol">
-<span class="section-label">סיכום פרקטי</span>
-<h2>✅ לפני שאני שואל “כמה לשתות?”</h2>
-<div class="single-list">
-<div class="card"><strong>כמה זמן הפעילות?</strong></div>
-<div class="card"><strong>כמה חם ולח?</strong></div>
-<div class="card"><strong>כמה שתיתי לפני?</strong></div>
-<div class="card"><strong>כמה אני מזיע?</strong></div>
-<div class="card"><strong>האם יש אוכל ושתייה רגילים לפני/אחרי?</strong></div>
+<section class="section" id="amount">
+<span class="kicker">9 · לקרוא את המספר נכון</span>
+<h2>📏 כמה סוכר זה “הרבה”?</h2>
+<p>פותחים דווקא בשאלה: <strong>“אם כתוב 10 גרם סוכר — זה הרבה או מעט?”</strong></p>
+<div class="compare-grid">
+<div class="compare"><b>מה חסר לנו?</b>האם זה ל־100 גרם? לכל האריזה? למנה? לבקבוק?</div>
+<div class="compare"><b>מה עוד צריך?</b>לדעת מהו המזון, אילו רכיבים נוספים יש בו וכמה באמת צורכים.</div>
 </div>
+<div class="challenge">
+<h3>דוגמה מהירה</h3>
+<div class="label-card">
+<div class="label-title">תה קר · תווית לימודית</div>
+<div class="label-row"><span>סוכר ל־100 מ״ל</span><span>5 גרם</span></div>
+<div class="label-row em"><span>בקבוק</span><span>500 מ״ל</span></div>
+</div>
+<p><strong>כמה סוכר יש בכל הבקבוק?</strong></p>
+<details class="teacher-key"><summary>תשובת מורה</summary><div>25 גרם. אפשר להמיר להמחשה לכ־6 כפיות, אבל העיקר הוא להבין שהמספר ל־100 מ״ל אינו המספר של כל הבקבוק.</div></details>
+</div>
+</section>
+
+<section class="game" id="kiosk">
+<span class="kicker">10 · משחק סיום</span>
+<h2>🛒 מעבדת הקיוסק — 10 שאלות, 4 אפשרויות</h2>
+<div class="kiosk-intro"><strong>איך משחקים?</strong> מציגים מוצר או תווית, כל הכיתה בוחרת א/ב/ג/ד, ורק אחרי הוויכוח פותחים “תשובת מורה”. המטרה היא לקרוא, לחשב ולשאול מה חסר — לא לנחש איזה מוצר “טוב” או “רע”.</div>
+
+<div class="kiosk-question"><span class="product-tag">קוקה־קולה 500 מ״ל</span><h3>1. על התווית כתוב 10.6 גרם סוכר ל־100 מ״ל. כמה יש בבקבוק 500 מ״ל?</h3><div class="quiz-options"><button class="quiz-option">א. 10.6 גרם</button><button class="quiz-option">ב. 21.2 גרם</button><button class="quiz-option">ג. 53 גרם</button><button class="quiz-option">ד. 106 גרם</button></div><details class="teacher-answer"><summary>תשובת מורה</summary><div><strong>ג — 53 גרם.</strong> 500 מ״ל הם חמש יחידות של 100 מ״ל, ולכן 10.6 × 5.</div></details></div>
+
+<div class="kiosk-question"><span class="product-tag">משקה אנרגיה 250 מ״ל</span><h3>2. תווית של פחית מציגה 11 גרם סוכר ל־100 מ״ל. כמה סוכר יש בפחית של 250 מ״ל?</h3><div class="quiz-options"><button class="quiz-option">א. 11 גרם</button><button class="quiz-option">ב. 22 גרם</button><button class="quiz-option">ג. 27.5 גרם</button><button class="quiz-option">ד. 44 גרם</button></div><details class="teacher-answer"><summary>תשובת מורה</summary><div><strong>ג — 27.5 גרם.</strong> ובמשקאות אנרגיה יש גם קפאין, ולכן בשיעור מדגישים שלא מסתכלים רק על הסוכר.</div></details></div>
+
+<div class="kiosk-question"><span class="product-tag">תה קר · תווית לימודית</span><h3>3. כתוב 5 גרם סוכר ל־100 מ״ל, והבקבוק הוא 500 מ״ל. מה נכון?</h3><div class="quiz-options"><button class="quiz-option">א. בבקבוק 5 גרם</button><button class="quiz-option">ב. בבקבוק 10 גרם</button><button class="quiz-option">ג. בבקבוק 20 גרם</button><button class="quiz-option">ד. בבקבוק 25 גרם</button></div><details class="teacher-answer"><summary>תשובת מורה</summary><div><strong>ד — 25 גרם.</strong> השם “תה” לא מספר לנו כמה סוכר יש; קוראים את התווית ואת גודל הבקבוק.</div></details></div>
+
+<div class="kiosk-question"><span class="product-tag">אייס קפה · תווית לימודית</span><h3>4. משקה של 230 מ״ל מציג 8 גרם סוכר ל־100 מ״ל. מה הכי קרוב לכמות הסוכר בבקבוק?</h3><div class="quiz-options"><button class="quiz-option">א. 8 גרם</button><button class="quiz-option">ב. 12 גרם</button><button class="quiz-option">ג. 18.4 גרם</button><button class="quiz-option">ד. 32 גרם</button></div><details class="teacher-answer"><summary>תשובת מורה</summary><div><strong>ג — כ־18.4 גרם.</strong> 2.3 × 8. המספר בתווית הוא דוגמה לימודית; מוצרים אמיתיים משתנים.</div></details></div>
+
+<div class="kiosk-question"><span class="product-tag">שוקו</span><h3>5. על שוקו כתוב “סך סוכרים”. האם כל הגרמים האלה בהכרח סוכר שהוסיפו?</h3><div class="quiz-options"><button class="quiz-option">א. כן, תמיד</button><button class="quiz-option">ב. לא, חלק יכול להיות לקטוז טבעי מהחלב</button><button class="quiz-option">ג. רק אם המשקה קר</button><button class="quiz-option">ד. רק אם כתוב קקאו</button></div><details class="teacher-answer"><summary>תשובת מורה</summary><div><strong>ב.</strong> בחלב יש לקטוז באופן טבעי; לכן “סך סוכרים” לא אומר לבדו כמה סוכר נוסף.</div></details></div>
+
+<div class="kiosk-question"><span class="product-tag">יוגורט בטעם</span><h3>6. יוגורט בטעם מכיל 12 גרם סוכרים ויוגורט טבעי 5 גרם. מה אפשר לקבוע בוודאות בלי לקרוא עוד?</h3><div class="quiz-options"><button class="quiz-option">א. כל 12 הגרם ביוגורט בטעם הם תוספת סוכר</button><button class="quiz-option">ב. ביוגורט הטבעי אין בכלל סוכר</button><button class="quiz-option">ג. יש הבדל בסך הסוכרים, אבל צריך עוד מידע כדי לדעת כמה נוסף</button><button class="quiz-option">ד. היוגורט בטעם בהכרח פחות מזין</button></div><details class="teacher-answer"><summary>תשובת מורה</summary><div><strong>ג.</strong> צריך רשימת רכיבים או מידע מתאים על סוכר מוסף כדי לדעת יותר. בשני המוצרים יכול להיות לקטוז טבעי.</div></details></div>
+
+<div class="kiosk-question"><span class="product-tag">גרנולה</span><h3>7. בגרנולה יש 18 גרם סוכר ל־100 גרם. מנה היא 40 גרם. כמה סוכר במנה?</h3><div class="quiz-options"><button class="quiz-option">א. 4 גרם</button><button class="quiz-option">ב. 7.2 גרם</button><button class="quiz-option">ג. 18 גרם</button><button class="quiz-option">ד. 40 גרם</button></div><details class="teacher-answer"><summary>תשובת מורה</summary><div><strong>ב — 7.2 גרם.</strong> 0.4 × 18. השאלה היא על המנה שאוכלים, לא על 100 גרם.</div></details></div>
+
+<div class="kiosk-question"><span class="product-tag">דגני בוקר</span><h3>8. על האריזה כתוב בגדול “דגנים מלאים”. מה זה אומר על כמות הסוכר?</h3><div class="quiz-options"><button class="quiz-option">א. בהכרח אין סוכר</button><button class="quiz-option">ב. בהכרח יש פחות מ־5 גרם סוכר</button><button class="quiz-option">ג. זה לא אומר מספיק — צריך לקרוא את התווית</button><button class="quiz-option">ד. זה אומר שהסוכר טבעי בלבד</button></div><details class="teacher-answer"><summary>תשובת מורה</summary><div><strong>ג.</strong> “דגנים מלאים” מתאר היבט אחד של המוצר; הוא לא מספר לבדו את כמות הסוכר.</div></details></div>
+
+<div class="kiosk-question"><span class="product-tag">חטיף חלבון</span><h3>9. על החטיף כתוב PROTEIN בגדול. מה אפשר להסיק על הסוכר?</h3><div class="quiz-options"><button class="quiz-option">א. אין בו סוכר</button><button class="quiz-option">ב. הוא תמיד דל בסוכר</button><button class="quiz-option">ג. אי אפשר לדעת בלי לקרוא תווית ורכיבים</button><button class="quiz-option">ד. כל הסוכר שבו טבעי</button></div><details class="teacher-answer"><summary>תשובת מורה</summary><div><strong>ג.</strong> טענה שיווקית על חלבון אינה תשובה לשאלה כמה סוכר יש במוצר.</div></details></div>
+
+<div class="kiosk-question"><span class="product-tag">מיץ תפוזים מול תפוז</span><h3>10. מה ההבדל החשוב ביותר לשיעור שלנו?</h3><div class="quiz-options"><button class="quiz-option">א. במיץ אין בכלל סוכר</button><button class="quiz-option">ב. בתפוז שלם יש מבנה וסיבים, ומיץ קל יותר לצרוך במהירות</button><button class="quiz-option">ג. תפוז שלם אינו מכיל גלוקוז או פרוקטוז</button><button class="quiz-option">ד. כל מיץ הוא משקה ללא קלוריות</button></div><details class="teacher-answer"><summary>תשובת מורה</summary><div><strong>ב.</strong> פרי שלם מספק סיבים ומבנה מזון; מיץ מאפשר לשתות במהירות כמות גדולה יותר ופחות סיבים נשארים בו.</div></details></div>
 </section>
 
 <section class="exit">
-<h2>🚪 יציאה מהשיעור</h2>
-<p><strong>חוזרים לשאלה:</strong> “אם אני מזיע הרבה — מים תמיד מספיקים?”<br><br>
-התשובה שאנחנו מחפשים: <strong>תלוי.</strong> במשך הפעילות, בחום, בכמות הזיעה, במה ששתינו ואכלנו ובמה שקורה אחר כך.<br><br>
-<strong>כרטיס יציאה:</strong> בחרו אחד מארבעת המושגים וכתבו עצה אחת לחיים שהשתנתה אצלכם בעקבות השיעור.</p>
+<h2>🎯 סגירת השיעור</h2>
+<ol>
+<li>מה קורה לפחמימות מהרגע שאוכלים ועד שהגלוקוז מגיע לדם?</li>
+<li>למה “טבעי” לא אומר “ללא סוכר”?</li>
+<li>מה הדבר הראשון שאתם בודקים בפעם הבאה שאתם מחזיקים בקבוק או חטיף?</li>
+</ol>
+<p><strong>משפט סיום:</strong> לא שופטים מזון לפי מילה אחת, לא לפי מספר אחד ולא לפי כיתוב שיווקי אחד — קוראים את התמונה כולה.</p>
 </section>
 
-<section class="science">
-<h2>🔬 ביסוס מדעי למורה</h2>
+<section class="science sources">
+<span class="kicker">מקורות למורה</span>
+<h2>📚 ביסוס מדעי</h2>
 <ul>
-<li><strong>מים וספורט בילדים ובני נוער:</strong> מים הם הבחירה המרכזית ברוב הפעילויות; פעילות ממושכת או הזעה רבה עשויות לשנות את הצורך. <a href="https://www.healthychildren.org/English/healthy-living/nutrition/Pages/Choose-Water-for-Healthy-Hydration.aspx" target="_blank" rel="noopener">HealthyChildren — Choose Water</a>.</li>
-<li><strong>משקאות ספורט:</strong> בפעילות קצרה משעה מים בדרך כלל מספיקים; בפעילות ארוכה יותר או בחום משמעותי משקה ספורט עשוי לסייע בהשלמת פחמימות ואלקטרוליטים. <a href="https://www.healthychildren.org/English/healthy-living/nutrition/Pages/Sports-Nutrition-for-Busy-Families-and-Busy-Lifestyles.aspx" target="_blank" rel="noopener">AAP / HealthyChildren — Sports Nutrition</a>.</li>
-<li><strong>נתרן:</strong> גבולות ייחוס: 9–13 שנים 1,800 מ״ג ליום; 14 ומעלה 2,300 מ״ג. מקורות נפוצים כוללים כריכים עם בשר מעובד, פיצה, חטיפים, מרקים, לחם וגבינות. <a href="https://www.cdc.gov/pcd/issues/2026/26_0054.htm" target="_blank" rel="noopener">CDC — Sodium intake</a>.</li>
-<li><strong>מלח מול נתרן:</strong> 1 גרם מלח ≈ 400 מ״ג נתרן; WHO ממליץ למבוגרים על פחות מ־2,000 מ״ג נתרן ביום ומתאים כלפי מטה לילדים. <a href="https://www.who.int/news-room/fact-sheets/detail/sodium-reduction" target="_blank" rel="noopener">WHO — Sodium reduction</a>.</li>
-<li><strong>דוגמת נתרן בכריך:</strong> ערכי מזון משתנים מאוד בין מותגים. <a href="https://stacks.cdc.gov/view/cdc/13306/cdc_13306_DS1.pdf" target="_blank" rel="noopener">CDC — Sodium reduction tips</a>.</li>
+<li><a href="https://www.niddk.nih.gov/health-information/digestive-diseases/digestive-system-how-it-works" target="_blank" rel="noopener">NIDDK — מערכת העיכול, פירוק פחמימות וספיגת סוכרים</a></li>
+<li><a href="https://www.fda.gov/food/nutrition-facts-label/added-sugars-nutrition-facts-label" target="_blank" rel="noopener">FDA — סך סוכרים לעומת סוכרים מוספים</a></li>
+<li><a href="https://www.cdc.gov/diabetes/healthy-eating/spotting-hidden-sugars-in-everyday-foods.html" target="_blank" rel="noopener">CDC — שמות שונים לסוכרים ברשימת רכיבים</a></li>
+<li><a href="https://me.health.gov.il/mental-health/learn-more/wellness/nutrition-and-wellbeing/" target="_blank" rel="noopener">משרד הבריאות — קפאין ומשקאות אנרגיה בילדים ובני נוער</a></li>
+<li><a href="https://www.cocacola.co.il/about/faq.html" target="_blank" rel="noopener">קוקה־קולה ישראל — 10.6 גרם סוכר ל־100 מ״ל</a></li>
 </ul>
-<p class="mini">הערת בטיחות: השיעור מלמד עקרונות חשיבה ולא נותן מרשם אישי לכמות נוזלים, מלח או משקה ספורט. מצבים רפואיים, מחלות חום, הקאות/שלשולים או חשד להפרעה בנתרן דורשים הערכה מתאימה.</p>
+<p class="mini">המספרים בתוויות המסומנות “תווית לימודית” הם תרגילי כיתה ולא נתונים של מוצר מסוים. נתוני מוצר ממותג מוצגים רק כאשר נבדקו מול מקור עדכני.</p>
 </section>
-</main>
+
+<script>
+document.querySelectorAll('.quiz-option').forEach(function(button){
+  button.addEventListener('click',function(){
+    var group=button.closest('.quiz-options');
+    group.querySelectorAll('.quiz-option').forEach(function(b){b.classList.remove('selected');});
+    button.classList.add('selected');
+  });
+});
+</script>
 <script src="site-nav.js"></script>
+</main>
 </body>
 </html>
