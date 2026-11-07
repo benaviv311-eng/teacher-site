@@ -18,7 +18,7 @@ test('nutrition lesson 4 is the energy-systems lesson and keeps later lessons av
   assert.match(library, /nutrition-grade8-lesson4\.html/);
   assert.match(library, /תזונה ומערכות האנרגיה בספורט/);
   assert.match(library, /nutrition-grade8-lesson5\.html/);
-  assert.match(library, /מים, זיעה ואלקטרוליטים/);
+  assert.match(library, /סוכר.*גלוקוז|גלוקוז.*סוכר/s);
   assert.match(library, /nutrition-grade8-lesson6\.html/);
   assert.match(library, /ויטמינים ומינרלים/);
 });
