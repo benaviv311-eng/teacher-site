@@ -225,3 +225,12 @@ test('English lesson 2 makes students write their own daily routine in at least 
   assert.match(html, /This is your routine/);
   assert.match(html, /Tell your partner about your day/);
 });
+
+
+test('English lesson 6 exposes a working fullscreen control', async () => {
+  const html = await read('english-lesson6.html');
+  assert.match(html, /id="fullscreenBtn"/);
+  assert.match(html, /requestFullscreen/);
+  assert.match(html, /exitFullscreen/);
+  assert.match(html, /fullscreenchange/);
+});
