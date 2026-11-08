@@ -14,16 +14,12 @@
 .menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;direction:ltr}
 .menu-item{display:flex;justify-content:space-between;background:#fff;border:1px solid #dfe7f2;border-radius:12px;padding:9px 11px}
 .hard{border-right:5px solid #d14d3f;background:#fff4f1}
-.fullscreen-btn{border:0;border-radius:14px;padding:10px 14px;background:#172033;color:#fff;font-weight:900;cursor:pointer;box-shadow:0 4px 18px #14213d18}
-.fullscreen-btn:hover{background:#234f9b}
-:fullscreen body{background:#f5f7fb}
-:fullscreen .app{max-width:1400px;padding-top:22px}
 @media(max-width:760px){.food-grid{grid-template-columns:repeat(3,1fr)}.choice-grid{grid-template-columns:repeat(2,1fr)}.menu-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <main class="app">
-  <div class="top"><div class="brand">☀️ בית ספר אור · אנגלית</div><div style="display:flex;gap:8px;flex-wrap:wrap"><button id="fullscreenBtn" class="fullscreen-btn" type="button">⛶ מסך מלא</button><a class="back" href="english.html">← כל שיעורי האנגלית</a></div></div>
+  <div class="top"><div class="brand">☀️ בית ספר אור · אנגלית</div><a class="back" href="english.html">← כל שיעורי האנגלית</a></div>
 
   <section class="hero">
     <small>כיתה ז׳ · שיעור 6 · 45 דקות</small>
@@ -153,38 +149,6 @@
   <section class="footer-card"><h2>✅ בסוף השיעור</h2><p>התלמיד יודע לאיית מילים של אוכל, להבין תיאור מתוך הקשר, לקרוא תפריט, לבחור תחת מגבלות, לחשב מחיר ולהזמין באנגלית.</p></section>
   <section class="footer-card"><h2>📄 דף עבודה</h2><p><a href="english-classwork6.html" style="color:#fff;font-weight:900">פתח את דף העבודה של Food & Drinks →</a></p></section>
 </main>
-<script>
-(() => {
-  const btn = document.getElementById('fullscreenBtn');
-  if (!btn) return;
-
-  const canFullscreen = document.documentElement.requestFullscreen && document.exitFullscreen;
-  if (!canFullscreen) {
-    btn.disabled = true;
-    btn.textContent = 'מסך מלא לא נתמך בדפדפן';
-    return;
-  }
-
-  const syncLabel = () => {
-    btn.textContent = document.fullscreenElement ? '⤢ יציאה ממסך מלא' : '⛶ מסך מלא';
-  };
-
-  btn.addEventListener('click', async () => {
-    try {
-      if (document.fullscreenElement) {
-        await document.exitFullscreen();
-      } else {
-        await document.documentElement.requestFullscreen();
-      }
-    } catch (error) {
-      btn.textContent = 'נסה שוב';
-    }
-  });
-
-  document.addEventListener('fullscreenchange', syncLabel);
-  syncLabel();
-})();
-</script>
 <script src="site-nav.js"></script>
 </body>
 </html>
