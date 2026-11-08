@@ -227,8 +227,8 @@ test('English lesson 2 makes students write their own daily routine in at least 
 });
 
 
-test('English lesson 6 exposes a working fullscreen control', async () => {
-  const html = await read('english-lesson6.html');
+test('English test 1 exposes a working fullscreen control', async () => {
+  const html = await read('english-test1.html');
   assert.match(html, /id="fullscreenBtn"/);
   assert.match(html, /requestFullscreen/);
   assert.match(html, /exitFullscreen/);
