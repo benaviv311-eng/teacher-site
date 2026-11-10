@@ -24,7 +24,7 @@ body{margin:0;font-family:Arial,"Noto Sans Hebrew",sans-serif;background:linear-
 .myth{background:#fef2f2;border:1px solid #fecaca;border-radius:16px;padding:15px;color:#991b1b;font-weight:800;margin-top:12px}
 .kiosk-intro{background:#111827;color:#fff;border-radius:20px;padding:18px;margin-top:12px}.kiosk-intro strong{color:#fbbf24}
 .kiosk-question{border:1px solid #dbeafe;border-radius:20px;background:#fbfdff;padding:17px;margin-top:14px}.kiosk-question h3{margin:0 0 10px;font-size:19px}.product-tag{display:inline-block;background:#e0f2fe;color:#075985;border-radius:999px;padding:5px 9px;font-weight:900;font-size:12px;margin-bottom:8px}
-.quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:8px}.quiz-option{border:1px solid #d6deea;background:#fff;border-radius:13px;padding:11px;text-align:right;font:inherit;font-weight:800;cursor:pointer}.quiz-option.selected{outline:3px solid #f59e0b;background:#fffbeb}.teacher-answer{margin-top:10px;border-radius:14px;background:#ecfdf5;border:1px solid #a7f3d0;padding:10px 12px}.teacher-answer summary{cursor:pointer;color:#166534;font-weight:900}.teacher-answer div{padding-top:7px;line-height:1.65}
+.quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:8px}.quiz-option{border:1px solid #d6deea;background:#fff;border-radius:13px;padding:11px;text-align:right;font:inherit;font-weight:800;cursor:pointer}.quiz-option.selected{outline:3px solid #f59e0b;background:#fffbeb}.teacher-answer{margin-top:10px;border-radius:14px;background:#ecfdf5;border:1px solid #a7f3d0;padding:10px 12px}.teacher-answer summary{cursor:pointer;color:#166534;font-weight:900}.teacher-answer div{padding-top:7px;line-height:1.65}.teacher-controls{position:sticky;top:64px;z-index:19;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;background:#111827;color:#fff;border-radius:16px;padding:10px 12px;margin:12px 0;box-shadow:0 8px 22px #11182722}.teacher-controls strong{font-size:14px}.teacher-controls .buttons{display:flex;gap:8px;flex-wrap:wrap}.teacher-controls button{border:0;border-radius:999px;padding:8px 12px;font-weight:900;cursor:pointer}.teacher-controls .show-answers{background:#f59e0b;color:#111827}.teacher-controls .hide-answers{background:#fff;color:#111827}.teacher-key summary,.teacher-answer summary{list-style:none}.teacher-key summary::-webkit-details-marker,.teacher-answer summary::-webkit-details-marker{display:none}.teacher-key summary::before,.teacher-answer summary::before{content:"👨‍🏫 ";}.teacher-key[open] summary::after,.teacher-answer[open] summary::after{content:"  ▲";}.teacher-key:not([open]) summary::after,.teacher-answer:not([open]) summary::after{content:"  ▼";}
 .calc{font-family:Arial,sans-serif;direction:ltr;text-align:left;background:#f8fafc;border:1px dashed #94a3b8;border-radius:12px;padding:10px;margin:8px 0;font-weight:900}
 .names{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.names span{background:#fff7ed;border:1px solid #fdba74;border-radius:999px;padding:7px 10px;font-weight:900;color:#9a3412}
 .exit{background:linear-gradient(135deg,#7c2d12,#ea580c);color:#fff;border-radius:24px;padding:22px;margin-top:20px}.exit h2{margin:0 0 8px}.exit ol{line-height:1.8}
@@ -47,6 +47,13 @@ body{margin:0;font-family:Arial,"Noto Sans Hebrew",sans-serif;background:linear-
 <nav class="route" aria-label="מסלול השיעור">
 <a href="#opening">פתיחה</a><a href="#journey">מסע הסוכר</a><a href="#label">תווית</a><a href="#fruit">קולה מול תפוח</a><a href="#sweeteners">דבש וסילאן</a><a href="#detectives">בלשי סוכר</a><a href="#natural">טבעי/מוסף</a><a href="#amount">כמה זה הרבה?</a><a href="#kiosk">מעבדת הקיוסק</a>
 </nav>
+<div class="teacher-controls" aria-label="מצב מורה">
+  <strong>👨‍🏫 מצב מורה — תשובות והסברים</strong>
+  <div class="buttons">
+    <button type="button" class="show-answers" id="showAllAnswers">הצג את כל התשובות</button>
+    <button type="button" class="hide-answers" id="hideAllAnswers">הסתר את כל התשובות</button>
+  </div>
+</div>
 
 <section class="board-plan" id="opening">
 <h2>1 · פתיחה — סוכר באמת נותן בוסט?</h2>
@@ -57,11 +64,11 @@ body{margin:0;font-family:Arial,"Noto Sans Hebrew",sans-serif;background:linear-
 <li>רק אחר כך נכנסים למסע של הסוכר בגוף.</li>
 </ol>
 <div class="question-stack">
-<div class="class-q"><strong>1. אם אני עייף ואוכל שוקולד — אני באמת מקבל יותר אנרגיה?</strong><details class="teacher-key"><summary>תשובת מורה</summary><div>השוקולד מספק אנרגיה כימית, אבל התחושה של “ערנות” אינה תלויה רק בסוכר. היא מושפעת גם משינה, רעב, קפאין אם יש, כמות המזון והקשר.</div></details></div>
-<div class="class-q"><strong>2. האם כל הסוכר שאנחנו אוכלים מגיע ישר לדם?</strong><details class="teacher-key"><summary>תשובת מורה</summary><div>לא. פחמימות מורכבות ודו־סוכרים צריכים קודם להתפרק לחד־סוכרים. חד־סוכרים כמו גלוקוז, פרוקטוז וגלקטוז יכולים להיספג במעי הדק, לעבור דרך הדם אל הכבד ומשם להמשיך לרקמות לפי צורכי הגוף.</div></details></div>
-<div class="class-q"><strong>3. מה ההבדל בין סוכר במיץ לסוכר בפרי שלם?</strong><details class="teacher-key"><summary>תשובת מורה</summary><div>בפרי שלם יש מבנה מזון וסיבים, והוא דורש לעיסה. במיץ המבנה נשבר וחלק גדול מהסיבים איננו, ולכן קל יותר לצרוך כמות גדולה ומהירה.</div></details></div>
-<div class="class-q"><strong>4. למה שני אנשים יכולים להגיב אחרת לאותו מזון מתוק?</strong><details class="teacher-key"><summary>תשובת מורה</summary><div>התגובה מושפעת מכמות המזון, מה נאכל איתו, זמן מהארוחה הקודמת, פעילות, שינה והבדלים אישיים.</div></details></div>
-<div class="class-q"><strong>5. האם סוכר הוא “רע”, או שצריך לשאול שאלה טובה יותר?</strong><details class="teacher-key"><summary>תשובת מורה</summary><div>השאלה הטובה יותר היא כמה, באיזה מזון, באיזה הקשר ומה עוד מקבלים מהמזון. השיעור עוסק בהבנה ולא בתוויות של “טוב/רע”.</div></details></div>
+<div class="class-q"><strong>1. אם אני עייף ואוכל שוקולד — אני באמת מקבל יותר אנרגיה?</strong><details class="teacher-key"><summary>הצג תשובה והסבר למורה</summary><div>השוקולד מספק אנרגיה כימית, אבל התחושה של “ערנות” אינה תלויה רק בסוכר. היא מושפעת גם משינה, רעב, קפאין אם יש, כמות המזון והקשר.</div></details></div>
+<div class="class-q"><strong>2. האם כל הסוכר שאנחנו אוכלים מגיע ישר לדם?</strong><details class="teacher-key"><summary>הצג תשובה והסבר למורה</summary><div>לא. פחמימות מורכבות ודו־סוכרים צריכים קודם להתפרק לחד־סוכרים. חד־סוכרים כמו גלוקוז, פרוקטוז וגלקטוז יכולים להיספג במעי הדק, לעבור דרך הדם אל הכבד ומשם להמשיך לרקמות לפי צורכי הגוף.</div></details></div>
+<div class="class-q"><strong>3. מה ההבדל בין סוכר במיץ לסוכר בפרי שלם?</strong><details class="teacher-key"><summary>הצג תשובה והסבר למורה</summary><div>בפרי שלם יש מבנה מזון וסיבים, והוא דורש לעיסה. במיץ המבנה נשבר וחלק גדול מהסיבים איננו, ולכן קל יותר לצרוך כמות גדולה ומהירה.</div></details></div>
+<div class="class-q"><strong>4. למה שני אנשים יכולים להגיב אחרת לאותו מזון מתוק?</strong><details class="teacher-key"><summary>הצג תשובה והסבר למורה</summary><div>התגובה מושפעת מכמות המזון, מה נאכל איתו, זמן מהארוחה הקודמת, פעילות, שינה והבדלים אישיים.</div></details></div>
+<div class="class-q"><strong>5. האם סוכר הוא “רע”, או שצריך לשאול שאלה טובה יותר?</strong><details class="teacher-key"><summary>הצג תשובה והסבר למורה</summary><div>השאלה הטובה יותר היא כמה, באיזה מזון, באיזה הקשר ומה עוד מקבלים מהמזון. השיעור עוסק בהבנה ולא בתוויות של “טוב/רע”.</div></details></div>
 </div>
 <div class="teacher-depth">
 <h3>🧑‍🏫 חומר דיבור למורה</h3>
@@ -88,8 +95,8 @@ body{margin:0;font-family:Arial,"Noto Sans Hebrew",sans-serif;background:linear-
 </div>
 <div class="one-line">המסר: הגוף לא “מקבל סוכר וזהו” — הוא מעכל, סופג, מווסת, משתמש ושומר.</div>
 <div class="question-stack">
-<div class="class-q"><strong>האם כל הסוכר שאכלנו הופך מיד ל־ATP?</strong><details class="teacher-key"><summary>תשובת מורה</summary><div>לא. פחמימות מורכבות ודו־סוכרים צריכים תחילה להתפרק, וחד־סוכרים נספגים במעי הדק. לאחר הספיגה גלוקוז יכול לשמש להפקת ATP, להיאגר כגליקוגן או להשתלב במסלולים מטבוליים אחרים.</div></details></div>
-<div class="class-q"><strong>אם יש גלוקוז בדם, למה צריך אינסולין?</strong><details class="teacher-key"><summary>תשובת מורה</summary><div>אינסולין הוא אות הורמונלי מרכזי שמסייע לווסת את רמת הגלוקוז. הוא מגביר קליטה בעיקר בשריר ובשומן, מעודד אגירה ומפחית ייצור גלוקוז בכבד; לא כל רקמה תלויה באינסולין באותה מידה.</div></details></div>
+<div class="class-q"><strong>האם כל הסוכר שאכלנו הופך מיד ל־ATP?</strong><details class="teacher-key"><summary>הצג תשובה והסבר למורה</summary><div>לא. פחמימות מורכבות ודו־סוכרים צריכים תחילה להתפרק, וחד־סוכרים נספגים במעי הדק. לאחר הספיגה גלוקוז יכול לשמש להפקת ATP, להיאגר כגליקוגן או להשתלב במסלולים מטבוליים אחרים.</div></details></div>
+<div class="class-q"><strong>אם יש גלוקוז בדם, למה צריך אינסולין?</strong><details class="teacher-key"><summary>הצג תשובה והסבר למורה</summary><div>אינסולין הוא אות הורמונלי מרכזי שמסייע לווסת את רמת הגלוקוז. הוא מגביר קליטה בעיקר בשריר ובשומן, מעודד אגירה ומפחית ייצור גלוקוז בכבד; לא כל רקמה תלויה באינסולין באותה מידה.</div></details></div>
 </div>
 <div class="myth">מיתוס: “אינסולין הוא הורמון רע”. לא. אינסולין הוא הורמון חיוני לוויסות תקין של חומרי האנרגיה בגוף.</div>
 <div class="teacher-depth">
@@ -122,7 +129,7 @@ body{margin:0;font-family:Arial,"Noto Sans Hebrew",sans-serif;background:linear-
 <h3>השאלה לכיתה</h3>
 <p><strong>כמה גרם סוכר יש בבקבוק כולו?</strong></p>
 <p>תנו להם לפתור. רק אחר כך פותחים:</p>
-<details class="teacher-key"><summary>תשובת מורה</summary><div><div class="calc">500 ÷ 100 × 10.6 = 53 g</div>בבקבוק יש 53 גרם סוכר. לפי ההמחשה המקובלת בסימון הישראלי של 4 גרם ≈ כפית, מדובר בכ־13 כפיות. המטרה היא להבין גודל מנה — לא להפחיד.</div></details>
+<details class="teacher-key"><summary>הצג תשובה והסבר למורה</summary><div><div class="calc">500 ÷ 100 × 10.6 = 53 g</div>בבקבוק יש 53 גרם סוכר. לפי ההמחשה המקובלת בסימון הישראלי של 4 גרם ≈ כפית, מדובר בכ־13 כפיות. המטרה היא להבין גודל מנה — לא להפחיד.</div></details>
 </div>
 </div>
 <div class="teacher-depth">
@@ -174,8 +181,8 @@ body{margin:0;font-family:Arial,"Noto Sans Hebrew",sans-serif;background:linear-
 </div>
 <div class="one-line">“טבעי” מתאר מקור — הוא לא ציון בריאות. דבש, סילאן ומייפל עדיין מספקים סוכרים; לפי WHO, הסוכרים בדבש ובסירופים נחשבים סוכרים חופשיים.</div>
 <div class="question-stack">
-<div class="class-q"><strong>אם כתוב “סילאן ללא תוספת סוכר” — האם אין בו סוכרים?</strong><details class="teacher-key"><summary>תשובת מורה</summary><div>לא. פירוש הדבר שלא הוסיפו סוכר נוסף; הסוכרים שמקורם בתמר עדיין קיימים.</div></details></div>
-<div class="class-q"><strong>שני מוצרים מכילים אותה כמות סוכר, אבל על אחד כתוב “100% טבעי”. האם הוא בהכרח בריא יותר?</strong><details class="teacher-key"><summary>תשובת מורה</summary><div>לא. צריך להסתכל על כל הרכב המזון, הכמות, הסיבים, החלבון, השומן ושאר הרכיבים.</div></details></div>
+<div class="class-q"><strong>אם כתוב “סילאן ללא תוספת סוכר” — האם אין בו סוכרים?</strong><details class="teacher-key"><summary>הצג תשובה והסבר למורה</summary><div>לא. פירוש הדבר שלא הוסיפו סוכר נוסף; הסוכרים שמקורם בתמר עדיין קיימים.</div></details></div>
+<div class="class-q"><strong>שני מוצרים מכילים אותה כמות סוכר, אבל על אחד כתוב “100% טבעי”. האם הוא בהכרח בריא יותר?</strong><details class="teacher-key"><summary>הצג תשובה והסבר למורה</summary><div>לא. צריך להסתכל על כל הרכב המזון, הכמות, הסיבים, החלבון, השומן ושאר הרכיבים.</div></details></div>
 </div>
 <div class="teacher-depth">
 <h3>🧑‍🏫 חומר דיבור למורה</h3>
@@ -198,7 +205,7 @@ body{margin:0;font-family:Arial,"Noto Sans Hebrew",sans-serif;background:linear-
 <p><strong>א:</strong> שיבולת שועל, אגוזים, דבש, שמן, קינמון.</p>
 <p><strong>ב:</strong> קמח, סירופ גלוקוז, שמן, קקאו.</p>
 <p><strong>ג:</strong> יוגורט, תותים, סוכר.</p>
-<details class="teacher-key"><summary>תשובת מורה</summary><div>בשלושתם יש מקור מתוק מוסף — פשוט בשם אחר. אבל עצם מציאת הסוכר עדיין לא אומרת שהמוצר “גרוע”; ממשיכים לבדוק כמות והרכב כולל.</div></details></div>
+<details class="teacher-key"><summary>הצג תשובה והסבר למורה</summary><div>בשלושתם יש מקור מתוק מוסף — פשוט בשם אחר. אבל עצם מציאת הסוכר עדיין לא אומרת שהמוצר “גרוע”; ממשיכים לבדוק כמות והרכב כולל.</div></details></div>
 <div class="teacher-depth">
 <h3>🧑‍🏫 חומר דיבור למורה</h3>
 <p>המטרה כאן אינה לשנן עשרות שמות, אלא לפתח הרגל: <strong>לקרוא מעבר לחזית האריזה.</strong> יצרן יכול להשתמש בסוכר, דבש, סירופ או תרכובות סוכר שונות — והתלמיד צריך לזהות שמדובר במקורות מתוקים.</p>
@@ -220,7 +227,7 @@ body{margin:0;font-family:Arial,"Noto Sans Hebrew",sans-serif;background:linear-
 <div class="compare"><b>יוגורט טבעי</b>יכול להכיל לקטוז שמקורו בחלב.</div>
 <div class="compare"><b>משקה קל רגיל</b>הסוכר שבו בדרך כלל נוסף במהלך הייצור.</div>
 </div>
-<div class="class-q"><strong>לשני מוצרים כתוב 8 גרם “סוכרים”. האם זה אומר שהם אותה בחירה?</strong><details class="teacher-key"><summary>תשובת מורה</summary><div>לא. “סך סוכרים” הוא רק נתון אחד. צריך לבדוק אם הסוכר טבעי או מוסף, מה גודל המנה ומה עוד יש במוצר.</div></details></div>
+<div class="class-q"><strong>לשני מוצרים כתוב 8 גרם “סוכרים”. האם זה אומר שהם אותה בחירה?</strong><details class="teacher-key"><summary>הצג תשובה והסבר למורה</summary><div>לא. “סך סוכרים” הוא רק נתון אחד. צריך לבדוק אם הסוכר טבעי או מוסף, מה גודל המנה ומה עוד יש במוצר.</div></details></div>
 <div class="one-line">סוכר הוא נתון אחד — המזון הוא התמונה כולה.</div>
 <div class="teacher-depth">
 <h3>🧑‍🏫 חומר דיבור למורה</h3>
@@ -251,7 +258,7 @@ body{margin:0;font-family:Arial,"Noto Sans Hebrew",sans-serif;background:linear-
 <div class="label-row em"><span>בקבוק</span><span>500 מ״ל</span></div>
 </div>
 <p><strong>כמה סוכר יש בכל הבקבוק?</strong></p>
-<details class="teacher-key"><summary>תשובת מורה</summary><div>25 גרם. אפשר להמיר להמחשה לכ־6 כפיות, אבל העיקר הוא להבין שהמספר ל־100 מ״ל אינו המספר של כל הבקבוק.</div></details>
+<details class="teacher-key"><summary>הצג תשובה והסבר למורה</summary><div>25 גרם. אפשר להמיר להמחשה לכ־6 כפיות, אבל העיקר הוא להבין שהמספר ל־100 מ״ל אינו המספר של כל הבקבוק.</div></details>
 </div>
 <div class="teacher-depth">
 <h3>🧑‍🏫 חומר דיבור למורה</h3>
@@ -281,25 +288,25 @@ body{margin:0;font-family:Arial,"Noto Sans Hebrew",sans-serif;background:linear-
 <div class="teacher-prompt">מטרת המשחק: לא “לתפוס” תלמידים בטעות, אלא לאמן אותם לעצור, לקרוא, לחשב ולנמק.</div>
 </div>
 
-<div class="kiosk-question"><span class="product-tag">קוקה־קולה 500 מ״ל</span><h3>1. על התווית כתוב 10.6 גרם סוכר ל־100 מ״ל. כמה יש בבקבוק 500 מ״ל?</h3><div class="quiz-options"><button class="quiz-option">א. 10.6 גרם</button><button class="quiz-option">ב. 21.2 גרם</button><button class="quiz-option">ג. 53 גרם</button><button class="quiz-option">ד. 106 גרם</button></div><details class="teacher-answer"><summary>תשובת מורה</summary><div><strong>ג — 53 גרם.</strong> 500 מ״ל הם חמש יחידות של 100 מ״ל, ולכן 10.6 × 5.</div></details></div>
+<div class="kiosk-question"><span class="product-tag">קוקה־קולה 500 מ״ל</span><h3>1. על התווית כתוב 10.6 גרם סוכר ל־100 מ״ל. כמה יש בבקבוק 500 מ״ל?</h3><div class="quiz-options"><button class="quiz-option">א. 10.6 גרם</button><button class="quiz-option">ב. 21.2 גרם</button><button class="quiz-option">ג. 53 גרם</button><button class="quiz-option">ד. 106 גרם</button></div><details class="teacher-answer"><summary>הצג תשובה והסבר למורה</summary><div><strong>ג — 53 גרם.</strong> 500 מ״ל הם חמש יחידות של 100 מ״ל, ולכן 10.6 × 5.</div></details></div>
 
-<div class="kiosk-question"><span class="product-tag">משקה אנרגיה 250 מ״ל</span><h3>2. תווית של פחית מציגה 11 גרם סוכר ל־100 מ״ל. כמה סוכר יש בפחית של 250 מ״ל?</h3><div class="quiz-options"><button class="quiz-option">א. 11 גרם</button><button class="quiz-option">ב. 22 גרם</button><button class="quiz-option">ג. 27.5 גרם</button><button class="quiz-option">ד. 44 גרם</button></div><details class="teacher-answer"><summary>תשובת מורה</summary><div><strong>ג — 27.5 גרם.</strong> ובמשקאות אנרגיה יש גם קפאין, ולכן בשיעור מדגישים שלא מסתכלים רק על הסוכר.</div></details></div>
+<div class="kiosk-question"><span class="product-tag">משקה אנרגיה 250 מ״ל</span><h3>2. תווית של פחית מציגה 11 גרם סוכר ל־100 מ״ל. כמה סוכר יש בפחית של 250 מ״ל?</h3><div class="quiz-options"><button class="quiz-option">א. 11 גרם</button><button class="quiz-option">ב. 22 גרם</button><button class="quiz-option">ג. 27.5 גרם</button><button class="quiz-option">ד. 44 גרם</button></div><details class="teacher-answer"><summary>הצג תשובה והסבר למורה</summary><div><strong>ג — 27.5 גרם.</strong> ובמשקאות אנרגיה יש גם קפאין, ולכן בשיעור מדגישים שלא מסתכלים רק על הסוכר.</div></details></div>
 
-<div class="kiosk-question"><span class="product-tag">תה קר · תווית לימודית</span><h3>3. כתוב 5 גרם סוכר ל־100 מ״ל, והבקבוק הוא 500 מ״ל. מה נכון?</h3><div class="quiz-options"><button class="quiz-option">א. בבקבוק 5 גרם</button><button class="quiz-option">ב. בבקבוק 10 גרם</button><button class="quiz-option">ג. בבקבוק 20 גרם</button><button class="quiz-option">ד. בבקבוק 25 גרם</button></div><details class="teacher-answer"><summary>תשובת מורה</summary><div><strong>ד — 25 גרם.</strong> השם “תה” לא מספר לנו כמה סוכר יש; קוראים את התווית ואת גודל הבקבוק.</div></details></div>
+<div class="kiosk-question"><span class="product-tag">תה קר · תווית לימודית</span><h3>3. כתוב 5 גרם סוכר ל־100 מ״ל, והבקבוק הוא 500 מ״ל. מה נכון?</h3><div class="quiz-options"><button class="quiz-option">א. בבקבוק 5 גרם</button><button class="quiz-option">ב. בבקבוק 10 גרם</button><button class="quiz-option">ג. בבקבוק 20 גרם</button><button class="quiz-option">ד. בבקבוק 25 גרם</button></div><details class="teacher-answer"><summary>הצג תשובה והסבר למורה</summary><div><strong>ד — 25 גרם.</strong> השם “תה” לא מספר לנו כמה סוכר יש; קוראים את התווית ואת גודל הבקבוק.</div></details></div>
 
-<div class="kiosk-question"><span class="product-tag">אייס קפה · תווית לימודית</span><h3>4. משקה של 230 מ״ל מציג 8 גרם סוכר ל־100 מ״ל. מה הכי קרוב לכמות הסוכר בבקבוק?</h3><div class="quiz-options"><button class="quiz-option">א. 8 גרם</button><button class="quiz-option">ב. 12 גרם</button><button class="quiz-option">ג. 18.4 גרם</button><button class="quiz-option">ד. 32 גרם</button></div><details class="teacher-answer"><summary>תשובת מורה</summary><div><strong>ג — כ־18.4 גרם.</strong> 2.3 × 8. המספר בתווית הוא דוגמה לימודית; מוצרים אמיתיים משתנים.</div></details></div>
+<div class="kiosk-question"><span class="product-tag">אייס קפה · תווית לימודית</span><h3>4. משקה של 230 מ״ל מציג 8 גרם סוכר ל־100 מ״ל. מה הכי קרוב לכמות הסוכר בבקבוק?</h3><div class="quiz-options"><button class="quiz-option">א. 8 גרם</button><button class="quiz-option">ב. 12 גרם</button><button class="quiz-option">ג. 18.4 גרם</button><button class="quiz-option">ד. 32 גרם</button></div><details class="teacher-answer"><summary>הצג תשובה והסבר למורה</summary><div><strong>ג — כ־18.4 גרם.</strong> 2.3 × 8. המספר בתווית הוא דוגמה לימודית; מוצרים אמיתיים משתנים.</div></details></div>
 
-<div class="kiosk-question"><span class="product-tag">שוקו</span><h3>5. על שוקו כתוב “סך סוכרים”. האם כל הגרמים האלה בהכרח סוכר שהוסיפו?</h3><div class="quiz-options"><button class="quiz-option">א. כן, תמיד</button><button class="quiz-option">ב. לא, חלק יכול להיות לקטוז טבעי מהחלב</button><button class="quiz-option">ג. רק אם המשקה קר</button><button class="quiz-option">ד. רק אם כתוב קקאו</button></div><details class="teacher-answer"><summary>תשובת מורה</summary><div><strong>ב.</strong> בחלב יש לקטוז באופן טבעי; לכן “סך סוכרים” לא אומר לבדו כמה סוכר נוסף.</div></details></div>
+<div class="kiosk-question"><span class="product-tag">שוקו</span><h3>5. על שוקו כתוב “סך סוכרים”. האם כל הגרמים האלה בהכרח סוכר שהוסיפו?</h3><div class="quiz-options"><button class="quiz-option">א. כן, תמיד</button><button class="quiz-option">ב. לא, חלק יכול להיות לקטוז טבעי מהחלב</button><button class="quiz-option">ג. רק אם המשקה קר</button><button class="quiz-option">ד. רק אם כתוב קקאו</button></div><details class="teacher-answer"><summary>הצג תשובה והסבר למורה</summary><div><strong>ב.</strong> בחלב יש לקטוז באופן טבעי; לכן “סך סוכרים” לא אומר לבדו כמה סוכר נוסף.</div></details></div>
 
-<div class="kiosk-question"><span class="product-tag">יוגורט בטעם</span><h3>6. יוגורט בטעם מכיל 12 גרם סוכרים ויוגורט טבעי 5 גרם. מה אפשר לקבוע בוודאות בלי לקרוא עוד?</h3><div class="quiz-options"><button class="quiz-option">א. כל 12 הגרם ביוגורט בטעם הם תוספת סוכר</button><button class="quiz-option">ב. ביוגורט הטבעי אין בכלל סוכר</button><button class="quiz-option">ג. יש הבדל בסך הסוכרים, אבל צריך עוד מידע כדי לדעת כמה נוסף</button><button class="quiz-option">ד. היוגורט בטעם בהכרח פחות מזין</button></div><details class="teacher-answer"><summary>תשובת מורה</summary><div><strong>ג.</strong> צריך רשימת רכיבים או מידע מתאים על סוכר מוסף כדי לדעת יותר. בשני המוצרים יכול להיות לקטוז טבעי.</div></details></div>
+<div class="kiosk-question"><span class="product-tag">יוגורט בטעם</span><h3>6. יוגורט בטעם מכיל 12 גרם סוכרים ויוגורט טבעי 5 גרם. מה אפשר לקבוע בוודאות בלי לקרוא עוד?</h3><div class="quiz-options"><button class="quiz-option">א. כל 12 הגרם ביוגורט בטעם הם תוספת סוכר</button><button class="quiz-option">ב. ביוגורט הטבעי אין בכלל סוכר</button><button class="quiz-option">ג. יש הבדל בסך הסוכרים, אבל צריך עוד מידע כדי לדעת כמה נוסף</button><button class="quiz-option">ד. היוגורט בטעם בהכרח פחות מזין</button></div><details class="teacher-answer"><summary>הצג תשובה והסבר למורה</summary><div><strong>ג.</strong> צריך רשימת רכיבים או מידע מתאים על סוכר מוסף כדי לדעת יותר. בשני המוצרים יכול להיות לקטוז טבעי.</div></details></div>
 
-<div class="kiosk-question"><span class="product-tag">גרנולה</span><h3>7. בגרנולה יש 18 גרם סוכר ל־100 גרם. מנה היא 40 גרם. כמה סוכר במנה?</h3><div class="quiz-options"><button class="quiz-option">א. 4 גרם</button><button class="quiz-option">ב. 7.2 גרם</button><button class="quiz-option">ג. 18 גרם</button><button class="quiz-option">ד. 40 גרם</button></div><details class="teacher-answer"><summary>תשובת מורה</summary><div><strong>ב — 7.2 גרם.</strong> 0.4 × 18. השאלה היא על המנה שאוכלים, לא על 100 גרם.</div></details></div>
+<div class="kiosk-question"><span class="product-tag">גרנולה</span><h3>7. בגרנולה יש 18 גרם סוכר ל־100 גרם. מנה היא 40 גרם. כמה סוכר במנה?</h3><div class="quiz-options"><button class="quiz-option">א. 4 גרם</button><button class="quiz-option">ב. 7.2 גרם</button><button class="quiz-option">ג. 18 גרם</button><button class="quiz-option">ד. 40 גרם</button></div><details class="teacher-answer"><summary>הצג תשובה והסבר למורה</summary><div><strong>ב — 7.2 גרם.</strong> 0.4 × 18. השאלה היא על המנה שאוכלים, לא על 100 גרם.</div></details></div>
 
-<div class="kiosk-question"><span class="product-tag">דגני בוקר</span><h3>8. על האריזה כתוב בגדול “דגנים מלאים”. מה זה אומר על כמות הסוכר?</h3><div class="quiz-options"><button class="quiz-option">א. בהכרח אין סוכר</button><button class="quiz-option">ב. בהכרח יש פחות מ־5 גרם סוכר</button><button class="quiz-option">ג. זה לא אומר מספיק — צריך לקרוא את התווית</button><button class="quiz-option">ד. זה אומר שהסוכר טבעי בלבד</button></div><details class="teacher-answer"><summary>תשובת מורה</summary><div><strong>ג.</strong> “דגנים מלאים” מתאר היבט אחד של המוצר; הוא לא מספר לבדו את כמות הסוכר.</div></details></div>
+<div class="kiosk-question"><span class="product-tag">דגני בוקר</span><h3>8. על האריזה כתוב בגדול “דגנים מלאים”. מה זה אומר על כמות הסוכר?</h3><div class="quiz-options"><button class="quiz-option">א. בהכרח אין סוכר</button><button class="quiz-option">ב. בהכרח יש פחות מ־5 גרם סוכר</button><button class="quiz-option">ג. זה לא אומר מספיק — צריך לקרוא את התווית</button><button class="quiz-option">ד. זה אומר שהסוכר טבעי בלבד</button></div><details class="teacher-answer"><summary>הצג תשובה והסבר למורה</summary><div><strong>ג.</strong> “דגנים מלאים” מתאר היבט אחד של המוצר; הוא לא מספר לבדו את כמות הסוכר.</div></details></div>
 
-<div class="kiosk-question"><span class="product-tag">חטיף חלבון</span><h3>9. על החטיף כתוב PROTEIN בגדול. מה אפשר להסיק על הסוכר?</h3><div class="quiz-options"><button class="quiz-option">א. אין בו סוכר</button><button class="quiz-option">ב. הוא תמיד דל בסוכר</button><button class="quiz-option">ג. אי אפשר לדעת בלי לקרוא תווית ורכיבים</button><button class="quiz-option">ד. כל הסוכר שבו טבעי</button></div><details class="teacher-answer"><summary>תשובת מורה</summary><div><strong>ג.</strong> טענה שיווקית על חלבון אינה תשובה לשאלה כמה סוכר יש במוצר.</div></details></div>
+<div class="kiosk-question"><span class="product-tag">חטיף חלבון</span><h3>9. על החטיף כתוב PROTEIN בגדול. מה אפשר להסיק על הסוכר?</h3><div class="quiz-options"><button class="quiz-option">א. אין בו סוכר</button><button class="quiz-option">ב. הוא תמיד דל בסוכר</button><button class="quiz-option">ג. אי אפשר לדעת בלי לקרוא תווית ורכיבים</button><button class="quiz-option">ד. כל הסוכר שבו טבעי</button></div><details class="teacher-answer"><summary>הצג תשובה והסבר למורה</summary><div><strong>ג.</strong> טענה שיווקית על חלבון אינה תשובה לשאלה כמה סוכר יש במוצר.</div></details></div>
 
-<div class="kiosk-question"><span class="product-tag">מיץ תפוזים מול תפוז</span><h3>10. מה ההבדל החשוב ביותר לשיעור שלנו?</h3><div class="quiz-options"><button class="quiz-option">א. במיץ אין בכלל סוכר</button><button class="quiz-option">ב. בתפוז שלם יש מבנה וסיבים, ומיץ קל יותר לצרוך במהירות</button><button class="quiz-option">ג. תפוז שלם אינו מכיל גלוקוז או פרוקטוז</button><button class="quiz-option">ד. כל מיץ הוא משקה ללא קלוריות</button></div><details class="teacher-answer"><summary>תשובת מורה</summary><div><strong>ב.</strong> פרי שלם מספק סיבים ומבנה מזון; מיץ מאפשר לשתות במהירות כמות גדולה יותר ופחות סיבים נשארים בו.</div></details></div>
+<div class="kiosk-question"><span class="product-tag">מיץ תפוזים מול תפוז</span><h3>10. מה ההבדל החשוב ביותר לשיעור שלנו?</h3><div class="quiz-options"><button class="quiz-option">א. במיץ אין בכלל סוכר</button><button class="quiz-option">ב. בתפוז שלם יש מבנה וסיבים, ומיץ קל יותר לצרוך במהירות</button><button class="quiz-option">ג. תפוז שלם אינו מכיל גלוקוז או פרוקטוז</button><button class="quiz-option">ד. כל מיץ הוא משקה ללא קלוריות</button></div><details class="teacher-answer"><summary>הצג תשובה והסבר למורה</summary><div><strong>ב.</strong> פרי שלם מספק סיבים ומבנה מזון; מיץ מאפשר לשתות במהירות כמות גדולה יותר ופחות סיבים נשארים בו.</div></details></div>
 </section>
 
 <section class="exit">
@@ -339,6 +346,15 @@ document.querySelectorAll('.quiz-option').forEach(function(button){
     button.classList.add('selected');
   });
 });
+function setAllAnswers(openState){
+  document.querySelectorAll('.teacher-key, .teacher-answer').forEach(function(el){
+    el.open = openState;
+  });
+}
+var showBtn=document.getElementById('showAllAnswers');
+var hideBtn=document.getElementById('hideAllAnswers');
+if(showBtn){showBtn.addEventListener('click',function(){setAllAnswers(true);});}
+if(hideBtn){hideBtn.addEventListener('click',function(){setAllAnswers(false);});}
 </script>
 <script src="site-nav.js"></script>
 </main>
