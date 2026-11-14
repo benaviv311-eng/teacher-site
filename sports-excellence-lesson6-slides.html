@@ -94,7 +94,7 @@ function cover(lesson,headline,sub,img){push(shell(bg(img)+'<div class="eyebrow"
 cover(6,'מהו <mark>ניצחון אמיתי?</mark>','תוצאה מול הצלחה · ניצחון פנימי וחיצוני · ספורטאים גדולים · רגשות ומטרות','jordan');
 let lesson7Start=-1;
 for(const s of d.sections){
- if(s.lesson===7 && lesson7Start<0){lesson7Start=items.length;cover(7,'האם ניצחון <mark>מוליד ניצחון?</mark>','אפקט המנצח · ביטחון · מומנטום · החלטות · גוף ומוח · אפקט המפסיד','curry')}
+ if(s.lesson===7 && lesson7Start<0){push(shell('<div class="eyebrow">סיכום שיעור 6</div><h1>הניצחון הוא <span class="gold">תוצאה</span>.<br>ההצלחה היא גם <span class="mint">דרך</span>.</h1><p>מה תרצו לנצח — ומה תרצו לשפר?</p>','closing',6),'1.8','summary',6);lesson7Start=items.length;cover(7,'האם ניצחון <mark>מוליד ניצחון?</mark>','אפקט המנצח · ביטחון · מומנטום · החלטות · גוף ומוח · אפקט המפסיד','curry')}
  const lead='<div class="eyebrow">סעיף '+esc(s.id)+' · '+esc(s.title)+'</div>';
  push(shell(bg(s.image)+lead+'<p class="question-main">'+esc(s.question)+'</p><span class="tag">קודם שואלים את התלמידים</span>','question',s.lesson),s.id,'question',s.lesson);
  push(shell(lead+'<h2>'+esc(s.title)+'</h2><div class="three">'+s.points.map(p=>'<div class="pillar"><b>'+esc(p[0])+'</b><p>'+esc(p[1])+'</p></div>').join('')+'</div><p class="note">שלושת המושגים מופיעים גם במערך המורה של סעיף '+esc(s.id)+'</p>','concept',s.lesson),s.id,'concept',s.lesson);
@@ -112,7 +112,6 @@ for(const s of d.sections){
   push(shell(markup,'experiment',7),'2.3','experiment',7)
  }
 }
-push(shell('<div class="eyebrow">סיכום שיעור 6</div><h1>הניצחון הוא <span class="gold">תוצאה</span>.<br>ההצלחה היא גם <span class="mint">דרך</span>.</h1><p>מה תרצו לנצח — ומה תרצו לשפר?</p>','closing',6),'1.8','summary',6);
 push(shell('<div class="eyebrow">סיכום שיעור 7</div><h1>העבר משפיע.<br><span class="gold">הוא לא קובע מראש</span> את העתיד.</h1><p>מה נעשה אחרת בניסיון הבא?</p>','closing',7),'2.6','summary',7);
 let current=0;
 const slides=items.map((it,i)=>{const holder=document.createElement('div');holder.innerHTML=it.html;const el=holder.firstElementChild;el.dataset.section=it.sec;el.dataset.index=i;stage.append(el);return el});
