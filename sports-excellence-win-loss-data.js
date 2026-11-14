@@ -40,7 +40,7 @@ window.WINLOSS={
     },
     "curry": {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Stephen%20Curry%20dribbling%202016.jpg?width=1200",
-      "credit": "Wikimedia Commons · סטף קרי בשנת 2016",
+      "credit": "Keith Allison · CC BY-SA 2.0 · סטף קרי ב־2016",
       "link": "https://commons.wikimedia.org/wiki/File:Stephen_Curry_dribbling_2016.jpg"
     }
   },
@@ -270,7 +270,9 @@ window.WINLOSS={
       "teacher": "את ההשוואה הביולוגית בין ניצחון קל לקשה נדחה לסעיף 3.4 שטרם פותח; כרגע בוחנים ערך ומשמעות.",
       "practice": "כתבו הישג שהגיע בקלות והישג שהגיע בקושי. באיזה אתם גאים יותר?",
       "image": "nadal",
-      "source": []
+      "source": [
+        "nadal"
+      ]
     },
     {
       "id": "1.8",
@@ -434,7 +436,10 @@ window.WINLOSS={
       "teacher": "לא לייחס לספורטאי מחשבות שלא תועדו. שאלו מה ניתן לדעת ומה רק השערה.",
       "practice": "לפני סיכון: מה ארוויח? מה אפסיד? האם ההחלטה מבוססת נתונים?",
       "image": "bolt",
-      "source": []
+      "source": [
+        "bolt",
+        "bolt200"
+      ]
     },
     {
       "id": "2.5",
@@ -498,6 +503,7 @@ window.WINLOSS={
       "image": "messi",
       "source": [
         "winner",
+        "fifaLoss",
         "fifa2022"
       ]
     }
@@ -505,7 +511,7 @@ window.WINLOSS={
   "dilemmas": [
     [
       "לקבל 100 במבחן בלי להבין באמת את החומר",
-      "להיכשל במבחן אבל לפתח דרך חשיבה חדשה"
+      "להיכשל במבחן, אבל להתפתח כבני אדם ולהבין משהו חשוב על עצמכם"
     ],
     [
       "לסיים במקום הראשון בלי מאמץ מיוחד",
@@ -580,6 +586,22 @@ window.WINLOSS={
     "goals": {
       "label": "סקירת מחקר מטרות תהליך וביצוע",
       "url": "https://doi.org/10.1080/1750984X.2022.2116723"
+    },
+    "nadal": {
+      "label": "גמר ווימבלדון 2008 — תוצאה ומשך",
+      "url": "https://en.wikipedia.org/wiki/2008_Wimbledon_Championships_%E2%80%93_Men%27s_singles_final"
+    },
+    "bolt": {
+      "label": "World Athletics — פסילת בולט בגמר 2011",
+      "url": "https://worldathletics.org/news/news/the-disqualification-of-usain-bolt"
+    },
+    "bolt200": {
+      "label": "World Athletics — זהב לבולט ב־200 מטר 2011",
+      "url": "https://worldathletics.org/news/report/mens-200m-final-bolt-blasts-to-1940-victo"
+    },
+    "fifaLoss": {
+      "label": "FIFA — הפסד ארגנטינה לערב הסעודית",
+      "url": "https://www.fifa.com/en/articles/world-cup-qatar-2022-argentina-v-saudi-arabia-match-report-review-first-game-group-e-result"
     }
   }
 };
