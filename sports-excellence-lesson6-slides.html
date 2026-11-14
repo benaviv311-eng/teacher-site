@@ -35,7 +35,7 @@ button,a{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outlin
 .story-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
 .story-photo .placeholder{display:none;position:absolute;inset:0;place-items:center;background:linear-gradient(160deg,#1d4d63,#07172b);font-size:clamp(40px,6vw,100px)}
 .story-photo img.broken{display:none}.story-photo img.broken +.placeholder{display:grid}
-.story-photo .credit{position:absolute;bottom:0;right:0;left:0;direction:ltr;background:#000a;text-align:center;padding:1.2% 3%;font-size:clamp(8px,.8vw,15px);color:#eee;line-height:1.3}
+.story-photo .credit a,.photocredit a{color:inherit;text-decoration:underline;text-underline-offset:2px}.story-photo .credit{position:absolute;bottom:0;right:0;left:0;direction:ltr;background:#000a;text-align:center;padding:1.2% 3%;font-size:clamp(8px,.8vw,15px);color:#eee;line-height:1.3}
 .bigprompt{font-size:clamp(17px,2.2vw,42px);line-height:1.35;color:var(--gold);font-weight:900;margin-top:auto}
 .reveal{display:none;color:#e8f8f4;background:#1260648a;border:1px solid #84e5d180;border-radius:15px;padding:1.5% 2%;font-size:clamp(13px,1.6vw,30px);line-height:1.35;margin-top:1%}
 .revealed .reveal{display:block}
@@ -87,8 +87,8 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const items=[];
 function push(html,sec,kind,lesson){items.push({html,sec,kind,lesson})}
 const footer=(part)=>'<div class="bottom"><span>בית ספר אור · מצוינות וספורט · '+(part===6?'שיעור 6':'שיעור 7')+'</span><span>ניצחון והפסד</span></div>';
-const photo=(img)=>{const a=d.images[img];if(!a)return '';return '<div class="story-photo"><img src="'+esc(a.url)+'" alt="צילום ארכיוני" onerror="this.classList.add(\'broken\')"><div class="placeholder">🏆</div><div class="credit">'+esc(a.credit)+'</div></div>'};
-const bg=(img)=>{const a=d.images[img];return a?'<div class="hero-photo" style="background-image:url(&quot;'+esc(a.url)+'&quot;)"></div><div class="photocredit">'+esc(a.credit)+'</div>':''};
+const photo=(img)=>{const a=d.images[img];if(!a)return '';return '<div class="story-photo"><img src="'+esc(a.url)+'" alt="צילום ארכיוני" onerror="this.classList.add(\'broken\')"><div class="placeholder">🏆</div><div class="credit"><a href="'+esc(a.link)+'" target="_blank" rel="noopener noreferrer">'+esc(a.credit)+'</a></div></div>'};
+const bg=(img)=>{const a=d.images[img];return a?'<div class="hero-photo" style="background-image:url(&quot;'+esc(a.url)+'&quot;)"></div><div class="photocredit"><a href="'+esc(a.link)+'" target="_blank" rel="noopener noreferrer">'+esc(a.credit)+'</a></div>':''};
 const shell=(content,cls,part)=>'<section class="slide '+cls+'" data-lesson="'+part+'"><div class="inner">'+content+'</div>'+footer(part)+'</section>';
 function cover(lesson,headline,sub,img){push(shell(bg(img)+'<div class="eyebrow">☀️ בית ספר אור · שיעור '+lesson+'</div><h1>'+headline+'</h1><p class="sub">'+sub+'</p><span class="tag">שאלות · דילמות · סיפורי ספורט אמיתיים</span>','cover',lesson),lesson===6?'1.1':'2.1','cover',lesson)}
 cover(6,'מהו <mark>ניצחון אמיתי?</mark>','תוצאה מול הצלחה · ניצחון פנימי וחיצוני · ספורטאים גדולים · רגשות ומטרות','jordan');
