@@ -1,0 +1,131 @@
+<!doctype html><html lang="he" dir="rtl"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="מצגת אינטראקטיבית מבוססת תמונות לשיעורים 6–7: ניצחון, הפסד, חביב, ג׳ורדן, אפקט המנצח, אפקט המפסיד והתגובות הביולוגיות.">
+<title>מצגת · ניצחון, הפסד ומה שביניהם | בית ספר אור</title>
+<style>
+:root{--base:#07172a;--deep:#0c2b3d;--teal:#86e8d9;--gold:#ffd17c;--text:#f5fbff;--muted:#bad1df}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--base);color:var(--text);font:17px Arial,"Noto Sans Hebrew",system-ui,sans-serif}body{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:9px;padding:9px}
+button,a{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.screen{width:min(98vw,calc((100dvh - 108px)*16/9),1800px);position:relative;outline:0}
+.stage{width:100%;aspect-ratio:16/9;border-radius:20px;position:relative;overflow:hidden;background:radial-gradient(circle at 80% 18%,#155166 0%,transparent 33%),linear-gradient(125deg,#123852,#07182c 79%);border:1px solid #346178;box-shadow:0 20px 56px #0009}
+.slide{position:absolute;inset:0;display:none;overflow:hidden;isolation:isolate}.slide.active{display:block}
+.slide:after{content:"";position:absolute;inset-inline-end:-19%;bottom:-44%;width:54%;aspect-ratio:1;border:1px solid #ffffff12;border-radius:50%;box-shadow:0 0 0 70px #ffffff04,0 0 0 130px #ffffff03;z-index:-1}
+.inner{height:100%;display:flex;flex-direction:column;padding:4.7% 5.4% 3%;position:relative;z-index:2}
+.eyebrow{font-size:clamp(11px,1.25vw,24px);font-weight:900;color:var(--teal);letter-spacing:.04em}
+.slide h1{font-size:clamp(28px,5.1vw,95px);line-height:1.13;margin:2.2% 0 2%;letter-spacing:-.015em}
+.slide h2{font-size:clamp(23px,4vw,72px);line-height:1.18;margin:2.5% 0}
+.slide p{font-size:clamp(15px,2vw,35px);line-height:1.45;margin:1% 0}
+.sub{color:var(--muted)}.gold{color:var(--gold)}.mint{color:var(--teal)}
+.tag{display:inline-block;align-self:flex-start;font-size:clamp(12px,1.3vw,23px);font-weight:900;border:1px solid #86e8d97d;border-radius:100px;padding:.35em .9em;background:#0a676b55;color:var(--teal)}
+.hero-photo{position:absolute;inset:0;z-index:-2;background-repeat:no-repeat;background-size:cover;background-position:50% 43%;filter:saturate(.92)}
+.hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(270deg,#071c30f6 0%,#081e33f1 31%,#0b2639b8 70%,#0b26385f 100%)}
+.cover .inner{justify-content:center}.cover h1{max-width:76%}.cover p{max-width:67%}
+.cover mark{background:transparent;color:var(--gold)}.photocredit{position:absolute;bottom:3%;left:4%;right:auto;direction:ltr;color:#ffffffaf;font-size:clamp(8px,.85vw,16px);z-index:3;max-width:42%;text-align:left}
+.bottom{position:absolute;bottom:2.5%;right:5.4%;left:5.4%;display:flex;justify-content:space-between;gap:10px;color:#d6e6f09a;font-size:clamp(10px,.95vw,18px);z-index:4}
+.question-main{font-size:clamp(25px,4.5vw,82px)!important;line-height:1.24!important;color:#fff;font-weight:900;margin:auto 0 5%!important;max-width:91%}
+.question-main em{color:var(--gold);font-style:normal}
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.7%;margin:2.7% 0 0;flex:1;max-height:62%}
+.pillar{background:#112e4aaa;border:1px solid #8bc6cf39;border-radius:18px;padding:7% 6%;display:flex;flex-direction:column}
+.pillar b{font-size:clamp(16px,2.1vw,39px);color:var(--gold);margin-bottom:7%}
+.pillar p{font-size:clamp(13px,1.65vw,30px);margin:0}
+.story-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.85fr);gap:3%;height:75%;align-items:stretch}
+.story-text{display:flex;flex-direction:column;gap:2%}
+.story-text p{font-size:clamp(15px,2vw,34px)}
+.story-photo{border-radius:18px;overflow:hidden;background:#1b3345;position:relative}
+.story-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.story-photo .placeholder{display:none;position:absolute;inset:0;place-items:center;background:linear-gradient(160deg,#1d4d63,#07172b);font-size:clamp(40px,6vw,100px)}
+.story-photo img.broken{display:none}.story-photo img.broken +.placeholder{display:grid}
+.story-photo .credit{position:absolute;bottom:0;right:0;left:0;direction:ltr;background:#000a;text-align:center;padding:1.2% 3%;font-size:clamp(8px,.8vw,15px);color:#eee;line-height:1.3}
+.bigprompt{font-size:clamp(17px,2.2vw,42px);line-height:1.35;color:var(--gold);font-weight:900;margin-top:auto}
+.reveal{display:none;color:#e8f8f4;background:#1260648a;border:1px solid #84e5d180;border-radius:15px;padding:1.5% 2%;font-size:clamp(13px,1.6vw,30px);line-height:1.35;margin-top:1%}
+.revealed .reveal{display:block}
+.note{font-size:clamp(11px,1.1vw,20px);color:#b8d6e1}
+.debate-options{display:grid;grid-template-columns:1fr 1fr;gap:2%;height:44%;margin:2% 0}
+.debate-choice{border:2px solid #ffffff3e;border-radius:20px;background:#112d4c;color:white;padding:5% 6%;text-align:right;font-size:clamp(18px,2.45vw,45px);line-height:1.35;font-weight:900;display:flex;flex-direction:column;justify-content:center}
+.debate-choice span{color:var(--gold);font-size:.6em;margin-bottom:3%}
+.debate-choice.selected{border-color:var(--gold);background:#214759}
+.debate-response{font-size:clamp(16px,2vw,38px);color:var(--teal);min-height:8%;font-weight:900;margin-top:2%}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:2%;flex:1;max-height:67%}
+.compare>div{border-radius:19px;border:1px solid #ffffff29;background:#193955a5;padding:5%;display:flex;flex-direction:column;gap:5%}
+.compare h3{font-size:clamp(20px,3vw,54px);margin:0;color:var(--gold)}
+.compare p{font-size:clamp(15px,2vw,36px)}
+.stat{font-size:clamp(40px,5.5vw,104px);font-weight:900;line-height:1;color:var(--teal)}
+.closing .inner{justify-content:center;text-align:center}.closing h1{max-width:100%}.closing p{font-weight:800}
+.controls{width:min(98vw,1470px);display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.controls button,.controls a,.controls select{background:#18384d;color:#f3fcff;border:1px solid #46677d;border-radius:11px;padding:8px 12px;min-height:41px;font-size:13px;font-weight:800;text-decoration:none}
+.controls .primary{background:#0a777a;border-color:#0c9697}
+.center-controls{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.count{direction:ltr;font-size:13px;color:#cad7e0;font-weight:900;min-width:67px;text-align:center}
+.bar{height:4px;background:#315066;position:absolute;bottom:0;left:0;right:0;z-index:10}
+.bar span{height:100%;display:block;background:var(--teal);width:0;transition:width .18s}
+.keyhelp{font-size:11px;color:#a5bacb}
+@media(max-width:720px){body{padding:4px}.stage{border-radius:10px}.screen{width:100%;}.controls{justify-content:center}.controls button,.controls a,.controls select{font-size:11px;min-height:33px;padding:6px 7px}.keyhelp{display:none}.story-grid{grid-template-columns:1.15fr .85fr}.story-photo{border-radius:9px}.pillar{border-radius:9px}.debate-choice{border-radius:8px}}
+@media print{body{background:#fff}.slide{display:block!important;position:relative;break-after:page;width:100%;height:55vw;background:#07172a}.controls{display:none}.stage{width:100%;height:auto;aspect-ratio:auto;border:0;box-shadow:none}.screen{width:100%;max-width:none}}
+</style></head><body>
+<div class="screen" tabindex="0" id="screen"><main class="stage" id="stage" aria-live="polite"></main><div class="bar"><span id="progress"></span></div></div>
+<nav class="controls" aria-label="פקדי מצגת">
+<a href="sports-excellence-lesson6.html">↩ מערך המורה</a>
+<div class="center-controls">
+<button id="prev" aria-label="השקופית הקודמת">→ הקודמת</button>
+<span class="count" id="counter"></span>
+<button id="next" class="primary" aria-label="השקופית הבאה">הבאה ←</button>
+<button id="reveal" aria-label="הצג הסבר">חשוף הסבר (R)</button>
+</div>
+<div class="center-controls">
+<button id="lesson6">שיעור 6</button><button id="lesson7">שיעור 7</button>
+<button id="full" aria-label="מסך מלא">⛶ מסך מלא (F)</button>
+</div>
+</nav>
+<div class="keyhelp">← / → למעבר · R לחשיפת הסבר · F למסך מלא · נגיעה באפשרות להצבעה</div>
+<script src="sports-excellence-win-loss-data.js"></script>
+<script>
+(function(){
+'use strict';
+const d=window.WINLOSS,stage=document.getElementById('stage'),screen=document.getElementById('screen'),count=document.getElementById('counter');
+if(!d){stage.textContent='אין אפשרות לטעון את חומר המצגת';return}
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const items=[];
+function push(html,sec,kind,lesson){items.push({html,sec,kind,lesson})}
+const footer=(part)=>'<div class="bottom"><span>בית ספר אור · מצוינות וספורט · '+(part===6?'שיעור 6':'שיעור 7')+'</span><span>ניצחון והפסד</span></div>';
+const photo=(img)=>{const a=d.images[img];if(!a)return '';return '<div class="story-photo"><img src="'+esc(a.url)+'" alt="צילום ארכיוני" onerror="this.classList.add(\'broken\')"><div class="placeholder">🏆</div><div class="credit">'+esc(a.credit)+'</div></div>'};
+const bg=(img)=>{const a=d.images[img];return a?'<div class="hero-photo" style="background-image:url(&quot;'+esc(a.url)+'&quot;)"></div><div class="photocredit">'+esc(a.credit)+'</div>':''};
+const shell=(content,cls,part)=>'<section class="slide '+cls+'" data-lesson="'+part+'"><div class="inner">'+content+'</div>'+footer(part)+'</section>';
+function cover(lesson,headline,sub,img){push(shell(bg(img)+'<div class="eyebrow">☀️ בית ספר אור · שיעור '+lesson+'</div><h1>'+headline+'</h1><p class="sub">'+sub+'</p><span class="tag">שאלות · דילמות · סיפורי ספורט אמיתיים</span>','cover',lesson),lesson===6?'1.1':'2.1','cover',lesson)}
+cover(6,'מהו <mark>ניצחון אמיתי?</mark>','תוצאה מול הצלחה · ניצחון פנימי וחיצוני · ספורטאים גדולים · רגשות ומטרות','jordan');
+let lesson7Start=-1;
+for(const s of d.sections){
+ if(s.lesson===7 && lesson7Start<0){lesson7Start=items.length;cover(7,'האם ניצחון <mark>מוליד ניצחון?</mark>','אפקט המנצח · ביטחון · מומנטום · החלטות · גוף ומוח · אפקט המפסיד','curry')}
+ const lead='<div class="eyebrow">סעיף '+esc(s.id)+' · '+esc(s.title)+'</div>';
+ push(shell(bg(s.image)+lead+'<p class="question-main">'+esc(s.question)+'</p><span class="tag">קודם שואלים את התלמידים</span>','question',s.lesson),s.id,'question',s.lesson);
+ push(shell(lead+'<h2>'+esc(s.title)+'</h2><div class="three">'+s.points.map(p=>'<div class="pillar"><b>'+esc(p[0])+'</b><p>'+esc(p[1])+'</p></div>').join('')+'</div><p class="note">שלושת המושגים מופיעים גם במערך המורה של סעיף '+esc(s.id)+'</p>','concept',s.lesson),s.id,'concept',s.lesson);
+ const story='<div class="eyebrow">הסיפור / הדילמה · '+esc(s.id)+'</div><h2>'+esc(s.title)+'</h2><div class="story-grid"><div class="story-text"><p>'+esc(s.story)+'</p><div class="bigprompt">'+esc(s.prompts[0])+'</div><div class="reveal"><b>הסבר למורה:</b> '+esc(s.explain)+'</div><p class="note">לחצו R או ״חשוף הסבר״ · כדי להציג את הפרשנות המדויקת</p></div>'+photo(s.image)+'</div>';
+ push(shell(story,'story',s.lesson),s.id,'story',s.lesson);
+ if(s.id==="1.2"){
+  for(let i=0;i<d.dilemmas.length;i++){
+   const pair=d.dilemmas[i];
+   const markup='<div class="eyebrow">1.2 · מהו ניצחון בשבילכם? · שאלה '+(i+1)+' מתוך 10</div><h2>מה אתם הייתם בוחרים?</h2><div class="debate-options"><button class="debate-choice" data-choice="A"><span>אפשרות א׳</span>'+esc(pair[0])+'</button><button class="debate-choice" data-choice="B"><span>אפשרות ב׳</span>'+esc(pair[1])+'</button></div><div class="debate-response">אין תשובה נכונה אחת. הסבירו את הבחירה שלכם.</div><div class="reveal">שאלת עומק: האם התשובה שלכם הייתה משתנה אילו איש לא היה יודע מה בחרתם?</div>';
+   push(shell(markup,'debate',6),'1.2','dilemma',6)
+  }
+ }
+ if(s.id==="2.3"){
+  const markup='<div class="eyebrow">2.3 · ניסוי כיתתי</div><h2>עץ · עץ · עץ · עץ · עץ</h2><p>אם המטבע הוגן וכל הטלה עצמאית, מה הסיכוי שיצא עץ בפעם השישית?</p><div class="compare"><div><h3>א׳ · 80%</h3><p>הרצף נמשך</p></div><div><h3>ב׳ · 50%</h3><p>כל הטלה עצמאית</p></div></div><div class="reveal">התשובה: 50%. למטבע אין זיכרון, אבל לבני אדם יש ניסיון ויכולת למידה. רצף אינו בהכרח אפקט המנצח.</div>';
+  push(shell(markup,'experiment',7),'2.3','experiment',7)
+ }
+}
+push(shell('<div class="eyebrow">סיכום שיעור 6</div><h1>הניצחון הוא <span class="gold">תוצאה</span>.<br>ההצלחה היא גם <span class="mint">דרך</span>.</h1><p>מה תרצו לנצח — ומה תרצו לשפר?</p>','closing',6),'1.8','summary',6);
+push(shell('<div class="eyebrow">סיכום שיעור 7</div><h1>העבר משפיע.<br><span class="gold">הוא לא קובע מראש</span> את העתיד.</h1><p>מה נעשה אחרת בניסיון הבא?</p>','closing',7),'2.6','summary',7);
+let current=0;
+const slides=items.map((it,i)=>{const holder=document.createElement('div');holder.innerHTML=it.html;const el=holder.firstElementChild;el.dataset.section=it.sec;el.dataset.index=i;stage.append(el);return el});
+function show(i,update=true){current=Math.max(0,Math.min(i,slides.length-1));slides.forEach((el,j)=>{el.classList.toggle('active',j===current);if(j!==current){el.classList.remove('revealed');el.querySelectorAll('.debate-choice').forEach(b=>b.classList.remove('selected'))}});count.textContent=(current+1)+' / '+slides.length;document.getElementById('progress').style.width=((current+1)/slides.length*100)+'%';document.getElementById('prev').disabled=current===0;document.getElementById('next').disabled=current===slides.length-1;if(update){const u=new URL(location.href);u.searchParams.set('start',String(current+1));u.searchParams.delete('section');history.replaceState({},'',u)}}
+function next(){show(current+1)}function prev(){show(current-1)}
+document.getElementById('next').onclick=next;document.getElementById('prev').onclick=prev;
+document.getElementById('reveal').onclick=()=>slides[current].classList.toggle('revealed');
+document.getElementById('lesson6').onclick=()=>show(0);document.getElementById('lesson7').onclick=()=>show(lesson7Start);
+document.getElementById('full').onclick=()=>{if(document.fullscreenElement)document.exitFullscreen?.();else screen.requestFullscreen?.()};
+stage.addEventListener('click',e=>{const b=e.target.closest('.debate-choice');if(b){const slide=b.closest('.slide');slide.querySelectorAll('.debate-choice').forEach(x=>x.classList.toggle('selected',x===b));}});
+document.addEventListener('keydown',e=>{if(['ArrowLeft','PageDown',' '].includes(e.key)){if(['BUTTON','INPUT'].includes(document.activeElement?.tagName)&&e.key===' ')return;e.preventDefault();next()}else if(['ArrowRight','PageUp'].includes(e.key)){e.preventDefault();prev()}else if(e.key==='r'||e.key==='R'||e.key==='ר')slides[current].classList.toggle('revealed');else if(e.key==='f'||e.key==='F'||e.key==='כ'){e.preventDefault();document.getElementById('full').click()}else if(e.key==='Home')show(0);else if(e.key==='End')show(slides.length-1)});
+let tx=null;screen.addEventListener('touchstart',e=>{tx=e.touches[0]?.clientX??null},{passive:true});screen.addEventListener('touchend',e=>{if(tx===null)return;const dx=(e.changedTouches[0]?.clientX??tx)-tx;tx=null;if(Math.abs(dx)>60)show(current+(dx>0?1:-1))},{passive:true});
+const p=new URLSearchParams(location.search);const requested=p.get('section');const start=Number(p.get('start'));if(requested){const found=items.findIndex(it=>it.sec===requested && it.kind==='question');show(found>=0?found:0,false)}else if(Number.isInteger(start)&&start>=1&&start<=items.length)show(start-1,false);else show(0,false);
+window.WINLOSS_SLIDES={get count(){return items.length},indexFor:section=>items.findIndex(it=>it.sec===section &&it.kind==='question'),lesson7Start:lesson7Start+1,sections:items.filter(it=>it.kind==='question').map(it=>it.sec)};
+})();
+</script></body></html>
