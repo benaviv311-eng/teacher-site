@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="מערך מורה מלא: ניצחון חיצוני ופנימי, מטרות אישיות וקבוצתיות, אפקט המנצח והמפסיד, הורמונים, ביטחון, דילמות ומצגות מסונכרנות.">
+<title>שיעורים 6–7 | ניצחון, הפסד ומה שביניהם | בית ספר אור</title>
+<style>
+:root{--navy:#112741;--ocean:#086a7a;--accent:#db9f49;--light:#f3f7fa;--ink:#19324a;--dim:#597084;--border:#d9e4ed}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--light);color:var(--ink);font-family:Arial,"Noto Sans Hebrew",system-ui,sans-serif;line-height:1.75}
+a{color:#176d97}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid #d8a551;outline-offset:3px}
+.wrap{max-width:1120px;margin:auto;padding:12px 18px 90px}
+.top{position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:9px;flex-wrap:wrap;background:#f3f7faed;backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:9px 3px}
+.top a,.top button{display:inline-flex;align-items:center;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--border);padding:8px 13px;border-radius:11px;font-weight:800;font-size:13px;min-height:42px}
+.top .go{background:var(--ocean);border-color:var(--ocean);color:#fff}.top .brand{margin-inline-start:auto;color:var(--dim);font-size:13px}
+.hero{position:relative;overflow:hidden;background:linear-gradient(120deg,#0a2438,#0f4855 65%,#13556d);border-radius:26px;color:#fff;padding:40px;margin:14px 0 20px;box-shadow:0 20px 34px #132e461b}
+.hero:after{content:"W / L";font:900 150px Arial;direction:ltr;position:absolute;left:-16px;top:0;color:#ffffff09;pointer-events:none}
+.kicker{color:#9fe2d1;font-size:13px;letter-spacing:.07em;font-weight:900}.hero h1{font-size:clamp(30px,5vw,54px);line-height:1.15;margin:12px 0}.hero p{max-width:800px;font-size:17px}
+.tags{display:flex;gap:7px;flex-wrap:wrap}.tags span{border:1px solid #ffffff55;background:#ffffff12;padding:4px 11px;border-radius:40px;font-size:12px;font-weight:800}
+.band{margin:22px 0 10px;border-right:5px solid var(--accent);padding:7px 18px}.band h2{font-size:26px;margin:0}.band p{margin:5px 0;color:var(--dim)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.toolbar a{background:#fff;text-decoration:none;border:1px solid var(--border);border-radius:12px;padding:8px 12px;color:var(--ink);font-weight:700;font-size:13px}
+.lesson{scroll-margin-top:80px;background:#fff;border:1px solid var(--border);border-radius:22px;padding:26px;margin:15px 0;box-shadow:0 10px 24px #112a430a;overflow:hidden}
+.lesson h3{font-size:clamp(22px,3vw,30px);line-height:1.3;margin:4px 0 14px}
+.no{display:inline-block;color:#0b706f;background:#e6f7f1;padding:3px 12px;font-weight:900;border-radius:80px;font-size:13px}
+.starter{font-size:clamp(20px,2.5vw,27px);font-weight:900;color:#0d5070;background:#ebf6fb;padding:18px 20px;border-radius:15px;border-right:5px solid #25a1a7;margin:12px 0 22px}
+.lesson h4{color:#0a7278;font-size:18px;margin:25px 0 10px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.mini{background:#f3f7fa;border:1px solid var(--border);border-radius:16px;padding:16px}.mini b{display:block;margin-bottom:5px;color:#15384c}.mini p{margin:0;font-size:14px}
+.story{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(240px,1fr);gap:16px;align-items:start}
+.photo-box{margin:0;background:#e8eff4;border-radius:16px;overflow:hidden;min-height:170px}
+.photo-box img{display:block;width:100%;max-height:315px;object-fit:cover;object-position:center;min-height:170px}
+.photo-box figcaption{padding:7px 12px;color:#596b75;font-size:11px;line-height:1.5}
+.photo-box figcaption a{color:inherit}.evidence{background:#f5f8fb;padding:14px 18px;border-right:4px solid #dba85c;border-radius:13px;margin-top:10px}
+.questions{padding-right:21px}.questions li{padding:3px 0}
+.teacher{background:#fff8ec;border:1px solid #f0d9a8;border-radius:15px;padding:14px 18px;margin-top:14px}
+.practice{background:#e8f6f1;border:1px solid #c8e7db;border-radius:15px;padding:14px 18px;margin-top:12px}
+.bridge{font-weight:900;color:#0b5970;margin-top:20px}
+.sources{font-size:12px;color:var(--dim);padding-top:7px}.sources a{margin-left:10px}
+.open-presentation{display:inline-flex;text-decoration:none;padding:9px 16px;border-radius:12px;background:#0f6572;color:#fff;font-weight:800;font-size:13px;margin-top:11px}
+.dilemmas{scroll-margin-top:80px;background:#fff;border:1px solid var(--border);border-radius:24px;padding:26px;margin:22px 0}
+.dilemmas h2{margin:0 0 8px}.dilemmas>p{color:var(--dim)}
+.dilemma{padding:17px 0;border-bottom:1px solid #e3ebf0}.dilemma:last-child{border:0}
+.dilemma h3{font-size:17px;margin:0 0 8px}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.choice{display:block;text-align:right;border:2px solid #dce7ee;background:#f7fafc;color:var(--ink);border-radius:13px;padding:13px;width:100%;min-height:72px;font-weight:700}
+.choice[aria-pressed="true"]{border-color:#0e8b8e;background:#e3f5ef}
+.small{font-size:13px;color:var(--dim)}.planning{background:#fff;border:1px solid var(--border);border-radius:22px;padding:25px;margin-top:20px}
+.planning h2{margin-top:0}.planrow{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #e5eaf1;padding:8px 0}.planrow:last-child{border:0}
+footer{font-size:13px;color:var(--dim);text-align:center;padding:23px}
+@media(max-width:700px){.wrap{padding:9px 11px 70px}.hero{padding:25px 21px}.lesson,.dilemmas{padding:18px}.story,.two{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.top .brand{display:none}.photo-box img{max-height:230px}}
+@media print{.top,.toolbar,.open-presentation,.dilemmas .choice{display:none}.lesson{break-inside:avoid;box-shadow:none}.wrap{max-width:100%}body{background:#fff}}
+</style></head>
+<body><div class="wrap">
+<nav class="top" aria-label="ניווט"><a href="sports-excellence.html">↩ ספריית מצוינות וספורט</a><a href="#part6">שיעור 6</a><a href="#part7">שיעור 7</a><a class="go" href="sports-excellence-lesson6-slides.html" target="_blank" rel="noopener">▶ פתיחת המצגת</a><a class="go" href="sports-excellence-lesson6-slides.html?section=2.1" target="_blank" rel="noopener">▶ מצגת שיעור 7</a><span class="brand">☀️ בית ספר אור</span></nav>
+<header class="hero"><div class="kicker">מערך מורה · מצוינות וספורט · כיתות ז׳–ח׳</div><h1>ניצחון, הפסד<br>ומה שביניהם</h1><p>שני שיעורים מחוברים: קודם נבין מהו ניצחון, מהי הצלחה ומה אנחנו מרגישים — ואז נחקור איך ניצחונות והפסדים קודמים עשויים להשפיע על ההתמודדות הבאה.</p><div class="tags"><span>שיעור 6 · משמעות הניצחון</span><span>שיעור 7 · אפקט המנצח והמפסיד</span><span>14 תתי־סעיפים</span><span>10 דילמות ערכיות</span><span>מצגת אחת מסונכרנת</span></div></header>
+<section class="planning" id="guide"><h2>איך ללמד בלי להעמיס?</h2><p>התוכן המלא הוא <strong>מאגר הוראה</strong>. אין צורך להעביר את כל תתי־הסעיפים בשני שיעורים של 50 דקות. בכל חלק בחרו את סיפורי הדגל והדילמות המתאימים לקצב הכיתה.</p><div class="planrow"><strong>שיעור 6 · 50 דקות</strong><span>1.1 (5) · 1.2 + דילמות (12) · 1.3 (10) · 1.4 (10) · 1.8 (8) · סיכום (5)</span></div><div class="planrow"><strong>שיעור 7 · 50 דקות</strong><span>2.1 (8) · 2.2 (9) · 2.3 + מטבע (12) · 2.4 (8) · 2.5 (7) · 2.6 (6)</span></div><p class="small">1.5–1.7 וחלק מהרחבות 2.x עומדים לרשות המורה לשיעור נוסף או למידה מעמיקה. סעיפי 2.7–2.9 והרחבת ההורמונים 3.4 עדיין לא פותחו, ולכן אינם מוצגים כחומר מאושר.</p></section>
+<div id="content"></div><div id="dilemma-root"></div>
+<footer>תוכן המורה והמצגת נבנים מאותו קובץ נתונים. התמונות הן תמונות ארכיון להמחשה עם ייחוס מפורש; אין להציג אותן כתיעוד של אירוע אחר.</footer>
+</div>
+<script src="sports-excellence-win-loss-data.js"></script>
+<script>
+(function(){
+'use strict';
+const d=window.WINLOSS,host=document.getElementById('content'),dr=document.getElementById('dilemma-root');
+if(!d){host.textContent='לא ניתן לטעון את חומר השיעור.';return}
+const E=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const anchor=id=>'sec-'+id.replace('.','-');
+function img(name){const a=d.images[name];return a?'<figure class="photo-box"><img loading="lazy" src="'+E(a.url)+'" alt="תמונה ארכיונית: '+E(a.credit)+'" onerror="this.style.display=\'none\';this.nextElementSibling.textContent=\'מקור תמונה: Wikimedia Commons\'"><figcaption><a href="'+E(a.link)+'" target="_blank" rel="noopener noreferrer">'+E(a.credit)+'</a></figcaption></figure>':''}
+function refs(s){return s.source?.length?'<div class="sources">מקורות לקריאה והעמקה: '+s.source.map(k=>d.refs[k]?'<a href="'+E(d.refs[k].url)+'" target="_blank" rel="noopener noreferrer">'+E(d.refs[k].label)+'</a>':'').join(' ')+'</div>':''}
+function sect(s){return '<article class="lesson" id="'+anchor(s.id)+'" data-sec="'+E(s.id)+'"><span class="no">'+E(s.id)+' · שיעור '+s.lesson+'</span><h3>'+E(s.title)+'</h3><div class="starter">❝ '+E(s.question)+' ❞</div><h4>שלושה מושגים שנפתח אחרי דיון</h4><div class="grid">'+s.points.map(p=>'<div class="mini"><b>'+E(p[0])+'</b><p>'+E(p[1])+'</p></div>').join('')+'</div><h4>סיפור או דילמה לפתיחה</h4><div class="story"><div><p>'+E(s.story)+'</p><div class="evidence"><strong>הסבר מדויק למורה:</strong> '+E(s.explain)+'</div></div>'+img(s.image)+'</div><h4>שאלות המשך לדיון</h4><ol class="questions">'+s.prompts.map(x=>'<li>'+E(x)+'</li>').join('')+'</ol><div class="teacher"><strong>🧭 הנחיה למורה</strong><p>'+E(s.teacher)+'</p></div><div class="practice"><strong>✍️ יישום מעשי</strong><p>'+E(s.practice)+'</p></div>'+refs(s)+'<p class="bridge">שאלת מעבר: '+E(s.id==='2.6'?'איך מתאוששים מהפסד ובונים את הצעד הבא?':(d.sections[d.sections.indexOf(s)+1]?.question||''))+'</p><a class="open-presentation" target="_blank" rel="noopener" href="sports-excellence-lesson6-slides.html?section='+encodeURIComponent(s.id)+'">▶ פתח שקופיות '+E(s.id)+'</a></article>'}
+for(const lesson of [6,7]){const h=document.createElement('section');h.className='band';h.id='part'+lesson;h.innerHTML='<h2>שיעור '+lesson+' — '+(lesson===6?'מהו ניצחון אמיתי?':'אפקט המנצח והמפסיד')+'</h2><p>'+(lesson===6?'מניצחון חיצוני אל הצלחה אישית וקבוצתית, משמעות ורגש.':'ביטחון, רצף, סיכון, תגובות הגוף ומה קורה אחרי הפסד.')+'</p>';host.append(h);const nav=document.createElement('div');nav.className='toolbar';nav.innerHTML=d.sections.filter(x=>x.lesson===lesson).map(s=>'<a href="#'+anchor(s.id)+'">'+E(s.id)+' · '+E(s.title)+'</a>').join('');host.append(nav);host.insertAdjacentHTML('beforeend',d.sections.filter(x=>x.lesson===lesson).map(sect).join(''))}
+dr.innerHTML='<section class="dilemmas" id="dilemmas"><span class="no">סעיף 1.2 · מאגר דילמות</span><h2>מהו ניצחון בשבילכם? — 10 שאלות</h2><p>פעילות הצבעה. אין תשובה נכונה או לא נכונה: השאלה היא מה חשוב לכם ומה הנימוק לבחירה. בחרו רק כמה שאלות לשיעור בן 50 דקות.</p>'+d.dilemmas.map((pair,i)=>'<div class="dilemma"><h3>'+(i+1)+'. מהו ניצחון בשבילכם?</h3><div class="two">'+pair.map((t,j)=>'<button type="button" class="choice" data-pick="'+i+'" data-opt="'+j+'" aria-pressed="false">'+(j===0?'א׳':'ב׳')+' — '+E(t)+'</button>').join('')+'</div></div>').join('')+'</section>';
+dr.addEventListener('click',e=>{const b=e.target.closest('[data-pick]');if(!b)return;dr.querySelectorAll('[data-pick="'+b.dataset.pick+'"]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)))});
+if(location.hash){const el=document.querySelector(location.hash);if(el)setTimeout(()=>el.scrollIntoView({block:'start'}),100)}
+})();
+</script><script src="site-nav.js"></script>
+</body></html>
