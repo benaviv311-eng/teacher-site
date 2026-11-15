@@ -73,9 +73,18 @@ test('English lesson 7 uses the approved harder opposites and adjective scramble
   }
 });
 
-test('English lesson 7 links the classroom presentation from the lesson page', async () => {
-  const html = await read('english-lesson7.html');
+test('English library exposes the lesson 7 classroom presentation page', async () => {
+  const library = await read('english.html');
+  const presentationUrl = new URL('../english-lesson7-presentation.html', import.meta.url);
 
-  assert.match(html, /https:\/\/docs\.google\.com\/presentation\/d\/1O5gQyv7gUZYFjyYJf3oHV5lsMg1FyP_2\/edit/);
-  assert.match(html, /מצגת|PowerPoint|Google Slides/i);
+  assert.equal(existsSync(presentationUrl), true);
+  assert.match(library, /href="english-lesson7-presentation\.html"/);
+  assert.match(library, /מצגת שיעור 7|English Challenge.*מצגת/is);
+});
+
+test('Lesson 7 presentation page opens the uploaded Google Slides deck', async () => {
+  const html = await read('english-lesson7-presentation.html');
+
+  assert.match(html, /https:\/\/docs\.google\.com\/presentation\/d\/1O5gQyv7gUZYFjyYJf3oHV5lsMg1FyP_2\//);
+  assert.match(html, /Google Slides|פתח את המצגת|מצגת/i);
 });
