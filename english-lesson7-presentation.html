@@ -4,39 +4,341 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>מצגת שיעור 7 — English Challenge</title>
-<link rel="stylesheet" href="english-lesson.css">
 <style>
-.presentation-shell{max-width:1180px;margin:0 auto;padding:18px}
-.presentation-card{background:#fff;border:1px solid #d7e2ec;border-radius:22px;padding:18px;box-shadow:0 10px 30px rgba(18,58,99,.08)}
-.presentation-frame{position:relative;width:100%;aspect-ratio:16/9;border:0;border-radius:16px;background:#eef4f8;overflow:hidden}
-.presentation-frame iframe{width:100%;height:100%;border:0}
-.presentation-actions{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0 0}
-.presentation-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:800;background:#123a63;color:#fff}
-.presentation-btn.secondary{background:#eef4f8;color:#123a63;border:1px solid #cbd9e7}
-.presentation-note{margin-top:12px;color:#64788a;font-size:14px}
-@media(max-width:760px){.presentation-shell{padding:10px}.presentation-card{padding:12px}.presentation-actions{display:grid}.presentation-btn{width:100%}}
+*{box-sizing:border-box}
+html,body{margin:0;background:#07111f;color:#172033;font-family:Arial,"Noto Sans Hebrew",sans-serif}
+body{min-height:100vh}
+.deck-shell{min-height:100vh;display:flex;flex-direction:column}
+.deck-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;background:#0d1c31;color:#fff;position:sticky;top:0;z-index:20}
+.deck-top a{color:#fff;text-decoration:none;font-weight:800}
+.deck-title{font-weight:900}
+.stage{width:min(96vw,1600px);aspect-ratio:16/9;margin:16px auto 10px;position:relative;background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 24px 60px #0008}
+.slide{display:none;position:absolute;inset:0;padding:44px 54px;background:linear-gradient(145deg,#f7fbff,#fff 62%,#eef7ff);overflow:hidden}
+.slide.active{display:block}
+.slide.task{border-top:12px solid #1f6feb}
+.slide.answer{border-top:12px solid #18a66a;background:linear-gradient(145deg,#f4fff9,#fff 62%,#eefbf5)}
+.slide::after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:#1f6feb12;left:-80px;bottom:-120px}
+.answer::after{background:#18a66a12}
+.slide-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;position:relative;z-index:2}
+.kicker{font-size:19px;font-weight:900;color:#1f6feb;letter-spacing:.3px}
+.answer .kicker{color:#148056}
+h1{margin:4px 0 8px;font-size:clamp(34px,4.2vw,66px);line-height:1}
+.sub{font-size:20px;color:#53677c;margin:0}
+.art{font-size:72px;line-height:1;background:#fff;border:1px solid #dfe9f4;border-radius:26px;padding:18px 22px;box-shadow:0 10px 30px #11335b12}
+.content{position:relative;z-index:2;margin-top:22px}
+.grid-wrap{display:grid;grid-template-columns:1.22fr .78fr;gap:28px;align-items:start}
+.word-grid{direction:ltr;margin:0;background:#10223d;color:#fff;border-radius:18px;padding:18px 22px;font:800 20px/1.28 "Courier New",monospace;letter-spacing:4px;white-space:pre;text-align:center;box-shadow:inset 0 0 0 2px #ffffff18}
+.rules{background:#fff;border:1px solid #dce7f3;border-radius:18px;padding:20px;font-size:23px;line-height:1.55;box-shadow:0 8px 24px #11335b10}
+.rules b{color:#1f6feb}.answer .rules b{color:#148056}
+.score{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.score div{border-radius:15px;padding:14px;text-align:center;font-weight:900}
+.normal{background:#eaf3ff;color:#13549a}.bonus{background:#fff1b8;color:#8a5b00}
+.bank{direction:ltr;text-align:center;background:#fff7dc;border:2px solid #f0ca56;border-radius:18px;padding:14px;font-size:23px;font-weight:900;margin-bottom:17px}
+.sentence-grid{direction:ltr;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sentence{background:#fff;border:1px solid #dce7f3;border-radius:14px;padding:13px 16px;font-size:20px;line-height:1.35}
+.answer-word{color:#148056;font-weight:900;background:#dcf8e9;border-radius:8px;padding:1px 5px}
+.reading{direction:ltr;text-align:left;background:#fff;border:1px solid #dce7f3;border-radius:16px;padding:15px 18px;font-size:19px;line-height:1.45;margin-bottom:14px}
+.questions{direction:ltr;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.q{background:#fff;border:1px solid #dce7f3;border-radius:13px;padding:10px 13px;font-size:17px;line-height:1.35}
+.good{color:#148056;font-weight:900}
+.op-grid{direction:ltr;display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.op-col{background:#fff;border:1px solid #dce7f3;border-radius:18px;padding:16px 22px;font-size:22px;line-height:1.55}
+.op-col h3{margin:0 0 8px;color:#1f6feb}
+.pairs{direction:ltr;display:grid;grid-template-columns:1fr 1fr;gap:12px 24px}
+.pair{display:flex;align-items:center;justify-content:center;gap:18px;background:#fff;border:1px solid #cfe7da;border-radius:16px;padding:15px;font-size:23px;font-weight:900}
+.pair .arrow{color:#148056;font-size:28px}
+.scramble{direction:ltr;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.scramble div{background:#fff;border:1px solid #dce7f3;border-radius:16px;padding:15px 18px;font:900 25px/1.2 "Courier New",monospace}
+.scramble-answer{color:#148056}
+.footer-note{position:absolute;bottom:18px;right:50px;left:50px;display:flex;justify-content:space-between;color:#6b7e91;font-size:14px;font-weight:700;z-index:2}
+.controls{display:flex;align-items:center;justify-content:center;gap:10px;padding:0 14px 18px;flex-wrap:wrap}
+.controls button,.controls a{border:0;border-radius:999px;padding:11px 17px;font:800 15px Arial,sans-serif;cursor:pointer;text-decoration:none}
+.controls button{background:#fff;color:#10223d}
+.controls .primary{background:#1f6feb;color:#fff}
+.controls .fullscreen{background:#18a66a;color:#fff}
+.counter{color:#fff;font-weight:900;min-width:85px;text-align:center}
+.progress{height:5px;background:#1a2b43;margin:0 18px 8px;border-radius:999px;overflow:hidden}
+.progress>div{height:100%;background:linear-gradient(90deg,#1f6feb,#18a66a);width:10%;transition:.2s}
+.solution-list{direction:ltr;background:#fff;border:1px solid #cfe7da;border-radius:18px;padding:20px;font-size:22px;line-height:1.65}
+.solution-list b{color:#148056}
+@media(max-width:900px){
+ .slide{padding:28px 28px}
+ .stage{width:100vw;margin:0;border-radius:0}
+ h1{font-size:32px}.sub{font-size:15px}.art{font-size:42px;padding:10px}
+ .word-grid{font-size:13px;letter-spacing:2px;padding:12px}
+ .rules{font-size:15px;padding:12px}
+ .sentence{font-size:14px;padding:8px}.bank{font-size:15px}
+ .reading{font-size:13px}.q{font-size:12px}
+ .op-col{font-size:15px}.pair{font-size:15px;padding:9px}
+ .scramble div{font-size:16px;padding:9px}
+ .footer-note{display:none}
+}
 </style>
 </head>
 <body>
-<main class="app presentation-shell">
-  <div class="top"><div class="brand">☀️ בית ספר אור · אנגלית</div><a class="back" href="english.html">← כל שיעורי האנגלית</a></div>
-  <section class="hero">
-    <small>כיתה ז׳ · שיעור 7</small>
-    <h1>🎞️ מצגת שיעור 7 — English Challenge</h1>
-    <p>10 שקופיות: בכל חלק משימה ולאחריה פתרון. תפזורת פעלים, השלמת משפטים, הבנת הנקרא, הפכים ו־Adjective Scramble.</p>
-  </section>
+<div class="deck-shell">
+  <div class="deck-top">
+    <a href="english.html">← ספריית אנגלית</a>
+    <div class="deck-title">🎞️ שיעור 7 · English Challenge</div>
+    <a href="english-lesson7.html">מערך השיעור</a>
+  </div>
 
-  <section class="presentation-card">
-    <div class="presentation-frame">
-      <iframe src="https://docs.google.com/presentation/d/1O5gQyv7gUZYFjyYJf3oHV5lsMg1FyP_2/preview" title="English Challenge Lesson 7 presentation" allowfullscreen></iframe>
-    </div>
-    <div class="presentation-actions">
-      <a class="presentation-btn" href="https://docs.google.com/presentation/d/1O5gQyv7gUZYFjyYJf3oHV5lsMg1FyP_2/edit?usp=drivesdk&amp;ouid=116689180823480416385&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener">▶ פתח את המצגת ב־Google Slides</a>
-      <a class="presentation-btn secondary" href="english-lesson7.html">🏆 חזרה למערך שיעור 7</a>
-    </div>
-    <p class="presentation-note">המצגת נבנתה ביחס 16:9 ומכילה שקופית משימה ושקופית תשובות לכל אחד מחמשת חלקי השיעור.</p>
-  </section>
-</main>
-<script src="site-nav.js"></script>
+  <div class="stage" id="deck">
+
+    <section class="slide task active">
+      <div class="slide-head">
+        <div><div class="kicker">PART 1 · TASK</div><h1>Verb Word Search</h1><p class="sub">Find verbs. First to 10 points wins!</p></div>
+        <div class="art">🔎</div>
+      </div>
+      <div class="content grid-wrap">
+<pre class="word-grid">Q Q A M B V P A K N O Q U E C Q C K
+L C E M Y C A K Z A T K E M B U V T
+R I U G M F Y Y Z P O B Y K P B A Z
+I F O B C A Y C M T T H L S N O B R
+M P O E X D L O L I S A L A M I Y Y
+S W I K S M C L H E W G E Z V Q R H
+O Q L U Y I H G P V E S U L L E L D
+Y U R V D Y C D P M M G Y C B U C L
+J S Q B U N T R R N Y I H M W B P U
+P V Q R T R A V E L Z M E K C F K M
+O L V E S C W T W X F M L W B D R P
+C O S R T I S T S L E E P X L N Z I
+X E W I R I K Y N R K S M M U Z U D
+M Z C H L K R O A N E P O A U G V G
+J E F N H E O W E L F D U L R J K Z
+J E P A A G C O L R P Y N T C A J Y
+M X F D R D I B C K H X E U M O Q C
+Q P A A T A B U F M Y L Y I R N M W</pre>
+        <div class="rules">
+          <b>Regular verb</b> = 1 point<br>
+          <b>Bonus verb</b> = 3 points<br><br>
+          Words can appear forward, backward, up, down or diagonally.
+          <div class="score"><div class="normal">REGULAR<br>1 POINT</div><div class="bonus">BONUS<br>3 POINTS</div></div>
+        </div>
+      </div>
+      <div class="footer-note"><span>Don’t show the answers yet.</span><span>1 / 10</span></div>
+    </section>
+
+    <section class="slide answer">
+      <div class="slide-head">
+        <div><div class="kicker">PART 1 · ANSWERS</div><h1>Verb Word Search</h1><p class="sub">26 hidden verbs</p></div>
+        <div class="art">✅</div>
+      </div>
+      <div class="content grid-wrap">
+<pre class="word-grid">Q Q A M B V P A K N O Q U E C Q C K
+L C E M Y C A K Z A T K E M B U V T
+R I U G M F Y Y Z P O B Y K P B A Z
+I F O B C A Y C M T T H L S N O B R
+M P O E X D L O L I S A L A M I Y Y
+S W I K S M C L H E W G E Z V Q R H
+O Q L U Y I H G P V E S U L L E L D
+Y U R V D Y C D P M M G Y C B U C L
+J S Q B U N T R R N Y I H M W B P U
+P V Q R T R A V E L Z M E K C F K M
+O L V E S C W T W X F M L W B D R P
+C O S R T I S T S L E E P X L N Z I
+X E W I R I K Y N R K S M M U Z U D
+M Z C H L K R O A N E P O A U G V G
+J E F N H E O W E L F D U L R J K Z
+J E P A A G C O L R P Y N T C A J Y
+M X F D R D I B C K H X E U M O Q C
+Q P A A T A B U F M Y L Y I R N M W</pre>
+        <div class="solution-list">
+          <b>20 regular:</b><br>
+          go · eat · drink · play · read · write · run · walk · sleep · open · close · help · study · watch · listen · swim · jump · cook · clean · dance
+          <br><br><b>6 bonus:</b><br>
+          remember · understand · practice · exercise · travel · answer
+        </div>
+      </div>
+      <div class="footer-note"><span>Bonus verbs are worth 3 points.</span><span>2 / 10</span></div>
+    </section>
+
+    <section class="slide task">
+      <div class="slide-head">
+        <div><div class="kicker">PART 2 · TASK</div><h1>Complete the Sentences</h1><p class="sub">Use every word once.</p></div>
+        <div class="art">✍️</div>
+      </div>
+      <div class="content">
+        <div class="bank">borrow · quiet · arrive · difficult · library · choose · carry · homework · remember · finish</div>
+        <div class="sentence-grid">
+          <div class="sentence">1. I usually ______ at school before 8:00.</div>
+          <div class="sentence">2. Please be ______ when the teacher is speaking.</div>
+          <div class="sentence">3. I sometimes ______ a book from the school library.</div>
+          <div class="sentence">4. This question is very ______, but I will try.</div>
+          <div class="sentence">5. We go to the ______ when we need a book.</div>
+          <div class="sentence">6. You can ______ one game to play with your group.</div>
+          <div class="sentence">7. I ______ my school bag every morning.</div>
+          <div class="sentence">8. I do my ______ after I come home.</div>
+          <div class="sentence">9. Try to ______ the new words for the test.</div>
+          <div class="sentence">10. I want to ______ my work before the lesson ends.</div>
+        </div>
+      </div>
+      <div class="footer-note"><span>Read the whole sentence before choosing.</span><span>3 / 10</span></div>
+    </section>
+
+    <section class="slide answer">
+      <div class="slide-head">
+        <div><div class="kicker">PART 2 · ANSWERS</div><h1>Complete the Sentences</h1><p class="sub">Check each word in context.</p></div>
+        <div class="art">✅</div>
+      </div>
+      <div class="content">
+        <div class="sentence-grid">
+          <div class="sentence">1. I usually <span class="answer-word">arrive</span> at school before 8:00.</div>
+          <div class="sentence">2. Please be <span class="answer-word">quiet</span> when the teacher is speaking.</div>
+          <div class="sentence">3. I sometimes <span class="answer-word">borrow</span> a book from the school library.</div>
+          <div class="sentence">4. This question is very <span class="answer-word">difficult</span>, but I will try.</div>
+          <div class="sentence">5. We go to the <span class="answer-word">library</span> when we need a book.</div>
+          <div class="sentence">6. You can <span class="answer-word">choose</span> one game to play with your group.</div>
+          <div class="sentence">7. I <span class="answer-word">carry</span> my school bag every morning.</div>
+          <div class="sentence">8. I do my <span class="answer-word">homework</span> after I come home.</div>
+          <div class="sentence">9. Try to <span class="answer-word">remember</span> the new words for the test.</div>
+          <div class="sentence">10. I want to <span class="answer-word">finish</span> my work before the lesson ends.</div>
+        </div>
+      </div>
+      <div class="footer-note"><span>Each bank word is used once.</span><span>4 / 10</span></div>
+    </section>
+
+    <section class="slide task">
+      <div class="slide-head">
+        <div><div class="kicker">PART 3 · TASK</div><h1>Reading Comprehension</h1><p class="sub">Read, find the information, then answer.</p></div>
+        <div class="art">📖</div>
+      </div>
+      <div class="content">
+        <div class="reading">Daniel is 13 years old and lives near his school. Every morning, he walks to school with his sister. His favorite subject is Science because he likes learning how things work. After school, Daniel usually goes home, eats lunch and finishes his homework. Twice a week, he plays basketball with his friends. In the evening, he sometimes reads a book or watches TV. He usually goes to bed at 10:00.</div>
+        <div class="questions">
+          <div class="q"><b>1. How old is Daniel?</b><br>A. 12 · B. 13 · C. 14</div>
+          <div class="q"><b>2. How does Daniel go to school?</b><br>A. By bus · B. By car · C. He walks</div>
+          <div class="q"><b>3. What is Daniel’s favorite subject?</b><br>A. Science · B. English · C. History</div>
+          <div class="q"><b>4. Why does he like Science?</b><br>A. Because it is easy · B. Because he likes learning how things work · C. Because his friends like it</div>
+          <div class="q"><b>5. What does Daniel do twice a week?</b><br>A. Plays basketball · B. Reads a book · C. Watches TV</div>
+          <div class="q"><b>6. What time does he usually go to bed?</b><br>A. 9:00 · B. 10:00 · C. 11:00</div>
+        </div>
+      </div>
+      <div class="footer-note"><span>Look back at the paragraph.</span><span>5 / 10</span></div>
+    </section>
+
+    <section class="slide answer">
+      <div class="slide-head">
+        <div><div class="kicker">PART 3 · ANSWERS</div><h1>Reading Comprehension</h1><p class="sub">The evidence is in the text.</p></div>
+        <div class="art">✅</div>
+      </div>
+      <div class="content">
+        <div class="reading">Daniel is <span class="good">13 years old</span> and lives near his school. Every morning, <span class="good">he walks to school</span> with his sister. His favorite subject is <span class="good">Science</span> because <span class="good">he likes learning how things work</span>. After school, Daniel usually goes home, eats lunch and finishes his homework. <span class="good">Twice a week, he plays basketball</span> with his friends. In the evening, he sometimes reads a book or watches TV. He usually goes to bed at <span class="good">10:00</span>.</div>
+        <div class="questions">
+          <div class="q">1. <span class="good">B · 13</span></div>
+          <div class="q">2. <span class="good">C · He walks</span></div>
+          <div class="q">3. <span class="good">A · Science</span></div>
+          <div class="q">4. <span class="good">B · He likes learning how things work</span></div>
+          <div class="q">5. <span class="good">A · Plays basketball</span></div>
+          <div class="q">6. <span class="good">B · 10:00</span></div>
+        </div>
+      </div>
+      <div class="footer-note"><span>1-B · 2-C · 3-A · 4-B · 5-A · 6-B</span><span>6 / 10</span></div>
+    </section>
+
+    <section class="slide task">
+      <div class="slide-head">
+        <div><div class="kicker">PART 4 · TASK</div><h1>Opposites</h1><p class="sub">Match Column A to Column B.</p></div>
+        <div class="art">↔️</div>
+      </div>
+      <div class="content op-grid">
+        <div class="op-col"><h3>Column A</h3>1. noisy<br>2. empty<br>3. expensive<br>4. dangerous<br>5. heavy<br>6. polite<br>7. narrow<br>8. arrive<br>9. forget<br>10. begin</div>
+        <div class="op-col"><h3>Column B</h3>a. remember<br>b. rude<br>c. cheap<br>d. full<br>e. safe<br>f. finish<br>g. leave<br>h. wide<br>i. quiet<br>j. light</div>
+      </div>
+      <div class="footer-note"><span>Each word is used once.</span><span>7 / 10</span></div>
+    </section>
+
+    <section class="slide answer">
+      <div class="slide-head">
+        <div><div class="kicker">PART 4 · ANSWERS</div><h1>Opposites</h1><p class="sub">10 correct pairs</p></div>
+        <div class="art">✅</div>
+      </div>
+      <div class="content pairs">
+        <div class="pair">noisy <span class="arrow">↔</span> quiet</div>
+        <div class="pair">empty <span class="arrow">↔</span> full</div>
+        <div class="pair">expensive <span class="arrow">↔</span> cheap</div>
+        <div class="pair">dangerous <span class="arrow">↔</span> safe</div>
+        <div class="pair">heavy <span class="arrow">↔</span> light</div>
+        <div class="pair">polite <span class="arrow">↔</span> rude</div>
+        <div class="pair">narrow <span class="arrow">↔</span> wide</div>
+        <div class="pair">arrive <span class="arrow">↔</span> leave</div>
+        <div class="pair">forget <span class="arrow">↔</span> remember</div>
+        <div class="pair">begin <span class="arrow">↔</span> finish</div>
+      </div>
+      <div class="footer-note"><span>Adjectives + verbs</span><span>8 / 10</span></div>
+    </section>
+
+    <section class="slide task">
+      <div class="slide-head">
+        <div><div class="kicker">PART 5 · TASK</div><h1>Adjective Scramble</h1><p class="sub">Unscramble the letters.</p></div>
+        <div class="art">🧩</div>
+      </div>
+      <div class="content scramble">
+        <div>1. YSONI → ______</div><div>6. PECHA → ______</div>
+        <div>2. TEQIU → ______</div><div>7. GONDERSUA → ______</div>
+        <div>3. SYEA → ______</div><div>8. FESA → ______</div>
+        <div>4. CILTUFDIF → ______</div><div>9. YVHEA → ______</div>
+        <div>5. VEEISNPXE → ______</div><div>10. LTHGI → ______</div>
+      </div>
+      <div class="footer-note"><span>Spelling must be correct.</span><span>9 / 10</span></div>
+    </section>
+
+    <section class="slide answer">
+      <div class="slide-head">
+        <div><div class="kicker">PART 5 · ANSWERS</div><h1>Adjective Scramble</h1><p class="sub">Check the spelling.</p></div>
+        <div class="art">🏁</div>
+      </div>
+      <div class="content scramble">
+        <div>1. YSONI → <span class="scramble-answer">NOISY</span></div><div>6. PECHA → <span class="scramble-answer">CHEAP</span></div>
+        <div>2. TEQIU → <span class="scramble-answer">QUIET</span></div><div>7. GONDERSUA → <span class="scramble-answer">DANGEROUS</span></div>
+        <div>3. SYEA → <span class="scramble-answer">EASY</span></div><div>8. FESA → <span class="scramble-answer">SAFE</span></div>
+        <div>4. CILTUFDIF → <span class="scramble-answer">DIFFICULT</span></div><div>9. YVHEA → <span class="scramble-answer">HEAVY</span></div>
+        <div>5. VEEISNPXE → <span class="scramble-answer">EXPENSIVE</span></div><div>10. LTHGI → <span class="scramble-answer">LIGHT</span></div>
+      </div>
+      <div class="footer-note"><span>English Challenge complete!</span><span>10 / 10</span></div>
+    </section>
+
+  </div>
+
+  <div class="progress"><div id="progressBar"></div></div>
+  <div class="controls">
+    <button id="prevSlide">◀ הקודם</button>
+    <span class="counter" id="counter">1 / 10</span>
+    <button class="primary" id="nextSlide">הבא ▶</button>
+    <button class="fullscreen" id="fullscreenBtn">⛶ מסך מלא</button>
+    <a href="https://docs.google.com/presentation/d/1O5gQyv7gUZYFjyYJf3oHV5lsMg1FyP_2/edit?usp=drivesdk" target="_blank" rel="noopener">PowerPoint / Drive</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  const slides=[...document.querySelectorAll('.slide')];
+  let index=0;
+  const counter=document.getElementById('counter');
+  const bar=document.getElementById('progressBar');
+  function show(i){
+    index=Math.max(0,Math.min(slides.length-1,i));
+    slides.forEach((s,n)=>s.classList.toggle('active',n===index));
+    counter.textContent=(index+1)+' / '+slides.length;
+    bar.style.width=((index+1)/slides.length*100)+'%';
+    document.getElementById('prevSlide').disabled=index===0;
+    document.getElementById('nextSlide').disabled=index===slides.length-1;
+  }
+  document.getElementById('prevSlide').addEventListener('click',()=>show(index-1));
+  document.getElementById('nextSlide').addEventListener('click',()=>show(index+1));
+  document.getElementById('fullscreenBtn').addEventListener('click',()=>{
+    const el=document.getElementById('deck');
+    if(!document.fullscreenElement){ el.requestFullscreen?.(); }
+    else { document.exitFullscreen?.(); }
+  });
+  document.addEventListener('keydown',(e)=>{
+    if(e.key==='ArrowLeft'||e.key==='PageDown'||e.key===' '){e.preventDefault();show(index+1);}
+    if(e.key==='ArrowRight'||e.key==='PageUp'){e.preventDefault();show(index-1);}
+    if(e.key==='Home')show(0);
+    if(e.key==='End')show(slides.length-1);
+  });
+  show(0);
+})();
+</script>
 </body>
 </html>
