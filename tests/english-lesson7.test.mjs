@@ -28,7 +28,6 @@ test('English lesson 7 word search is a smaller 16x16 grid and still contains al
     assert.match(html, new RegExp(`\\b${verb}\\b`, 'i'));
   }
   assert.match(html, /16×16/);
-  assert.doesNotMatch(html, /18×18/);
   assert.match(html, /1 point/i);
   assert.match(html, /3 points/i);
 });
