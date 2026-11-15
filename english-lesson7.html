@@ -6,22 +6,14 @@
 <title>שיעור 7 — English Challenge</title>
 <link rel="stylesheet" href="english-lesson.css">
 <style>
-.wordsearch{direction:ltr;display:grid;gap:2px;background:#172033;padding:12px;border-radius:18px;overflow:auto;max-width:720px;margin:12px auto}
-.wordsearch>div{display:grid;grid-template-columns:repeat(18,1fr);gap:2px;min-width:630px}
-.wordsearch span{display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;background:#fff;border-radius:5px;font:800 17px/1 Arial,sans-serif;color:#172033}
-.wordsearch.solution .hit-cell{background:#dff3e6;color:#0e6d3d}
-.wordsearch.solution .bonus-cell{background:#fff0b8;color:#8a5a00;outline:2px solid #e4b63c}
-.bank{direction:ltr;background:#f7f9fc;border:1px dashed #9fb2ca;border-radius:14px;padding:12px;font-weight:800;text-align:center;line-height:1.8}
-.q-list{direction:ltr;text-align:left;max-width:900px;margin:10px auto}
-.q-list li{margin:10px 0}
-.opposites{direction:ltr;display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:12px}
-.op-col{background:#fff;border:1px solid #dfe7f2;border-radius:14px;padding:14px}
-.op-col div{padding:7px 10px;border-bottom:1px solid #eef2f7}
-.scramble-grid{direction:ltr;display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:10px}
-.scramble-grid div{background:#fff;border:1px solid #dfe7f2;border-radius:12px;padding:10px 12px;font-weight:800}
-.reading{direction:ltr;text-align:left;background:#fff;border:1px solid #dfe7f2;border-radius:16px;padding:16px;line-height:1.7}
+.wordsearch{direction:ltr;white-space:pre;font:900 24px/1.38 "Courier New",monospace;letter-spacing:3px;background:#10223d;color:#fff;border-radius:18px;padding:20px;overflow:auto;text-align:center;max-width:820px;margin:14px auto}
+.bank{direction:ltr;background:#fff7dc;border:2px solid #f0ca56;border-radius:14px;padding:13px;font-weight:900;text-align:center;line-height:1.8}
+.q-list{direction:ltr;text-align:left;max-width:950px;margin:12px auto}.q-list li{margin:12px 0;line-height:1.55}
+.reading{direction:ltr;text-align:left;background:#fff;border:1px solid #dfe7f2;border-radius:16px;padding:18px;line-height:1.7;font-size:18px}
+.opposites{direction:ltr;display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:12px}.op-col{background:#fff;border:1px solid #dfe7f2;border-radius:14px;padding:16px}.op-col div{padding:7px 10px;border-bottom:1px solid #eef2f7}
+.scramble-grid{direction:ltr;display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:10px}.scramble-grid div{background:#fff;border:1px solid #dfe7f2;border-radius:12px;padding:10px 12px;font-weight:800}
 .badge-bonus{display:inline-block;background:#fff0b8;color:#7b5400;border-radius:999px;padding:4px 9px;font-weight:800}
-@media(max-width:760px){.opposites,.scramble-grid{grid-template-columns:1fr}.wordsearch span{font-size:15px}}
+@media(max-width:760px){.wordsearch{font-size:17px;letter-spacing:1px;padding:12px}.opposites,.scramble-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -29,133 +21,106 @@
   <div class="top"><div class="brand">☀️ בית ספר אור · אנגלית</div><a class="back" href="english.html">← כל שיעורי האנגלית</a></div>
 
   <section class="hero">
-    <small>כיתה ז׳ · שיעור 7 · 45 דקות</small>
-    <h1>🏆 English Challenge</h1>
-    <p>שיעור תחרותי של חזרה ותרגול: תפזורת פעלים, השלמת משפטים, הבנת הנקרא, הפכים וסקרמבל תארים. כל חלק בנוי כך שאפשר להציג משימה ואז לחשוף פתרון.</p>
+    <small>כיתה ז׳ · שיעור 7 · English Challenge</small>
+    <h1>🏆 English Challenge — Harder Version</h1>
+    <p>גרסה מאתגרת יותר: תפזורת קטנה וברורה יותר עם אותיות גדולות, השלמת משפטים לפי הקשר, הבנת הנקרא עם שאלות הסקה, 16 זוגות הפכים וסקרמבל תארים.</p>
   </section>
 
   <section class="panel" style="border:2px solid #8ab8e8;background:#f3f8ff">
-    <h2>🎞️ המצגת מוכנה בתוך האתר</h2>
-    <p>10 שקופיות לכיתה — בכל חלק משימה ולאחריה פתרון. אין צורך ב-Google Drive כדי להציג.</p>
+    <h2>🎞️ המצגת בתוך האתר</h2>
     <p><a href="english-lesson7-presentation.html" style="display:inline-block;background:#123a63;color:#fff;text-decoration:none;font-weight:900;padding:12px 18px;border-radius:12px">▶ פתיחת המצגת באתר</a></p>
   </section>
 
   <section class="panel">
-    <h2>שיעור 7 — English Challenge</h2>
-    <div class="summary">
-      <div class="goal"><strong>🎯 Can-Do Goal</strong><br><span dir="ltr">Today I can recognize verbs and adjectives, understand short texts, complete sentences from context, and match opposites.</span></div>
-      <div class="prep"><strong>🧰 לפני הכניסה לכיתה</strong><ul><li>עבוד עם ניקוד קבוצתי על הלוח.</li><li>אל תציג את הפתרון לפני שסוגרים את הסבב.</li><li>בתפזורת: פועל רגיל = נקודה, פועל בונוס = 3 נקודות.</li><li>בכל חלק יש תיבת תשובות למורה מיד מתחת למשימה.</li></ul></div>
-    </div>
-    <div class="quickbar"><div class="quick"><b>5</b><span>חלקים</span></div><div class="quick"><b>45</b><span>דקות</span></div><div class="quick"><b>26</b><span>פעלים בתפזורת</span></div><div class="quick"><b>10</b><span>זוגות הפכים</span></div></div>
+    <div class="quickbar"><div class="quick"><b>5</b><span>חלקים</span></div><div class="quick"><b>16×16</b><span>תפזורת</span></div><div class="quick"><b>26</b><span>פעלים שנבדקו</span></div><div class="quick"><b>16</b><span>זוגות הפכים</span></div></div>
   </section>
-
-  <div class="section-title"><div><h2>השיעור — דקה אחר דקה</h2><p>חיפוש → הקשר → קריאה → התאמה → איות.</p></div></div>
 
   <section class="timeline">
     <article class="stage">
-      <div class="stage-head"><div class="stage-num"><span class="num">1</span><h3>Verb Word Search</h3></div><span class="time">00:00–08:00</span></div>
-      <div class="lesson-column">
-        <div class="role teacher">
-          <h4>👨‍🏫 מה אני עושה</h4>
-          <p>מציג תפזורת <strong>18×18</strong>. לא נותן רשימת מילים מראש. הראשון שמגיע ל־10 נקודות מנצח. פועל רגיל = <strong>1 point</strong>; פועל בונוס = <strong>3 points</strong>.</p>
-          <div class="wordsearch"><div><span>Q</span><span>Q</span><span>A</span><span>M</span><span>B</span><span>V</span><span>P</span><span>A</span><span>K</span><span>N</span><span>O</span><span>Q</span><span>U</span><span>E</span><span>C</span><span>Q</span><span>C</span><span>K</span></div><div><span>L</span><span>C</span><span>E</span><span>M</span><span>Y</span><span>C</span><span>A</span><span>K</span><span>Z</span><span>A</span><span>T</span><span>K</span><span>E</span><span>M</span><span>B</span><span>U</span><span>V</span><span>T</span></div><div><span>R</span><span>I</span><span>U</span><span>G</span><span>M</span><span>F</span><span>Y</span><span>Y</span><span>Z</span><span>P</span><span>O</span><span>B</span><span>Y</span><span>K</span><span>P</span><span>B</span><span>A</span><span>Z</span></div><div><span>I</span><span>F</span><span>O</span><span>B</span><span>C</span><span>A</span><span>Y</span><span>C</span><span>M</span><span>T</span><span>T</span><span>H</span><span>L</span><span>S</span><span>N</span><span>O</span><span>B</span><span>R</span></div><div><span>M</span><span>P</span><span>O</span><span>E</span><span>X</span><span>D</span><span>L</span><span>O</span><span>L</span><span>I</span><span>S</span><span>A</span><span>L</span><span>A</span><span>M</span><span>I</span><span>Y</span><span>Y</span></div><div><span>S</span><span>W</span><span>I</span><span>K</span><span>S</span><span>M</span><span>C</span><span>L</span><span>H</span><span>E</span><span>W</span><span>G</span><span>E</span><span>Z</span><span>V</span><span>Q</span><span>R</span><span>H</span></div><div><span>O</span><span>Q</span><span>L</span><span>U</span><span>Y</span><span>I</span><span>H</span><span>G</span><span>P</span><span>V</span><span>E</span><span>S</span><span>U</span><span>L</span><span>L</span><span>E</span><span>L</span><span>D</span></div><div><span>Y</span><span>U</span><span>R</span><span>V</span><span>D</span><span>Y</span><span>C</span><span>D</span><span>P</span><span>M</span><span>M</span><span>G</span><span>Y</span><span>C</span><span>B</span><span>U</span><span>C</span><span>L</span></div><div><span>J</span><span>S</span><span>Q</span><span>B</span><span>U</span><span>N</span><span>T</span><span>R</span><span>R</span><span>N</span><span>Y</span><span>I</span><span>H</span><span>M</span><span>W</span><span>B</span><span>P</span><span>U</span></div><div><span>P</span><span>V</span><span>Q</span><span>R</span><span>T</span><span>R</span><span>A</span><span>V</span><span>E</span><span>L</span><span>Z</span><span>M</span><span>E</span><span>K</span><span>C</span><span>F</span><span>K</span><span>M</span></div><div><span>O</span><span>L</span><span>V</span><span>E</span><span>S</span><span>C</span><span>W</span><span>T</span><span>W</span><span>X</span><span>F</span><span>M</span><span>L</span><span>W</span><span>B</span><span>D</span><span>R</span><span>P</span></div><div><span>C</span><span>O</span><span>S</span><span>R</span><span>T</span><span>I</span><span>S</span><span>T</span><span>S</span><span>L</span><span>E</span><span>E</span><span>P</span><span>X</span><span>L</span><span>N</span><span>Z</span><span>I</span></div><div><span>X</span><span>E</span><span>W</span><span>I</span><span>R</span><span>I</span><span>K</span><span>Y</span><span>N</span><span>R</span><span>K</span><span>S</span><span>M</span><span>M</span><span>U</span><span>Z</span><span>U</span><span>D</span></div><div><span>M</span><span>Z</span><span>C</span><span>H</span><span>L</span><span>K</span><span>R</span><span>O</span><span>A</span><span>N</span><span>E</span><span>P</span><span>O</span><span>A</span><span>U</span><span>G</span><span>V</span><span>G</span></div><div><span>J</span><span>E</span><span>F</span><span>N</span><span>H</span><span>E</span><span>O</span><span>W</span><span>E</span><span>L</span><span>F</span><span>D</span><span>U</span><span>L</span><span>R</span><span>J</span><span>K</span><span>Z</span></div><div><span>J</span><span>E</span><span>P</span><span>A</span><span>A</span><span>G</span><span>C</span><span>O</span><span>L</span><span>R</span><span>P</span><span>Y</span><span>N</span><span>T</span><span>C</span><span>A</span><span>J</span><span>Y</span></div><div><span>M</span><span>X</span><span>F</span><span>D</span><span>R</span><span>D</span><span>I</span><span>B</span><span>C</span><span>K</span><span>H</span><span>X</span><span>E</span><span>U</span><span>M</span><span>O</span><span>Q</span><span>C</span></div><div><span>Q</span><span>P</span><span>A</span><span>A</span><span>T</span><span>A</span><span>B</span><span>U</span><span>F</span><span>M</span><span>Y</span><span>L</span><span>Y</span><span>I</span><span>R</span><span>N</span><span>M</span><span>W</span></div></div>
-          <p><span class="badge-bonus">BONUS VERBS = 3 POINTS</span></p>
-          <div class="teacher-answer">
-            <strong>✅ תשובות למורה</strong><br>
-            <b>20 regular verbs:</b> <span dir="ltr">go · eat · drink · play · read · write · run · walk · sleep · open · close · help · study · watch · listen · swim · jump · cook · clean · dance</span><br><br>
-            <b>6 bonus verbs:</b> <span dir="ltr">remember · understand · practice · exercise · travel · answer</span>
-            <div class="wordsearch solution"><div><span>Q</span><span>Q</span><span>A</span><span>M</span><span>B</span><span>V</span><span>P</span><span>A</span><span>K</span><span>N</span><span>O</span><span>Q</span><span>U</span><span>E</span><span>C</span><span>Q</span><span>C</span><span>K</span></div><div><span>L</span><span>C</span><span>E</span><span>M</span><span>Y</span><span>C</span><span>A</span><span>K</span><span>Z</span><span>A</span><span>T</span><span>K</span><span>E</span><span>M</span><span>B</span><span>U</span><span>V</span><span>T</span></div><div><span>R</span><span>I</span><span>U</span><span>G</span><span>M</span><span>F</span><span>Y</span><span>Y</span><span>Z</span><span>P</span><span>O</span><span>B</span><span>Y</span><span>K</span><span>P</span><span>B</span><span>A</span><span>Z</span></div><div><span>I</span><span>F</span><span>O</span><span>B</span><span>C</span><span>A</span><span>Y</span><span>C</span><span>M</span><span>T</span><span>T</span><span>H</span><span>L</span><span>S</span><span>N</span><span>O</span><span>B</span><span>R</span></div><div><span>M</span><span>P</span><span>O</span><span>E</span><span>X</span><span>D</span><span>L</span><span>O</span><span>L</span><span>I</span><span>S</span><span>A</span><span>L</span><span>A</span><span>M</span><span>I</span><span>Y</span><span>Y</span></div><div><span>S</span><span>W</span><span>I</span><span>K</span><span>S</span><span>M</span><span>C</span><span>L</span><span>H</span><span>E</span><span>W</span><span>G</span><span>G</span><span>Z</span><span>V</span><span>Q</span><span>R</span><span class="hit-cell">H</span></div><div><span>O</span><span>Q</span><span>L</span><span>U</span><span>Y</span><span>I</span><span>H</span><span>G</span><span>P</span><span>V</span><span class="hit-cell">E</span><span class="hit-cell">S</span><span class="hit-cell">U</span><span>L</span><span>L</span><span class="hit-cell">E</span><span>L</span><span class="hit-cell">D</span></div><div><span>Y</span><span>U</span><span>R</span><span>V</span><span>D</span><span>Y</span><span>C</span><span>D</span><span class="bonus-cell">P</span><span>M</span><span class="hit-cell">M</span><span>G</span><span>Y</span><span>C</span><span>B</span><span>U</span><span class="hit-cell">C</span><span class="hit-cell">L</span></div><div><span>J</span><span>S</span><span>Q</span><span>B</span><span class="hit-cell">U</span><span>N</span><span>T</span><span class="bonus-cell">R</span><span class="bonus-cell">R</span><span>N</span><span class="hit-cell">Y</span><span>I</span><span class="hit-cell">H</span><span>M</span><span>W</span><span>B</span><span>P</span><span>U</span></div><div><span>P</span><span>V</span><span>Q</span><span>R</span><span class="bonus-cell">T</span><span class="bonus-cell">R</span><span class="bonus-cell">A</span><span class="bonus-cell">V</span><span class="bonus-cell">E</span><span class="bonus-cell">L</span><span>Z</span><span class="hit-cell">M</span><span class="hit-cell">E</span><span>K</span><span class="hit-cell">C</span><span>F</span><span>K</span><span>M</span></div><div><span>O</span><span>L</span><span>V</span><span>E</span><span class="hit-cell">S</span><span>C</span><span class="hit-cell">W</span><span>T</span><span class="bonus-cell">W</span><span>X</span><span>F</span><span class="hit-cell">M</span><span class="hit-cell">L</span><span class="hit-cell">W</span><span class="hit-cell">B</span><span>D</span><span>R</span><span>P</span></div><div><span>C</span><span>O</span><span>S</span><span>R</span><span class="hit-cell">T</span><span>I</span><span class="hit-cell">S</span><span>T</span><span class="hit-cell">S</span><span class="hit-cell">L</span><span class="bonus-cell">E</span><span class="hit-cell">E</span><span class="hit-cell">P</span><span>X</span><span class="hit-cell">L</span><span>N</span><span>Z</span><span>I</span></div><div><span>X</span><span>E</span><span>W</span><span class="hit-cell">I</span><span class="hit-cell">R</span><span>I</span><span class="hit-cell">K</span><span>Y</span><span class="bonus-cell">N</span><span class="bonus-cell">R</span><span class="bonus-cell">K</span><span>S</span><span>M</span><span class="hit-cell">M</span><span class="hit-cell">U</span><span>Z</span><span>U</span><span>D</span></div><div><span>M</span><span>Z</span><span class="hit-cell">C</span><span class="hit-cell">H</span><span class="hit-cell">L</span><span>K</span><span class="hit-cell">R</span><span class="hit-cell">O</span><span class="bonus-cell">A</span><span class="bonus-cell">N</span><span class="bonus-cell">E</span><span class="hit-cell">P</span><span class="hit-cell">O</span><span>A</span><span>U</span><span>G</span><span>V</span><span>G</span></div><div><span>J</span><span>E</span><span>F</span><span>N</span><span class="hit-cell">H</span><span class="hit-cell">E</span><span class="hit-cell">O</span><span class="hit-cell">W</span><span class="bonus-cell">E</span><span class="bonus-cell">L</span><span class="bonus-cell">F</span><span>D</span><span>U</span><span>L</span><span class="hit-cell">R</span><span>J</span><span>K</span><span>Z</span></div><div><span>J</span><span>E</span><span>P</span><span>A</span><span class="hit-cell">A</span><span class="hit-cell">G</span><span class="hit-cell">C</span><span class="hit-cell">O</span><span class="hit-cell">L</span><span class="bonus-cell">R</span><span class="hit-cell">P</span><span class="bonus-cell">Y</span><span class="bonus-cell">N</span><span class="bonus-cell">T</span><span class="hit-cell">C</span><span class="hit-cell">A</span><span>J</span><span>Y</span></div><div><span>M</span><span>X</span><span>F</span><span class="hit-cell">D</span><span class="hit-cell">R</span><span class="hit-cell">D</span><span class="hit-cell">I</span><span class="hit-cell">B</span><span class="hit-cell">C</span><span class="bonus-cell">K</span><span>H</span><span class="bonus-cell">X</span><span class="bonus-cell">E</span><span class="bonus-cell">U</span><span class="bonus-cell">M</span><span class="hit-cell">O</span><span>Q</span><span>C</span></div><div><span>Q</span><span>P</span><span>A</span><span>A</span><span class="hit-cell">T</span><span class="hit-cell">A</span><span class="hit-cell">B</span><span class="hit-cell">U</span><span>F</span><span>M</span><span class="bonus-cell">Y</span><span class="bonus-cell">L</span><span class="bonus-cell">Y</span><span class="bonus-cell">I</span><span class="hit-cell">R</span><span>N</span><span>M</span><span>W</span></div></div>
-            <small>ירוק = רגיל · זהב = בונוס.</small>
-          </div>
+      <div class="stage-head"><div class="stage-num"><span class="num">1</span><h3>Verb Word Search</h3></div><span class="time">16×16</span></div>
+      <div class="lesson-column"><div class="role teacher">
+        <h4>🔎 המשימה</h4>
+        <p>התפזורת צומצמה מ־18×18 ל־<strong>16×16</strong>, ולכן האותיות גדולות יותר. הראשון שמגיע ל־10 נקודות מנצח. פועל רגיל = <strong>1 point</strong>; פועל בונוס = <strong>3 points</strong>.</p>
+<pre class="wordsearch">U D A X I H H E X D V X R C S N
+B A C G H Q T A M R G G W U D W
+R N H O S I E Z P I A O Y Z A F
+W A N K I E G X E Y W K D C N M
+R N D L L T I C E Z B S X O C R
+U S D J U M P M L R C R O P E N
+N W J W K N U T S O C L S L G A
+W E C L R B D R V T S I H E Y E
+P R A C T I C E J C U E S H H L
+D W M I A O T M R U L D F E L C
+L W G Y E V I E L S W V Y U C T
+U F A K O O C M N E T S I L R X
+H L F T N O M B I U V A W R H V
+P K Y Y C I B E H B Z A N K M I
+C G S W K H R R G U P M R D U O
+E I E H R E A D X R R I X T S N</pre>
+        <p><span class="badge-bonus">BONUS VERBS = 3 POINTS</span></p>
+        <div class="teacher-answer"><strong>✅ בדיקת תפזורת: 26/26 נמצאים בפועל</strong><br><br>
+          <b>20 regular:</b> <span dir="ltr">go · eat · drink · play · read · write · run · walk · sleep · open · close · help · study · watch · listen · swim · jump · cook · clean · dance</span><br><br>
+          <b>6 bonus:</b> <span dir="ltr">remember · understand · practice · exercise · travel · answer</span>
         </div>
-        <div class="role students"><h4>👥 מה התלמידים עושים</h4><p>מחפשים כמה שיותר פעלים. המילים יכולות להופיע קדימה, אחורה, למעלה, למטה ובאלכסון.</p></div>
-      </div>
+      </div></div>
     </article>
 
     <article class="stage">
-      <div class="stage-head"><div class="stage-num"><span class="num">2</span><h3>Complete the Sentences</h3></div><span class="time">08:00–16:00</span></div>
-      <div class="lesson-column">
-        <div class="role teacher">
-          <h4>👨‍🏫 מה אני עושה</h4>
-          <p>מציג בנק של 10 מילים. כל מילה נכנסת פעם אחת בלבד. כדי לענות צריך להבין את המשפט, לא רק לזהות מילה מוכרת.</p>
-          <div class="bank">borrow | quiet | arrive | difficult | library | choose | carry | homework | remember | finish</div>
-          <ol class="q-list">
-            <li>I usually ______ at school before 8:00.</li>
-            <li>Please be ______ when the teacher is speaking.</li>
-            <li>I sometimes ______ a book from the school library.</li>
-            <li>This question is very ______, but I will try.</li>
-            <li>We go to the ______ when we need a book.</li>
-            <li>You can ______ one game to play with your group.</li>
-            <li>I ______ my school bag every morning.</li>
-            <li>I do my ______ after I come home.</li>
-            <li>Try to ______ the new words for the test.</li>
-            <li>I want to ______ my work before the lesson ends.</li>
-          </ol>
-          <div class="teacher-answer"><strong>✅ תשובות למורה</strong><br><span dir="ltr">1. arrive · 2. quiet · 3. borrow · 4. difficult · 5. library · 6. choose · 7. carry · 8. homework · 9. remember · 10. finish</span></div>
-        </div>
-        <div class="role students"><h4>👥 מה התלמידים עושים</h4><p>בוחרים בכל פעם מילה אחת מהבנק ומסמנים אותה כדי שלא ישתמשו בה שוב.</p></div>
-      </div>
+      <div class="stage-head"><div class="stage-num"><span class="num">2</span><h3>Complete the Sentences</h3></div><span class="time">Harder context</span></div>
+      <div class="lesson-column"><div class="role teacher">
+        <div class="bank">avoid · improve · decide · crowded · proud · careful · borrow · return · prepare · suddenly</div>
+        <ol class="q-list">
+          <li>Before the test, Maya decided to ______ by reviewing her notes and asking questions.</li>
+          <li>The bus was so ______ that we had to stand near the door.</li>
+          <li>Please ______ the library book by Thursday so another student can use it.</li>
+          <li>You should be ______ when crossing a busy street, even when the light is green.</li>
+          <li>I try to ______ using my phone while I am doing homework.</li>
+          <li>After weeks of practice, I could see my English begin to ______.</li>
+          <li>We need to ______ which project idea is the most useful before we start.</li>
+          <li>I felt ______ of my team because nobody gave up after we lost the first game.</li>
+          <li>Can I ______ your dictionary? I forgot mine at home.</li>
+          <li>The lights went out ______, and everyone became quiet.</li>
+        </ol>
+        <div class="teacher-answer"><strong>✅ תשובות</strong><br><span dir="ltr">1 prepare · 2 crowded · 3 return · 4 careful · 5 avoid · 6 improve · 7 decide · 8 proud · 9 borrow · 10 suddenly</span></div>
+      </div></div>
     </article>
 
     <article class="stage">
-      <div class="stage-head"><div class="stage-num"><span class="num">3</span><h3>Reading Comprehension</h3></div><span class="time">16:00–26:00</span></div>
-      <div class="lesson-column">
-        <div class="role teacher">
-          <h4>👨‍🏫 מה אני עושה</h4>
-          <div class="reading">Daniel is 13 years old and lives near his school. Every morning, he walks to school with his sister. His favorite subject is Science because he likes learning how things work. After school, Daniel usually goes home, eats lunch and finishes his homework. Twice a week, he plays basketball with his friends. In the evening, he sometimes reads a book or watches TV. He usually goes to bed at 10:00.</div>
-          <ol class="q-list">
-            <li>How old is Daniel?<br>a. 12 &nbsp;&nbsp; b. 13 &nbsp;&nbsp; c. 14</li>
-            <li>How does Daniel go to school?<br>a. By bus &nbsp;&nbsp; b. By car &nbsp;&nbsp; c. He walks</li>
-            <li>What is Daniel’s favorite subject?<br>a. Science &nbsp;&nbsp; b. English &nbsp;&nbsp; c. History</li>
-            <li>Why does he like Science?<br>a. Because it is easy &nbsp;&nbsp; b. Because he likes learning how things work &nbsp;&nbsp; c. Because his friends like it</li>
-            <li>What does Daniel do twice a week?<br>a. Plays basketball &nbsp;&nbsp; b. Reads a book &nbsp;&nbsp; c. Watches TV</li>
-            <li>What time does he usually go to bed?<br>a. 9:00 &nbsp;&nbsp; b. 10:00 &nbsp;&nbsp; c. 11:00</li>
-          </ol>
-          <div class="teacher-answer"><strong>✅ תשובות למורה</strong><br><span dir="ltr">1-B · 2-C · 3-A · 4-B · 5-A · 6-B</span></div>
-        </div>
-        <div class="role students"><h4>👥 מה התלמידים עושים</h4><p>קוראים את הפסקה ומוצאים את המידע המדויק לפני שבוחרים תשובה.</p></div>
-      </div>
+      <div class="stage-head"><div class="stage-num"><span class="num">3</span><h3>Reading Comprehension</h3></div><span class="time">Inference</span></div>
+      <div class="lesson-column"><div class="role teacher">
+        <div class="reading">Last month, Maya's class started a project to reduce plastic waste at school. They noticed that many students bought water bottles every day and threw them away after one use. Maya suggested placing refill stations near the gym and cafeteria, but the school could not afford new machines. Instead, the class designed posters and asked students to bring reusable bottles. During the first week, only a few students changed their habits. The class did not give up. They visited other classes, explained why the project mattered, and created a competition between grades. After a month, the school collected almost half as many plastic bottles as before. Maya was pleased, but she said the project was not finished because changing a habit takes time.</div>
+        <ol class="q-list">
+          <li><b>What problem did Maya's class notice?</b><br>A. Students did not like water. · B. Many students used and threw away plastic bottles every day. · C. The cafeteria stopped selling drinks.</li>
+          <li><b>Why didn't the class install refill stations?</b><br>A. Students refused to use them. · B. There was no room. · C. The school could not afford the machines.</li>
+          <li><b>What did the class do instead?</b><br>A. Made posters and encouraged reusable bottles. · B. Asked the school to ban water. · C. Bought machines themselves.</li>
+          <li><b>What happened during the first week?</b><br>A. Most students changed immediately. · B. Only a few students changed their habits. · C. The project ended.</li>
+          <li><b>Why did the class visit other classes and create a competition?</b><br>A. To win a prize. · B. To sell reusable bottles. · C. To encourage more students to change their habits.</li>
+          <li><b>What does “almost half as many plastic bottles as before” mean?</b><br>A. The school collected more plastic bottles. · B. The number fell to about half. · C. The number stayed exactly the same.</li>
+          <li><b>What can we infer from Maya's final comment?</b><br>A. The project failed. · B. Machines are the only solution. · C. Lasting change needs time and continued effort.</li>
+        </ol>
+        <div class="teacher-answer"><strong>✅ תשובות</strong><br><span dir="ltr">1-B · 2-C · 3-A · 4-B · 5-C · 6-B · 7-C</span></div>
+      </div></div>
     </article>
 
     <article class="stage">
-      <div class="stage-head"><div class="stage-num"><span class="num">4</span><h3>Opposites</h3></div><span class="time">26:00–34:00</span></div>
-      <div class="lesson-column">
-        <div class="role teacher">
-          <h4>👨‍🏫 מה אני עושה</h4>
-          <p>מציג שתי עמודות מעורבבות. התלמידים צריכים לחבר בקו בין 10 זוגות ההפכים.</p>
-          <div class="opposites">
-            <div class="op-col"><b>Column A</b><div>1. noisy</div><div>2. empty</div><div>3. expensive</div><div>4. dangerous</div><div>5. heavy</div><div>6. polite</div><div>7. narrow</div><div>8. arrive</div><div>9. forget</div><div>10. begin</div></div>
-            <div class="op-col"><b>Column B</b><div>a. remember</div><div>b. rude</div><div>c. cheap</div><div>d. full</div><div>e. safe</div><div>f. finish</div><div>g. leave</div><div>h. wide</div><div>i. quiet</div><div>j. light</div></div>
-          </div>
-          <div class="teacher-answer"><strong>✅ תשובות למורה</strong><br><span dir="ltr">noisy ↔ quiet · empty ↔ full · expensive ↔ cheap · dangerous ↔ safe · heavy ↔ light · polite ↔ rude · narrow ↔ wide · arrive ↔ leave · forget ↔ remember · begin ↔ finish</span></div>
+      <div class="stage-head"><div class="stage-num"><span class="num">4</span><h3>Opposites</h3></div><span class="time">16 pairs</span></div>
+      <div class="lesson-column"><div class="role teacher">
+        <p>Match each word in Column A with its opposite in Column B.</p>
+        <div class="opposites">
+          <div class="op-col"><b>Column A</b><div>1. ancient</div><div>2. generous</div><div>3. ordinary</div><div>4. patient</div><div>5. increase</div><div>6. accept</div><div>7. include</div><div>8. create</div><div>9. succeed</div><div>10. possible</div><div>11. careful</div><div>12. private</div><div>13. victory</div><div>14. enter</div><div>15. expand</div><div>16. minimum</div></div>
+          <div class="op-col"><b>Column B</b><div>a. exclude</div><div>b. defeat</div><div>c. modern</div><div>d. careless</div><div>e. maximum</div><div>f. fail</div><div>g. selfish</div><div>h. exit</div><div>i. impossible</div><div>j. decrease</div><div>k. destroy</div><div>l. unusual</div><div>m. public</div><div>n. refuse</div><div>o. contract</div><div>p. impatient</div></div>
         </div>
-        <div class="role students"><h4>👥 מה התלמידים עושים</h4><p>מתאימים כל מילה להפך שלה. כל מילה משמשת פעם אחת בלבד.</p></div>
-      </div>
+        <div class="teacher-answer"><strong>✅ תשובות</strong><br><span dir="ltr">ancient–modern · generous–selfish · ordinary–unusual · patient–impatient · increase–decrease · accept–refuse · include–exclude · create–destroy · succeed–fail · possible–impossible · careful–careless · private–public · victory–defeat · enter–exit · expand–contract · minimum–maximum</span></div>
+      </div></div>
     </article>
 
     <article class="stage">
-      <div class="stage-head"><div class="stage-num"><span class="num">5</span><h3>Adjective Scramble</h3></div><span class="time">34:00–45:00</span></div>
-      <div class="lesson-column">
-        <div class="role teacher">
-          <h4>👨‍🏫 מה אני עושה</h4>
-          <p>מציג 10 תארים באותיות מבולבלות. חלק מהמילים הופיעו בחלק ההפכים, כך שהתלמידים מקבלים חזרה נוספת בצורה אחרת.</p>
-          <div class="scramble-grid">
-            <div>1. YSONI</div><div>2. TEQIU</div><div>3. SYEA</div><div>4. CILTUFDIF</div><div>5. VEEISNPXE</div><div>6. PECHA</div><div>7. GONDERSUA</div><div>8. FESA</div><div>9. YVHEA</div><div>10. LTHGI</div>
-          </div>
-          <div class="teacher-answer"><strong>✅ תשובות למורה</strong><br><span dir="ltr">1. NOISY · 2. QUIET · 3. EASY · 4. DIFFICULT · 5. EXPENSIVE · 6. CHEAP · 7. DANGEROUS · 8. SAFE · 9. HEAVY · 10. LIGHT</span></div>
-        </div>
-        <div class="role students"><h4>👥 מה התלמידים עושים</h4><p>מסדרים את האותיות וכותבים את התואר באיות נכון. שגיאת כתיב = אין נקודה.</p></div>
-      </div>
+      <div class="stage-head"><div class="stage-num"><span class="num">5</span><h3>Adjective Scramble</h3></div></div>
+      <div class="lesson-column"><div class="role teacher">
+        <div class="scramble-grid"><div>1. YSONI → ______</div><div>6. PECHA → ______</div><div>2. TEQIU → ______</div><div>7. GONDERSUA → ______</div><div>3. SYEA → ______</div><div>8. FESA → ______</div><div>4. CILTUFDIF → ______</div><div>9. YVHEA → ______</div><div>5. VEEISNPXE → ______</div><div>10. LTHGI → ______</div></div>
+        <div class="teacher-answer"><strong>✅ תשובות</strong><br><span dir="ltr">1 NOISY · 2 QUIET · 3 EASY · 4 DIFFICULT · 5 EXPENSIVE · 6 CHEAP · 7 DANGEROUS · 8 SAFE · 9 HEAVY · 10 LIGHT</span></div>
+      </div></div>
     </article>
-  </section>
-
-  <section class="panel">
-    <h2>✅ 3 דברים שלמדנו היום</h2>
-    <ol>
-      <li>לזהות ולהשתמש בפעלים ובתארים באנגלית.</li>
-      <li>להבין משפטים ופסקה קצרה מתוך הקשר.</li>
-      <li>לזהות הפכים ולאיית מילים בצורה מדויקת.</li>
-    </ol>
   </section>
 </main>
 <script src="site-nav.js"></script>
