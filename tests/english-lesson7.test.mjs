@@ -82,9 +82,18 @@ test('English library exposes the lesson 7 classroom presentation page', async (
   assert.match(library, /מצגת שיעור 7|English Challenge.*מצגת/is);
 });
 
-test('Lesson 7 presentation page opens the uploaded Google Slides deck', async () => {
+test('Lesson 7 presentation runs directly on the site as ten classroom slides', async () => {
   const html = await read('english-lesson7-presentation.html');
+  const slides = html.match(/<section class="slide/g) ?? [];
 
-  assert.match(html, /https:\/\/docs\.google\.com\/presentation\/d\/1O5gQyv7gUZYFjyYJf3oHV5lsMg1FyP_2\//);
-  assert.match(html, /Google Slides|פתח את המצגת|מצגת/i);
+  assert.equal(slides.length, 10);
+  assert.doesNotMatch(html, /<iframe/i);
+  assert.match(html, /id="prevSlide"/);
+  assert.match(html, /id="nextSlide"/);
+  assert.match(html, /id="fullscreenBtn"/);
+  assert.match(html, /Verb Word Search/i);
+  assert.match(html, /Complete the Sentences/i);
+  assert.match(html, /Reading Comprehension/i);
+  assert.match(html, /Opposites/i);
+  assert.match(html, /Adjective Scramble/i);
 });
