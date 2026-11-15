@@ -72,3 +72,12 @@ test('English lesson 7 uses the approved harder opposites and adjective scramble
     assert.match(html, new RegExp(scramble));
   }
 });
+
+test('English lesson 7 links the downloadable classroom presentation', async () => {
+  const html = await read('english-lesson7.html');
+  const deckUrl = new URL('../assets/English_Challenge_Lesson_7.pptx', import.meta.url);
+
+  assert.equal(existsSync(deckUrl), true);
+  assert.match(html, /href="assets\/English_Challenge_Lesson_7\.pptx"/);
+  assert.match(html, /מצגת|PowerPoint/i);
+});
