@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>שיעור 6 — מעבדת הקשב</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#172033}.wrap{max-width:980px;margin:auto;padding:16px 14px 90px}.top{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:8px;min-height:48px;padding:6px 0;background:#f4f7fbee;backdrop-filter:blur(10px)}.back,.home{width:38px;height:38px;border-radius:12px;background:#fff;color:#245fc0;display:grid;place-items:center;text-decoration:none;font-size:20px;box-shadow:0 4px 16px #14213d18}.hero{margin-top:16px;background:linear-gradient(135deg,#111827,#2563eb 52%,#0f766e);color:#fff;padding:30px;border-radius:30px;box-shadow:0 16px 42px #14213d22}.hero small{opacity:.9;font-weight:800}.hero h1{margin:8px 0 10px;font-size:clamp(32px,7vw,52px);line-height:1.05}.hero p{line-height:1.7;margin:0;max-width:780px}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.chip{background:#ffffff20;border:1px solid #ffffff33;padding:8px 12px;border-radius:999px;font-weight:800}.card{background:#fff;border-radius:24px;padding:22px;margin:14px 0;box-shadow:0 6px 24px #14213d0b;border:1px solid #edf1f7}.card h2{margin:0 0 12px;font-size:25px}.card h3{margin:18px 0 8px;font-size:19px;color:#0f766e}.card p,.card li{line-height:1.75;color:#344054}.time{font-size:12px;font-weight:900;background:#dbeafe;color:#1d4ed8;padding:6px 9px;border-radius:999px;display:inline-block;margin-bottom:10px}.challenge{border:2px solid #dbeafe;background:linear-gradient(180deg,#fff,#f8fbff)}.challenge-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.num{font-size:14px;font-weight:900;background:#172033;color:#fff;padding:8px 12px;border-radius:999px}.tag{font-size:13px;font-weight:900;color:#0f766e;background:#ecfdf5;padding:8px 12px;border-radius:999px}.board{font-size:24px;font-weight:900;line-height:1.55;color:#0f766e;background:#ecfdf5;padding:16px;border-radius:18px;margin:12px 0}.quote{font-weight:900;font-size:18px;color:#172033;background:#f8fafc;border-right:4px solid #0f766e;padding:14px 16px;border-radius:14px;margin:14px 0}.teacher{background:#fff7ed;border-right:4px solid #f59e0b;padding:13px 15px;border-radius:14px;margin:12px 0;line-height:1.7}.life{background:#eff6ff;border-right:4px solid #2563eb;padding:13px 15px;border-radius:14px;margin:12px 0;line-height:1.7}.research{background:#f0fdf4;border-right:4px solid #16a34a;padding:13px 15px;border-radius:14px;margin:12px 0;line-height:1.7}.question{background:#faf5ff;border-right:4px solid #9333ea;padding:13px 15px;border-radius:14px;margin:12px 0;line-height:1.7}.steps{display:grid;gap:9px}.step{background:#f8fafc;padding:12px 14px;border-radius:14px;font-weight:800;line-height:1.6}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.mini{background:#f8fafc;border-radius:16px;padding:15px}.mini h4{margin:0 0 6px}.btn{border:0;border-radius:14px;padding:12px 16px;font-family:inherit;font-weight:900;font-size:15px;cursor:pointer}.btn-primary{background:#2563eb;color:#fff}.btn-dark{background:#172033;color:#fff}.btn-light{background:#eef2f7;color:#172033}.actions{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.hidden{display:none!important}.number-board{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;direction:ltr;margin:14px 0}.number-board button{min-height:54px;border:1px solid #dbe3ef;border-radius:14px;background:#fff;font-size:20px;font-weight:900;cursor:pointer}.number-board button.hit{background:#dcfce7;border-color:#86efac;color:#166534}.timer{font-size:30px;font-weight:900;color:#2563eb}.wow-stage{position:relative;height:360px;border-radius:22px;background:linear-gradient(180deg,#eaf2ff,#f8fafc);overflow:hidden;border:1px solid #dbeafe;margin:16px 0;direction:ltr}.court-line{position:absolute;inset:30px;border:3px solid #ffffffaa;border-radius:18px}.midline{position:absolute;top:30px;bottom:30px;left:50%;width:3px;background:#ffffffaa}.player{position:absolute;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font-weight:900;box-shadow:0 6px 18px #0002;transform:translate(-50%,-50%);z-index:3}.player.white{background:#fff;border:3px solid #94a3b8;color:#111827}.player.dark{background:#111827;border:3px solid #64748b;color:#fff}.ball{position:absolute;width:18px;height:18px;border-radius:50%;transform:translate(-50%,-50%);z-index:4;box-shadow:0 3px 8px #0003}.ball.wball{background:#f59e0b}.ball.dball{background:#7c3aed}.unexpected{position:absolute;top:50%;left:-60px;transform:translateY(-50%);font-size:52px;z-index:6;filter:drop-shadow(0 4px 8px #0003)}.wow-info{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}.stroop-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:14px 0;direction:ltr}.stroop{background:#f8fafc;border-radius:14px;padding:18px;text-align:center;font-size:28px;font-weight:900}.red{color:#2563eb}.blue{color:#16a34a}.green{color:#dc2626}.orange{color:#7c3aed}.scenario{background:linear-gradient(135deg,#172033,#334155);color:#fff;border-radius:22px;padding:22px}.scenario p,.scenario li{color:#fff}.reset{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}.reset div{background:#172033;color:#fff;border-radius:16px;padding:16px;text-align:center;font-weight:900}.summary{background:#172033;color:#fff}.summary h2,.summary p,.summary li{color:#fff}.source{font-size:13px;color:#667085;line-height:1.6}.source a{color:#245fc0}.tiny{font-size:13px;color:#667085}@media(max-width:720px){.two{grid-template-columns:1fr}.number-board{grid-template-columns:repeat(5,1fr);gap:6px}.number-board button{min-height:48px}.stroop-grid{grid-template-columns:repeat(2,1fr)}.reset{grid-template-columns:1fr 1fr}.wow-stage{height:310px}.card{padding:18px}.hero{padding:22px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<div class="top"><a class="back" href="lessons.html" aria-label="חזרה לשיעורים">↩</a><a class="home" href="index.html" aria-label="בית">🏠</a><b>☀️ בית ספר אור</b></div>
+
+<section class="hero">
+<small>אורח חיים בריא והקשר בין ספורט להצלחה • שיעור 6</small>
+<h1>מעבדת הקשב</h1>
+<p>מי מנהל את תשומת הלב שלי? חמישה אתגרים קצרים שמחברים גוף, מוח, כדורסל וחיים — ואז מפצחים מה באמת קרה.</p>
+<div class="chips"><span class="chip">מיקוד</span><span class="chip">הסחות</span><span class="chip">חלוקת קשב</span><span class="chip">עיכוב תגובה</span><span class="chip">כדורסל</span></div>
+</section>
+
+<section class="card">
+<h2>העיקרון של השיעור</h2>
+<div class="board">ניסוי → מה קרה לי? → איפה זה קורה בספורט? → מה אני עושה עם זה בחיים?</div>
+<p>מעט הרצאה. הרבה התנסות. אחרי כל אתגר עוצרים לשתי שאלות בלבד: <b>מה קרה?</b> ו־<b>למה זה חשוב לי?</b></p>
+<div class="teacher"><b>למורה:</b> לא להפוך את האתגרים ל״מבחן מי חכם יותר״. אלו הדגמות של תהליכי קשב, לא אבחון אישי.</div>
+</section>
+
+<section class="card">
+<h2>ציוד</h2>
+<div class="two"><div class="mini">לוח וטוש</div><div class="mini">טיימר</div><div class="mini">מסך / מקרן — יתרון</div><div class="mini">כיסאות ומרחב קטן לעמידה</div></div>
+</section>
+
+<section class="card challenge">
+<div class="challenge-head"><span class="num">אתגר 1</span><span class="tag">הגוף בלי העיניים</span></div>
+<h2>כמה מידע הגוף מקבל בלי שנרגיש?</h2>
+<div class="steps">
+<div class="step">1. עמוד על רגל אחת 20 שניות.</div>
+<div class="step">2. אותה משימה — עיניים עצומות.</div>
+<div class="step">3. עיניים פתוחות, רגל אחת, סובב ראש לאט ימינה–שמאלה.</div>
+<div class="step">4. יד ימין לברך שמאל ולהפך — להגביר קצב.</div>
+<div class="step">5. עיניים עצומות: לגעת בקצה האף. ואז להעריך מתי עברו 30 שניות.</div>
+</div>
+<div class="question"><b>שאלה:</b> למה אותה משימה נהייתה קשה יותר כשסגרנו עיניים או הוספנו עוד דרישה?</div>
+<div class="teacher"><b>קווים:</b> המוח משלב ראייה, תחושת גוף ומידע ממערכת שיווי המשקל. כשהמידע משתנה או כשמוסיפים משימה — גם הביצוע יכול להשתנות.</div>
+<div class="life"><b>כלי לחיים:</b> לפני שאומרים ״אני פשוט גרוע בזה״ — בדקו מה השתנה במשימה ובסביבה.</div>
+</section>
+
+<section class="card challenge" id="spotlight">
+<div class="challenge-head"><span class="num">אתגר 2</span><span class="tag">זרקור הקשב</span></div>
+<h2>מה אתם רואים — ומה אתם מפספסים?</h2>
+<p>לחצו על ״לוח חדש״. התלמידים צריכים למצוא במהירות 1→2→3 וכן הלאה. אחרי 30 שניות עוצרים ושואלים מה עוד הם זוכרים מהמיקום של המספרים.</p>
+<div class="wow-info"><div class="timer" id="gridTimer">30</div><div class="actions"><button class="btn btn-primary" id="newBoardBtn" type="button">🔀 לוח חדש</button><button class="btn btn-light" id="startGridBtn" type="button">▶ התחלת 30 שניות</button></div></div>
+<div class="number-board" id="numberBoard"></div>
+<div class="question"><b>שאלה:</b> הסתכלתם על הלוח. אז למה אתם לא זוכרים הכול שהיה בו?</div>
+<div class="teacher"><b>קווים:</b> הקשב קיבל משימה — למצוא את המספר הבא. מידע אחר היה קיים, אבל קיבל פחות עדיפות.</div>
+<div class="board">קשב הוא כמו זרקור: הוא לא משנה את כל מה שקיים — הוא משנה מה בולט עכשיו.</div>
+<div class="life"><b>כלי לחיים:</b> במקום ״אני צריך להתרכז בהכול״ שאלו: <b>מה הדבר החשוב ביותר עכשיו?</b></div>
+</section>
+
+<section class="card challenge" id="wow">
+<div class="challenge-head"><span class="num">אתגר 3 — WOW</span><span class="tag">להסתכל ולא לראות</span></div>
+<h2>ספרו רק את המסירות של הקבוצה הלבנה</h2>
+<p><b>אל תגידו לתלמידים לחפש שום דבר אחר.</b> לוחצים ״התחל״ וסופרים כמה פעמים הכדור הכתום עובר בין השחקנים הלבנים.</p>
+<div class="wow-stage" id="wowStage">
+<div class="court-line"></div><div class="midline"></div>
+<div class="player white" id="w1">1</div><div class="player white" id="w2">2</div><div class="player white" id="w3">3</div>
+<div class="player dark" id="d1">1</div><div class="player dark" id="d2">2</div><div class="player dark" id="d3">3</div>
+<div class="ball wball" id="wball"></div><div class="ball dball" id="dball"></div><div class="unexpected" id="unexpected">⭐</div>
+</div>
+<div class="actions"><button class="btn btn-primary" id="startWow" type="button">▶ התחל ניסוי</button><button class="btn btn-dark hidden" id="revealWow" type="button">👁️ חשוף תשובה</button></div>
+<div class="teacher hidden" id="wowResult"><b>תשובה:</b> היו <b>12 מסירות</b> בקבוצה הלבנה. ועכשיו השאלה החשובה: <b>מי שם לב לכוכב שעבר באמצע?</b></div>
+<div class="question"><b>שאלה:</b> איך אפשר להסתכל על המסך ועדיין לפספס משהו ברור?</div>
+<div class="teacher"><b>קווים:</b> זהו עיקרון של קשב סלקטיבי ועיוורון קשבי. לא לומר ״אנחנו רואים רק דבר אחד״ — אלא שהמשימה שאליה הקשב מופנה משפיעה מאוד על מה שנבחין בו.</div>
+<div class="life"><b>חיבור לכדורסל:</b> שחקן יכול להסתכל לכיוון של שחקן פנוי ועדיין לא לזהות את המסירה, אם הקשב שלו נעול על מידע אחר.</div>
+</section>
+
+<section class="card challenge">
+<div class="challenge-head"><span class="num">אתגר 4</span><span class="tag">שתי משימות יחד</span></div>
+<h2>מה נפגע כשמעמיסים על הקשב?</h2>
+<p><b>שלב א׳:</b> עמידה על רגל אחת 20 שניות.</p>
+<p><b>שלב ב׳:</b> אותה עמידה ובמקביל עונים מהר:</p>
+<div class="two"><div class="mini"><b>17 + 8</b></div><div class="mini"><b>30 − 7</b></div><div class="mini"><b>6 × 4</b></div><div class="mini"><b>15 + 9</b></div></div>
+<div class="question"><b>שאלה:</b> מה נפגע יותר — החשבון, שיווי המשקל, או שניהם?</div>
+<div class="teacher"><b>תשובות:</b> 25, 23, 24, 24. אין תשובה אחת לגבי הביצוע: אצל תלמיד אחד תיפגע היציבה יותר, אצל אחר החשבון, ואצל אחר כמעט לא יהיה שינוי.</div>
+<div class="research"><b>רעיון:</b> שתי משימות יכולות להתחרות על משאבי קשב. מחקרים במתבגרים מצאו ששילוב משימה קוגניטיבית עם משימת יציבה יכול לשנות ביצועים, בהתאם לקושי ולניסיון.</div>
+<div class="life"><b>כלי לחיים:</b> כשמשהו חשוב ודורש דיוק — לפעמים הדבר החכם ביותר הוא <b>להוריד משימה אחת</b>.</div>
+</section>
+
+<section class="card challenge">
+<div class="challenge-head"><span class="num">אתגר 5</span><span class="tag">עיכוב תגובה</span></div>
+<h2>לא כל גירוי דורש פעולה</h2>
+<p><b>סיבוב א׳:</b> ״ימין״ = צעד שמאלה. ״שמאל״ = צעד ימינה. ״קדימה״ = לא זזים. מתחילים לאט ומגבירים קצב.</p>
+<p><b>סיבוב ב׳ — Stroop:</b> אמרו את <b>צבע הכתב</b>, לא את המילה.</p>
+<div class="stroop-grid"><div class="stroop red">אדום</div><div class="stroop blue">כחול</div><div class="stroop green">ירוק</div><div class="stroop orange">כתום</div><div class="stroop blue">אדום</div><div class="stroop green">כחול</div><div class="stroop orange">ירוק</div><div class="stroop red">כחול</div></div>
+<div class="question"><b>שאלה:</b> למה אנחנו יודעים את החוק ועדיין לפעמים מגיבים לפי הדבר הראשון שקפץ לנו?</div>
+<div class="teacher"><b>קווים:</b> תגובות מתורגלות ומידע לא־רלוונטי יכולים להתחרות בתגובה שאנחנו צריכים לבצע עכשיו. זו הדגמה של הפרעה ועיכוב תגובה, לא מבחן של ״כוח רצון״.</div>
+<div class="life"><b>כלי לחיים:</b> <b>גירוי ≠ פקודה.</b> התראה לא מחייבת לפתוח. כעס לא מחייב לענות מיד. הטעיה של מגן לא מחייבת לקפוץ.</div>
+</section>
+
+<section class="card scenario">
+<span class="time">אתגר סיום</span>
+<h2>8 שניות לסיום</h2>
+<p>אתם עם הכדור. מגן מולכם. חבר פנוי בפינה. השעון יורד. הקהל צורח. המאמן צועק. אתם עדיין חושבים על הזריקה שהחטאתם קודם.</p>
+<h3 style="color:#fff">מה חשוב עכשיו — ומה רעש?</h3>
+<ul><li><b>מיקוד:</b> מה רלוונטי לפעולה הבאה?</li><li><b>סינון:</b> מה אפשר כרגע לא לתת לו עדיפות?</li><li><b>חלוקת קשב:</b> כדור + מגן + חבר + זמן.</li><li><b>קבלת החלטה:</b> זריקה / חדירה / מסירה.</li><li><b>עיכוב תגובה:</b> לא לבצע אוטומטית את הדבר הראשון.</li><li><b>קשב פנימי:</b> לא להיתקע על הטעות הקודמת.</li></ul>
+<div class="quote" style="color:#fff;background:#ffffff12">שחקן טוב לא חייב לתת לכל דבר אותה תשומת לב. הוא צריך לזהות מה חשוב עכשיו.</div>
+</section>
+
+<section class="card">
+<h2>השראה מ־Rapt — תקציב הקשב</h2>
+<p>הרעיון הגדול שאנחנו לוקחים מהספר של Winifred Gallagher: להתייחס לקשב כאל משאב יקר. מה שאנחנו נותנים לו עדיפות משפיע על החוויה שלנו ועל הפעולות שאנחנו עושים.</p>
+<div class="two"><div class="mini"><b>מה גונב לי הכי הרבה קשב?</b><br>__________</div><div class="mini"><b>למה הייתי רוצה לתת יותר קשב השבוע?</b><br>__________</div></div>
+<div class="teacher"><b>דיוק:</b> Rapt הוא ספר עיון פופולרי שמאגד רעיונות ומחקרים; הוא לא ״תיאוריה מדעית אחת״. משתמשים בו כמסגרת רעיונית, לא כהוכחה.</div>
+</section>
+
+<section class="card summary">
+<h2>כלי אחד לקחת הביתה — RESET</h2>
+<div class="reset"><div>1<br>עצור</div><div>2<br>מה חשוב עכשיו?</div><div>3<br>הסר הסחה אחת</div><div>4<br>חזור לפעולה אחת</div></div>
+<p>המטרה היא לא שהקשב לעולם לא ינדוד. המיומנות החשובה היא לזהות שהוא נדד — ולהחזיר אותו.</p>
+<div class="quote" style="color:#fff;background:#ffffff12">אתה לא בוחר כל מה שמנסה למשוך את הקשב שלך. אתה יכול להתאמן בלבחור מה מקבל אותו.</div>
+</section>
+
+<section class="card">
+<h2>תזמון מומלץ</h2>
+<p>אתגר 1 — 10 דק׳ · אתגר 2 — 7 דק׳ · WOW — 8 דק׳ · אתגר 4 — 8 דק׳ · אתגר 5 — 8 דק׳ · מצב כדורסל — 7 דק׳ · Rapt + RESET + סיכום — 8–10 דק׳.</p>
+<p><b>סה״כ:</b> כ־60 דקות. אם יש 90 דקות, אפשר לתת לכל אתגר סיבוב שני שבו התלמידים מנסים לשפר ביצוע אחרי שהם יודעים מה לחפש.</p>
+</section>
+
+<section class="card">
+<h2>מקורות למורה</h2>
+<p class="source">Simons, D. J., & Chabris, C. F. (1999). <i>Gorillas in our midst: sustained inattentional blindness for dynamic events.</i> Perception, 28(9), 1059–1074.</p>
+<p class="source">Lacour, M. et al. / מחקרי postural control: ראייה ומידע תחושתי תורמים לשליטה ביציבה.</p>
+<p class="source">Boisgontier, M. P. et al. ומחקרים נוספים על dual-task במתבגרים: ביצוע מוטורי וקוגניטיבי יכול להשתנות כאשר הם מבוצעים במקביל.</p>
+<p class="source">Stroop literature: אפקט Stroop משמש להדגמת הפרעה בין מידע רלוונטי ולא־רלוונטי במשימת צבע־מילה.</p>
+<p class="source">Winifred Gallagher, <i>Rapt: Attention and the Focused Life</i> — מסגרת רעיונית על האופן שבו הקצאת קשב מעצבת חוויה.</p>
+</section>
+
+<p class="tiny">שיעור בקורס אורח חיים בריא והקשר בין ספורט להצלחה — בית ספר אור.</p>
+</main>
+<script>
+// Number spotlight challenge
+const board=document.getElementById('numberBoard');
+const newBoardBtn=document.getElementById('newBoardBtn');
+const startGridBtn=document.getElementById('startGridBtn');
+const gridTimer=document.getElementById('gridTimer');
+let gridInterval=null;
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function buildBoard(){const nums=shuffle(Array.from({length:25},(_,i)=>i+1));board.innerHTML=nums.map(n=>`<button type="button" data-n="${n}">${n}</button>`).join('');let target=1;board.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{if(Number(b.dataset.n)===target){b.classList.add('hit');target++;}}));gridTimer.textContent='30';clearInterval(gridInterval)}
+newBoardBtn.addEventListener('click',buildBoard);
+startGridBtn.addEventListener('click',()=>{clearInterval(gridInterval);let t=30;gridTimer.textContent=t;gridInterval=setInterval(()=>{t--;gridTimer.textContent=t;if(t<=0){clearInterval(gridInterval);gridTimer.textContent='עצור'}} ,1000)});
+buildBoard();
+
+// Custom selective-attention WOW experiment
+const pos={w1:[18,28],w2:[48,18],w3:[76,38],d1:[22,72],d2:[53,79],d3:[80,67]};
+Object.entries(pos).forEach(([id,[x,y]])=>{const el=document.getElementById(id);el.style.left=x+'%';el.style.top=y+'%'});
+const wball=document.getElementById('wball'),dball=document.getElementById('dball'),unexpected=document.getElementById('unexpected');
+const startWow=document.getElementById('startWow'),revealWow=document.getElementById('revealWow'),wowResult=document.getElementById('wowResult'),wowStage=document.getElementById('wowStage');
+const wSeq=['w1','w2','w3','w1','w3','w2','w1','w2','w3','w2','w1','w3','w1']; // 12 passes
+const dSeq=['d1','d3','d2','d1','d2','d3','d1','d3','d2','d3','d1','d2','d1'];
+function px(id){const r=wowStage.getBoundingClientRect(),e=document.getElementById(id),er=e.getBoundingClientRect();return [er.left-r.left+er.width/2,er.top-r.top+er.height/2]}
+function placeBall(ball,id){const [x,y]=px(id);ball.style.left=x+'px';ball.style.top=y+'px'}
+function moveBall(ball,from,to,dur){return new Promise(resolve=>{const [x1,y1]=px(from),[x2,y2]=px(to);ball.style.left=x1+'px';ball.style.top=y1+'px';const a=ball.animate([{left:x1+'px',top:y1+'px'},{left:x2+'px',top:y2+'px'}],{duration:dur,easing:'ease-in-out',fill:'forwards'});a.onfinish=()=>{ball.style.left=x2+'px';ball.style.top=y2+'px';resolve()}})}
+async function runWow(){startWow.disabled=true;revealWow.classList.add('hidden');wowResult.classList.add('hidden');unexpected.style.left='-60px';placeBall(wball,'w1');placeBall(dball,'d1');for(let i=0;i<wSeq.length-1;i++){if(i===5){unexpected.animate([{left:'-60px'},{left:'45%'},{left:'105%'}],{duration:2500,easing:'linear',fill:'forwards'})}await Promise.all([moveBall(wball,wSeq[i],wSeq[i+1],520),moveBall(dball,dSeq[i],dSeq[i+1],520)]);await new Promise(r=>setTimeout(r,90))}startWow.disabled=false;revealWow.classList.remove('hidden')}
+startWow.addEventListener('click',runWow);
+revealWow.addEventListener('click',()=>wowResult.classList.remove('hidden'));
+window.addEventListener('resize',()=>{placeBall(wball,'w1');placeBall(dball,'d1')});
+setTimeout(()=>{placeBall(wball,'w1');placeBall(dball,'d1')},50);
+</script>
+</body>
+</html>
