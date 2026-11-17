@@ -11,7 +11,7 @@ body{margin:0;font-family:Arial,"Noto Sans Hebrew",sans-serif;background:linear-
 .app{max-width:1020px;margin:auto;padding:18px 16px 120px}
 .top{display:flex;justify-content:space-between;align-items:center;gap:12px}.brand{font-size:22px;font-weight:900}.back{display:inline-block;text-decoration:none;color:#172033;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:11px 14px;box-shadow:0 4px 18px #14213d12;font-weight:800}
 .hero{margin-top:18px;background:linear-gradient(135deg,#0f766e,#0d9488 52%,#22c55e);color:#fff;border-radius:30px;padding:30px;box-shadow:0 16px 40px #0f766e25}.hero small{opacity:.92;font-weight:900}.hero h1{margin:7px 0 8px;font-size:clamp(32px,5vw,50px);line-height:1.08}.hero p{margin:0;line-height:1.72;max-width:880px;font-size:17px}
-.meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}.meta span{background:#ffffff19;border:1px solid #ffffff2f;border-radius:999px;padding:7px 11px;font-weight:900;font-size:13px}.presentation-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.presentation-actions a{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border-radius:14px;padding:12px 16px;font-weight:900;box-shadow:0 6px 18px #00000018}.presentation-actions .open-ppt{background:#fff;color:#0f766e}.presentation-actions .download-ppt{background:#111827;color:#fff;border:1px solid #ffffff33}
+.meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}.meta span{background:#ffffff19;border:1px solid #ffffff2f;border-radius:999px;padding:7px 11px;font-weight:900;font-size:13px}.presentation-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.presentation-actions a{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border-radius:14px;padding:12px 16px;font-weight:900;box-shadow:0 6px 18px #00000018}.presentation-actions .open-ppt{background:#fff;color:#0f766e}.presentation-actions .download-ppt{background:#111827;color:#fff;border:1px solid #ffffff33}.presentation-actions .lab-btn{background:#fef3c7;color:#713f12}
 .route{position:sticky;top:6px;z-index:20;display:flex;gap:7px;overflow:auto;margin:14px 0;padding:8px;background:#fffffff0;border:1px solid #bbf7d0;border-radius:16px;backdrop-filter:blur(10px);box-shadow:0 8px 22px #0f766e10}.route a{white-space:nowrap;text-decoration:none;color:#0f766e;background:#ecfdf5;border-radius:999px;padding:8px 11px;font-weight:900;font-size:13px}
 .teacher-bar{position:sticky;top:66px;z-index:19;display:flex;gap:8px;align-items:center;flex-wrap:wrap;background:#111827;color:#fff;border-radius:16px;padding:10px 12px;margin:10px 0 16px;box-shadow:0 8px 22px #11182722}.teacher-bar strong{margin-left:auto}.teacher-bar button{border:0;border-radius:11px;padding:9px 12px;font-weight:900;cursor:pointer}.show-all{background:#fef3c7;color:#78350f}.hide-all{background:#fff;color:#111827}
 .section,.game,.science{background:#fff;border:1px solid #e8edf4;border-radius:24px;padding:22px;margin-top:20px;box-shadow:0 6px 24px #14213d0b}.section h2,.game h2,.science h2{margin:0 0 10px}.kicker{display:inline-block;background:#d1fae5;color:#065f46;border-radius:999px;padding:7px 11px;font-size:12px;font-weight:900;margin-bottom:8px}
@@ -43,7 +43,7 @@ body{margin:0;font-family:Arial,"Noto Sans Hebrew",sans-serif;background:linear-
 <div class="presentation-actions">
 <a class="open-ppt" href="https://docs.google.com/presentation/d/1Oa3pTgLPAk914raNnOSoqi18GAozmwL_/edit?usp=drivesdk" target="_blank" rel="noopener">📊 פתיחת המצגת</a>
 <a class="download-ppt" href="https://drive.google.com/uc?export=download&id=1Oa3pTgLPAk914raNnOSoqi18GAozmwL_">⬇ הורדת PowerPoint</a>
-</div>
+<a class="lab-btn" href="protein-lab.html">🧪 פתיחת מעבדת החלבון</a></div>
 </section>
 
 <nav class="route">
@@ -95,7 +95,7 @@ body{margin:0;font-family:Arial,"Noto Sans Hebrew",sans-serif;background:linear-
 
 <section class="game" id="guess">
 <span class="kicker">3 · אתגר הכרטיסיות · 12 דקות</span>
-<h2>🎯 כמה חלבון יש בזה?</h2>
+<h2>🎯 כמה חלבון יש בזה?</h2><div class="challenge"><h3>🧪 הפעילות האינטראקטיבית</h3><p>במקום להפעיל את הכרטיסיות מתוך PowerPoint, פתחו את המעבדה באתר. היא כוללת כרטיסיות נפתחות, חלבון→קלוריות ואתגר “מי הכי קלורי?”.</p><p><a class="back" href="protein-lab.html" style="display:inline-flex">פתחו את המעבדה האינטראקטיבית ←</a></p></div>
 <p>במצגת החלק הזה יהפוך למסך של כרטיסיות. לחיצה על כרטיס תגדיל אותו למרכז, הכיתה תנחש, ורק בלחיצה נוספת תיחשף התשובה.</p>
 <div class="challenge"><h3>חוק המשחק</h3><p>לכל קבוצה יש ניחוש אחד. אין מחשבון. הקבוצה הקרובה ביותר מקבלת נקודה. הערכים מוצגים בקירוב כדי לבנות אינטואיציה; במוצרים מסחריים נשתמש בתווית המדויקת.</p></div>
 <div class="card-grid">
