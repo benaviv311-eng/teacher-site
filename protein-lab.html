@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>מעבדת החלבון | בית ספר אור</title>
+<style>
+*{box-sizing:border-box}
+:root{--ink:#172033;--muted:#64748b;--green:#0f766e;--green2:#14b8a6;--panel:#fff;--line:#dbe3ef;--soft:#f6fbfa;--yellow:#fef3c7;--yellowInk:#854d0e;--blue:#eff6ff;--red:#fee2e2}
+body{margin:0;font-family:Arial,"Noto Sans Hebrew",sans-serif;background:linear-gradient(180deg,#f4fbfa,#f7f9fc);color:var(--ink)}
+.app{max-width:1100px;margin:auto;padding:16px 16px 90px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.back{display:inline-flex;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);padding:11px 14px;border-radius:14px;font-weight:900}
+.hero{margin-top:14px;border-radius:28px;padding:28px;background:linear-gradient(135deg,#0f766e,#0d9488 55%,#22c55e);color:#fff;box-shadow:0 16px 36px #0f766e20}
+.hero h1{margin:4px 0 8px;font-size:clamp(31px,5vw,52px)}
+.hero p{margin:0;max-width:850px;line-height:1.7}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
+.tab{border:1px solid #b7e4d8;background:#fff;color:#0f766e;padding:11px 14px;border-radius:999px;font-weight:900;cursor:pointer}
+.tab.active{background:#0f766e;color:#fff}
+.panel{display:none}.panel.active{display:block}
+.section{background:#fff;border:1px solid var(--line);border-radius:24px;padding:22px;margin-top:14px;box-shadow:0 6px 22px #14213d0b}
+.section h2{margin:0 0 8px}
+.intro{color:var(--muted);line-height:1.7}
+.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:18px}
+.food{border:1px solid var(--line);background:#fff;border-radius:20px;padding:14px;min-height:180px;cursor:pointer;transition:.2s transform,.2s box-shadow,.2s border-color;text-align:center;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px}
+.food.done{border-color:#86efac;background:#f0fdf4}
+.food:hover{transform:translateY(-3px);box-shadow:0 12px 24px #14213d14}
+.food .emoji{font-size:54px}
+.food h3{margin:0;font-size:17px}
+.food .serving{font-size:12px;color:var(--muted)}
+.badge{display:inline-flex;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:900;background:#ecfdf5;color:#065f46}
+.progress{margin-top:14px;height:10px;background:#e5e7eb;border-radius:999px;overflow:hidden}.progress>div{height:100%;background:#10b981;width:0;transition:.2s}
+.overlay{position:fixed;inset:0;background:#08111dcc;display:none;align-items:center;justify-content:center;padding:18px;z-index:100}
+.overlay.open{display:flex}
+.modal{width:min(720px,100%);background:#fff;border-radius:28px;padding:24px;box-shadow:0 24px 70px #0007;position:relative;text-align:center}
+.modal .emoji{font-size:88px}
+.modal h2{margin:6px 0}
+.modal .serving{color:var(--muted);font-weight:800}
+.guessbox{margin:18px auto 0;max-width:420px;background:#fff7ed;border:1px dashed #f59e0b;border-radius:18px;padding:16px;color:#7c2d12;font-size:23px;font-weight:900}
+.answer{display:none;margin:18px auto 0;max-width:480px;background:#ecfdf5;border:1px solid #86efac;border-radius:18px;padding:18px}
+.answer.show{display:block}
+.answer .big{font-size:38px;font-weight:900;color:#065f46}
+.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.btn{border:0;border-radius:14px;padding:12px 16px;font-weight:900;cursor:pointer}
+.primary{background:#0f766e;color:#fff}.secondary{background:#e2e8f0;color:#0f172a}
+.cal-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:16px}
+.cal-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;text-align:center;cursor:pointer;min-height:140px;display:flex;flex-direction:column;justify-content:center}
+.cal-card.done{background:#f0fdf4;border-color:#86efac}
+.cal-card .g{font-size:34px;font-weight:900;color:#0f766e}.cal-card small{color:var(--muted)}
+.density{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px}
+.d-item{border:1px solid var(--line);border-radius:20px;padding:18px;text-align:center;cursor:pointer;background:#fff}
+.d-item .emoji{font-size:52px}.d-item h3{margin:7px 0}.d-item .value{display:none;font-size:26px;font-weight:900;color:#0f766e}.d-item.revealed .value{display:block}
+.reveal-all{margin-top:16px}
+.teacher{margin-top:16px;background:#111827;color:#fff;border-radius:18px;padding:16px;line-height:1.7}
+.teacher strong{color:#fde68a}
+.scoreline{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:12px;color:var(--muted);font-weight:800}
+@media(max-width:900px){.cards,.cal-grid{grid-template-columns:repeat(3,1fr)}.density{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:580px){.cards,.cal-grid{grid-template-columns:repeat(2,1fr)}.section{padding:17px}.hero{padding:22px}.food{min-height:155px}.food .emoji{font-size:44px}}
+</style>
+</head>
+<body>
+<main class="app">
+<div class="top">
+<div><strong>☀️ בית ספר אור · מדעי התזונה</strong></div>
+<a class="back" href="nutrition-grade8-lesson6.html">← חזרה לשיעור 6</a>
+</div>
+
+<section class="hero">
+<div class="badge" style="background:#ffffff22;color:#fff">מעבדה אינטראקטיבית</div>
+<h1>🧪 מעבדת החלבון</h1>
+<p>שלושה משחקים לכיתה: כמה חלבון יש במזון, כמה קלוריות מגיעות מהחלבון עצמו, ומי הכי קלורי ל־100 גרם. אין מחשבון — המטרה היא ניחוש, שיחה וחשיפה.</p>
+</section>
+
+<div class="tabs">
+<button class="tab active" data-panel="protein">1 · כמה חלבון?</button>
+<button class="tab" data-panel="calories">2 · חלבון → קלוריות</button>
+<button class="tab" data-panel="density">3 · מי הכי קלורי?</button>
+</div>
+
+<section id="protein" class="panel active">
+<div class="section">
+<h2>🎯 כמה חלבון יש בזה?</h2>
+<p class="intro">לחצו על כרטיס. הכרטיס ייפתח במרכז. תנו לכיתה לנחש, ורק אחר כך חשפו את התשובה. כרטיס שכבר נפתח יסומן בירוק.</p>
+<div class="cards" id="foodCards"></div>
+<div class="scoreline"><span id="foodProgressText">0 מתוך 10 נחשפו</span><span>הכי קרוב = נקודה</span></div>
+<div class="progress"><div id="foodProgress"></div></div>
+</div>
+</section>
+
+<section id="calories" class="panel">
+<div class="section">
+<h2>🔥 הפוך: כמה קלוריות יש בחלבון?</h2>
+<p class="intro">הפעם לא שואלים כמה חלבון יש במזון. מציגים מספר גרמים של חלבון ושואלים: <strong>כמה קק״ל מגיעות מהחלבון עצמו?</strong></p>
+<div class="teacher"><strong>הכלל למורה:</strong> 1 גרם חלבון ≈ 4 קק״ל. חשוב: זו האנרגיה שמגיעה מהחלבון בלבד — לא סך הקלוריות במזון.</div>
+<div class="cal-grid" id="calCards"></div>
+<div class="scoreline"><span id="calProgressText">0 מתוך 10 נחשפו</span><span>בלי מחשבון</span></div>
+<div class="progress"><div id="calProgress"></div></div>
+</div>
+</section>
+
+<section id="density" class="panel">
+<div class="section">
+<h2>⚖️ מי הכי קלורי ל־100 גרם?</h2>
+<p class="intro">לפני החשיפה: כל קבוצה בוחרת מוצר אחד. אחר כך חשפו את הערכים והשוו.</p>
+<div class="density" id="densityCards"></div>
+<button type="button" class="btn primary reveal-all" id="revealDensity">חשוף את כל הערכים</button>
+<div class="teacher"><strong>נקודת הדיון:</strong> שקדים יכולים להיות הרבה יותר קלוריים ל־100 גרם מעוף, סלמון או קוטג׳ — לא בגלל שחלבון “משמין יותר”, אלא מפני שבמזון יש גם שומן ורכיבים נוספים. שומן מספק בערך 9 קק״ל לגרם, לעומת כ־4 קק״ל לגרם חלבון.</div>
+</div>
+</section>
+</main>
+
+<div class="overlay" id="overlay" aria-hidden="true">
+<div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+<div class="emoji" id="modalEmoji">🥚</div>
+<h2 id="modalTitle"></h2>
+<div class="serving" id="modalServing"></div>
+<div class="guessbox" id="modalQuestion">כמה גרם חלבון?</div>
+<div class="answer" id="modalAnswer"></div>
+<div class="actions">
+<button type="button" class="btn primary" id="revealBtn">חשוף תשובה</button>
+<button type="button" class="btn secondary" id="closeBtn">חזרה לכרטיסיות</button>
+</div>
+</div>
+</div>
+
+<script>
+const foods=[
+ {emoji:'🥚',name:'ביצה גדולה',serving:'ביצה אחת',answer:'כ־6 גרם חלבון',note:'ערך סדר גודל לביצה גדולה.'},
+ {emoji:'🥛',name:'חלב',serving:'כוס, כ־240 מ״ל',answer:'כ־8 גרם חלבון',note:'משתנה מעט לפי סוג החלב.'},
+ {emoji:'🧀',name:'קוטג׳',serving:'100 גרם',answer:'כ־11–12 גרם',note:'משתנה בין מוצרים ואחוזי שומן.'},
+ {emoji:'🫘',name:'עדשים מבושלות',serving:'כוס',answer:'כ־18 גרם',note:'כמות משוערת לכוס מבושלת.'},
+ {emoji:'🌰',name:'שקדים',serving:'כ־28 גרם',answer:'כ־6 גרם',note:'מנה קטנה יחסית, אך מזון צפוף קלורית.'},
+ {emoji:'🍗',name:'עוף מבושל',serving:'כ־100 גרם',answer:'סביב 30 גרם',note:'תלוי בחלק ובצורת ההכנה.'},
+ {emoji:'🐟',name:'סלמון',serving:'כ־100 גרם',answer:'כ־20–25 גרם',note:'תלוי בסוג ובצורת ההכנה.'},
+ {emoji:'🌱',name:'טופו',serving:'100 גרם',answer:'הערך משתנה מאוד',note:'טופו רך וקשה יכולים להיות שונים משמעותית — קראו את התווית.'},
+ {emoji:'🥤',name:'אבקת חלבון',serving:'סקופ טיפוסי',answer:'לרוב כ־20–25 גרם',note:'תלוי במוצר ובגודל הסקופ.'},
+ {emoji:'🏷️',name:'מוצר PRO',serving:'מוצר מסחרי אחד',answer:'אי אפשר לדעת מהמילה PRO',note:'צריך לקרוא את התווית והמנה בפועל.'}
+];
+const grams=[6,8,12,18,20,25,30,33,40,50];
+const density=[
+ {emoji:'🌰',name:'שקדים',value:'≈ 579 קק״ל'},
+ {emoji:'🐟',name:'סלמון',value:'≈ 200–210 קק״ל'},
+ {emoji:'🍗',name:'חזה עוף מבושל',value:'≈ 165 קק״ל'},
+ {emoji:'🧀',name:'קוטג׳',value:'≈ 90–110 קק״ל'}
+];
+
+const foodCards=document.getElementById('foodCards');
+const overlay=document.getElementById('overlay');
+const modalEmoji=document.getElementById('modalEmoji');
+const modalTitle=document.getElementById('modalTitle');
+const modalServing=document.getElementById('modalServing');
+const modalQuestion=document.getElementById('modalQuestion');
+const modalAnswer=document.getElementById('modalAnswer');
+const revealBtn=document.getElementById('revealBtn');
+const closeBtn=document.getElementById('closeBtn');
+let currentFood=null;
+const openedFoods=new Set();
+
+foods.forEach((f,i)=>{
+ const b=document.createElement('button');
+ b.type='button'; b.className='food';
+ b.innerHTML='<div class="emoji">'+f.emoji+'</div><h3>'+f.name+'</h3><div class="serving">'+f.serving+'</div>';
+ b.addEventListener('click',()=>openFood(i,b));
+ foodCards.appendChild(b);
+});
+
+function openFood(i,card){
+ currentFood={i,card};
+ const f=foods[i];
+ modalEmoji.textContent=f.emoji;
+ modalTitle.textContent=f.name;
+ modalServing.textContent=f.serving;
+ modalQuestion.textContent=i===9?'אפשר לדעת כמה חלבון יש רק מהמילה PRO?':'כמה גרם חלבון לדעתכם?';
+ modalAnswer.classList.remove('show');
+ modalAnswer.innerHTML='<div class="big">'+f.answer+'</div><div style="margin-top:8px;color:#475569">'+f.note+'</div>';
+ revealBtn.disabled=false;
+ overlay.classList.add('open');
+ overlay.setAttribute('aria-hidden','false');
+ revealBtn.focus();
+}
+revealBtn.addEventListener('click',()=>{
+ modalAnswer.classList.add('show');
+ revealBtn.disabled=true;
+ if(currentFood){
+   openedFoods.add(currentFood.i);
+   currentFood.card.classList.add('done');
+   updateFoodProgress();
+ }
+});
+closeBtn.addEventListener('click',closeOverlay);
+overlay.addEventListener('click',e=>{if(e.target===overlay)closeOverlay()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&overlay.classList.contains('open'))closeOverlay()});
+function closeOverlay(){overlay.classList.remove('open');overlay.setAttribute('aria-hidden','true');}
+function updateFoodProgress(){
+ document.getElementById('foodProgressText').textContent=openedFoods.size+' מתוך 10 נחשפו';
+ document.getElementById('foodProgress').style.width=(openedFoods.size*10)+'%';
+}
+
+const calCards=document.getElementById('calCards');
+const openedCal=new Set();
+grams.forEach((g,i)=>{
+ const c=document.createElement('button');
+ c.type='button';c.className='cal-card';
+ c.innerHTML='<div class="g">'+g+' גרם</div><small>כמה קק״ל מהחלבון?</small>';
+ c.addEventListener('click',()=>{
+   if(c.classList.contains('done')) return;
+   c.classList.add('done');
+   c.innerHTML='<div class="g">'+(g*4)+' קק״ל</div><small>'+g+' × 4 = '+(g*4)+'</small>';
+   openedCal.add(i); updateCalProgress();
+ });
+ calCards.appendChild(c);
+});
+function updateCalProgress(){
+ document.getElementById('calProgressText').textContent=openedCal.size+' מתוך 10 נחשפו';
+ document.getElementById('calProgress').style.width=(openedCal.size*10)+'%';
+}
+
+const densityCards=document.getElementById('densityCards');
+density.forEach((d,i)=>{
+ const c=document.createElement('button');
+ c.type='button';c.className='d-item';
+ c.innerHTML='<div class="emoji">'+d.emoji+'</div><h3>'+d.name+'</h3><div class="value">'+d.value+'</div>';
+ c.addEventListener('click',()=>c.classList.toggle('revealed'));
+ densityCards.appendChild(c);
+});
+document.getElementById('revealDensity').addEventListener('click',()=>{
+ document.querySelectorAll('.d-item').forEach(x=>x.classList.add('revealed'));
+});
+
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+ document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+ document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
+ t.classList.add('active');
+ document.getElementById(t.dataset.panel).classList.add('active');
+}));
+</script>
+</body>
+</html>
