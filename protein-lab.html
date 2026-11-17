@@ -74,7 +74,7 @@ body{margin:0;font-family:Arial,"Noto Sans Hebrew",sans-serif;background:linear-
 <div class="tabs">
 <button class="tab active" data-panel="protein">1 · כמה חלבון?</button>
 <button class="tab" data-panel="calories">2 · חלבון → קלוריות</button>
-<button class="tab" data-panel="density">3 · מי הכי קלורי?</button>
+<button class="tab" data-panel="density">3 · 40 גרם חלבון</button>
 </div>
 
 <section id="protein" class="panel active">
@@ -100,11 +100,12 @@ body{margin:0;font-family:Arial,"Noto Sans Hebrew",sans-serif;background:linear-
 
 <section id="density" class="panel">
 <div class="section">
-<h2>⚖️ מי הכי קלורי ל־100 גרם?</h2>
-<p class="intro">לפני החשיפה: כל קבוצה בוחרת מוצר אחד. אחר כך חשפו את הערכים והשוו.</p>
+<h2>⚖️ אותם 40 גרם חלבון — אבל כמה קלוריות?</h2>
+<p class="intro">המטרה זהה בכל הכרטיסים: להגיע לכ־<strong>40 גרם חלבון</strong>. לפני החשיפה, התלמידים מנחשים: <strong>מאיזה מזון נצטרך לאכול הכי הרבה? ובאיזה מזון נקבל הכי הרבה קלוריות?</strong></p>
+<div class="teacher"><strong>איך משחקים:</strong> בוחרים מזון → מנחשים כמה גרם ממנו צריך כדי להגיע לכ־40 גרם חלבון → מנחשים כמה קלוריות יהיו בכמות הזאת → לוחצים לחשיפה. הערכים הם סדרי גודל למזון טיפוסי ויכולים להשתנות לפי מוצר וצורת הכנה.</div>
 <div class="density" id="densityCards"></div>
-<button type="button" class="btn primary reveal-all" id="revealDensity">חשוף את כל הערכים</button>
-<div class="teacher"><strong>נקודת הדיון:</strong> שקדים יכולים להיות הרבה יותר קלוריים ל־100 גרם מעוף, סלמון או קוטג׳ — לא בגלל שחלבון “משמין יותר”, אלא מפני שבמזון יש גם שומן ורכיבים נוספים. שומן מספק בערך 9 קק״ל לגרם, לעומת כ־4 קק״ל לגרם חלבון.</div>
+<button type="button" class="btn primary reveal-all" id="revealDensity">חשוף את כל 10 הכרטיסים</button>
+<div class="teacher"><strong>נקודת הדיון:</strong> בכל הכרטיסים קיבלנו בערך אותה כמות חלבון — 40 גרם — אבל סך הקלוריות שונה מאוד, כי המזון מביא איתו גם שומן, פחמימות ומים. לכן “כמה חלבון?” היא רק שאלה אחת מתוך כמה.</div>
 </div>
 </section>
 </main>
@@ -138,11 +139,17 @@ const foods=[
 ];
 const grams=[6,8,12,18,20,25,30,33,40,50];
 const density=[
- {emoji:'🌰',name:'שקדים',value:'≈ 579 קק״ל'},
- {emoji:'🐟',name:'סלמון',value:'≈ 200–210 קק״ל'},
- {emoji:'🍗',name:'חזה עוף מבושל',value:'≈ 165 קק״ל'},
- {emoji:'🧀',name:'קוטג׳',value:'≈ 90–110 קק״ל'}
-];
+ {emoji:'🍗',name:'חזה עוף מבושל',protein100:31,cal100:165},
+ {emoji:'🐟',name:'טונה במים',protein100:25.5,cal100:116},
+ {emoji:'🥣',name:'יוגורט יווני 0%',protein100:10.2,cal100:59},
+ {emoji:'🧀',name:'קוטג׳',protein100:11.1,cal100:98},
+ {emoji:'🥚',name:'ביצים',protein100:12.6,cal100:155},
+ {emoji:'🐠',name:'סלמון מבושל',protein100:22,cal100:206},
+ {emoji:'🫘',name:'עדשים מבושלות',protein100:9,cal100:116},
+ {emoji:'🟤',name:'חומוס מבושל',protein100:8.9,cal100:164},
+ {emoji:'🌱',name:'טופו קשה',protein100:17.3,cal100:144},
+ {emoji:'🌰',name:'שקדים',protein100:21.2,cal100:579}
+]
 
 const foodCards=document.getElementById('foodCards');
 const overlay=document.getElementById('overlay');
@@ -217,9 +224,11 @@ function updateCalProgress(){
 
 const densityCards=document.getElementById('densityCards');
 density.forEach((d,i)=>{
+ const gramsNeeded=Math.round((40/d.protein100)*100);
+ const calories=Math.round((gramsNeeded/100)*d.cal100);
  const c=document.createElement('button');
  c.type='button';c.className='d-item';
- c.innerHTML='<div class="emoji">'+d.emoji+'</div><h3>'+d.name+'</h3><div class="value">'+d.value+'</div>';
+ c.innerHTML='<div class="emoji">'+d.emoji+'</div><h3>'+d.name+'</h3><div style="color:#64748b;font-weight:800">מטרה: 40 גרם חלבון</div><div class="value">צריך ≈ '+gramsNeeded+' גרם<br><span style="font-size:18px;color:#475569">≈ '+calories+' קק״ל</span></div>';
  c.addEventListener('click',()=>c.classList.toggle('revealed'));
  densityCards.appendChild(c);
 });
