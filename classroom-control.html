@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#10283a" />
+  <title>לוח שליטה בכיתה | בית אור</title>
+  <style>
+    :root { --ink:#152c3d;--muted:#5d7080;--bg:#f2f6f7;--paper:#fff;--line:#dae4e9;--sea:#167e8a;--deep:#10283a;--coral:#ed7965;--pink:#f6d8e4;--radius:21px;--shadow:0 10px 40px rgba(16,40,58,.065); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:Arial,'Noto Sans Hebrew','Segoe UI',sans-serif; line-height:1.5; }
+    button,input,select,textarea { font:inherit; }
+    button { cursor:pointer; touch-action:manipulation; }
+    button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible { outline:3px solid #2ba3bb; outline-offset:3px; }
+    button:disabled { opacity:.55;cursor:not-allowed; }
+    .hero {background:linear-gradient(118deg,#10283a,#16495b 63%,#287280);color:#fff;position:relative;overflow:hidden;}
+    .hero:before,.hero:after {content:'';display:block;position:absolute;border:1px solid #ffffff15;border-radius:50%;width:360px;height:360px;left:-120px;top:-200px;}
+    .hero:after {width:240px;height:240px;left:70px;top:-100px;}
+    .wrap {max-width:1216px;margin:auto;padding:0 26px;}
+    header .wrap {padding-top:30px;padding-bottom:30px;position:relative;z-index:1;}
+    .eyebrow {font-size:13px;letter-spacing:.5px;color:#b7dde4;font-weight:700;margin:0 0 8px;}
+    .topline {display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;}
+    h1 {font-size:clamp(28px,4.6vw,43px);margin:0;letter-spacing:-1.3px;line-height:1.23;}
+    .subhead {margin:9px 0 0;color:#d1e5e8;font-size:15px;max-width:700px;}
+    .stop {border:1px solid #ffffff75;background:#fff;color:#8e262a;font-weight:900;padding:13px 23px;border-radius:15px;font-size:17px;display:flex;gap:8px;align-items:center;box-shadow:0 5px 20px #06172530;}
+    .stop:active,.primary:active,.small:active{transform:translateY(1px);}
+    .toolbar {margin-top:23px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center;}
+    .now {display:flex;gap:9px;align-items:center;color:#ecf6f8;font-size:14px;}
+    .status-dot {width:10px;height:10px;border-radius:50%;background:#8dd5cf;box-shadow:0 0 0 4px #8dd5cf25;flex-shrink:0;}
+    .status-dot.busy {background:#ffb480;box-shadow:0 0 0 4px #ffb48028;}
+    .volume {display:flex;align-items:center;gap:11px;background:#ffffff16;border:1px solid #ffffff24;padding:9px 14px;border-radius:13px;color:#fff;font-size:14px;}
+    .volume input {accent-color:#81d6dc;width:130px;}
+    .volume output{min-width:36px;direction:ltr;text-align:left;font-variant-numeric:tabular-nums;}
+    main.wrap {padding-top:26px;padding-bottom:50px;}
+    .intro {display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap;margin:0 0 15px;}
+    .intro h2 {font-size:20px;margin:0;letter-spacing:-.35px;}
+    .intro p {font-size:13px;margin:0;color:var(--muted);}
+    .grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;}
+    .card {background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;min-width:0;display:flex;flex-direction:column;gap:13px;}
+    .card-head {display:flex;align-items:start;gap:12px;min-height:62px;}
+    .ico {display:grid;place-items:center;width:49px;height:49px;font-size:24px;border-radius:15px;flex-shrink:0;}
+    .aqua{background:#e0f5f4;}.sand{background:#fbedd8;}.rose{background:#fce6f0;}.lav{background:#efebfd;}.blue{background:#e4f0fb;}.lime{background:#e5f4e6;}
+    .card h3 {font-size:18px;margin:0 0 4px;letter-spacing:-.45px;}
+    .description {font-size:13px;color:var(--muted);margin:0;}
+    .card-body {flex:1;display:flex;flex-direction:column;gap:12px;}
+    .label {font-size:13px;font-weight:700;margin:0 0 5px;display:block;}
+    .primary {width:100%;min-height:52px;border:0;border-radius:14px;background:var(--deep);color:white;font-size:16px;font-weight:800;padding:12px 15px;display:flex;justify-content:center;align-items:center;gap:9px;}
+    .primary.teal {background:var(--sea);}.primary.coral {background:#b63f4d;}.primary.gold {background:#9a5a14;}.primary.purple {background:#6652a8;}
+    .secondary {background:#eef5f6;border:1px solid #d8e5e9;color:#23495a;border-radius:11px;padding:9px 11px;font-size:13px;font-weight:700;}
+    .secondary[aria-pressed="true"] {background:#d6edf0;border-color:#5caab4;color:#135763;}
+    .small {border:1px solid #cfdee3;background:#f7fafb;border-radius:11px;color:var(--ink);font-size:13px;padding:9px 11px;font-weight:700;}
+    .pills {display:flex;flex-wrap:wrap;gap:7px;}
+    .pills button {font-size:12px;min-height:36px;}
+    .field {width:100%;border:1px solid #cadbe1;border-radius:12px;padding:11px 12px;background:#fff;color:var(--ink);min-width:0;}
+    select.field {appearance:auto;}
+    .row {display:flex;gap:8px;}
+    .row > * {min-width:0;}.grow {flex:1;}
+    .seg {display:flex;background:#f0f5f7;border-radius:11px;padding:4px;gap:3px;}
+    .seg button {flex:1;border:0;background:transparent;border-radius:8px;padding:9px 6px;color:var(--muted);font-size:13px;font-weight:700;}
+    .seg button[aria-pressed="true"] {background:#fff;box-shadow:0 2px 8px #152c3d18;color:#164c58;}
+    .note {font-size:12px;color:#647885;margin:0;}
+    .phrase-preview {background:#f1f7f8;border:1px dashed #b6d2da;border-radius:12px;padding:10px 13px;font-weight:800;font-size:15px;min-height:53px;display:flex;align-items:center;}
+    .hidden {display:none !important;}
+    .detail-head {margin:3px 0 0;font-size:13px;color:var(--ink);font-weight:700;}
+    .card-foot {font-size:11px;color:#72838c;margin-top:auto;}
+    .footer {font-size:13px;color:#627685;margin-top:23px;line-height:1.8;}
+    #toast {position:fixed;z-index:50;left:18px;bottom:18px;max-width:calc(100vw - 36px);padding:12px 15px;background:#1a3746;color:white;border-radius:13px;box-shadow:0 8px 35px #0003;opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .2s,transform .2s;font-size:13px;}
+    #toast.show {opacity:1;transform:translateY(0);}
+    @media(max-width:1020px) {.grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+    @media(max-width:680px) {.grid{grid-template-columns:1fr;gap:14px;}.wrap{padding:0 15px;}header .wrap{padding-top:24px;padding-bottom:24px;}.card{padding:17px;}.toolbar{align-items:stretch;}.volume{width:100%;justify-content:space-between;}.volume input{flex:1;}.stop{width:100%;justify-content:center;}.hero:before{left:-280px;}.topline{align-items:stretch;}main.wrap{padding-top:20px;}}
+    @media(prefers-reduced-motion:reduce) {*,*:before,*:after {transition:none!important;}}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">בית אור · עוזר המורה</p>
+      <div class="topline">
+        <div><h1>לוח שליטה בכיתה</h1><p class="subhead">שקט, ריכוז, מוזיקה והצלחות — בלחיצה אחת.</p></div>
+        <button class="stop" id="stopAll" title="עצור את כל הקולות (Esc)">■ עצור הכול</button>
+      </div>
+      <div class="toolbar">
+        <div class="now" role="status" aria-live="polite"><span class="status-dot" id="statusDot"></span><span id="statusText">מוכן להפעלה</span></div>
+        <label class="volume">🔉 עוצמה כללית <input type="range" id="globalVolume" min="0" max="100" value="55" aria-label="עוצמת שמע כללית"/><output id="volumeValue">55%</output></label>
+      </div>
+    </div>
+  </header>
+  <main class="wrap">
+    <div class="intro"><h2>ששת הכפתורים שלך</h2><p>אפשר להפעיל גם מהטלפון · הצלילים פועלים ישירות בדפדפן</p></div>
+    <div class="grid">
+      <section class="card" aria-labelledby="titleQuiet">
+        <div class="card-head"><div class="ico aqua" aria-hidden="true">🌍</div><div><h3 id="titleQuiet">שקט בשפות העולם</h3><p class="description">בקשת שקט בהשמעה רצופה ב־5 שפות.</p></div></div>
+        <div class="card-body">
+          <button class="primary teal" id="playQuiet">▶ בקשו שקט ב־5 שפות</button>
+          <p class="detail-head">או בחרו שפה אחת</p>
+          <div class="pills" id="languagePills">
+            <button class="secondary" data-lang="he">עברית</button>
+            <button class="secondary" data-lang="en">English</button>
+            <button class="secondary" data-lang="ar">العربية</button>
+            <button class="secondary" data-lang="ru">Русский</button>
+            <button class="secondary" data-lang="ja">日本語</button>
+          </div>
+          <p class="note" id="languageProgress">עברית ← אנגלית ← ערבית ← רוסית ← יפנית</p>
+        </div>
+      </section>
+      <section class="card" aria-labelledby="titleMusic">
+        <div class="card-head"><div class="ico sand" aria-hidden="true">🎋</div><div><h3 id="titleMusic">מוזיקה יפנית להרגעה</h3><p class="description">מנגינה מקורית, שקטה ומתמשכת בהשראת צלילי קוטו וזן.</p></div></div>
+        <div class="card-body">
+          <button class="primary gold" id="toggleMusic" aria-pressed="false">♫ הפעל מוזיקה מרגיעה</button>
+          <p class="note">מוזיקה אינסטרומנטלית, ללא מילים. אפשר לעצור בכל רגע.</p>
+          <p class="card-foot">המוזיקה נוצרת בדפדפן; אינה הקלטה מסחרית.</p>
+        </div>
+      </section>
+      <section class="card" aria-labelledby="titleSquish">
+        <div class="card-head"><div class="ico rose" aria-hidden="true">🫧</div><div><h3 id="titleSquish">מסיבה של סקווישים</h3><p class="description">כרוז מצחיק וצלילי קפיצות, בועות וסקווישים.</p></div></div>
+        <div class="card-body">
+          <button class="primary purple" id="playSquish">🎈 מסיבה של סקווישים!</button>
+          <p class="note">אפקט קצר ומשעשע להפוגה או להעלאת האנרגיה.</p>
+        </div>
+      </section>
+      <section class="card" aria-labelledby="titleBracha">
+        <div class="card-head"><div class="ico lav" aria-hidden="true">📣</div><div><h3 id="titleBracha">גברת ברכה – שקט!</h3><p class="description">בקשת שקט קומית ודרמטית, ברוח הדמות מהפיג'מות.</p></div></div>
+        <div class="card-body">
+          <label class="label" for="brachaLine">בחרו משפט</label>
+          <select class="field" id="brachaLine"><option value="0">שקט בכיתה, עכשיו!</option><option value="1">כולם מסתכלים קדימה!</option><option value="2">המחשבים נסגרים!</option></select>
+          <button class="primary coral" id="playBracha">📢 השמיעי, גברת ברכה</button>
+          <p class="note">טקסטים מקוריים, עם קול דפדפן דרמטי — לא הקול המקורי של הדמות או השחקנית.</p>
+        </div>
+      </section>
+      <section class="card" aria-labelledby="titleSuccess">
+        <div class="card-head"><div class="ico lime" aria-hidden="true">🏆</div><div><h3 id="titleSuccess">כפתור חגיגת הצלחה</h3><p class="description">צופר DJ, מחיאות כפיים, תרועות ותופים.</p></div></div>
+        <div class="card-body">
+          <div class="seg" aria-label="בחירת מצב אפקט" id="successModes"><button data-mode="random" aria-pressed="true">🎲 אקראי</button><button data-mode="manual" aria-pressed="false">🎛️ לפי בחירה</button></div>
+          <div id="effectPicker" class="hidden"><label class="label" for="effectType">בחרו אפקט</label><select class="field" id="effectType"><option value="airhorn">📣 צופר DJ</option><option value="applause">👏 מחיאות כפיים</option><option value="drums">🥁 תופים</option><option value="fanfare">🎺 תרועת ניצחון</option><option value="crowd">🎉 קהל מריע</option><option value="bell">🔔 פעמון הצלחה</option></select></div>
+          <button class="primary teal" id="playSuccess">🎉 חוגגים הצלחה!</button>
+          <p class="note" id="effectDescription">כל לחיצה תבחר צליל אחר.</p>
+        </div>
+      </section>
+      <section class="card" aria-labelledby="titlePersonal">
+        <div class="card-head"><div class="ico blue" aria-hidden="true">🎙️</div><div><h3 id="titlePersonal">הודעה אישית לתלמיד</h3><p class="description">הקלידו שם ובחרו משפט. הקול יגיד את שניהם ברצף.</p></div></div>
+        <div class="card-body">
+          <div><label for="studentName" class="label">שם התלמיד/ה</label><div class="row"><input id="studentName" class="field grow" list="studentNames" placeholder="למשל: דניאל" autocomplete="off" maxlength="50"/><datalist id="studentNames"></datalist><button class="small" id="saveStudent" title="שמור את השם לרשימה">＋ שמור</button></div></div>
+          <div><label for="studentPhrase" class="label">משפט להשמעה</label><select class="field" id="studentPhrase"><option value="בבקשה להיות בשקט">להיות בשקט</option><option value="בבקשה לסגור את המחשב">לסגור את המחשב</option><option value="בבקשה להתרכז בשיעור">להתרכז בשיעור</option><option value="בבקשה לחזור למקום">לחזור למקום</option><option value="כל הכבוד על ההשתתפות">כל הכבוד!</option><option value="custom">משפט משלי...</option></select></div>
+          <div id="customPhraseRow" class="hidden"><label class="label" for="customPhrase">משפט חופשי</label><input id="customPhrase" class="field" maxlength="160" placeholder="הקלידו את המשפט הרצוי"/></div>
+          <div class="phrase-preview" id="personalPreview">[שם התלמיד], בבקשה להיות בשקט.</div>
+          <button class="primary" id="playPersonal">🔊 השמע הודעה אישית</button>
+          <p class="note">שמות שנשמרו נשארים בדפדפן הזה בלבד.</p>
+        </div>
+      </section>
+    </div>
+    <p class="footer">💡 טיפ: מקש Esc עוצר את כל הצלילים. לפני ההפעלה הראשונה ודאו שהטלפון אינו על השתק. הקראת טקסט נעשית באמצעות קולות הדפדפן; שפות שאינן מותקנות במכשיר עלולות להישמע פחות טבעיות או לא לפעול. רמת השמע המקסימלית תלויה במכשיר.</p>
+  </main>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script>
+  (() => {
+    'use strict';
+    const $ = id => document.getElementById(id);
+    const messages = [
+      {code:'he',name:'עברית', lang:'he-IL',text:'שקט בבקשה'},
+      {code:'en',name:'אנגלית',lang:'en-US',text:'Quiet, please.'},
+      {code:'ar',name:'ערבית',lang:'ar-SA',text:'الهدوء من فضلكم'},
+      {code:'ru',name:'רוסית',lang:'ru-RU',text:'Тишина, пожалуйста.'},
+      {code:'ja',name:'יפנית',lang:'ja-JP',text:'静かにしてください。'}
+    ];
+    const brachaLines = [
+      'חבריא! אני רוצה שקט מוחלט בכיתה. לא בעוד דקה, לא אחר כך. עכשיו!',
+      'שימו לב, כולם! עיניים קדימה, אוזניים פתוחות, והשיחה יוצאת להפסקה!',
+      'המחשבים נסגרים, הידיים על השולחן, ועכשיו כולנו איתי. תודה רבה!'
+    ];
+    const effects = [
+      ['airhorn','צופר DJ'],['applause','מחיאות כפיים'],['drums','תופים'],
+      ['fanfare','תרועת ניצחון'],['crowd','קהל מריע'],['bell','פעמון הצלחה']
+    ];
+    let ctx = null, master = null, fxBus = null, musicBus = null, musicTimer = null;
+    let musicPlaying = false, soundToken = 0, speaking = false, soundIsActive = false, toastTimer = null;
+    let selectedMode = 'random';
+    let lastEffect = null;
+    let voiceList = [];
+    function safeGet(key, fallback) {try{return JSON.parse(localStorage.getItem(key)) ?? fallback;}catch{return fallback;}}
+    function safeSet(key, value) {try{localStorage.setItem(key,JSON.stringify(value));}catch{}}
+    let students = safeGet('beit_or_student_names_v1',[]);
+    if (!Array.isArray(students)) students=[];
+    let volume = safeGet('beit_or_global_volume_v1',55);
+    volume = Math.max(0,Math.min(100,Number(volume)||0));
+    $('globalVolume').value=String(volume);$('volumeValue').textContent=volume+'%';
+    const canSpeak = 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
+    function status(text, busy=false) {$('statusText').textContent=text;$('statusDot').classList.toggle('busy',busy);}
+    function toast(message) {$('toast').textContent=message;$('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('show'),3000);}
+    function initAudio() {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (!AudioCtx) {toast('הדפדפן אינו תומך ביצירת צלילים.');return false;}
+      if (!ctx) { ctx = new AudioCtx();master=ctx.createGain();master.gain.value=volume/100;master.connect(ctx.destination); }
+      if (ctx.state==='suspended') ctx.resume().catch(()=>{});
+      return true;
+    }
+    function refreshVolume() {if(master)master.gain.setTargetAtTime(volume/100,ctx.currentTime,.025);}
+    $('globalVolume').addEventListener('input',e=>{volume=Number(e.target.value);$('volumeValue').textContent=volume+'%';safeSet('beit_or_global_volume_v1',volume);refreshVolume();});
+    function cancelSpeech() {if(canSpeak) {try{window.speechSynthesis.cancel();}catch{}}speaking=false;}
+    function stopBuses() {
+      if (musicTimer!==null) {clearInterval(musicTimer);musicTimer=null;}
+      if (ctx) {for(const bus of [fxBus,musicBus]){if(bus){try{bus.gain.cancelScheduledValues(ctx.currentTime);bus.gain.setTargetAtTime(0,ctx.currentTime,.025);}catch{}}}}
+      fxBus=null;musicBus=null;musicPlaying=false;
+      $('toggleMusic').textContent='♫ הפעל מוזיקה מרגיעה';$('toggleMusic').setAttribute('aria-pressed','false');
+    }
+    function stopAll(quiet=false) {soundToken++;cancelSpeech();stopBuses();soundIsActive=false;status('מוכן להפעלה');$('languageProgress').textContent='עברית ← אנגלית ← ערבית ← רוסית ← יפנית';if(!quiet)toast('כל הצלילים נעצרו');}
+    $('stopAll').addEventListener('click',()=>stopAll());
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')stopAll();});
+    function getVoice(lang) {
+      if (!canSpeak) return null;
+      voiceList=window.speechSynthesis.getVoices();
+      return voiceList.find(v=>v.lang.toLowerCase()===lang.toLowerCase()) || voiceList.find(v=>v.lang.toLowerCase().startsWith(lang.substring(0,2).toLowerCase())) || null;
+    }
+    if(canSpeak){voiceList=window.speechSynthesis.getVoices();window.speechSynthesis.addEventListener?.('voiceschanged',()=>{voiceList=window.speechSynthesis.getVoices();});}
+    function speakParts(parts, descriptor, done) {
+      stopAll(true);
+      if(!canSpeak){status('הדפדפן לא תומך בהקראה');toast('אין תמיכה בהקראת טקסט בדפדפן זה');return;}
+      const myToken = soundToken;
+      speaking=true;status(descriptor,true);
+      let index=0;
+      function next(){
+        if(myToken!==soundToken)return;
+        if(index>=parts.length){speaking=false;status('ההקראה הסתיימה');if(done)done();return;}
+        const part=parts[index++];
+        const utterance = new SpeechSynthesisUtterance(part.text);
+        utterance.lang=part.lang||'he-IL';
+        const matching=getVoice(utterance.lang);if(matching)utterance.voice=matching;
+        utterance.rate=part.rate||.88;utterance.pitch=part.pitch||1;utterance.volume=volume/100;
+        if(part.name) {$('languageProgress').textContent=`מושמע: ${part.name} (${index}/${parts.length})`;}
+        let advanced=false;
+        function advance(){if(advanced)return;advanced=true;if(myToken===soundToken)setTimeout(next,part.pause ?? 300);}
+        utterance.onend=advance;utterance.onerror=advance;
+        try{window.speechSynthesis.speak(utterance);}catch{advance();}
+      }
+      next();
+    }
+    $('playQuiet').addEventListener('click',()=>speakParts(messages.map(m=>({...m,rate:.86,pause:450})),'בקשת שקט בחמש שפות'));
+    $('languagePills').addEventListener('click',e=>{const btn=e.target.closest('button[data-lang]');if(!btn)return;const m=messages.find(m=>m.code===btn.dataset.lang);if(m)speakParts([{...m,rate:.86}],'בקשת שקט ב'+m.name);});
+    function busForFx(){if(!initAudio())return null;if(fxBus)try{fxBus.gain.setTargetAtTime(0,ctx.currentTime,.02);}catch{}fxBus=ctx.createGain();fxBus.gain.value=.84;fxBus.connect(master);return fxBus;}
+    function osc(bus,freq,start,duration,type='sine',gain=.15,endFreq=null) {
+      const o=ctx.createOscillator(),g=ctx.createGain();o.type=type;o.frequency.setValueAtTime(Math.max(10,freq),start);
+      if(endFreq && endFreq>0)o.frequency.exponentialRampToValueAtTime(endFreq,start+duration*.88);
+      g.gain.setValueAtTime(.0001,start);g.gain.exponentialRampToValueAtTime(Math.max(.0002,gain),start+Math.min(.018,duration*.12));g.gain.exponentialRampToValueAtTime(.0001,start+duration);
+      o.connect(g);g.connect(bus);o.start(start);o.stop(start+duration+.02);return o;
+    }
+    function makeNoise(bus,start,duration,gain=.1,highpass=900,lowpass=8000){
+      const count=Math.max(1,Math.floor(ctx.sampleRate*duration)),buff=ctx.createBuffer(1,count,ctx.sampleRate),data=buff.getChannelData(0);
+      for(let i=0;i<count;i++)data[i]=Math.random()*2-1;
+      const source=ctx.createBufferSource(),hp=ctx.createBiquadFilter(),lp=ctx.createBiquadFilter(),g=ctx.createGain();source.buffer=buff;
+      hp.type='highpass';hp.frequency.value=highpass;lp.type='lowpass';lp.frequency.value=lowpass;
+      g.gain.setValueAtTime(.0001,start);g.gain.linearRampToValueAtTime(gain,start+.015);g.gain.exponentialRampToValueAtTime(.0001,start+duration);
+      source.connect(hp);hp.connect(lp);lp.connect(g);g.connect(bus);source.start(start);source.stop(start+duration);return source;
+    }
+    function playEffect(effect, labelOverride){
+      stopAll(true);
+      const b=busForFx();if(!b)return;
+      const t=ctx.currentTime+.04;const name=effects.find(e=>e[0]===effect)?.[1]||labelOverride||'אפקט';
+      status('מושמע: '+name,true);
+      switch(effect){
+        case 'airhorn':
+          for(let p=0;p<2;p++){let s=t+p*.7;for(let i=0;i<4;i++){let f=[310,415,520,630][i];osc(b,f,s,.52,'sawtooth',.035);osc(b,f*1.007,s,.52,'sawtooth',.025);}}break;
+        case 'applause':
+          for(let i=0;i<38;i++){let s=t+Math.random()*2.3;makeNoise(b,s,.06+Math.random()*.10,.012+Math.random()*.026,680,7500);}break;
+        case 'drums':
+          for(let i=0;i<9;i++){const s=t+i*.19;osc(b,i%3===0?170:130,s,.16,'sine',.18,i%3===0?42:55);makeNoise(b,s,.075,.045,1100,5500);}break;
+        case 'fanfare':
+          [[392,0],[494,.25],[587,.5],[784,.82],[659,1.25],[784,1.5]].forEach(([f,delta],i)=>{osc(b,f,t+delta,i===5?.77:.22,'triangle',.13);osc(b,f*2,t+delta,i===5?.77:.22,'sine',.028);});break;
+        case 'crowd':
+          for(let i=0;i<16;i++){const s=t+i*.13;makeNoise(b,s,.25,.04,250,2800);osc(b,150+Math.random()*230,s,.21,'triangle',.02);}break;
+        case 'bell':
+          for(let j=0;j<3;j++){let s=t+j*.44;[784,1176,1568].forEach((f,i)=>osc(b,f,s,.9,'sine',.13/(i+1)));}break;
+        case 'squish':
+          for(let i=0;i<7;i++){let s=t+i*.19;osc(b,190+i*52,s,.2,'sine',.14,72+i*12);osc(b,450+i*40,s+.045,.1,'triangle',.06,140+i*15);}break;
+      }
+      const thisToken=soundToken;setTimeout(()=>{if(thisToken===soundToken)status('מוכן להפעלה');},3000);
+    }
+    $('playSquish').addEventListener('click',()=>{speakParts([{text:'מסיבה של סקווישים!',lang:'he-IL',rate:1.07,pitch:1.45,pause:30}],'מסיבה של סקווישים',()=>playEffect('squish','סקווישים'));});
+    $('playBracha').addEventListener('click',()=>{const line=brachaLines[Number($('brachaLine').value)||0];speakParts([{text:line,lang:'he-IL',rate:1.01,pitch:.83}], 'גברת ברכה מבקשת שקט');});
+    $('successModes').addEventListener('click',e=>{
+      const b=e.target.closest('button[data-mode]');if(!b)return;selectedMode=b.dataset.mode;
+      for(const btn of $('successModes').querySelectorAll('button'))btn.setAttribute('aria-pressed',String(btn.dataset.mode===selectedMode));
+      $('effectPicker').classList.toggle('hidden',selectedMode!=='manual');
+      $('effectDescription').textContent=selectedMode==='random'?'כל לחיצה תבחר צליל אחר.':'הצליל הנבחר יושמע בכל לחיצה.';
+    });
+    $('playSuccess').addEventListener('click',()=>{
+      let effect=$('effectType').value;
+      if(selectedMode==='random'){const pool=effects.map(e=>e[0]).filter(x=>x!==lastEffect);effect=pool[Math.floor(Math.random()*pool.length)];}
+      lastEffect=effect;playEffect(effect);
+    });
+    function koto(bus,freq,start,velocity=.12){
+      const partials=[[1,1],[2,.29],[3,.10],[4,.04]];
+      for(const [harm,factor] of partials){const o=ctx.createOscillator(),g=ctx.createGain();o.type=harm===1?'triangle':'sine';o.frequency.value=freq*harm;
+        g.gain.setValueAtTime(.0001,start);g.gain.exponentialRampToValueAtTime(Math.max(.0002,velocity*factor),start+.008);
+        g.gain.exponentialRampToValueAtTime(.0001,start+2.1/(harm*.48+.52));o.connect(g);g.connect(bus);o.start(start);o.stop(start+2.3);}
+    }
+    function pad(bus,freq,start,length=7){for(const f of [freq,freq*1.5]){
+      const o=ctx.createOscillator(),filter=ctx.createBiquadFilter(),g=ctx.createGain();o.type='sine';o.frequency.value=f;
+      filter.type='lowpass';filter.frequency.value=800;g.gain.setValueAtTime(.0001,start);g.gain.linearRampToValueAtTime(.023,start+1.2);g.gain.setValueAtTime(.023,start+length-1.4);g.gain.linearRampToValueAtTime(.0001,start+length);
+      o.connect(filter);filter.connect(g);g.connect(bus);o.start(start);o.stop(start+length+.02);
+    }}
+    let musicPhrase=0;
+    function scheduleMusic(){if(!musicPlaying||!ctx||!musicBus)return;const t=ctx.currentTime+.13;
+      const melodies=[ [293.66,349.23,440,392,523.25,440,349.23,293.66], [293.66,392,440,523.25,587.33,523.25,440,349.23], [261.63,349.23,392,440,392,349.23,293.66,261.63], [293.66,349.23,440,587.33,523.25,440,392,293.66] ];
+      const notes=melodies[musicPhrase++%melodies.length];
+      notes.forEach((f,i)=>{if(i!==5||musicPhrase%2===0)koto(musicBus,f,t+i*.85,i%4===0?.115:.083);});
+      pad(musicBus,musicPhrase%3===0?130.81:146.83,t,7.3);
+    }
+    function playMusic(){
+      stopAll(true);if(!initAudio())return;
+      musicPlaying=true;musicPhrase=0;musicBus=ctx.createGain();musicBus.gain.value=0;musicBus.gain.linearRampToValueAtTime(.62,ctx.currentTime+.5);musicBus.connect(master);
+      scheduleMusic();musicTimer=setInterval(scheduleMusic,6900);
+      $('toggleMusic').textContent='Ⅱ עצור מוזיקה';$('toggleMusic').setAttribute('aria-pressed','true');status('מוזיקה יפנית מרגיעה מתנגנת',true);
+    }
+    $('toggleMusic').addEventListener('click',()=>{if(musicPlaying)stopAll(true);else playMusic();});
+    function refreshStudentDatalist(){
+      const list=$('studentNames');list.replaceChildren();for(const name of students){const o=document.createElement('option');o.value=String(name);list.append(o);}
+    }
+    refreshStudentDatalist();
+    function getCurrentPhrase(){return $('studentPhrase').value==='custom' ? $('customPhrase').value.trim() : $('studentPhrase').value;}
+    function updatePreview(){const n=$('studentName').value.trim(),p=getCurrentPhrase().trim();$('personalPreview').textContent=(n||'[שם התלמיד]')+', '+(p||'[המשפט]')+'.';}
+    $('studentName').addEventListener('input',updatePreview);
+    $('customPhrase').addEventListener('input',updatePreview);
+    $('studentPhrase').addEventListener('change',()=>{$('customPhraseRow').classList.toggle('hidden',$('studentPhrase').value!=='custom');updatePreview();});
+    $('saveStudent').addEventListener('click',()=>{
+      const name=$('studentName').value.trim().replace(/\s+/g,' ');
+      if(!name){toast('יש להקליד שם תלמיד');return;}
+      if(!students.includes(name)){students.push(name);students.sort((a,b)=>a.localeCompare(b,'he'));safeSet('beit_or_student_names_v1',students);refreshStudentDatalist();}
+      toast('השם '+name+' נשמר בדפדפן');
+    });
+    $('playPersonal').addEventListener('click',()=>{
+      const name=$('studentName').value.trim(),phrase=getCurrentPhrase().trim();
+      if(!name){toast('צריך להקליד שם תלמיד');$('studentName').focus();return;}
+      if(!phrase){toast('צריך לבחור או לכתוב משפט');return;}
+      speakParts([{text:`${name}, ${phrase}.`,lang:'he-IL',rate:.9,pitch:1}], 'הודעה אישית אל '+name);
+    });
+    updatePreview();
+    if(!canSpeak)toast('אין בדפדפן תמיכה מובנית בהקראת טקסט; האפקטים המוזיקליים עדיין זמינים.');
+  })();
+  </script>
+  <script src="site-nav.js"></script>
+</body>
+</html>
