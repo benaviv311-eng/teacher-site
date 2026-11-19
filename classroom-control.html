@@ -129,7 +129,7 @@
         <div class="card-body">
           <button class="primary gold" id="toggleMusic" aria-pressed="false">♫ הפעל מוזיקה מרגיעה</button>
           <p class="note">מוזיקה אינסטרומנטלית, ללא מילים. אפשר לעצור בכל רגע.</p>
-          <p class="card-foot">אפשר להעלות באולפן הסאונד קטע מוזיקה יפני אמיתי; בלי קובץ יישמע עיבוד זן מובנה.</p>
+          <p class="card-foot">הקלטת קוטו יפני אמיתי כבר כלולה. אפשר להחליף אותה בקטע אישי באולפן הסאונד.</p>
         </div>
       </section>
       <section class="card" aria-labelledby="titleSquish">
@@ -184,7 +184,7 @@
         <div id="studioSlots" class="studio-slots"></div>
       </details>
     </section>
-    <p class="audio-credit">אפקטים מוקלטים: Mixkit (רישיון אפקטים חינמי) ו־BigSoundBank (CC0). ניתן להחליף כל אחד מהם בקובץ אישי באולפן. האפקטים המקוונים דורשים חיבור לרשת.</p>
+    <p class="audio-credit">אפקטים מוקלטים: Mixkit (רישיון אפקטים חינמי) ו־BigSoundBank (CC0). קטע הקוטו היפני: <a href="https://commons.wikimedia.org/wiki/File:Koto_performance.ogg" target="_blank" rel="noopener">Torsodog, CC BY 3.0</a>. ניתן להחליף כל צליל בקובץ אישי באולפן. המדיה המקוונת דורשת חיבור לרשת.</p>
     <p class="footer">💡 טיפ: מקש Esc עוצר את כל הצלילים. לפני ההפעלה הראשונה ודאו שהטלפון אינו על השתק. הקלטות אישיות גוברות על קולות הדפדפן. איכות הקול המובנה תלויה בקולות המותקנים במכשיר. רמת השמע המקסימלית תלויה במכשיר.</p>
   </main>
   <div id="toast" role="status" aria-live="polite"></div>
@@ -514,10 +514,11 @@
       const token=soundToken;
       const blob=await clipGet('music');
       if(token!==soundToken)return;
-      if(!blob){synthMusic();return;}
-      const src=URL.createObjectURL(blob);mediaUrl=src;
+      const src=blob?URL.createObjectURL(blob):
+        'https://upload.wikimedia.org/wikipedia/commons/transcoded/2/2e/Koto_performance.ogg/Koto_performance.ogg.mp3';
+      if(blob)mediaUrl=src;
       musicPlaying=true;
-      makePlayer(src,token,null,()=>{toast('שגיאה בהשמעת המוזיקה – חוזר לעיבוד המובנה');synthMusic();},true);
+      makePlayer(src,token,null,()=>{toast('מוזיקה מוקלטת לא זמינה – עובר לעיבוד זן מובנה');synthMusic();},true);
       $('toggleMusic').textContent='Ⅱ עצור מוזיקה';
       $('toggleMusic').setAttribute('aria-pressed','true');
       status('מוזיקה יפנית מוקלטת מתנגנת',true);
