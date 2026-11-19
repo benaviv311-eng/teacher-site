@@ -69,7 +69,28 @@
     @media(max-width:1020px) {.grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
     @media(max-width:680px) {.grid{grid-template-columns:1fr;gap:14px;}.wrap{padding:0 15px;}header .wrap{padding-top:24px;padding-bottom:24px;}.card{padding:17px;}.toolbar{align-items:stretch;}.volume{width:100%;justify-content:space-between;}.volume input{flex:1;}.stop{width:100%;justify-content:center;}.hero:before{left:-280px;}.topline{align-items:stretch;}main.wrap{padding-top:20px;}}
     @media(prefers-reduced-motion:reduce) {*,*:before,*:after {transition:none!important;}}
-  </style>
+  
+  /* Professional Sound Studio */
+  .sound-studio{margin:22px 0;padding:21px;background:#fff;border-radius:22px;border:1px solid #e4e9f0;box-shadow:0 5px 24px #14213d0c}
+  .sound-studio h2{font-size:21px;color:#172b45;margin:0 0 8px}
+  .sound-studio p{color:#526277;font-size:14px;line-height:1.6}
+  .sound-studio summary{cursor:pointer;font-weight:800;font-size:17px;padding:8px 2px}
+  .studio-controls{display:flex;gap:9px;align-items:end;flex-wrap:wrap;background:#f4f7fb;padding:12px;border-radius:14px;margin:12px 0}
+  .studio-controls label{display:grid;gap:4px;font-weight:700;font-size:13px;color:#37465b;flex:1;min-width:140px}
+  .studio-controls select{padding:10px;background:white;color:#273c57;border:1px solid #cfdae6;border-radius:10px;width:100%}
+  .studio-controls button,.audio-action{font:inherit;border:1px solid #d2deea;background:#fff;color:#214973;border-radius:9px;padding:8px 10px;cursor:pointer;font-weight:800}
+  .audio-action:hover,.studio-controls button:hover{background:#eaf4fe}
+  .studio-slots{display:grid;gap:7px;margin-top:12px}
+  .studio-slot{display:flex;align-items:center;gap:7px;flex-wrap:wrap;padding:10px 12px;border:1px solid #e5ecf4;border-radius:12px;background:#fbfdff}
+  .studio-slot label{font-size:14px;font-weight:700;min-width:132px;flex:1}
+  .studio-slot .clipstatus{color:#64748b;font-size:11px;min-width:72px}
+  .studio-slot button{font-size:12px}
+  .studio-slot button.recording{background:#ffe6e6;color:#ac1c28;border-color:#ffaaaa;animation:pulseAudio 1.1s infinite}
+  @keyframes pulseAudio{50%{opacity:.62}}
+  .audio-credit{font-size:12px;color:#64748b;line-height:1.5}
+  @media(max-width:560px){.studio-slot{gap:6px}.studio-slot label{flex-basis:100%}.studio-slot button{flex:1}}
+
+</style>
 </head>
 <body>
   <header class="hero">
@@ -108,7 +129,7 @@
         <div class="card-body">
           <button class="primary gold" id="toggleMusic" aria-pressed="false">♫ הפעל מוזיקה מרגיעה</button>
           <p class="note">מוזיקה אינסטרומנטלית, ללא מילים. אפשר לעצור בכל רגע.</p>
-          <p class="card-foot">המוזיקה נוצרת בדפדפן; אינה הקלטה מסחרית.</p>
+          <p class="card-foot">אפשר להעלות באולפן הסאונד קטע מוזיקה יפני אמיתי; בלי קובץ יישמע עיבוד זן מובנה.</p>
         </div>
       </section>
       <section class="card" aria-labelledby="titleSquish">
@@ -124,11 +145,11 @@
           <label class="label" for="brachaLine">בחרו משפט</label>
           <select class="field" id="brachaLine"><option value="0">שקט בכיתה, עכשיו!</option><option value="1">כולם מסתכלים קדימה!</option><option value="2">המחשבים נסגרים!</option></select>
           <button class="primary coral" id="playBracha">📢 השמיעי, גברת ברכה</button>
-          <p class="note">טקסטים מקוריים, עם קול דפדפן דרמטי — לא הקול המקורי של הדמות או השחקנית.</p>
+          <p class="note">טקסטים מקוריים, עם טקסטים מקוריים, ללא חיקוי הקול של השחקנית. ניתן להקליט קול אנושי באולפן.</p>
         </div>
       </section>
       <section class="card" aria-labelledby="titleSuccess">
-        <div class="card-head"><div class="ico lime" aria-hidden="true">🏆</div><div><h3 id="titleSuccess">כפתור חגיגת הצלחה</h3><p class="description">צופר DJ, מחיאות כפיים, תרועות ותופים.</p></div></div>
+        <div class="card-head"><div class="ico lime" aria-hidden="true">🏆</div><div><h3 id="titleSuccess">כפתור חגיגת הצלחה</h3><p class="description">צופר מוקלט, מחיאות כפיים אמיתיות, תרועות ותופים.</p></div></div>
         <div class="card-body">
           <div class="seg" aria-label="בחירת מצב אפקט" id="successModes"><button data-mode="random" aria-pressed="true">🎲 אקראי</button><button data-mode="manual" aria-pressed="false">🎛️ לפי בחירה</button></div>
           <div id="effectPicker" class="hidden"><label class="label" for="effectType">בחרו אפקט</label><select class="field" id="effectType"><option value="airhorn">📣 צופר DJ</option><option value="applause">👏 מחיאות כפיים</option><option value="drums">🥁 תופים</option><option value="fanfare">🎺 תרועת ניצחון</option><option value="crowd">🎉 קהל מריע</option><option value="bell">🔔 פעמון הצלחה</option></select></div>
@@ -148,7 +169,23 @@
         </div>
       </section>
     </div>
-    <p class="footer">💡 טיפ: מקש Esc עוצר את כל הצלילים. לפני ההפעלה הראשונה ודאו שהטלפון אינו על השתק. הקראת טקסט נעשית באמצעות קולות הדפדפן; שפות שאינן מותקנות במכשיר עלולות להישמע פחות טבעיות או לא לפעול. רמת השמע המקסימלית תלויה במכשיר.</p>
+
+    <section class="sound-studio" aria-labelledby="studioTitle">
+      <details id="soundStudioDetails">
+        <summary>🎙️ אולפן סאונד מקצועי · קולות והקלטות</summary>
+        <h2 id="studioTitle">התאמה אישית של כל צליל</h2>
+        <p>בכל שורה אפשר להקליט קול אנושי במיקרופון או להעלות קובץ MP3/WAV. הקובץ החדש מחליף את הצליל המובנה. ההקלטות נשמרות רק בדפדפן במכשיר הזה.</p>
+        <div class="studio-controls">
+          <label>שפת הקול <select id="voiceLanguage"><option value="he-IL">עברית</option><option value="en-US">אנגלית</option><option value="ar-SA">ערבית</option><option value="ru-RU">רוסית</option><option value="ja-JP">יפנית</option></select></label>
+          <label>קול זמין במכשיר <select id="voiceChoice"><option value="auto">בחירה אוטומטית</option></select></label>
+          <button id="voiceSample" type="button">▶ בדוק קול</button>
+        </div>
+        <p class="audio-credit">קול מוקלט יישמע טבעי יותר מקול המכשיר. מומלץ להקליט במקום שקט ולכוון את עוצמת השמע לפני השיעור.</p>
+        <div id="studioSlots" class="studio-slots"></div>
+      </details>
+    </section>
+    <p class="audio-credit">אפקטים מוקלטים: Mixkit (רישיון אפקטים חינמי) ו־BigSoundBank (CC0). ניתן להחליף כל אחד מהם בקובץ אישי באולפן. האפקטים המקוונים דורשים חיבור לרשת.</p>
+    <p class="footer">💡 טיפ: מקש Esc עוצר את כל הצלילים. לפני ההפעלה הראשונה ודאו שהטלפון אינו על השתק. הקלטות אישיות גוברות על קולות הדפדפן. איכות הקול המובנה תלויה בקולות המותקנים במכשיר. רמת השמע המקסימלית תלויה במכשיר.</p>
   </main>
   <div id="toast" role="status" aria-live="polite"></div>
   <script>
@@ -194,7 +231,7 @@
       return true;
     }
     function refreshVolume() {if(master)master.gain.setTargetAtTime(volume/100,ctx.currentTime,.025);}
-    $('globalVolume').addEventListener('input',e=>{volume=Number(e.target.value);$('volumeValue').textContent=volume+'%';safeSet('beit_or_global_volume_v1',volume);refreshVolume();});
+    $('globalVolume').addEventListener('input',e=>{volume=Number(e.target.value);$('volumeValue').textContent=volume+'%';safeSet('beit_or_global_volume_v1',volume);refreshVolume();for(const a of [activeClip,activeMusic])if(a)a.volume=volume/100*(a===activeMusic?.46:.72);});
     function cancelSpeech() {if(canSpeak) {try{window.speechSynthesis.cancel();}catch{}}speaking=false;}
     function stopBuses() {
       if (musicTimer!==null) {clearInterval(musicTimer);musicTimer=null;}
@@ -202,34 +239,178 @@
       fxBus=null;musicBus=null;musicPlaying=false;
       $('toggleMusic').textContent='♫ הפעל מוזיקה מרגיעה';$('toggleMusic').setAttribute('aria-pressed','false');
     }
-    function stopAll(quiet=false) {soundToken++;cancelSpeech();stopBuses();soundIsActive=false;status('מוכן להפעלה');$('languageProgress').textContent='עברית ← אנגלית ← ערבית ← רוסית ← יפנית';if(!quiet)toast('כל הצלילים נעצרו');}
+    function stopAll(quiet=false) {soundToken++;cancelSpeech();stopMedia();stopBuses();soundIsActive=false;status('מוכן להפעלה');$('languageProgress').textContent='עברית ← אנגלית ← ערבית ← רוסית ← יפנית';if(!quiet)toast('כל הצלילים נעצרו');}
     $('stopAll').addEventListener('click',()=>stopAll());
     document.addEventListener('keydown',e=>{if(e.key==='Escape')stopAll();});
+
+    // Locally stored human recordings are preferred over synthesised speech.
+    const clipNames=[
+      ['quiet-he','🌍 שקט – עברית'],['quiet-en','🌍 שקט – אנגלית'],['quiet-ar','🌍 שקט – ערבית'],
+      ['quiet-ru','🌍 שקט – רוסית'],['quiet-ja','🌍 שקט – יפנית'],
+      ['bracha-0','📣 גברת ברכה – משפט 1'],['bracha-1','📣 גברת ברכה – משפט 2'],['bracha-2','📣 גברת ברכה – משפט 3'],
+      ['squish-voice','🎈 הכרזת מסיבת סקווישים'],
+      ['fx-airhorn','🎉 צופר DJ'],['fx-applause','👏 מחיאות כפיים'],['fx-drums','🥁 תופים'],
+      ['fx-fanfare','🎺 תרועת ניצחון'],['fx-crowd','🎉 קהל מריע'],['fx-bell','🔔 פעמון הצלחה'],
+      ['fx-squish','🎈 קולות סקווישים'],['music','🎋 מוזיקה יפנית מרגיעה']
+    ];
+    const stockFx={
+      airhorn:'https://bigsoundbank.com/UPLOAD/mp3/1827.mp3',
+      applause:'https://assets.mixkit.co/sfx/preview/mixkit-small-group-cheer-and-applause-518.mp3',
+      drums:'https://assets.mixkit.co/active_storage/sfx/577/577-preview.mp3',
+      fanfare:'https://assets.mixkit.co/sfx/preview/mixkit-trumpet-fanfare-2293.mp3',
+      crowd:'https://assets.mixkit.co/sfx/preview/mixkit-ending-show-audience-clapping-478.mp3',
+      bell:'https://assets.mixkit.co/active_storage/sfx/2865/2865-preview.mp3'
+    };
+    let activeClip=null,activeMusic=null,mediaUrl=null,recorder=null,recordedChunks=[],recordStream=null,recordSlot=null;
+    let voicePreferences=safeGet('beit_or_voice_prefs_v2',{});
+    if(!voicePreferences || typeof voicePreferences!=='object') voicePreferences={};
+    let dbPromise=null;
+    function clipsDB(){
+      if(!('indexedDB' in window))return Promise.reject(new Error('אין תמיכה בשמירת אודיו בדפדפן'));
+      if(!dbPromise)dbPromise=new Promise((resolve,reject)=>{
+        const r=indexedDB.open('beit_or_audio_studio_v1',1);
+        r.onupgradeneeded=()=>{if(!r.result.objectStoreNames.contains('clips'))r.result.createObjectStore('clips');};
+        r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);
+      });
+      return dbPromise;
+    }
+    async function clipGet(key){
+      try{const db=await clipsDB();return await new Promise((resolve,reject)=>{const t=db.transaction('clips','readonly');const r=t.objectStore('clips').get(key);r.onsuccess=()=>resolve(r.result||null);r.onerror=()=>reject(r.error);});}
+      catch{return null;}
+    }
+    async function clipPut(key,blob){
+      const db=await clipsDB();
+      return new Promise((resolve,reject)=>{const t=db.transaction('clips','readwrite');t.objectStore('clips').put(blob,key);t.oncomplete=resolve;t.onerror=()=>reject(t.error);});
+    }
+    async function clipDelete(key){
+      const db=await clipsDB();return new Promise((resolve,reject)=>{const t=db.transaction('clips','readwrite');t.objectStore('clips').delete(key);t.oncomplete=resolve;t.onerror=()=>reject(t.error);});
+    }
+    function stopMedia(){
+      for(const a of [activeClip,activeMusic])if(a){try{a.pause();a.currentTime=0;a.src='';a.load();}catch{}}
+      activeClip=null;activeMusic=null;
+      if(mediaUrl){URL.revokeObjectURL(mediaUrl);mediaUrl=null;}
+    }
+    function makePlayer(src,token,done,failed,loop=false){
+      const player=new Audio(src);player.preload='auto';player.volume=volume/100*(loop?.46:.72);player.loop=loop;
+      if(loop)activeMusic=player;else activeClip=player;
+      player.onended=()=>{if(token===soundToken && !loop){activeClip=null;done?.();}};
+      player.onerror=()=>{if(token===soundToken)failed?.();};
+      player.play().catch(()=>{if(token===soundToken)failed?.();});
+      return player;
+    }
+    function initStudio(){
+      const area=$('studioSlots');
+      clipNames.forEach(([key,title])=>{
+        const row=document.createElement('div');row.className='studio-slot';row.dataset.slot=key;
+        const label=document.createElement('label');label.textContent=title;
+        const file=document.createElement('input');file.type='file';file.accept='audio/*';file.hidden=true;
+        const statusEl=document.createElement('span');statusEl.className='clipstatus';statusEl.textContent='מובנה';
+        const upload=document.createElement('button');upload.type='button';upload.className='audio-action';upload.textContent='⬆ העלה קובץ';
+        const rec=document.createElement('button');rec.type='button';rec.className='audio-action record';rec.textContent='● הקלט';
+        const preview=document.createElement('button');preview.type='button';preview.className='audio-action';preview.textContent='▶ שמע';
+        const clear=document.createElement('button');clear.type='button';clear.className='audio-action';clear.textContent='× אפס';
+        row.append(label,statusEl,upload,rec,preview,clear,file);area.append(row);
+        async function refresh(){statusEl.textContent=await clipGet(key)?'✓ קול אישי':'מובנה';}
+        refresh();
+        upload.onclick=()=>file.click();
+        file.onchange=async()=>{const f=file.files?.[0];if(!f)return;
+          if(f.size>15*1024*1024){toast('הקובץ גדול מדי. עד 15MB.');return;}
+          try{await clipPut(key,f);await refresh();toast('הצליל נשמר: '+title);}
+          catch{toast('לא ניתן לשמור את הקובץ בדפדפן הזה.');}file.value='';
+        };
+        clear.onclick=async()=>{if(key===recordSlot)return toast('תחילה סיים את ההקלטה');
+          await clipDelete(key).catch(()=>{});await refresh();toast('חזר לצליל המובנה');
+        };
+        preview.onclick=async()=>{stopAll(true);const token=soundToken;const blob=await clipGet(key);if(token!==soundToken)return;
+          if(blob){const url=URL.createObjectURL(blob);mediaUrl=url;makePlayer(url,token,()=>status('מוכן להפעלה'),()=>toast('לא ניתן לפתוח את ההקלטה'));status('בודק: '+title,true);}
+          else if(key.startsWith('fx-'))playEffect(key.slice(3));
+          else if(key.startsWith('quiet-')){const lang=messages.find(x=>x.code===key.slice(6));if(lang)speakParts([{...lang,slot:key}],title);}
+          else if(key.startsWith('bracha-'))speakParts([{text:brachaLines[Number(key.slice(-1))],lang:'he-IL',slot:key}],title);
+          else if(key==='squish-voice')speakParts([{text:'מסיבה של סקווישים!',lang:'he-IL',slot:key}],title);
+          else if(key==='music')playMusic();
+        };
+        rec.onclick=async()=>{
+          if(recordSlot===key&&recorder){recorder.stop();return;}
+          if(recordSlot){toast('כבר מתבצעת הקלטה. סיים אותה קודם.');return;}
+          if(!navigator.mediaDevices?.getUserMedia||!window.MediaRecorder){toast('הקלטת מיקרופון לא זמינה בדפדפן הזה');return;}
+          try{recordStream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:true}});
+            recordedChunks=[];recordSlot=key;recorder=new MediaRecorder(recordStream);
+            recorder.ondataavailable=e=>{if(e.data?.size)recordedChunks.push(e.data);};
+            recorder.onstop=async()=>{
+              const blob=new Blob(recordedChunks,{type:recorder.mimeType||'audio/webm'});
+              try{await clipPut(key,blob);await refresh();toast('הקלטה נשמרה: '+title);}
+              catch{toast('לא הצלחנו לשמור את ההקלטה.');}
+              recordStream?.getTracks().forEach(t=>t.stop());recordStream=null;recorder=null;recordSlot=null;rec.textContent='● הקלט';rec.classList.remove('recording');
+            };
+            recorder.start();rec.textContent='■ סיים';rec.classList.add('recording');toast('הקלטה החלה – דבר אל המיקרופון');
+          }catch{toast('לא ניתנה הרשאה למיקרופון');}
+        };
+      });
+    }
+    initStudio();
+    function refreshVoiceChoices(){
+      if(!canSpeak)return;
+      const lang=$('voiceLanguage').value, select=$('voiceChoice');
+      voiceList=window.speechSynthesis.getVoices();
+      const candidates=voiceList.filter(v=>v.lang.toLowerCase().startsWith(lang.slice(0,2).toLowerCase()));
+      select.replaceChildren(new Option('בחירה אוטומטית','auto'));
+      candidates.forEach(v=>select.add(new Option(v.name+' · '+v.lang,v.voiceURI)));
+      select.value=voicePreferences[lang]||'auto';
+      if(select.selectedIndex<0)select.value='auto';
+    }
+    $('voiceLanguage').onchange=refreshVoiceChoices;
+    $('voiceChoice').onchange=()=>{voicePreferences[$('voiceLanguage').value]=$('voiceChoice').value;safeSet('beit_or_voice_prefs_v2',voicePreferences);};
+    $('voiceSample').onclick=()=>{const lang=messages.find(m=>m.lang===$('voiceLanguage').value);if(lang)speakParts([lang],'בדיקת קול');};
+    refreshVoiceChoices();
+    window.speechSynthesis?.addEventListener?.('voiceschanged',refreshVoiceChoices);
+
     function getVoice(lang) {
       if (!canSpeak) return null;
       voiceList=window.speechSynthesis.getVoices();
-      return voiceList.find(v=>v.lang.toLowerCase()===lang.toLowerCase()) || voiceList.find(v=>v.lang.toLowerCase().startsWith(lang.substring(0,2).toLowerCase())) || null;
+      const candidates=voiceList.filter(v=>v.lang.toLowerCase().startsWith(lang.substring(0,2).toLowerCase()));
+      const saved=voicePreferences[lang];
+      if(saved && saved!=='auto'){const voice=candidates.find(v=>v.voiceURI===saved);if(voice)return voice;}
+      candidates.sort((a,b)=>{
+        const score=v=> (/natural|neural|premium|enhanced/i.test(v.name)?8:0)+(/Google|Microsoft|Apple/i.test(v.name)?4:0)+(v.lang.toLowerCase()===lang.toLowerCase()?2:0);
+        return score(b)-score(a);
+      });
+      return candidates[0]||null;
     }
     if(canSpeak){voiceList=window.speechSynthesis.getVoices();window.speechSynthesis.addEventListener?.('voiceschanged',()=>{voiceList=window.speechSynthesis.getVoices();});}
     function speakParts(parts, descriptor, done) {
       stopAll(true);
-      if(!canSpeak){status('הדפדפן לא תומך בהקראה');toast('אין תמיכה בהקראת טקסט בדפדפן זה');return;}
-      const myToken = soundToken;
+      const token=soundToken;
       speaking=true;status(descriptor,true);
       let index=0;
-      function next(){
-        if(myToken!==soundToken)return;
-        if(index>=parts.length){speaking=false;status('ההקראה הסתיימה');if(done)done();return;}
+      async function next(){
+        if(token!==soundToken)return;
+        if(index>=parts.length){speaking=false;status('ההקראה הסתיימה');done?.();return;}
         const part=parts[index++];
-        const utterance = new SpeechSynthesisUtterance(part.text);
-        utterance.lang=part.lang||'he-IL';
-        const matching=getVoice(utterance.lang);if(matching)utterance.voice=matching;
-        utterance.rate=part.rate||.88;utterance.pitch=part.pitch||1;utterance.volume=volume/100;
-        if(part.name) {$('languageProgress').textContent=`מושמע: ${part.name} (${index}/${parts.length})`;}
-        let advanced=false;
-        function advance(){if(advanced)return;advanced=true;if(myToken===soundToken)setTimeout(next,part.pause ?? 300);}
-        utterance.onend=advance;utterance.onerror=advance;
-        try{window.speechSynthesis.speak(utterance);}catch{advance();}
+        const slot=part.slot||(part.code?'quiet-'+part.code:null);
+        if(part.name)$('languageProgress').textContent='מושמע: '+part.name+' ('+index+'/'+parts.length+')';
+        if(slot){
+          const blob=await clipGet(slot);if(token!==soundToken)return;
+          if(blob){
+            const url=URL.createObjectURL(blob);mediaUrl=url;
+            makePlayer(url,token,()=>{URL.revokeObjectURL(url);if(mediaUrl===url)mediaUrl=null;setTimeout(next,part.pause??240);},()=>fallback(),false);
+            return;
+          }
+        }
+        fallback();
+        function fallback(){
+          if(token!==soundToken)return;
+          if(!canSpeak){status('חסר קול זמין');toast('לא נמצאה הקלטה או אפשרות הקראה. פתח את אולפן הסאונד להקלטה.');speaking=false;return;}
+          const u=new SpeechSynthesisUtterance(part.text);
+          u.lang=part.lang||'he-IL';
+          const v=getVoice(u.lang);if(v)u.voice=v;
+          u.rate=Math.max(.78,Math.min(1.06,part.rate||.94));
+          u.pitch=Math.max(.93,Math.min(1.12,part.pitch||1));
+          u.volume=volume/100;
+          let advanced=false;
+          function advance(){if(advanced)return;advanced=true;if(token===soundToken)setTimeout(next,part.pause??250);}
+          u.onend=advance;u.onerror=advance;
+          try{window.speechSynthesis.speak(u);}catch{advance();}
+        }
       }
       next();
     }
@@ -250,7 +431,7 @@
       g.gain.setValueAtTime(.0001,start);g.gain.linearRampToValueAtTime(gain,start+.015);g.gain.exponentialRampToValueAtTime(.0001,start+duration);
       source.connect(hp);hp.connect(lp);lp.connect(g);g.connect(bus);source.start(start);source.stop(start+duration);return source;
     }
-    function playEffect(effect, labelOverride){
+    function synthEffect(effect, labelOverride){
       stopAll(true);
       const b=busForFx();if(!b)return;
       const t=ctx.currentTime+.04;const name=effects.find(e=>e[0]===effect)?.[1]||labelOverride||'אפקט';
@@ -273,8 +454,25 @@
       }
       const thisToken=soundToken;setTimeout(()=>{if(thisToken===soundToken)status('מוכן להפעלה');},3000);
     }
-    $('playSquish').addEventListener('click',()=>{speakParts([{text:'מסיבה של סקווישים!',lang:'he-IL',rate:1.07,pitch:1.45,pause:30}],'מסיבה של סקווישים',()=>playEffect('squish','סקווישים'));});
-    $('playBracha').addEventListener('click',()=>{const line=brachaLines[Number($('brachaLine').value)||0];speakParts([{text:line,lang:'he-IL',rate:1.01,pitch:.83}], 'גברת ברכה מבקשת שקט');});
+
+    async function playEffect(effect,labelOverride){
+      stopAll(true);
+      const token=soundToken;
+      const blob=await clipGet('fx-'+effect);
+      if(token!==soundToken)return;
+      const src=blob?URL.createObjectURL(blob):stockFx[effect];
+      if(!src){synthEffect(effect,labelOverride);return;}
+      if(blob)mediaUrl=src;
+      const name=effects.find(e=>e[0]===effect)?.[1]||labelOverride||'אפקט';
+      status('מושמע: '+name,true);
+      makePlayer(src,token,()=>{if(blob){URL.revokeObjectURL(src);if(mediaUrl===src)mediaUrl=null;}status('מוכן להפעלה');},()=>{
+        if(blob){URL.revokeObjectURL(src);if(mediaUrl===src)mediaUrl=null;}
+        synthEffect(effect,labelOverride);
+      });
+    }
+
+    $('playSquish').addEventListener('click',()=>{speakParts([{text:'מסיבה של סקווישים!',lang:'he-IL',rate:.99,pitch:1.05,pause:30,slot:'squish-voice'}],'מסיבה של סקווישים',()=>playEffect('squish','סקווישים'));});
+    $('playBracha').addEventListener('click',()=>{const line=brachaLines[Number($('brachaLine').value)||0];speakParts([{text:line,lang:'he-IL',rate:.92,pitch:1.03,slot:'bracha-'+(Number($('brachaLine').value)||0)}], 'גברת ברכה מבקשת שקט');});
     $('successModes').addEventListener('click',e=>{
       const b=e.target.closest('button[data-mode]');if(!b)return;selectedMode=b.dataset.mode;
       for(const btn of $('successModes').querySelectorAll('button'))btn.setAttribute('aria-pressed',String(btn.dataset.mode===selectedMode));
@@ -304,12 +502,27 @@
       notes.forEach((f,i)=>{if(i!==5||musicPhrase%2===0)koto(musicBus,f,t+i*.85,i%4===0?.115:.083);});
       pad(musicBus,musicPhrase%3===0?130.81:146.83,t,7.3);
     }
-    function playMusic(){
+    function synthMusic(){
       stopAll(true);if(!initAudio())return;
       musicPlaying=true;musicPhrase=0;musicBus=ctx.createGain();musicBus.gain.value=0;musicBus.gain.linearRampToValueAtTime(.62,ctx.currentTime+.5);musicBus.connect(master);
       scheduleMusic();musicTimer=setInterval(scheduleMusic,6900);
       $('toggleMusic').textContent='Ⅱ עצור מוזיקה';$('toggleMusic').setAttribute('aria-pressed','true');status('מוזיקה יפנית מרגיעה מתנגנת',true);
     }
+
+    async function playMusic(){
+      stopAll(true);
+      const token=soundToken;
+      const blob=await clipGet('music');
+      if(token!==soundToken)return;
+      if(!blob){synthMusic();return;}
+      const src=URL.createObjectURL(blob);mediaUrl=src;
+      musicPlaying=true;
+      makePlayer(src,token,null,()=>{toast('שגיאה בהשמעת המוזיקה – חוזר לעיבוד המובנה');synthMusic();},true);
+      $('toggleMusic').textContent='Ⅱ עצור מוזיקה';
+      $('toggleMusic').setAttribute('aria-pressed','true');
+      status('מוזיקה יפנית מוקלטת מתנגנת',true);
+    }
+
     $('toggleMusic').addEventListener('click',()=>{if(musicPlaying)stopAll(true);else playMusic();});
     function refreshStudentDatalist(){
       const list=$('studentNames');list.replaceChildren();for(const name of students){const o=document.createElement('option');o.value=String(name);list.append(o);}
