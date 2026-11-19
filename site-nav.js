@@ -10,7 +10,8 @@
     current === 'critical-thinking.html' ? 'critical' :
     current === 'nutrition-builder.html' ? 'nutrition' :
     isEnglish ? 'english' :
-    current === 'games.html' ? 'games' : '';
+    current === 'games.html' ? 'games' :
+    current === 'classroom-control.html' ? 'classroomControl' : '';
 
   document.querySelectorAll('body > nav').forEach(el => el.remove());
   document.querySelectorAll('button.home, a.home').forEach(el => el.remove());
@@ -59,6 +60,7 @@
     <a class="global-nav-item ${active==='nutrition'?'active':''}" href="nutrition-builder.html"><strong>🥗</strong>בונה תפריט</a>
     <a class="global-nav-item ${active==='english'?'active':''}" href="english.html"><strong>📘🇬🇧</strong>אנגלית</a>
     <a class="global-nav-item ${active==='games'?'active':''}" href="games.html"><strong>🎮</strong>משחקים</a>
+    <a class="global-nav-item ${active==='classroomControl'?'active':''}" href="classroom-control.html"><strong>🎛️</strong>ניהול כיתה</a>
   </div>`;
   document.body.appendChild(nav);
 })();
