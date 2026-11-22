@@ -33,6 +33,6 @@ test('lesson 8 keeps three reading levels and answer keys', async () => {
 test('lesson 8 presentation viewer exists and points to the uploaded deck', async () => {
   assert.equal(existsSync(new URL('../english-lesson8-presentation.html', import.meta.url)), true);
   const viewer = await read('english-lesson8-presentation.html');
-  assert.match(viewer, /1D1yjyFgSzChNVgDhKky7KPk1OlsiFltA/);
+  assert.match(viewer, /1daa8fE6L0ho8jsbLv0F0DLEF43h5lgViLlmqphFMJ2s/);
   assert.match(viewer, /Google Slides|PPTX/i);
 });
