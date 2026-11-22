@@ -9,9 +9,10 @@ test('English library links lesson 8 Reading & Games Challenge', async () => {
   const library = await read('english.html');
   assert.match(library, /href="english-lesson8\.html"/);
   assert.match(library, /Reading & Games Challenge/i);
+  assert.match(library, /href="english-lesson8-presentation\.html"/);
 });
 
-test('lesson 8 exposes the approved four-part flow', async () => {
+test('lesson 8 exposes the approved reading and game flow', async () => {
   const html = await read('english-lesson8.html');
   assert.match(html, /Reading Challenge 1/i);
   assert.match(html, /Reading Challenge 2/i);
@@ -29,8 +30,9 @@ test('lesson 8 keeps three reading levels and answer keys', async () => {
   assert.match(html, /TEACHER KEY/i);
 });
 
-test('lesson 8 presentation is linked and stored in the repo', async () => {
-  const html = await read('english-lesson8.html');
-  assert.match(html, /presentations\/English_Games_Reading_Challenge\.pptx/);
-  assert.equal(existsSync(new URL('../presentations/English_Games_Reading_Challenge.pptx', import.meta.url)), true);
+test('lesson 8 presentation viewer exists and points to the uploaded deck', async () => {
+  assert.equal(existsSync(new URL('../english-lesson8-presentation.html', import.meta.url)), true);
+  const viewer = await read('english-lesson8-presentation.html');
+  assert.match(viewer, /1D1yjyFgSzChNVgDhKky7KPk1OlsiFltA/);
+  assert.match(viewer, /Google Slides|PPTX/i);
 });
