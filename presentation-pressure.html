@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>מעבדת הלחץ והביצועים — מצגת</title>
+<style>
+:root{--bg:#0d1324;--panel:#151d34;--purple:#7c3aed;--orange:#f97316;--blue:#2563eb;--green:#16a34a;--text:#f8fafc;--muted:#cbd5e1}
+*{box-sizing:border-box}html,body{margin:0;height:100%;background:#060a14;color:var(--text);font-family:Arial,"Noto Sans Hebrew",sans-serif;overflow:hidden}
+body{display:grid;place-items:center}
+.deck{position:relative;width:100vw;height:100vh;background:var(--bg);overflow:hidden}
+.slide{position:absolute;inset:0;display:none;padding:clamp(28px,5vw,72px);background:
+radial-gradient(circle at 15% 20%,#7c3aed44,transparent 34%),
+radial-gradient(circle at 88% 84%,#f9731638,transparent 33%),
+linear-gradient(135deg,#0b1223,#111a30 56%,#24133b);overflow:auto}
+.slide.active{display:flex;flex-direction:column;justify-content:center}
+.slide::after{content:"";position:absolute;inset:auto -10% -34% auto;width:60vw;height:60vw;border:1px solid #ffffff10;border-radius:50%;pointer-events:none}
+.kicker{font-size:clamp(14px,1.4vw,22px);font-weight:900;color:#fdba74;margin-bottom:12px}
+h1{font-size:clamp(42px,6vw,86px);line-height:1.02;margin:0 0 18px;max-width:1100px}
+h2{font-size:clamp(34px,4.6vw,66px);line-height:1.05;margin:0 0 24px;max-width:1150px}
+h3{font-size:clamp(24px,3vw,42px);margin:0 0 14px;color:#ddd6fe}
+p,li{font-size:clamp(21px,2.15vw,34px);line-height:1.45}
+ul{margin:12px 0;padding-right:1.2em}
+.small{font-size:clamp(16px,1.5vw,23px);color:var(--muted)}
+.big-quote{font-size:clamp(30px,4.4vw,66px);font-weight:900;line-height:1.22;max-width:1200px}
+.accent{color:#fb923c}.purple{color:#c4b5fd}.green{color:#86efac}.blue{color:#93c5fd}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,42px);width:min(1200px,100%)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2vw,28px);width:min(1250px,100%)}
+.card{background:#ffffff10;border:1px solid #ffffff16;border-radius:24px;padding:clamp(18px,2.5vw,34px);backdrop-filter:blur(8px)}
+.card strong{display:block;font-size:clamp(22px,2.5vw,36px);margin-bottom:8px}
+.pillrow{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}.pill{padding:10px 16px;border-radius:999px;background:#ffffff12;border:1px solid #ffffff1d;font-weight:900;font-size:clamp(14px,1.4vw,20px)}
+.choice{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}.choice div{padding:22px;border-radius:20px;background:#ffffff10;border:1px solid #ffffff17;text-align:center;font-size:clamp(20px,2vw,30px);font-weight:900}
+.flow{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:22px}.flow .node{padding:16px 20px;border-radius:18px;background:#ffffff10;border:1px solid #ffffff17;font-size:clamp(19px,2vw,30px);font-weight:900}.arrow{font-size:clamp(28px,3vw,46px);color:#fb923c}
+.center{text-align:center;align-items:center}.center h1,.center h2,.center p{margin-left:auto;margin-right:auto}
+.myth{font-size:clamp(34px,5vw,72px);font-weight:900;line-height:1.18;max-width:1150px}
+.answer{font-size:clamp(38px,5.2vw,76px);font-weight:900;color:#fdba74;margin-bottom:18px}
+.notes{position:absolute;right:18px;left:18px;bottom:70px;background:#fff;color:#111827;border-radius:16px;padding:14px 18px;font-size:16px;line-height:1.45;display:none;z-index:8;box-shadow:0 12px 40px #0008}.notes.show{display:block}
+.controls{position:absolute;left:18px;right:18px;bottom:16px;display:flex;align-items:center;justify-content:space-between;gap:10px;z-index:10;direction:ltr}
+.controls .group{display:flex;gap:8px;align-items:center}
+button,a.ctrl{appearance:none;border:0;background:#ffffff12;color:white;border:1px solid #ffffff1a;border-radius:14px;padding:10px 14px;font:700 15px Arial;cursor:pointer;text-decoration:none}
+button:hover,a.ctrl:hover{background:#ffffff20}
+.counter{font-weight:900;min-width:76px;text-align:center}
+.progress{position:absolute;left:0;right:0;bottom:0;height:5px;background:#ffffff0d;z-index:12}.progress>div{height:100%;background:linear-gradient(90deg,var(--purple),var(--orange));width:0}
+.brand{position:absolute;top:16px;left:20px;color:#ffffff80;font-size:14px;font-weight:800;z-index:6}
+.section-num{position:absolute;top:18px;right:22px;color:#fdba74;font-weight:900;font-size:18px;z-index:6}
+@media(max-width:800px){.slide{padding:60px 22px 100px}.grid2,.grid3{grid-template-columns:1fr}.choice{grid-template-columns:1fr}.controls{bottom:12px}.brand{font-size:12px}}
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
+<div class="brand">☀️ בית ספר אור · אורח חיים בריא</div>
+<div id="slides"></div>
+<div class="notes" id="notes"></div>
+<div class="controls">
+  <div class="group">
+    <button id="prev" title="הקודם">←</button>
+    <span class="counter" id="counter">1 / 32</span>
+    <button id="next" title="הבא">→</button>
+  </div>
+  <div class="group">
+    <a class="ctrl" href="lesson-pressure.html">חזרה לשיעור</a>
+    <button id="notesBtn" title="הערות למורה">הערות</button>
+    <button id="fullBtn" title="מסך מלא">מסך מלא</button>
+  </div>
+</div>
+<div class="progress"><div id="bar"></div></div>
+</div>
+<script>
+const slides=[
+{n:"",k:"שיעור שביעי",t:"מעבדת הלחץ והביצועים",b:"מה קורה כשמשהו באמת חשוב לנו — ואיך נשארים יעילים גם תחת לחץ?",p:["לחץ","נשימה","דיבור עצמי","RESET","Choking"],note:"פתיחה: לא להסביר עדיין מהו לחץ. רק לשאול: מתי אתם מרגישים שהגוף “עולה הילוך” לפני ביצוע?",layout:"title"},
+{n:"",k:"מטרת השיעור",t:"לא להעלים לחץ — ללמוד לתפקד בתוכו",cols:[["מה נבדוק?","מה הגוף עושה כשהביצוע חשוב","מתי לחץ עוזר ומתי מפריע","למה לפעמים “נחנקים”","איך חוזרים אחרי טעות"],["מה ניקח לחיים?","נשימה ככלי לוויסות","מילת ביצוע קצרה","RESET אחרי טעות","שגרת ביצוע לפני רגע חשוב"]],foot:"ניסוי • מה קרה לי • למה זה חשוב • כלי לחיים",note:"דגש: לא להציג לחץ כטוב/רע. אותו לחץ יכול להשפיע אחרת לפי האדם, המשימה והניסיון.",layout:"cols"},
+{n:"1",k:"לחץ אמיתי",t:"אותה משימה — מצב אחר",cols:[["סבב א׳","קליעת כדור נייר לפח","ניסיון רגיל","בלי ספירה, בלי ניקוד ובלי לחץ מיוחד"],["סבב ב׳","אותה משימה בדיוק — אבל עכשיו:","ספירה לאחור • ניקוד • כולם מסתכלים • ניסיון אחד"]],foot:"טוויסט: אם מישהו קולע בזריקה לאחור — כל הכיתה מקבלת שיעור חופשי.",note:"הבטחה רק אם אפשר לקיים. אם לא — להחליף בעשר דקות משחק/פעילות חופשית. אחרי הסבב לא לנתח תוצאה; לשאול על הגוף והמחשבות.",layout:"cols"},
+{n:"1",k:"מפצחים",t:"מה השתנה בגוף שלכם — למרות שהמשימה כמעט לא השתנתה?",cards:[["דופק","מהיר יותר?"],["נשימה","שטוחה / מהירה?"],["שרירים","מתח בידיים?"],["מחשבות","“אל תפשל”"],["קהל","כולם מסתכלים"]],note:"תשובות אפשריות: דופק, נשימה, רעד, מתח, מהירות יתר, מחשבות, מודעות לקהל. אין צורך שכל תלמיד ירגיש את הכול.",layout:"cards"},
+{n:"2",k:"לחץ תמיד רע?",t:"לפעמים קצת לחץ דווקא מחדד",cols:[["סבב א׳","העבירו כדור מיד ליד עשרים פעמים בקצב רגיל."],["סבב ב׳","יש לכם חמש־עשרה שניות.","נסו לשבור את השיא שלכם."]],foot:"מה הלחץ הוסיף לכם — אם בכלל? חדות • אנרגיה • רצינות • מהירות • או דווקא בלבול",note:"הדגש הוא שהתגובה אינה אחידה. לא להציג עקומת U הפוכה כחוק אוניברסלי; להשתמש בה רק כרעיון פתיחה.",layout:"cols"},
+{n:"2",k:"מסקנה ראשונה",t:"לא כל לחץ הוא אויב",flow:["מעט מדי","אדישות","מתאים למשימה","חדות","יותר מדי","עומס"],foot:"השאלה החשובה: האם המצב שלי מתאים למה שאני צריך לבצע עכשיו?",note:"להדגיש: “מתאים למשימה” ולא “רגוע”. דיוק לעומת ספרינט הם דוגמאות טובות לצרכי עוררות שונים.",layout:"flow"},
+{n:"3",k:"Choking",t:"למה אנחנו לפעמים מפריעים לעצמנו?",cols:[["מסלול ראשון — יותר מדי שליטה","אני מתחיל לעקוב במודע אחרי כל פרט במיומנות שכבר התאמנתי עליה."],["מסלול שני — הקשב נחטף","קהל, תוצאה, פחד מטעות ודאגות לוקחים קשב מהפעולה עצמה."]],foot:"יותר מחשבה ≠ בהכרח ביצוע טוב יותר",note:"חיבור ל־Choke של Sian Beilock ולמחקר על explicit monitoring / distraction. לא להציג מנגנון יחיד לכל מצבי choking.",layout:"cols"},
+{n:"3",k:"ניסוי שלישי",t:"כדרור רגיל מול “תחשוב על הכול”",cols:[["פעם ראשונה","“תכדרר רגיל.”","בלי הערות נוספות."],["פעם שנייה","“שים לב לזווית המרפק, לכל אצבע, לברך, לקצב… ואל תטעה.”"]],foot:"כלי: לבחור רמז ביצוע אחד — “מטרה”, “קצב”, “שחרור”, “הבא”.",note:"לשאול: האם הפעולה הרגישה טבעית יותר או פחות? לא חייב להיות הבדל לכל תלמיד.",layout:"cols"},
+{n:"4",k:"אחרי טעות",t:"הטעות שכבר נגמרה",cols:[["אחרי החטאה — גרסה א׳","“אל תחטיא שוב.”","“זוכר מה עשית עכשיו?”"],["אחרי החטאה — גרסה ב׳","“הבא.”","“תכוון למרכז.”"]],foot:"הטעות הראשונה כבר קרתה. השאלה היא אם היא תקבל גם את המהלך הבא.",note:"חיבור לחיים: במבחן — נתקעת? סמן, עבור, חזור. בספורט — החטאה ואז ספרינט להגנה.",layout:"cols"},
+{n:"5",k:"נשימה ככלי לוויסות",t:"שלושים שניות רגיל — ואז חמש עד שש נשימות איטיות ונוחות",flow:["שאיפה רגועה","נשיפה איטית","בלי למלא בכוח"],foot:"מה השתנה — אם בכלל?",note:"תשובות לגיטימיות: פחות מתח, דופק איטי יותר, יותר ריכוז, לא השתנה כלום, היה מוזר. לא כולם צריכים להרגיש אותו דבר.",layout:"flow"},
+{n:"5",k:"נשימה",t:"כלי אפשרי — לא כפתור קסם",cols:[["מה אפשר לומר","נשימה איטית יכולה להשפיע על קצב הנשימה, הדופק והוויסות האוטונומי."],["מה לא צריך לומר","“יותר חמצן תמיד טוב”","“נשיפה ארוכה היא חוק”","“כולם יירגעו אותו דבר”"]],foot:"לפני רגע מלחיץ: כמה נשימות איטיות, ואז — “מה הפעולה הבאה שלי?”",note:"דיוק: סקירות תומכות בהשפעות של slow-paced breathing על HR/HRV; אין צורך ללמד יחס נשיפה:שאיפה מסוים כחוק.",layout:"cols"},
+{n:"6",k:"מיתוס או אמת?",t:"משחק קצר: בוחרים צד, מנמקים ואז חושפים תשובה",cols:[["מיתוס","עמדו בצד אחד של החדר"],["אמת","עמדו בצד השני של החדר"]],foot:"אחרי הבחירה: מסבירים במשפט אחד — ואז חושפים תשובה.",note:"לשמור על קצב: עשרים עד שלושים שניות לכל טענה, ואז תשובה קצרה.",layout:"cols"},
+{n:"6",k:"מיתוס או אמת?",t:"“לפני מצב מלחיץ צריך לקחת נשימה ענקית.”",choices:true,note:"בחרו צד לפני שעוברים לשקופית הבאה.",layout:"myth"},
+{n:"6",k:"תשובה",t:"לא בהכרח",b:"נשימות גדולות ומהירות שוב ושוב עלולות להפוך לנשימת יתר. עדיף ללמד נשימה רגועה ואיטית.",note:"נשימה גדולה אחת אינה “מסוכנת”; הבעיה היא overbreathing חוזר ומהיר.",layout:"answer"},
+{n:"6",k:"מיתוס או אמת?",t:"“ככל שאכניס יותר חמצן — אבצע טוב יותר.”",choices:true,note:"בחרו צד לפני שעוברים לשקופית הבאה.",layout:"myth"},
+{n:"6",k:"תשובה",t:"מיתוס",b:"נשימה אינה “מילוי אינסופי” של הגוף בחמצן. ההשפעה של נשימה איטית קשורה גם לוויסות קצב הנשימה והמערכת האוטונומית.",note:"לשמור את ההסבר פשוט; אין צורך להיכנס לפיזיולוגיה עמוקה של המוגלובין בכיתה.",layout:"answer"},
+{n:"6",k:"מיתוס או אמת?",t:"“אם אני מתנשף באימון — סימן שאני לא בכושר.”",choices:true,note:"בחרו צד לפני שעוברים לשקופית הבאה.",layout:"myth"},
+{n:"6",k:"תשובה",t:"מיתוס",b:"גם ספורטאי מאומן מתנשף כשעצימות המאמץ גבוהה. הגוף צריך להגביר אוורור במאמץ.",note:"חיבור לכדורסל: גם שחקן בכושר גבוה אחרי רצף ספרינטים ינשום בכבדות.",layout:"answer"},
+{n:"6",k:"מיתוס או אמת?",t:"“אם אני לחוץ לפני משחק — סימן שאני לא מוכן.”",choices:true,note:"בחרו צד לפני שעוברים לשקופית הבאה.",layout:"myth"},
+{n:"6",k:"תשובה",t:"מיתוס",b:"לחץ יכול להופיע דווקא משום שהאירוע חשוב. השאלה היא איך אני מתפקד בתוכו.",note:"דוגמה: שחקן מקצועי יכול להיות לחוץ לפני גמר ועדיין להיות מוכן מאוד.",layout:"answer"},
+{n:"6",k:"מיתוס או אמת?",t:"“המטרה לפני ביצוע חשוב היא להיות רגוע ככל האפשר.”",choices:true,note:"בחרו צד לפני שעוברים לשקופית הבאה.",layout:"myth"},
+{n:"6",k:"תשובה",t:"מיתוס",b:"לפני זריקה מדויקת אולי נרצה פחות עוררות. לפני ספרינט או מאבק על ריבאונד — ייתכן שנרצה יותר אנרגיה.",note:"זהו המסר המרכזי: לא “רגוע”, אלא “מתאים למשימה”.",layout:"answer"},
+{n:"7",k:"דיבור עצמי",t:"אל תיתן לעצמך נאום — תן לעצמך הוראה",cols:[["לפני ניסיון א׳","“אל תפספס.”","“כולם מסתכלים.”","“זו זריקה חשובה.”"],["לפני ניסיון ב׳","רק מילת ביצוע אחת:","“מטרה” / “שחרור” / “קצב”"]],foot:"ברגע לחץ — רמז קצר ורלוונטי עדיף על הצפה של מחשבות.",note:"לא לטעון שחשיבה חיובית תמיד משפרת ביצוע. הדגש הוא cue קצר שמכוון קשב.",layout:"cols"},
+{n:"8",k:"RESET",t:"אחרי טעות — חוזרים לפעולה",flow:["עצור","נשימה","מילת מפתח","פעולה הבאה"],foot:"החטאה • נשיפה • “הבא” • ספרינט להגנה",note:"שאלה: מה יותר חשוב — לא לטעות בכלל, או לחזור מהר אחרי טעות? תשובה: ביצוע אמיתי כולל טעויות; המטרה היא לקצר את זמן ההשפעה שלהן.",layout:"flow"},
+{n:"9",k:"שגרת ביצוע",t:"מה עושים לפני הרגע החשוב?",flow:["עמדה","נשימה","מילת מפתח","ביצוע"],foot:"ברגע מלחיץ — אל תנסה להרגיש מושלם. תתחיל מהשגרה שלך.",note:"פעילות: ניסיון אחד בלי שגרה, ניסיון שני עם שגרה. לא להבטיח שיפור מיידי בתוצאה; לשאול מה הרגיש יותר מסודר.",layout:"flow"},
+{n:"10",k:"גמר המעבדה",t:"להוריד, להעלות או להשאיר?",cards:[["מצב ראשון","נותרו שמונה שניות. החטאת שתי זריקות. עכשיו אתה על קו העונשין."],["מצב שני","דקה לפני תחילת משחק ואתה ישנוני ואדיש."],["מצב שלישי","המבחן מתחיל ואתה מרגיש שאתה בפאניקה."]],foot:"להוריד מעט | להעלות | להשאיר",note:"לתת עשרים עד שלושים שניות לנימוק בזוגות לפני שעוברים לשני המצבים הבאים.",layout:"cards"},
+{n:"10",k:"גמר המעבדה",t:"עוד שני מצבים",cards:[["מצב רביעי","אתה בחימום, אבל הראש בכלל במקום אחר ואין לך אנרגיה."],["מצב חמישי","אתה באמצע ריב ומרגיש שאתה עומד להתפוצץ."]],foot:"אותה שאלה: מה הגוף והקשב צריכים עכשיו?",note:"מצב רביעי נועד להראות שלפעמים צריך דווקא להעלות עוררות. מצב חמישי מחבר את הכלי לחיים מחוץ לספורט.",layout:"cards"},
+{n:"10",k:"גמר המעבדה",t:"תשובות אפשריות — שלושת המצבים הראשונים",cards:[["מצב ראשון — להוריד מעט","פחות רעש ועוררות, שגרה קצרה ורמז ביצוע. לא להפוך לאדיש."],["מצב שני — להעלות","תנועה, חימום, קצב, מטרה ברורה ואנרגיה."],["מצב שלישי — להוריד מעט","נשימה רגועה ואז פעולה אחת: לקרוא את השאלה הראשונה."]],foot:"אין תשובה מוחלטת לכל אדם — המטרה היא לזהות מה המשימה דורשת.",note:"להדגיש: אלה תשובות אפשריות, לא אבחון ולא חוק אחיד לכולם.",layout:"cards"},
+{n:"10",k:"גמר המעבדה",t:"תשובות אפשריות — שני המצבים הנוספים",cards:[["מצב רביעי — להעלות","תנועה, קצב, חימום פעיל ומטרה ברורה יכולים לעזור להעלות מעורבות ועוררות."],["מצב חמישי — להוריד מעט","עצירה, נשימה ובחירת המשפט הבא לפני תגובה עשויות לעזור לא להגיב מתוך הצפה."]],foot:"לא תמיד צריך להירגע — צריך להגיע למצב שמתאים למה שעומדים לעשות.",note:"חיבור לחיים: בריב המטרה אינה “להעלים רגש”, אלא ליצור רגע קטן בין הגירוי לתגובה.",layout:"cards"},
+{n:"",k:"כלי לחיים",t:"שני רצפים פשוטים",cols:[["לפני ביצוע","עמדה","נשימה","מילת מפתח","ביצוע"],["אחרי טעות","עצור","נשימה","מילת מפתח","הפעולה הבאה"]],foot:"ספורט • מבחן • הצגה • שיחה מלחיצה",note:"לבקש מכל תלמיד לבחור מילת מפתח אחת שמתאימה לו ולכתוב אותה.",layout:"cols"},
+{n:"",k:"מה לקחת מהשיעור?",t:"המטרה היא לא תמיד להירגע — אלא להגיע למצב שמתאים למשימה",cards:[["לחץ","יכול לעזור או להפריע"],["מחשבה","יותר מחשבה לא תמיד משפרת את הביצוע"],["טעות","לא חייבת לקבל את המהלך הבא"],["נשימה","כלי אחד לוויסות — לא קסם"],["שגרה","מפחיתה רעש ומחזירה לפעולה"]],note:"סיום: לשאול כל תלמיד “מה הכלי האחד שאתה באמת מוכן לנסות השבוע?”",layout:"cards"},
+{n:"",k:"למורה",t:"מקורות וביסוס",cols:[["ספרים","Foundations of Sport and Exercise Psychology","Choke — Sian Beilock","The Inner Game of Tennis — W. Timothy Gallwey"],["מחקר","ביצוע תחת לחץ בספורט","התערבויות נגד choking","self-talk וביצוע","pre-performance routines","slow-paced breathing ו־HR/HRV"]],foot:"הפעילויות בשיעור הן הדגמות חינוכיות — לא מבחן חרדה ולא אבחון פסיכולוגי.",note:"מקורות באתר כוללים PubMed IDs: 41951087, 42271117, 26167788, 35967624, 35623448, 36871835.",layout:"cols"}
+];
+
+function esc(s){return String(s??"").replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[m]))}
+function renderSlide(s,i){
+ const el=document.createElement("section"); el.className="slide"+(i===0?" active":""); el.dataset.i=i;
+ let h=s.n?'<div class="section-num">שלב '+esc(s.n)+'</div>':"";
+ h+='<div class="kicker">'+esc(s.k||"")+'</div>';
+ if(s.layout==="title"){h+='<h1>'+esc(s.t)+'</h1><p>'+esc(s.b)+'</p><div class="pillrow">'+s.p.map(x=>'<span class="pill">'+esc(x)+'</span>').join("")+'</div>'}
+ else if(s.layout==="cols"){h+='<h2>'+esc(s.t)+'</h2><div class="grid2">'+s.cols.map(c=>'<div class="card"><strong>'+esc(c[0])+'</strong>'+c.slice(1).map(x=>'<p>'+esc(x)+'</p>').join("")+'</div>').join("")+'</div>'+(s.foot?'<p class="small">'+esc(s.foot)+'</p>':"")}
+ else if(s.layout==="cards"){h+='<h2>'+esc(s.t)+'</h2><div class="grid3">'+s.cards.map(c=>'<div class="card"><strong>'+esc(c[0])+'</strong><p>'+esc(c[1])+'</p></div>').join("")+'</div>'+(s.foot?'<p class="small">'+esc(s.foot)+'</p>':"")}
+ else if(s.layout==="flow"){h+='<h2>'+esc(s.t)+'</h2><div class="flow">'+s.flow.map((x,j)=>'<span class="node">'+esc(x)+'</span>'+(j<s.flow.length-1?'<span class="arrow">←</span>':"")).join("")+'</div>'+(s.foot?'<p class="small">'+esc(s.foot)+'</p>':"")}
+ else if(s.layout==="myth"){h+='<div class="myth">'+esc(s.t)+'</div><div class="choice"><div>מיתוס</div><div>אמת</div><div>נמקו</div></div>'}
+ else if(s.layout==="answer"){h+='<div class="answer">'+esc(s.t)+'</div><p class="big-quote">'+esc(s.b)+'</p>'}
+ el.innerHTML=h; return el;
+}
+const holder=document.getElementById("slides"); slides.forEach((s,i)=>holder.appendChild(renderSlide(s,i)));
+let idx=0; const noteEl=document.getElementById("notes"),count=document.getElementById("counter"),bar=document.getElementById("bar");
+function show(i){idx=Math.max(0,Math.min(slides.length-1,i));document.querySelectorAll(".slide").forEach((x,j)=>x.classList.toggle("active",j===idx));count.textContent=(idx+1)+" / "+slides.length;bar.style.width=((idx+1)/slides.length*100)+"%";noteEl.textContent=slides[idx].note||"";noteEl.classList.remove("show");}
+document.getElementById("next").onclick=()=>show(idx+1);document.getElementById("prev").onclick=()=>show(idx-1);
+document.getElementById("notesBtn").onclick=()=>noteEl.classList.toggle("show");
+document.getElementById("fullBtn").onclick=()=>{if(!document.fullscreenElement)document.documentElement.requestFullscreen?.();else document.exitFullscreen?.()};
+document.addEventListener("keydown",e=>{if(["ArrowRight","PageDown"," ","Enter"].includes(e.key)){e.preventDefault();show(idx+1)}else if(["ArrowLeft","PageUp","Backspace"].includes(e.key)){e.preventDefault();show(idx-1)}else if(e.key.toLowerCase()==="f"){document.getElementById("fullBtn").click()}else if(e.key.toLowerCase()==="n"){document.getElementById("notesBtn").click()}else if(e.key==="Home"){show(0)}else if(e.key==="End"){show(slides.length-1)}});
+show(0);
+</script>
+</body>
+</html>
