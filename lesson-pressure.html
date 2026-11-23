@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>שיעור 7 — מעבדת הלחץ והביצועים</title>
 <style>
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}.wrap{max-width:980px;margin:auto;padding:16px 14px 90px}.top{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:8px;min-height:48px;padding:6px 0;background:#f5f7fbee;backdrop-filter:blur(10px)}.back,.home{width:38px;height:38px;border-radius:12px;background:#fff;color:#7c3aed;display:grid;place-items:center;text-decoration:none;font-size:20px;box-shadow:0 4px 16px #14213d18}.hero{margin-top:16px;background:linear-gradient(135deg,#111827,#7c3aed 52%,#ea580c);color:#fff;padding:30px;border-radius:30px;box-shadow:0 16px 42px #14213d22}.hero small{opacity:.9;font-weight:800}.hero h1{margin:8px 0 10px;font-size:clamp(32px,7vw,52px);line-height:1.05}.hero p{line-height:1.7;margin:0;max-width:800px}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.chip{background:#ffffff20;border:1px solid #ffffff33;padding:8px 12px;border-radius:999px;font-weight:800}.card{background:#fff;border-radius:24px;padding:22px;margin:14px 0;box-shadow:0 6px 24px #14213d0b;border:1px solid #edf1f7}.card h2{margin:0 0 12px;font-size:25px}.card h3{margin:18px 0 8px;font-size:19px;color:#7c3aed}.card p,.card li{line-height:1.75;color:#344054}.challenge{border:2px solid #ede9fe;background:linear-gradient(180deg,#fff,#fbfaff)}.challenge-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.num{font-size:14px;font-weight:900;background:#172033;color:#fff;padding:8px 12px;border-radius:999px}.tag{font-size:13px;font-weight:900;color:#9a3412;background:#fff7ed;padding:8px 12px;border-radius:999px}.board{font-size:24px;font-weight:900;line-height:1.55;color:#6d28d9;background:#f5f3ff;padding:16px;border-radius:18px;margin:12px 0}.quote{font-weight:900;font-size:18px;color:#172033;background:#f8fafc;border-right:4px solid #7c3aed;padding:14px 16px;border-radius:14px;margin:14px 0}.teacher{background:#fff7ed;border-right:4px solid #f59e0b;padding:13px 15px;border-radius:14px;margin:12px 0;line-height:1.7}.life{background:#eff6ff;border-right:4px solid #2563eb;padding:13px 15px;border-radius:14px;margin:12px 0;line-height:1.7}.research{background:#f0fdf4;border-right:4px solid #16a34a;padding:13px 15px;border-radius:14px;margin:12px 0;line-height:1.7}.question{background:#faf5ff;border-right:4px solid #9333ea;padding:13px 15px;border-radius:14px;margin:12px 0;line-height:1.7}.steps{display:grid;gap:9px}.step{background:#f8fafc;padding:12px 14px;border-radius:14px;font-weight:800;line-height:1.6}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.mini{background:#f8fafc;border-radius:16px;padding:15px}.mini h4{margin:0 0 6px}.btn{border:0;border-radius:14px;padding:12px 16px;font-family:inherit;font-weight:900;font-size:15px;cursor:pointer}.btn-primary{background:#7c3aed;color:#fff}.btn-orange{background:#ea580c;color:#fff}.btn-light{background:#eef2f7;color:#172033}.actions{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.myth{border:1px solid #e5e7eb;border-radius:18px;padding:16px;margin:10px 0;background:#fff}.myth h4{margin:0 0 10px;font-size:18px}.answer{display:none;margin-top:12px;background:#f8fafc;border-radius:14px;padding:12px;line-height:1.7}.answer.show{display:block}.scenario{border:1px solid #e5e7eb;border-radius:18px;padding:16px;margin:12px 0;background:#fff}.scenario h4{margin:0 0 10px}.choice{display:flex;gap:8px;flex-wrap:wrap}.choice button{border:1px solid #d8dee8;background:#fff;border-radius:12px;padding:9px 12px;font-family:inherit;font-weight:800;cursor:pointer}.feedback{display:none;margin-top:10px;padding:11px 13px;border-radius:12px;background:#f8fafc;line-height:1.6}.feedback.show{display:block}.reset{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}.reset div{background:#172033;color:#fff;border-radius:16px;padding:16px;text-align:center;font-weight:900}.summary{background:#172033;color:#fff}.summary h2,.summary p,.summary li{color:#fff}.source{font-size:13px;color:#667085;line-height:1.7}.source a{color:#245fc0}.warning{background:#fff1f2;border-right:4px solid #e11d48;padding:13px 15px;border-radius:14px;margin:12px 0;line-height:1.7}.deep{background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:14px 16px;margin:12px 0;line-height:1.75}.deep b{color:#5b21b6}.basket{background:#fff7ed;border:1px solid #fed7aa;border-radius:16px;padding:14px 16px;margin:12px 0;line-height:1.75}@media(max-width:720px){.two{grid-template-columns:1fr}.reset{grid-template-columns:1fr 1fr}.card{padding:18px}.hero{padding:22px}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}.wrap{max-width:1000px;margin:auto;padding:16px 14px 90px}.top{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:8px;min-height:48px;padding:6px 0;background:#f5f7fbee;backdrop-filter:blur(10px)}.back,.home{width:38px;height:38px;border-radius:12px;background:#fff;color:#7c3aed;display:grid;place-items:center;text-decoration:none;font-size:20px;box-shadow:0 4px 16px #14213d18}.hero{margin-top:16px;background:linear-gradient(135deg,#111827,#7c3aed 52%,#ea580c);color:#fff;padding:30px;border-radius:30px;box-shadow:0 16px 42px #14213d22}.hero small{opacity:.9;font-weight:800}.hero h1{margin:8px 0 10px;font-size:clamp(32px,7vw,52px);line-height:1.05}.hero p{line-height:1.7;margin:0;max-width:820px}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.chip{background:#ffffff20;border:1px solid #ffffff33;padding:8px 12px;border-radius:999px;font-weight:800}.card{background:#fff;border-radius:24px;padding:22px;margin:14px 0;box-shadow:0 6px 24px #14213d0b;border:1px solid #edf1f7}.card h2{margin:0 0 12px;font-size:25px}.card h3{margin:18px 0 8px;font-size:19px;color:#7c3aed}.card p,.card li{line-height:1.75;color:#344054}.challenge{border:2px solid #ede9fe;background:linear-gradient(180deg,#fff,#fbfaff)}.challenge-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.num{font-size:14px;font-weight:900;background:#172033;color:#fff;padding:8px 12px;border-radius:999px}.tag{font-size:13px;font-weight:900;color:#9a3412;background:#fff7ed;padding:8px 12px;border-radius:999px}.board{font-size:24px;font-weight:900;line-height:1.55;color:#6d28d9;background:#f5f3ff;padding:16px;border-radius:18px;margin:12px 0}.quote{font-weight:900;font-size:18px;color:#172033;background:#f8fafc;border-right:4px solid #7c3aed;padding:14px 16px;border-radius:14px;margin:14px 0}.teacher{background:#fff7ed;border-right:4px solid #f59e0b;padding:13px 15px;border-radius:14px;margin:12px 0;line-height:1.7}.life{background:#eff6ff;border-right:4px solid #2563eb;padding:13px 15px;border-radius:14px;margin:12px 0;line-height:1.7}.research{background:#f0fdf4;border-right:4px solid #16a34a;padding:13px 15px;border-radius:14px;margin:12px 0;line-height:1.7}.question{background:#faf5ff;border-right:4px solid #9333ea;padding:13px 15px;border-radius:14px;margin:12px 0;line-height:1.7}.warning{background:#fff1f2;border-right:4px solid #e11d48;padding:13px 15px;border-radius:14px;margin:12px 0;line-height:1.7}.deep{background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:14px 16px;margin:12px 0;line-height:1.75}.deep b{color:#5b21b6}.basket{background:#fff7ed;border:1px solid #fed7aa;border-radius:16px;padding:14px 16px;margin:12px 0;line-height:1.75}.steps{display:grid;gap:9px}.step{background:#f8fafc;padding:12px 14px;border-radius:14px;font-weight:800;line-height:1.6}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.mini{background:#f8fafc;border-radius:16px;padding:15px}.mini h4{margin:0 0 6px}.btn{border:0;border-radius:14px;padding:12px 16px;font-family:inherit;font-weight:900;font-size:15px;cursor:pointer}.btn-primary{background:#7c3aed;color:#fff}.btn-light{background:#eef2f7;color:#172033}.actions{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.myth{border:1px solid #e5e7eb;border-radius:18px;padding:16px;margin:10px 0;background:#fff}.myth h4{margin:0 0 10px;font-size:18px}.answer{display:none;margin-top:12px;background:#f8fafc;border-radius:14px;padding:12px;line-height:1.7}.answer.show{display:block}.scenario{border:1px solid #e5e7eb;border-radius:18px;padding:16px;margin:12px 0;background:#fff}.scenario h4{margin:0 0 10px}.choice{display:flex;gap:8px;flex-wrap:wrap}.choice button{border:1px solid #d8dee8;background:#fff;border-radius:12px;padding:9px 12px;font-family:inherit;font-weight:800;cursor:pointer}.feedback{display:none;margin-top:10px;padding:11px 13px;border-radius:12px;background:#f8fafc;line-height:1.6}.feedback.show{display:block}.reset{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}.reset div{background:#172033;color:#fff;border-radius:16px;padding:16px;text-align:center;font-weight:900}.stress-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.stress-type{border:1px solid #e2e8f0;border-radius:18px;padding:16px;background:#fff}.stress-type h4{margin:0 0 8px;color:#6d28d9;font-size:18px}.control{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.control>div{border-radius:18px;padding:17px;min-height:150px}.control .now{background:#ecfdf5;border:1px solid #bbf7d0}.control .influence{background:#eff6ff;border:1px solid #bfdbfe}.control .outside{background:#f8fafc;border:1px solid #e2e8f0}.toolgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.toolbox{border-radius:18px;padding:16px;background:#111827;color:#fff}.toolbox h4{margin:0 0 8px;color:#fdba74}.toolbox p{color:#e5e7eb;margin:6px 0}.breath-stage{background:linear-gradient(135deg,#0f172a,#312e81);color:#fff;border-radius:22px;padding:20px;margin:14px 0}.breath-stage h3,.breath-stage p{color:#fff}.breath-display{font-size:clamp(32px,7vw,60px);font-weight:900;text-align:center;padding:26px 10px}.breath-timer{text-align:center;font-size:18px;font-weight:800;color:#c4b5fd}.summary{background:#172033;color:#fff}.summary h2,.summary p,.summary li{color:#fff}.source{font-size:13px;color:#667085;line-height:1.7}.source a{color:#245fc0}@media(max-width:760px){.two,.three,.stress-grid,.control,.toolgrid{grid-template-columns:1fr}.reset{grid-template-columns:1fr 1fr}.card{padding:18px}.hero{padding:22px}}
 </style>
 </head>
 <body>
@@ -15,225 +15,206 @@
 <section class="hero">
 <small>אורח חיים בריא והקשר בין ספורט להצלחה • שיעור 7</small>
 <h1>מעבדת הלחץ והביצועים</h1>
-<p>מה קורה לגוף ולמוח כשמשהו באמת חשוב לנו — ואיך אפשר להישאר יעילים גם כשיש קהל, זמן, טעות, מבחן או זריקת עונשין?</p>
-<div class="chips"><span class="chip">לחץ</span><span class="chip">עוררות</span><span class="chip">Choking</span><span class="chip">נשימה</span><span class="chip">דיבור עצמי</span><span class="chip">RESET</span></div>
+<p>מה קורה לגוף ולמוח כשמשהו באמת חשוב לנו — ואיך נשארים יעילים כשיש קהל, זמן, טעות, מבחן, ויכוח או זריקת עונשין?</p>
+<div class="chips"><span class="chip">לחץ</span><span class="chip">עוררות</span><span class="chip">Choking</span><span class="chip">נשימה</span><span class="chip">דיבור עצמי</span><span class="chip">RESET</span><span class="chip">שליטה</span></div>
 </section>
 
 <section class="card" id="presentation-download">
 <h2>📊 מצגת השיעור</h2>
-<p>המצגת זמינה להצגה ישירה באתר — מסך מלא, חצים במקלדת והערות למורה.</p>
-<div class="actions">
-<a class="btn btn-primary" style="text-decoration:none;display:inline-block" href="presentation-pressure.html">▶ הצג מצגת</a>
-<a class="btn btn-light" style="text-decoration:none;display:inline-block" href="downloads/pressure-performance-lab-presentation.pptx" download>⬇️ הורדת PPTX</a>
-</div>
+<p>המצגת מוצגת ישירות באתר, כולל כל החומר המורחב שמופיע אחרי RESET.</p>
+<div class="actions"><a class="btn btn-primary" style="text-decoration:none;display:inline-block" href="presentation-pressure.html">▶ הצג מצגת</a></div>
 </section>
 
 <section class="card">
 <h2>העיקרון של השיעור</h2>
-<div class="board">המטרה היא לא להעלים לחץ. המטרה היא לדעת לתפקד כשהוא מגיע.</div>
-<p>בכל חלק קודם חווים משהו, אחר כך מפרקים אותו, ורק אז מחברים לספורט ולחיים. המטרה אינה ללמד “איך לא להילחץ”, אלא לזהות מה הלחץ עושה לגוף, לקשב ולהחלטות — ולבחור תגובה יעילה יותר.</p>
-<div class="deep"><b>שלוש שכבות שנבדוק לאורך השיעור:</b> <b>גוף</b> — דופק, נשימה ומתח; <b>קשב</b> — במה אני מתמקד ומה מסיח אותי; <b>משמעות</b> — מה אני אומר לעצמי על הרגע: “אתגר” או “אסון”.</div>
-<div class="teacher"><b>למורה:</b> לא להפוך לחץ ל״טוב״ או ״רע״. אותה רמת עוררות יכולה לעזור במשימה אחת ולהפריע באחרת, וגם להשפיע אחרת על אנשים שונים.</div>
+<div class="board">המטרה היא לא להעלים לחץ. המטרה היא לדעת לזהות אותו, לווסת אותו ולפעול בתוכו.</div>
+<p>בכל חלק קודם חווים, אחר כך מפרקים, ורק אז מחברים לספורט ולחיים. לאורך השיעור בודקים שלוש שכבות: <b>הגוף</b>, <b>הקשב</b> ו<b>המשמעות שאנחנו נותנים לרגע</b>.</p>
+<div class="teacher"><b>למורה:</b> לא להפוך לחץ ל״טוב״ או ״רע״. אותה עוררות יכולה לעזור במשימה אחת ולהפריע באחרת, וגם להשפיע אחרת על אנשים שונים.</div>
 </section>
 
-<section class="card">
-<h2>ציוד וזמן</h2>
-<div class="two"><div class="mini"><b>זמן:</b> 75–90 דקות</div><div class="mini"><b>ציוד:</b> כדורי נייר / כדור קטן, פח או מטרה, טיימר ולוח</div><div class="mini"><b>מבנה:</b> ניסוי → דיון קצר → כלי</div><div class="mini"><b>קהל:</b> מתאים במיוחד לכיתה ספורטיבית</div></div>
-</section>
+<section class="card"><h2>ציוד וזמן</h2><div class="two"><div class="mini"><b>זמן:</b> 90–110 דקות בגרסה המלאה</div><div class="mini"><b>ציוד:</b> כדורי נייר / כדור קטן, פח או מטרה, טיימר ולוח</div><div class="mini"><b>מבנה:</b> ניסוי → פירוק → כלי → יישום</div><div class="mini"><b>אפשרות קיצור:</b> לדלג על חלק מהתרחישים ב־8א–8ה</div></div></section>
 
 <section class="card challenge">
-<div class="challenge-head"><span class="num">1</span><span class="tag">לחץ אמיתי</span></div>
-<h2>אותה משימה — מצב אחר</h2>
-<p><b>סבב א׳:</b> כל תלמיד מקבל ניסיון רגיל לקלוע כדור נייר לפח.</p>
-<p><b>סבב ב׳:</b> אותה משימה, אבל עכשיו יש ספירה לאחור, ניקוד, כולם מסתכלים, ויש ניסיון אחד בלבד.</p>
+<div class="challenge-head"><span class="num">1</span><span class="tag">לחץ אמיתי</span></div><h2>אותה משימה — מצב אחר</h2>
+<p><b>סבב א׳:</b> ניסיון רגיל לקלוע כדור נייר לפח.</p><p><b>סבב ב׳:</b> אותה משימה עם ספירה לאחור, ניקוד, קהל וניסיון אחד בלבד.</p>
 <div class="quote">טוויסט: “אם מישהו קולע בזריקה לאחור — כל הכיתה מקבלת שיעור חופשי.”</div>
-<div class="warning"><b>למורה:</b> להשתמש בתנאי הזה רק אם באמת אפשר לעמוד בו. אחרת להחליף ב־10 דקות משחק/פעילות חופשית.</div>
-<div class="question"><b>שאלה:</b> מה השתנה בגוף שלכם למרות שהמשימה עצמה כמעט לא השתנתה?</div>
+<div class="warning"><b>למורה:</b> להשתמש בפרס רק אם אפשר לקיים אותו. אחרת להחליף בפעילות חופשית קצרה.</div>
+<div class="question"><b>שאלה:</b> מה השתנה בגוף למרות שהמשימה כמעט לא השתנתה?</div>
 <div class="teacher"><b>קווים:</b> דופק, נשימה, מתח בידיים, רעד, מחשבות, מהירות יתר, רצון לא לפשל, מודעות לקהל.</div>
-<div class="board">הלחץ לא שינה רק את המשימה — הוא שינה את המצב שבו ביצענו אותה.</div>
-<div class="deep"><b>מה בעצם יצר את הלחץ?</b> לא הכדור ולא הפח. הוספנו <b>חשיבות לתוצאה</b>, <b>הערכה של אחרים</b>, <b>זמן</b>, <b>אי־ודאות</b> ותחושה של “יש לי רק הזדמנות אחת”. אלה מקורות לחץ נפוצים גם בספורט וגם בחיים.</div>
-<div class="basket"><b>כדורסל:</b> אותה זריקת עונשין יכולה להרגיש אחרת לחלוטין באימון ריק ובשוויון כשנותרו שמונה שניות. התנועה דומה — המשמעות של הרגע שונה.</div>
-<div class="question"><b>שאלת המשך:</b> מה היה מלחיץ יותר — הקהל, הפרס, הניסיון היחיד או הפחד לאכזב את הכיתה? <br><b>קווים למורה:</b> אין תשובה אחת. המטרה היא לזהות שלחץ יכול להגיע ממקורות שונים אצל אנשים שונים.</div>
+<div class="deep"><b>מה יצר את הלחץ?</b> חשיבות התוצאה, הערכה של אחרים, זמן, אי־ודאות ותחושת “יש לי רק הזדמנות אחת”.</div>
+<div class="basket"><b>כדורסל:</b> אותה זריקת עונשין יכולה להרגיש אחרת באימון ריק ובשוויון כשנותרו שמונה שניות.</div>
 </section>
 
 <section class="card challenge">
-<div class="challenge-head"><span class="num">2</span><span class="tag">לחץ תמיד רע?</span></div>
-<h2>מעט לחץ יכול גם לחדד</h2>
-<div class="steps"><div class="step">סבב א׳: העבירו כדור מיד ליד 20 פעמים בקצב רגיל.</div><div class="step">סבב ב׳: “יש לכם 15 שניות — נסו לשבור את השיא שלכם.”</div></div>
-<div class="question"><b>שאלה:</b> מה הלחץ הוסיף לכם?</div>
-<div class="teacher"><b>קווים:</b> אצל חלק מהתלמידים — אנרגיה, חדות, רצינות, מהירות ומיקוד. אצל אחרים — דווקא בלבול. אין תשובה אחידה.</div>
-<div class="research"><b>דיוק מדעי:</b> המודל הפשוט של “מעט לחץ טוב, הרבה לחץ רע” שימושי לפתיחה, אבל בפועל ההשפעה תלויה באדם, במשימה, בניסיון ובאופן שבו הלחץ מעובד.</div>
-<div class="deep"><b>מושג חשוב — עוררות:</b> רמת ה״הפעלה״ של הגוף והמוח. עוררות אינה זהה לחרדה. אפשר להיות עם הרבה אנרגיה בלי פחד, ואפשר להיות מודאג גם בלי להרגיש מאוד אנרגטי.</div>
-<div class="deep"><b>למה אין “רמת לחץ מושלמת” אחת?</b> משימת דיוק עדינה, ספרינט, נאום מול קהל ומבחן דורשים שילוב שונה של אנרגיה, דיוק וקשב. גם ניסיון ומאפיינים אישיים משנים את התגובה.</div>
-<div class="basket"><b>כדורסל:</b> לפני מאבק על ריבאונד ייתכן ששחקן צריך יותר אנרגיה ואגרסיביות; לפני זריקת עונשין הוא עשוי להזדקק לפחות רעש ויותר שליטה.</div>
-<div class="life"><b>כלי לחיים:</b> לא לשאול רק “האם אני לחוץ?”, אלא “האם המצב שלי מתאים למה שאני צריך לבצע עכשיו?”</div>
+<div class="challenge-head"><span class="num">2</span><span class="tag">עוררות</span></div><h2>לחץ תמיד רע?</h2>
+<div class="steps"><div class="step">סבב א׳: העבירו כדור מיד ליד עשרים פעמים בקצב רגיל.</div><div class="step">סבב ב׳: יש לכם חמש־עשרה שניות — נסו לשבור את השיא.</div></div>
+<div class="question"><b>שאלה:</b> מה הלחץ הוסיף — אם בכלל?</div>
+<div class="teacher"><b>קווים:</b> חדות, אנרגיה, רצינות ומהירות; אצל אחרים — בלבול או נוקשות.</div>
+<div class="deep"><b>עוררות ≠ חרדה.</b> עוררות היא רמת ההפעלה של הגוף והמוח. אפשר להיות מאוד אנרגטי בלי פחד, ואפשר להיות מודאג גם בלי הרבה אנרגיה.</div>
+<div class="research"><b>דיוק:</b> אין “רמת לחץ מושלמת” אחת. ההשפעה תלויה במשימה, באדם, בניסיון ובאופן שבו הוא מפרש את המצב.</div>
+<div class="life"><b>כלי:</b> במקום “איך אני נרגע?” — “איזה מצב יעזור לי לבצע את המשימה הזאת?”</div>
 </section>
 
 <section class="card challenge">
-<div class="challenge-head"><span class="num">3</span><span class="tag">Choking</span></div>
-<h2>למה לפעמים אנחנו הורסים משהו שאנחנו כבר יודעים לעשות?</h2>
-<p>תלמיד מבצע פעולה שהוא מכיר היטב — למשל כדרור פשוט.</p>
-<div class="steps"><div class="step">פעם ראשונה: “תכדרר רגיל.”</div><div class="step">פעם שנייה: “שים לב לזווית המרפק, לכל אצבע, לברך, לקצב, ואל תטעה.”</div></div>
+<div class="challenge-head"><span class="num">3</span><span class="tag">Choking</span></div><h2>למה לפעמים אנחנו מפריעים לעצמנו?</h2>
+<p>תלמיד מבצע כדרור פשוט פעם אחת באופן טבעי, ופעם שנייה כשהמורה מציף אותו בהוראות על המרפק, האצבעות, הברך והקצב.</p>
 <div class="question"><b>שאלה:</b> האם יותר מחשבה תמיד עושה ביצוע טוב יותר?</div>
-<div class="teacher"><b>קווים:</b> לא. בלמידת מיומנות חדשה פרטים חשובים. אבל במיומנות מתורגלת, לחץ ומעקב מודע מדי עלולים להפריע לאוטומטיות. במסלול אחר, דאגות והסחות עלולות לגזול קשב מהמשימה.</div>
-<div class="quote">לפעמים הבעיה היא לא שאנחנו לא יודעים לבצע — אלא שאנחנו מפריעים לעצמנו לבצע.</div>
-<div class="deep"><b>מהו Choking?</b> לא כל טעות תחת לחץ היא choking. הכוונה היא לירידה משמעותית בביצוע ברגע לחץ, ביחס ליכולת שהאדם כבר מסוגל להציג.</div>
-<div class="deep"><b>שני הסברים מרכזיים:</b> <b>עודף ניטור</b> — אני מנסה לשלוט במודע בתנועה שכבר הפכה יחסית אוטומטית; <b>הסחת קשב</b> — מחשבות על תוצאה, קהל או טעות גוזלות משאבי קשב מהמשימה. המחקר אינו מצביע על מנגנון יחיד שמתאים לכל אדם וכל מצב.</div>
-<div class="basket"><b>כדורסל:</b> שחקן שקולע מאות עונשין יכול ברגע מכריע להתחיל לחשוב “איפה המרפק? איך האצבעות? אל תחטיא” — ובכך להפוך פעולה מוכרת למסורבלת יותר.</div>
-<div class="life"><b>כלי:</b> ברגע לחץ לבחור רמז ביצוע אחד: “מטרה”, “קצב”, “שחרור”, “הבא”.</div>
+<div class="deep"><b>Choking</b> הוא לא כל טעות תחת לחץ. מדובר בירידה משמעותית בביצוע ברגע לחץ ביחס ליכולת שכבר קיימת.</div>
+<div class="two"><div class="mini"><b>עודף ניטור</b><br>אני מנסה לשלוט במודע בכל פרט במיומנות שכבר יחסית אוטומטית.</div><div class="mini"><b>הסחת קשב</b><br>קהל, תוצאה, פחד מטעות ודאגות לוקחים קשב מהפעולה עצמה.</div></div>
+<div class="life"><b>כלי:</b> לבחור רמז ביצוע אחד — “מטרה”, “קצב”, “שחרור”, “הבא”.</div>
 </section>
 
 <section class="card challenge">
-<div class="challenge-head"><span class="num">4</span><span class="tag">אחרי טעות</span></div>
-<h2>הטעות שכבר נגמרה</h2>
-<p>תלמיד מבצע 5 ניסיונות של משימת דיוק.</p>
-<div class="two"><div class="mini"><h4>אחרי החטאה — סבב א׳</h4>“אל תחטיא שוב. זוכר מה עשית עכשיו?”</div><div class="mini"><h4>אחרי החטאה — סבב ב׳</h4>“הבא. תכוון למרכז.”</div></div>
+<div class="challenge-head"><span class="num">4</span><span class="tag">אחרי טעות</span></div><h2>הטעות שכבר נגמרה</h2>
+<div class="two"><div class="mini"><b>אחרי החטאה — גרסה א׳</b><br>“אל תחטיא שוב. זוכר מה עשית עכשיו?”</div><div class="mini"><b>אחרי החטאה — גרסה ב׳</b><br>“הבא. תכוון למרכז.”</div></div>
 <div class="question"><b>שאלה:</b> איזה משפט עזר יותר לעבור לניסיון הבא?</div>
-<div class="teacher"><b>קווים:</b> המטרה אינה למחוק רגש או להתעלם מהטעות. המטרה היא לא לתת לטעות שכבר קרתה לקחת גם את הפעולה הבאה.</div>
+<div class="deep"><b>למה טעות אחת יכולה להפוך לשתיים?</b> כי הקשב נשאר בעבר — כעס, בושה, ניתוח חוזר — בזמן שהמשחק כבר ממשיך.</div>
+<div class="basket"><b>כדורסל:</b> החטאת לייאפ והיריבה כבר במתפרצת. אם הראש נשאר בהחטאה, אתה מאחר להגנה.</div>
 <div class="quote">הטעות הראשונה כבר קרתה. השאלה היא אם היא תקבל גם את המהלך הבא.</div>
-<div class="deep"><b>למה טעות אחת עלולה להפוך לשתיים?</b> לא מפני שהטעות “מדבקת”, אלא כי הקשב יכול להישאר מאחור: ניתוח חוזר, כעס, בושה או ניסיון לתקן משהו שכבר הסתיים. בינתיים הסביבה ממשיכה.</div>
-<div class="basket"><b>כדורסל:</b> החטאת לייאפ — היריבה כבר במתפרצת. אם הראש עדיין ב“איך פספסתי?”, הגוף מאחר לעבור להגנה.</div>
-<div class="question"><b>ניסוי קטן:</b> מדדו לא רק כמה טעויות היו, אלא כמה שניות לוקח לתלמיד לעבור לפעולה הבאה. <br><b>המסר:</b> חוסן אינו אפס טעויות; הוא יכולת התאוששות.</div>
-<div class="life"><b>חיבור:</b> במבחן — נתקעת? סמן, עבור, וחזור אחר כך.</div>
 </section>
 
 <section class="card challenge">
-<div class="challenge-head"><span class="num">5</span><span class="tag">נשימה</span></div>
-<h2>האם אפשר להשפיע על רמת העוררות?</h2>
-<p>30 שניות של נשימה רגילה. אחר כך 5–6 נשימות איטיות ונוחות: שאיפה רגועה, נשיפה איטית, בלי למלא בכוח ובלי לעצור.</p>
+<div class="challenge-head"><span class="num">5</span><span class="tag">נשימה</span></div><h2>האם אפשר להשפיע על רמת העוררות?</h2>
+<p>שלושים שניות של נשימה רגילה. אחר כך חמש עד שש נשימות איטיות ונוחות: שאיפה רגועה, נשיפה איטית, בלי למלא בכוח ובלי לעצור.</p>
 <div class="question"><b>שאלה:</b> מה השתנה — אם בכלל?</div>
-<div class="teacher"><b>תשובות לגיטימיות:</b> פחות מתח, דופק מרגיש איטי יותר, יותר ריכוז, לא השתנה כלום, היה מוזר. לא כולם צריכים להרגיש אותו דבר.</div>
-<div class="research"><b>דיוק:</b> נשימה איטית קשורה לשינויים בוויסות האוטונומי ובמדדי שונות קצב הלב. היא כלי אפשרי, לא “כפתור קסם”. אין צורך ללמד נשיפה ארוכה מהשאיפה כחוק.</div>
-<div class="deep"><b>מה הנשימה כן עושה?</b> האטת קצב הנשימה משנה את הקשר בין הנשימה לקצב הלב, וסקירות מצאו עלייה במדדי שונות קצב הלב הקשורים לוויסות אוטונומי בזמן ולאחר נשימה איטית. זה לא אומר שכל תלמיד ירגיש מיד רגוע.</div>
-<div class="deep"><b>מה הנשימה לא עושה?</b> היא אינה “מכניסה אינסוף חמצן”, אינה מוחקת מחשבות ואינה מבטיחה ביצוע מוצלח. היא נותנת לנו פעולה גופנית פשוטה שיכולה לעזור לייצב את הקצב לפני שחוזרים למשימה.</div>
-<div class="warning"><b>בטיחות בכיתה:</b> לא לנשום עמוק או מהר בכוח. אם תלמיד מרגיש סחרחורת או אי־נוחות — חוזרים מיד לנשימה רגילה.</div>
-<div class="life"><b>כלי:</b> לפני מבחן, זריקת עונשין או שיחה מלחיצה — כמה נשימות איטיות ואז: “מה הפעולה הבאה שלי?”</div>
+<div class="teacher"><b>תשובות לגיטימיות:</b> פחות מתח, דופק מרגיש איטי יותר, יותר ריכוז, לא השתנה כלום, היה מוזר.</div>
+<div class="deep"><b>מה הנשימה כן עושה?</b> נשימה איטית משנה את הקשר בין הנשימה לקצב הלב, ומחקרים מצאו השפעות על קצב הלב ושונות קצב הלב. היא יכולה לעזור בוויסות — אבל אינה כפתור קסם.</div>
+<div class="deep"><b>מה היא לא עושה?</b> היא לא “ממלאת אינסוף חמצן”, לא מוחקת מחשבות ולא מבטיחה הצלחה.</div>
+<div class="warning"><b>בטיחות:</b> לא לנשום מהר או עמוק בכוח. אם יש סחרחורת או אי־נוחות — חוזרים מיד לנשימה רגילה.</div>
 </section>
 
 <section class="card challenge">
-<div class="challenge-head"><span class="num">6</span><span class="tag">משחק</span></div>
-<h2>מיתוס או אמת?</h2>
-<p>בכיתה אפשר לעמוד בצד “מיתוס” או “אמת”. באתר לחצו לחשיפת התשובה.</p>
-
-<div class="myth"><h4>“לפני מצב מלחיץ צריך לקחת נשימה ענקית.”</h4><button class="btn btn-primary reveal" type="button">חשוף תשובה</button><div class="answer"><b>לא בהכרח.</b> נשימה אחת גדולה אינה “אסורה”, אבל נשימות גדולות ומהירות שוב ושוב עלולות להפוך לנשימת יתר ולהוביל לסחרחורת, עקצוצים או תחושת חוסר אוויר. בכיתה עדיף לתרגל נשימה <b>רגועה ואיטית</b>, בלי מאמץ.</div></div>
-<div class="myth"><h4>“ככל שאכניס יותר חמצן — אבצע טוב יותר.”</h4><button class="btn btn-primary reveal" type="button">חשוף תשובה</button><div class="answer"><b>מיתוס.</b> אצל אדם בריא במנוחה, הדם כבר נושא כמות גבוהה מאוד של חמצן. “יותר נשימות” אינן נותנות בוסט אינסופי. היתרון האפשרי של נשימה איטית קשור יותר ל<b>וויסות הקצב הגופני</b> מאשר למילוי הגוף בחמצן.</div></div>
-<div class="myth"><h4>“אם אני מתנשף באימון — סימן שאני לא בכושר.”</h4><button class="btn btn-primary reveal" type="button">חשוף תשובה</button><div class="answer"><b>מיתוס.</b> גם ספורטאי בכושר גבוה מתנשף אחרי מאמץ עצים. ההבדל בכושר מתבטא בין השאר ביכולת לבצע עומס גבוה יותר ובהתאוששות — לא בכך שלעולם לא נושמים בכבדות.</div></div>
-<div class="myth"><h4>“אם אני לחוץ לפני משחק — סימן שאני לא מוכן.”</h4><button class="btn btn-primary reveal" type="button">חשוף תשובה</button><div class="answer"><b>מיתוס.</b> לחץ יכול להופיע דווקא משום שהאירוע חשוב. גם ספורטאים מנוסים יכולים להרגיש עוררות ודאגה לפני גמר. מוכנות נמדדת במה שאנחנו עושים עם המצב — לא בהיעדר מוחלט של לחץ.</div></div>
-<div class="myth"><h4>“המטרה לפני ביצוע חשוב היא להיות רגוע ככל האפשר.”</h4><button class="btn btn-primary reveal" type="button">חשוף תשובה</button><div class="answer"><b>מיתוס.</b> “רגוע” אינו תמיד היעד. לפני זריקה מדויקת אולי נרצה להפחית מעט רעש; לפני ספרינט, לחץ הגנתי או מאבק על ריבאונד — ייתכן שנרצה דווקא יותר אנרגיה. היעד הוא <b>מצב שמתאים למשימה</b>.</div></div>
-<div class="board">לא תמיד צריך להירגע. צריך להגיע למצב שמתאים למה שאני עומד לעשות.</div>
+<div class="challenge-head"><span class="num">6</span><span class="tag">משחק</span></div><h2>מיתוס או אמת?</h2>
+<p>התלמידים בוחרים צד בחדר. באתר אפשר לחשוף תשובה.</p>
+<div class="myth"><h4>“לפני מצב מלחיץ צריך לקחת נשימה ענקית.”</h4><button class="btn btn-primary reveal">חשוף תשובה</button><div class="answer"><b>לא בהכרח.</b> נשימה אחת גדולה אינה בעיה, אבל נשימות גדולות ומהירות שוב ושוב עלולות לגרום לנשימת יתר. עדיף נשימה רגועה ואיטית.</div></div>
+<div class="myth"><h4>“ככל שאכניס יותר חמצן — אבצע טוב יותר.”</h4><button class="btn btn-primary reveal">חשוף תשובה</button><div class="answer"><b>מיתוס.</b> יותר נשימות אינן נותנות “בוסט אינסופי”. היתרון האפשרי של נשימה איטית קשור בעיקר לוויסות הקצב הגופני.</div></div>
+<div class="myth"><h4>“אם אני מתנשף באימון — סימן שאני לא בכושר.”</h4><button class="btn btn-primary reveal">חשוף תשובה</button><div class="answer"><b>מיתוס.</b> גם ספורטאי בכושר גבוה מתנשף במאמץ עצים. כושר מתבטא גם ביכולת לבצע עומס ובהתאוששות.</div></div>
+<div class="myth"><h4>“אם אני לחוץ לפני משחק — סימן שאני לא מוכן.”</h4><button class="btn btn-primary reveal">חשוף תשובה</button><div class="answer"><b>מיתוס.</b> לחץ יכול להופיע דווקא כי האירוע חשוב. מוכנות אינה היעדר מוחלט של לחץ.</div></div>
+<div class="myth"><h4>“המטרה לפני ביצוע חשוב היא להיות רגוע ככל האפשר.”</h4><button class="btn btn-primary reveal">חשוף תשובה</button><div class="answer"><b>מיתוס.</b> לפני דיוק אולי נרצה פחות רעש; לפני ספרינט או מאבק על ריבאונד אולי נרצה יותר אנרגיה. היעד הוא מצב שמתאים למשימה.</div></div>
 </section>
 
 <section class="card challenge">
-<div class="challenge-head"><span class="num">7</span><span class="tag">דיבור עצמי</span></div>
-<h2>אל תיתן לעצמך נאום — תן לעצמך הוראה</h2>
-<p>אותה משימת דיוק בשני ניסיונות.</p>
-<div class="two"><div class="mini"><h4>לפני ניסיון א׳</h4>“אל תפספס. כולם מסתכלים. זו זריקה חשובה.”</div><div class="mini"><h4>לפני ניסיון ב׳</h4>רק מילת ביצוע אחת: “מטרה” / “שחרור” / “קצב”.</div></div>
-<div class="question"><b>שאלה:</b> איזה סוג דיבור היה שימושי יותר לביצוע?</div>
-<div class="teacher"><b>קווים:</b> לא לטעון שחשיבה חיובית תמיד משפרת. המטרה היא להפנות את הקשב לרמז קצר ורלוונטי במקום להציף את הראש בתוצאה ובפחד.</div>
-<div class="deep"><b>שני סוגי self-talk שימושיים:</b> <b>הוראתי</b> — “מטרה”, “קצב”, “מרכז”; <b>מוטיבציוני</b> — “קדימה”, “אני ממשיך”. מטא־אנליזה מצאה השפעה חיובית ממוצעת של התערבויות self-talk, כאשר משימות עדינות וחדשות נטו ליהנות במיוחד מהוראות ממוקדות.</div>
-<div class="question"><b>משימת תלמיד:</b> כל תלמיד בוחר מילת מפתח אחת שמתאימה לו. אסור לבחור משפט שלם. אחר כך בודקים אם היא עוזרת להפנות קשב לפעולה.</div>
+<div class="challenge-head"><span class="num">7</span><span class="tag">דיבור עצמי</span></div><h2>אל תיתן לעצמך נאום — תן לעצמך הוראה</h2>
+<div class="two"><div class="mini"><b>לפני ניסיון א׳</b><br>“אל תפספס. כולם מסתכלים. זו זריקה חשובה.”</div><div class="mini"><b>לפני ניסיון ב׳</b><br>מילת ביצוע אחת: “מטרה” / “שחרור” / “קצב”.</div></div>
+<div class="deep"><b>שני סוגי self-talk:</b> הוראתי — “מטרה”, “קצב”; מוטיבציוני — “קדימה”, “אני ממשיך”. ברגע לחץ נרצה בדרך כלל מעט מילים והרבה בהירות.</div>
+<div class="question"><b>משימה:</b> כל תלמיד בוחר מילת מפתח אחת שמתאימה לו. לא משפט שלם.</div>
 <div class="life"><b>חיים:</b> מבחן — “שאלה ראשונה”. הצגה — “משפט ראשון”. שיחה קשה — “לדבר לאט”.</div>
 </section>
 
-<section class="card challenge">
-<div class="challenge-head"><span class="num">8</span><span class="tag">RESET</span></div>
-<h2>איך חוזרים מהר אחרי טעות?</h2>
+<section class="card challenge" id="reset">
+<div class="challenge-head"><span class="num">8</span><span class="tag">RESET</span></div><h2>איך חוזרים מהר אחרי טעות?</h2>
 <div class="reset"><div>1<br>עצור</div><div>2<br>נשימה</div><div>3<br>מילת מפתח</div><div>4<br>פעולה הבאה</div></div>
 <p><b>דוגמה:</b> החטאת לייאפ → נשיפה → “הבא” → ספרינט להגנה.</p>
-<div class="question"><b>שאלה:</b> מה יותר חשוב לשחקן טוב — לא לטעות בכלל, או לחזור מהר אחרי טעות?</div>
-<div class="teacher"><b>קווים:</b> ביצוע אמיתי כולל טעויות. המדד המעניין כאן הוא כמה זמן הטעות ממשיכה לשלוט בקשב ובפעולה.</div>
+<div class="question"><b>שאלה:</b> מה יותר חשוב — לא לטעות בכלל, או לחזור מהר אחרי טעות?</div>
+<div class="teacher"><b>דיוק:</b> RESET הוא מסגרת לימודית של השיעור, לא פרוטוקול פסיכולוגי רשמי שנבדק בדיוק בארבעת השלבים האלה.</div>
 <div class="quote">חוסן הוא לא לא ליפול. חוסן הוא לקצר את הזמן בין הנפילה לחזרה.</div>
-<div class="deep"><b>חשוב למורה:</b> RESET כאן הוא <b>מסגרת לימודית שבנינו לשיעור</b>, לא פרוטוקול פסיכולוגי סטנדרטי שנבדק בדיוק בארבעת השלבים האלה. הוא מרכז עקרונות מוכרים: עצירה קצרה, ויסות, רמז קשבי וחזרה לפעולה.</div>
-<div class="two"><div class="mini"><b>בספורט:</b><br>החטאה → נשיפה → “הבא” → הגנה</div><div class="mini"><b>במבחן:</b><br>נתקעתי → עצירה → “המשך” → שאלה הבאה</div><div class="mini"><b>בריב:</b><br>הצפה → נשימה → “לאט” → המשפט הבא</div><div class="mini"><b>בהצגה:</b><br>שכחתי → עצירה → “משפט הבא” → ממשיך</div></div>
 </section>
 
-<section class="card challenge">
-<div class="challenge-head"><span class="num">9</span><span class="tag">שגרת ביצוע</span></div>
-<h2>מה עושים לפני הרגע החשוב?</h2>
-<div class="steps"><div class="step">1. עמדה</div><div class="step">2. נשימה רגועה</div><div class="step">3. מילת מפתח אחת</div><div class="step">4. ביצוע</div></div>
-<p>כל תלמיד בוחר משימת דיוק ומנסה פעם אחת בלי שגרה ופעם אחת עם אותה שגרה קצרה.</p>
-<div class="question"><b>שאלה:</b> מה השגרה נתנה לכם?</div>
-<div class="teacher"><b>קווים:</b> תחושת מוכרות, פחות החלטות מיותרות, סדר קשבי, פחות היסוס. לא חייב להיות שיפור בכל ניסיון.</div>
-<div class="life"><b>כלי:</b> לפני מבחן — יושב → נשימה → “שאלה ראשונה” → מתחיל.</div>
-<div class="deep"><b>מהי שגרת ביצוע?</b> רצף קצר ועקבי של פעולות ומוקדי קשב לפני ביצוע. לדוגמה: מיקום רגליים → נשימה → מבט במטרה → מילת מפתח → ביצוע.</div>
-<div class="deep"><b>למה לתרגל אותה דווקא באימון?</b> כדי שברגע חשוב לא נצטרך להמציא פתרון חדש. סקירות ועמדות מקצועיות בפסיכולוגיית ספורט מציעות pre-performance routines כאחת האסטרטגיות שיכולות לתמוך בביצוע תחת לחץ, במיוחד במשימות self-paced.</div>
-<div class="question"><b>שאלת מורה:</b> מה בשגרה צריך להיות קבוע ומה יכול להשתנות? <br><b>קווים:</b> הרצף והעוגן יכולים להיות קבועים; אורך הנשימה, המילה או פרטי התנועה יכולים להיות אישיים.</div>
-<div class="board">ברגע מלחיץ — אל תנסה להרגיש מושלם. תתחיל מהשגרה שלך.</div>
+<!-- כל החומר הבא נוסף אחרי שלב 8 -->
+<section class="card challenge" id="stress-map">
+<div class="challenge-head"><span class="num">8א</span><span class="tag">מפת לחץ</span></div><h2>לא כל מצב לחץ הוא אותו דבר</h2>
+<p>אם כל לחץ נראה לנו אותו דבר — ננסה להשתמש באותו כלי לכל מצב. במקום זה, קודם מזהים <b>איזה סוג לחץ יש כאן</b>.</p>
+<div class="stress-grid">
+<div class="stress-type"><h4>1. לחץ ביצוע מיידי</h4><p><b>ספורט:</b> זריקת עונשין, הגשה, פנדל.</p><p><b>חיים:</b> מבחן שמתחיל עכשיו, הצגה מול הכיתה.</p><p><b>כלים:</b> נשימה קצרה, רמז ביצוע, שגרה קבועה.</p></div>
+<div class="stress-type"><h4>2. לחץ לפני אירוע</h4><p><b>ספורט:</b> משחק חשוב מחר.</p><p><b>חיים:</b> מבחן בעוד יומיים, שיחה שמפחידה אותי.</p><p><b>כלים:</b> תוכנית, הכנה, שינה, פירוק למשימות קטנות.</p></div>
+<div class="stress-type"><h4>3. לחץ אחרי טעות</h4><p><b>ספורט:</b> איבוד כדור, החטאה.</p><p><b>חיים:</b> טעיתי בשאלה, אמרתי משהו לא נכון.</p><p><b>כלים:</b> RESET, פעולה הבאה, למידה מאוחרת יותר.</p></div>
+<div class="stress-type"><h4>4. לחץ חברתי / קונפליקט</h4><p><b>ספורט:</b> ריב עם שופט, מאמן או שחקן.</p><p><b>חיים:</b> ויכוח, הודעה מעצבנת, ביקורת.</p><p><b>כלים:</b> עצירה, נשימה, מטרה לשיחה, תגובה איטית יותר.</p></div>
+<div class="stress-type"><h4>5. לחץ מחוסר שליטה</h4><p><b>ספורט:</b> החלטת שופט, יריב חזק, מזג אוויר.</p><p><b>חיים:</b> תגובה של מישהו אחר, תוצאה שכבר נקבעה.</p><p><b>כלים:</b> להפריד בין מה שאני שולט בו למה שלא.</p></div>
+</div>
+<div class="board">לפני שבוחרים כלי — מזהים את סוג הלחץ.</div>
 </section>
 
-<section class="card challenge">
-<div class="challenge-head"><span class="num">10</span><span class="tag">גמר המעבדה</span></div>
-<h2>להוריד, להעלות או להשאיר?</h2>
-<p>בכל מצב בחרו מה כנראה יעזור יותר. אין תשובה מוחלטת לכל אדם — המטרה היא לנמק.</p>
-
-<div class="scenario" data-good="down"><h4>נותרו 8 שניות. החטאת שתי זריקות. עכשיו אתה על קו העונשין.</h4><div class="choice"><button data-v="down">להוריד מעט</button><button data-v="up">להעלות</button><button data-v="same">להשאיר</button></div><div class="feedback">לרוב נרצה <b>להוריד מעט רעש ועוררות</b>, להשתמש ברוטינה וברמז ביצוע — לא להפוך לאדישים.</div></div>
-<div class="scenario" data-good="up"><h4>דקה לפני תחילת משחק ואתה ישנוני ואדיש.</h4><div class="choice"><button data-v="down">להוריד</button><button data-v="up">להעלות</button><button data-v="same">להשאיר</button></div><div class="feedback">כאן ייתכן שנרצה <b>להעלות עוררות</b>: תנועה, חימום, מיקוד במשימה ואנרגיה.</div></div>
-<div class="scenario" data-good="down"><h4>המבחן מתחיל ואתה מרגיש שאתה בפאניקה.</h4><div class="choice"><button data-v="down">להוריד מעט</button><button data-v="up">להעלות</button><button data-v="same">להשאיר</button></div><div class="feedback">אפשר לנסות <b>להוריד מעט עוררות</b>: נשימות רגועות ואז פעולה קטנה וברורה — לקרוא את השאלה הראשונה.</div></div>
-<div class="scenario" data-good="up"><h4>אתה בחימום אבל הראש בכלל במקום אחר ואין אנרגיה.</h4><div class="choice"><button data-v="down">להוריד</button><button data-v="up">להעלות</button><button data-v="same">להשאיר</button></div><div class="feedback">כאן אפשר <b>להעלות עוררות ומעורבות</b> באמצעות תנועה, קצב ומטרה ברורה.</div></div>
-<div class="scenario" data-good="down"><h4>אתה באמצע ריב ומרגיש שאתה עומד להתפוצץ.</h4><div class="choice"><button data-v="down">להוריד מעט</button><button data-v="up">להעלות</button><button data-v="same">להשאיר</button></div><div class="feedback">כאן בדרך כלל עדיף <b>להוריד עוררות לפני תגובה</b>: עצירה, נשימה, ואז לבחור מה לומר.</div></div>
+<section class="card challenge" id="control-circles">
+<div class="challenge-head"><span class="num">8ב</span><span class="tag">שליטה</span></div><h2>מה בשליטתי עכשיו?</h2>
+<div class="control">
+<div class="now"><h3>בשליטתי עכשיו</h3><p>הנשימה שלי, המאמץ, הפעולה הבאה, מה אני אומר לעצמי, לאן אני מפנה קשב.</p></div>
+<div class="influence"><h3>יש לי השפעה</h3><p>תקשורת עם חבר לקבוצה, הכנה למבחן, שיחה עם מאמן, בקשת עזרה.</p></div>
+<div class="outside"><h3>לא בשליטתי</h3><p>החלטת שופט שכבר התקבלה, מה היריב חושב, מזג האוויר, מה שכבר קרה.</p></div>
+</div>
+<div class="question"><b>משחק:</b> המורה מקריא מצבים והתלמידים מצביעים: בשליטתי / יש לי השפעה / מחוץ לשליטתי. <br><b>דוגמאות:</b> “השופט שרק”, “יש מבחן מחר”, “החטאתי”, “חבר כועס עליי”, “אני עייף כי ישנתי מעט”.</div>
+<div class="life"><b>כלי לחיים:</b> כשהראש תקוע במשהו שאינני שולט בו — לשאול: “מה הדבר הקטן הבא שכן בשליטתי?”</div>
 </section>
 
-<section class="card">
-<h2>איך מחליטים איזה כלי צריך עכשיו?</h2>
-<div class="steps">
-<div class="step"><b>1. מה המשימה דורשת?</b> דיוק, כוח, מהירות, ריכוז או תקשורת?</div>
-<div class="step"><b>2. איפה אני עכשיו?</b> מוצף מדי, רדום מדי, או בערך במקום הנכון?</div>
-<div class="step"><b>3. מה כלי אחד שיכול להזיז אותי לכיוון הנכון?</b> נשימה, תנועה, מילת מפתח, RESET או שגרת ביצוע.</div>
-<div class="step"><b>4. חוזרים למשימה.</b> לא ממשיכים לנתח את עצמנו בלי סוף.</div>
+<section class="card challenge" id="reappraisal">
+<div class="challenge-head"><span class="num">8ג</span><span class="tag">פירוש מחדש</span></div><h2>הפרפרים בבטן — איום או הכנה?</h2>
+<p>דופק מהיר, ידיים חמות ונשימה מהירה יכולים לקבל שתי פרשנויות שונות:</p>
+<div class="two"><div class="mini"><b>“משהו לא בסדר איתי”</b><br>אני מפרש את העוררות כסימן שאינני מסוגל להתמודד.</div><div class="mini"><b>“הגוף מתכונן”</b><br>אני מפרש את העוררות כאנרגיה שאפשר לכוון למשימה.</div></div>
+<div class="research"><b>המחקר:</b> מחקרים על stress reappraisal מצאו שבחלק ממצבי הערכה וביצוע, שינוי הפרשנות של העוררות מ“מסוכנת” ל“יכולה לעזור לי” שיפר מדדים פיזיולוגיים ולעיתים גם ביצוע. זו אינה חשיבה חיובית קסומה — הדרישות האמיתיות עדיין קיימות.</div>
+<div class="question"><b>פעילות:</b> הפכו משפט “איום” למשפט “אתגר”.<br>“אני בלחץ, אני הולך להיכשל” → “הגוף שלי עולה הילוך; עכשיו אני חוזר לשאלה הראשונה.”<br>“אני רועד לפני העונשין” → “אני דרוך; נשימה, מטרה, זריקה.”</div>
+<div class="teacher"><b>דיוק:</b> לא לומר לתלמיד “הלחץ טוב”. לומר: “העוררות לא בהכרח אומרת שמשהו רע קורה; אפשר לפרש אותה כמשאב ולהחזיר קשב לפעולה.”</div>
+</section>
+
+<section class="card challenge" id="toolbox">
+<div class="challenge-head"><span class="num">8ד</span><span class="tag">ארגז כלים</span></div><h2>איזה כלי מתאים לאיזה לחץ?</h2>
+<div class="toolgrid">
+<div class="toolbox"><h4>אני מוצף מדי</h4><p>נשימה איטית • רמז קצר • להקטין את המשימה לפעולה אחת.</p></div>
+<div class="toolbox"><h4>אני רדום / אדיש</h4><p>תנועה • חימום • קצב • מילת אנרגיה • מטרה ברורה.</p></div>
+<div class="toolbox"><h4>אני תקוע בטעות</h4><p>RESET • פעולה הבאה • את הניתוח עושים אחר כך.</p></div>
+<div class="toolbox"><h4>אני דואג למה שיהיה</h4><p>תוכנית קצרה • מה בשליטתי • צעד ראשון • זמן מוגדר להתכונן.</p></div>
+<div class="toolbox"><h4>אני בתוך ריב</h4><p>עצירה • נשימה • מה המטרה שלי בשיחה? • להגיב לאט יותר.</p></div>
+<div class="toolbox"><h4>אני לא שולט במצב</h4><p>לקבל את העובדה • להעביר קשב למה שכן בשליטתי • לבחור פעולה.</p></div>
 </div>
 <div class="board">משימה → מצב נוכחי → כלי אחד → פעולה.</div>
 </section>
 
-<section class="card">
-<h2>כלי החיים של השיעור</h2>
-<div class="two">
-<div class="mini"><b>לפני ביצוע:</b><br>עמדה → נשימה → מילת מפתח → ביצוע</div>
-<div class="mini"><b>אחרי טעות:</b><br>עצור → נשימה → מילת מפתח → הפעולה הבאה</div>
-</div>
+<section class="card challenge" id="breathing-lab">
+<div class="challenge-head"><span class="num">8ה</span><span class="tag">מעבדת נשימה מורחבת</span></div><h2>שלוש דרכים לעבוד עם הנשימה</h2>
+<h3>א. נשימה קצבית איטית — ברירת המחדל</h3>
+<p>אפשר להתחיל בקצב נוח של בערך חמש שניות שאיפה וחמש שניות נשיפה. זה נותן בערך שש נשימות בדקה. <b>לא חייבים לדייק בשעון</b>; המטרה היא האטה נוחה, בלי מאמץ ובלי עצירות.</p>
+<div class="breath-stage"><h3>תרגול של דקה</h3><div class="breath-display" id="breathDisplay">מוכן?</div><div class="breath-timer" id="breathTimer">דקה אחת • שאיפה 5 שניות • נשיפה 5 שניות</div><div class="actions" style="justify-content:center"><button class="btn btn-primary" id="breathStart">התחל</button><button class="btn btn-light" id="breathStop">עצור</button></div></div>
+<div class="research"><b>מה ידוע:</b> מטא־אנליזות של נשימה איטית מצאו השפעות על קצב לב ושונות קצב לב, ומטא־אנליזה של breathwork מצאה ירידה קטנה־בינונית במתח לעומת קבוצות ביקורת — אבל החוקרים מדגישים שהמחקר עדיין מגוון ושצריך להיזהר מהבטחות גדולות.</div>
+
+<h3>ב. “אנחה פיזיולוגית” / cyclic sigh — אפשרות קצרה</h3>
+<p>שאיפה רגועה → שאיפה קטנה נוספת → נשיפה ארוכה ונוחה. אפשר לבצע פעם או פעמיים, לא ברצף מהיר.</p>
+<div class="teacher"><b>דיוק:</b> מחקר אקראי במבוגרים מצא תוצאות מבטיחות לתרגול יומי של cyclic sighing, אבל זה עדיין לא אומר שזו “הנשימה הכי טובה”, ובוודאי לא שהממצאים זהים אצל בני נוער.</div>
+
+<h3>ג. Box breathing — אופציה, לא חובה</h3>
+<p>שאיפה → עצירה → נשיפה → עצירה, בפרקי זמן שווים. הטכניקה נפוצה בספורט ובמסגרות ביצוע, אך עצירות נשימה אינן הכרחיות להשגת האטה, ולא כל תלמיד מרגיש איתן בנוח.</p>
+<div class="warning"><b>כלל בכיתה:</b> לא מכריחים עצירות נשימה, לא עושים תחרות “מי מחזיק יותר”, ולא משתמשים בנשימות מהירות בכוונה. אם הנשימה גורמת סחרחורת, כאב או תחושת מצוקה — עוצרים וחוזרים לנשימה טבעית.</div>
+<div class="basket"><b>מתי להשתמש בספורט?</b> לפני ביצוע מדויק, בין מהלכים, אחרי טעות או בזמן הפסקה. אחרי ספרינט קשה — לא מנסים מיד “לכפות” קצב איטי; נותנים לנשימה להתאושש ואז מאטים בהדרגה.</div>
+<div class="life"><b>מתי בחיים?</b> לפני מבחן, לפני דיבור מול קבוצה, לפני תגובה להודעה מכעיסה, או כשצריך ליצור כמה שניות בין גירוי לתגובה.</div>
 </section>
 
-<section class="card summary">
-<h2>מה כותבים על הלוח בסוף?</h2>
-<p style="font-size:24px;font-weight:900">המטרה היא לא תמיד להירגע — אלא להגיע למצב שמתאים למשימה.</p>
-<ul><li>לחץ יכול לעזור או להפריע.</li><li>יותר מחשבה אינה תמיד יותר ביצוע.</li><li>טעות לא חייבת לקבל גם את המהלך הבא.</li><li>נשימה היא כלי אחד לוויסות, לא קסם.</li><li>ברגע לחץ: רמז קצר ורוטינה פשוטה.</li></ul>
+<section class="card challenge">
+<div class="challenge-head"><span class="num">9</span><span class="tag">שגרת ביצוע</span></div><h2>מה עושים לפני הרגע החשוב?</h2>
+<div class="steps"><div class="step">1. עמדה</div><div class="step">2. נשימה רגועה</div><div class="step">3. מילת מפתח אחת</div><div class="step">4. ביצוע</div></div>
+<div class="deep"><b>שגרת ביצוע</b> היא רצף קצר ועקבי של פעולות ומוקדי קשב לפני ביצוע. המטרה היא לא “להרגיש מושלם”, אלא להיכנס למסלול מוכר.</div>
+<p>כל תלמיד מנסה פעם אחת בלי שגרה ופעם אחת עם שגרה.</p>
+<div class="question"><b>שאלה:</b> מה השגרה נתנה — פחות היסוס? יותר סדר? תחושת שליטה? לא הרגשתם הבדל?</div>
+<div class="board">ברגע מלחיץ — אל תחכה להרגיש מושלם. תתחיל מהשגרה.</div>
 </section>
 
-<section class="card">
-<h2>ביסוס מדעי למורה</h2>
-<p class="source">השיעור נשען על ספרי פסיכולוגיית ספורט ויישום כגון <b>Foundations of Sport and Exercise Psychology</b>, <b>Choke</b> מאת Sian Beilock ו־<b>The Inner Game of Tennis</b> מאת W. Timothy Gallwey. הספרים נותנים מסגרת; הטענות המדעיות בעמוד נשענות גם על סקירות ומטא־אנליזות. עמדה מקצועית של Exercise and Sports Science Australia מ־2026 מדגישה שלחץ יכול לסייע או לפגוע בביצוע, ושבחירת אסטרטגיה צריכה להיות תלויה בהקשר, במשימה ובספורטאי.</p>
+<section class="card challenge">
+<div class="challenge-head"><span class="num">10</span><span class="tag">גמר המעבדה</span></div><h2>להוריד, להעלות או להשאיר?</h2>
+<p>בכל מצב בוחרים מה כנראה יעזור יותר — ואז מנמקים דרך ארבע שאלות: מה המשימה דורשת? איפה אני עכשיו? מה בשליטתי? איזה כלי אחד מתאים?</p>
+<div class="scenario" data-good="down"><h4>נותרו שמונה שניות. החטאת שתי זריקות. עכשיו אתה על קו העונשין.</h4><div class="choice"><button data-v="down">להוריד מעט</button><button data-v="up">להעלות</button><button data-v="same">להשאיר</button></div><div class="feedback">אפשרות טובה: להוריד מעט רעש ועוררות, להשתמש ברוטינה וברמז ביצוע — בלי להפוך לאדיש.</div></div>
+<div class="scenario" data-good="up"><h4>דקה לפני תחילת משחק ואתה ישנוני ואדיש.</h4><div class="choice"><button data-v="down">להוריד</button><button data-v="up">להעלות</button><button data-v="same">להשאיר</button></div><div class="feedback">אפשרות טובה: להעלות עוררות באמצעות תנועה, חימום, קצב ומטרה ברורה.</div></div>
+<div class="scenario" data-good="down"><h4>המבחן מתחיל ואתה מרגיש שאתה בפאניקה.</h4><div class="choice"><button data-v="down">להוריד מעט</button><button data-v="up">להעלות</button><button data-v="same">להשאיר</button></div><div class="feedback">אפשר לנסות נשימה רגועה ואז פעולה קטנה וברורה — לקרוא את השאלה הראשונה.</div></div>
+<div class="scenario" data-good="up"><h4>אתה בחימום, הראש במקום אחר ואין לך אנרגיה.</h4><div class="choice"><button data-v="down">להוריד</button><button data-v="up">להעלות</button><button data-v="same">להשאיר</button></div><div class="feedback">אפשר להעלות מעורבות בעזרת תנועה, קצב ומטרה ברורה.</div></div>
+<div class="scenario" data-good="down"><h4>אתה באמצע ריב ומרגיש שאתה עומד להתפוצץ.</h4><div class="choice"><button data-v="down">להוריד מעט</button><button data-v="up">להעלות</button><button data-v="same">להשאיר</button></div><div class="feedback">בדרך כלל עדיף ליצור רגע לפני תגובה: עצירה, נשימה, לזהות את מטרת השיחה ואז לבחור משפט.</div></div>
+</section>
+
+<section class="card"><h2>כלי החיים של השיעור</h2><div class="two"><div class="mini"><b>לפני ביצוע:</b><br>עמדה → נשימה → מילת מפתח → ביצוע</div><div class="mini"><b>אחרי טעות:</b><br>עצור → נשימה → מילת מפתח → הפעולה הבאה</div></div><div class="board">משימה → מצב נוכחי → מה בשליטתי → כלי אחד → פעולה.</div></section>
+
+<section class="card summary"><h2>מה לקחת מהשיעור?</h2><ul><li>לחץ יכול לעזור או להפריע.</li><li>לא כל לחץ דורש אותו כלי.</li><li>עוררות אינה בהכרח סימן שמשהו לא בסדר.</li><li>טעות לא חייבת לקבל גם את המהלך הבא.</li><li>נשימה היא כלי לוויסות — לא קסם ולא תחרות.</li><li>מה שלא בשליטתי לא צריך לקבל את כל הקשב שלי.</li></ul><p style="font-size:24px;font-weight:900">המטרה היא לא תמיד להירגע — אלא להגיע למצב שמתאים למשימה ולפעול.</p></section>
+
+<section class="card"><h2>ביסוס מדעי למורה</h2>
+<p class="source">מסגרת השיעור נשענת על <b>Foundations of Sport and Exercise Psychology</b>, <b>Choke</b> של Sian Beilock ו־<b>The Inner Game of Tennis</b>, ובנוסף על סקירות ומחקרים ישירים.</p>
 <ul class="source">
-<li><a href="https://pubmed.ncbi.nlm.nih.gov/41951087/" target="_blank" rel="noopener">מטא־אנליזה: התערבויות נגד choking תחת לחץ בספורט</a></li>
-<li><a href="https://pubmed.ncbi.nlm.nih.gov/42271117/" target="_blank" rel="noopener">Position Statement 2026: ביצוע תחת לחץ בספורט</a></li>
-<li><a href="https://pubmed.ncbi.nlm.nih.gov/26167788/" target="_blank" rel="noopener">מטא־אנליזה: self-talk וביצוע בספורט</a></li>
-<li><a href="https://pubmed.ncbi.nlm.nih.gov/35967624/" target="_blank" rel="noopener">רוטינות הכנה וויסות לפני ביצוע</a></li>
-<li><a href="https://pubmed.ncbi.nlm.nih.gov/35623448/" target="_blank" rel="noopener">סקירה ומטא־אנליזה: נשימה איטית וקצב לב/HRV</a></li>
-<li><a href="https://pubmed.ncbi.nlm.nih.gov/36871835/" target="_blank" rel="noopener">נשיפה ארוכה לעומת נשימה סימטרית — ללא יתרון ברור</a></li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/42271117/" target="_blank" rel="noopener">Performance Under Pressure in Sport — ESSA Position Statement, 2026</a></li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/41951087/" target="_blank" rel="noopener">Meta-analysis: interventions against choking under pressure</a></li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/40027878/" target="_blank" rel="noopener">Challenge vs Threat — updated review and meta-analysis</a></li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/34292050/" target="_blank" rel="noopener">Stress arousal reappraisal in academic performance</a></li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/35623448/" target="_blank" rel="noopener">Slow breathing, heart rate and HRV — systematic review and meta-analysis</a></li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/36624160/" target="_blank" rel="noopener">Breathwork and stress — meta-analysis of randomized trials</a></li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/36630953/" target="_blank" rel="noopener">Structured breathing and cyclic sighing — randomized controlled study</a></li>
 </ul>
-<div class="teacher"><b>חשוב:</b> האתגרים בכיתה הם הדגמות חינוכיות. הם אינם מבחני חרדה, אבחון פסיכולוגי או הוכחה לכך שתלמיד מסוים “טוב/רע בלחץ”.</div>
-</section>
-
+<div class="teacher"><b>חשוב:</b> הפעילויות הן הדגמות חינוכיות, לא אבחון חרדה ולא טיפול רפואי או פסיכולוגי.</div></section>
 </main>
 <script>
-document.querySelectorAll('.reveal').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    const a=btn.nextElementSibling;
-    a.classList.toggle('show');
-    btn.textContent=a.classList.contains('show')?'הסתר תשובה':'חשוף תשובה';
-  });
-});
-document.querySelectorAll('.scenario').forEach(box=>{
-  const good=box.dataset.good;
-  const fb=box.querySelector('.feedback');
-  box.querySelectorAll('.choice button').forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      fb.classList.add('show');
-      box.querySelectorAll('.choice button').forEach(b=>{
-        b.style.background=b.dataset.v===good?'#dcfce7':'#fff';
-        b.style.borderColor=b.dataset.v===good?'#86efac':'#d8dee8';
-      });
-    });
-  });
-});
+document.querySelectorAll('.reveal').forEach(btn=>btn.addEventListener('click',()=>{const a=btn.nextElementSibling;a.classList.toggle('show');btn.textContent=a.classList.contains('show')?'הסתר תשובה':'חשוף תשובה';}));
+document.querySelectorAll('.scenario').forEach(box=>{const good=box.dataset.good,fb=box.querySelector('.feedback');box.querySelectorAll('.choice button').forEach(btn=>btn.addEventListener('click',()=>{fb.classList.add('show');box.querySelectorAll('.choice button').forEach(b=>{b.style.background=b.dataset.v===good?'#dcfce7':'#fff';b.style.borderColor=b.dataset.v===good?'#86efac':'#d8dee8';});}));});
+let breathInterval=null,breathLeft=60,phase=0;const bd=document.getElementById('breathDisplay'),bt=document.getElementById('breathTimer');function stopBreath(){if(breathInterval){clearInterval(breathInterval);breathInterval=null;}if(bd)bd.textContent='מוכן?';if(bt)bt.textContent='דקה אחת • שאיפה 5 שניות • נשיפה 5 שניות';}document.getElementById('breathStart')?.addEventListener('click',()=>{stopBreath();breathLeft=60;phase=0;bd.textContent='שאיפה';bt.textContent='נותרו 60 שניות';breathInterval=setInterval(()=>{breathLeft--;phase++;if(phase===5){bd.textContent=bd.textContent==='שאיפה'?'נשיפה':'שאיפה';phase=0;}bt.textContent='נותרו '+breathLeft+' שניות';if(breathLeft<=0){clearInterval(breathInterval);breathInterval=null;bd.textContent='סיימנו';bt.textContent='חזרו לנשימה טבעית';}},1000);});document.getElementById('breathStop')?.addEventListener('click',stopBreath);
 </script>
 <script src="site-nav.js"></script>
 </body>
