@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="מצגת אינטראקטיבית תואמת למערך המורה על דייוויד גוגינס: 6 שיעורים, תמונות ממקורות, 26 נושאים, 12 שאלות ושקופיות תשובה נפרדות.">
+<title>מצגת דייוויד גוגינס | בית ספר אור</title>
+<style>
+:root{--bg:#061322;--teal:#8bf0d1;--gold:#f6c573;--text:#f7faff;--soft:#c8dce4;--line:#ffffff35}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,"Noto Sans Hebrew",system-ui,sans-serif;min-height:100%}
+body{padding:8px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:10px}
+button,select,a{font:inherit}button,select{cursor:pointer}button:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.shell{width:min(99vw,calc((100dvh - 108px) * 16 / 9),1800px);outline:0;position:relative}
+.stage{aspect-ratio:16/9;border-radius:20px;border:1px solid #335264;background:radial-gradient(circle at 82% 20%,#1b5960 0%,transparent 32%),linear-gradient(135deg,#0e2c42,#061322 76%);box-shadow:0 20px 60px #0009;overflow:hidden;position:relative}
+.slide{display:none;position:absolute;inset:0;isolation:isolate;overflow:hidden}.slide.active{display:block}
+.slide:after{content:"";position:absolute;right:-16%;bottom:-62%;width:56%;aspect-ratio:1;border:1px solid #ffffff12;border-radius:50%;box-shadow:0 0 0 50px #ffffff04,0 0 0 95px #ffffff03;z-index:-2}
+.content{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;padding:3.6% 5.2% 3.4%}
+.eyebrow{font-size:clamp(10px,1.18vw,22px);font-weight:900;color:var(--teal);letter-spacing:.035em}
+.slide h1{font-size:clamp(29px,5.1vw,96px);line-height:1.15;margin:2% 0}.slide h2{font-size:clamp(22px,3.3vw,65px);line-height:1.17;margin:2% 0 1.4%}
+.slide p{font-size:clamp(14px,1.7vw,32px);line-height:1.45;margin:1.2% 0}
+.slide .small{font-size:clamp(12px,1.23vw,23px);color:var(--soft)}
+.slide .gold{color:var(--gold)}.slide .mint{color:var(--teal)}
+.foot{position:absolute;bottom:2.4%;right:5.2%;left:5.2%;display:flex;justify-content:space-between;gap:16px;font-size:clamp(9px,.86vw,17px);color:#cadbe9a1;font-weight:800;z-index:4;pointer-events:none}
+.background-photo{position:absolute;inset:0;z-index:-3;opacity:.8}
+.background-photo img{height:100%;width:100%;object-fit:cover;object-position:center 44%;display:block}
+.background-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(270deg,#061724f8 0%,#071b2be9 40%,#071c2cc0 68%,#0c233966 100%)}
+.photo-credit{position:absolute;bottom:2.2%;left:3%;max-width:38%;color:#d9eaf1b5;font-size:clamp(8px,.75vw,15px);z-index:4;text-align:left;direction:ltr}
+.photo-credit a{color:inherit}
+.cover .content{justify-content:center}.cover h1{max-width:78%;font-size:clamp(32px,5.2vw,100px)}.cover p{max-width:68%;font-size:clamp(17px,2.1vw,40px);color:#dbeef1}
+.cover .capsule{display:inline-flex;align-self:flex-start;border:1px solid #96eedf88;border-radius:40px;background:#0d5b5c77;color:#a4ffe2;padding:.45em 1em;font-size:clamp(12px,1.35vw,24px);font-weight:900}
+.question-title{font-size:clamp(22px,3.9vw,73px);font-weight:900;line-height:1.23;max-width:95%;margin:auto 0;color:var(--text)}
+.question-ask{margin-top:5%;font-size:clamp(14px,1.4vw,26px);color:var(--teal);font-weight:800}
+.story-layout{display:grid;grid-template-columns:1.15fr .85fr;gap:3%;flex:1;min-height:0;margin:2% 0 3%}
+.story-copy{display:flex;flex-direction:column;min-height:0}.story-copy p{font-size:clamp(14px,1.75vw,31px);line-height:1.38}
+.story-copy .highlight{font-size:clamp(15px,1.78vw,34px);font-weight:900;color:var(--gold);margin-top:auto;padding-top:2%}
+.story-img{min-height:0;position:relative;background:linear-gradient(135deg,#195767,#081c2b);border-radius:17px;overflow:hidden;border:1px solid #4c777b70}
+.story-img img{width:100%;height:100%;object-fit:cover;object-position:center 38%;display:block}
+.story-img .fallback{display:none;position:absolute;inset:0;align-items:center;justify-content:center;font-size:clamp(40px,7vw,110px)}
+.story-img img.failed{display:none}.story-img img.failed+.fallback{display:flex}
+.story-img .credit{position:absolute;bottom:0;right:0;left:0;background:#001522c9;font-size:clamp(7px,.78vw,15px);padding:.7% 2%;line-height:1.25}
+.story-img .credit a{color:#daeff2}
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2%;margin:2% 0 1.5%;min-height:0;flex:1}
+.pillar{border:1px solid #7bacae47;border-radius:17px;background:#123a4e92;padding:8% 7%;min-height:0}
+.pillar b{font-size:clamp(17px,2vw,38px);color:var(--gold);display:block;margin-bottom:8%}
+.pillar p{font-size:clamp(13px,1.6vw,30px);line-height:1.35;color:#ecf7fa}
+.science{background:#0b343f;border-right:3px solid #80dbca;padding:1.25% 1.65%;border-radius:11px;color:#e0f4f4;line-height:1.42;font-size:clamp(12px,1.4vw,27px);max-height:23%;overflow:auto}
+.action{font-size:clamp(13px,1.25vw,24px);color:var(--gold);font-weight:800;margin-top:1.5%}
+.quiz-q .choices{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5%;flex:1;max-height:49%;margin:2% 0 1%}
+.quiz-q .choice{display:flex;text-align:right;align-items:center;border:2px solid #87c1c449;background:#153a52;color:white;border-radius:16px;padding:7%;font-size:clamp(14px,1.95vw,36px);line-height:1.36;font-weight:900;position:relative}
+.quiz-q .choice.selected{border-color:var(--gold);background:#224e5f}
+.quiz-q .choice em{position:absolute;top:8%;right:7%;font-size:.68em;color:var(--teal);font-style:normal}
+.quiz-a .answer-letter{font-size:clamp(35px,5.9vw,112px);line-height:1.1;color:var(--teal);font-weight:900;margin:2% 0}
+.quiz-a .why{font-size:clamp(20px,2.8vw,53px);line-height:1.35;color:#fff;max-width:89%}
+.quiz-a .correct-caption{font-size:clamp(15px,2vw,38px);color:var(--gold);font-weight:900}
+.summary .content{justify-content:center}.summary h1{max-width:100%}.summary p{color:var(--soft);font-weight:800}
+.controls{width:min(99vw,1500px);display:flex;justify-content:space-between;align-items:center;gap:9px;flex-wrap:wrap}
+.group{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.controls a,.controls button,.controls select{border:1px solid #3a6377;border-radius:10px;padding:8px 12px;background:#163449;color:#fff;font-size:13px;text-decoration:none;font-weight:900;min-height:39px}
+.controls button.hot{background:#07837b;border-color:#0a9e94}.controls button:disabled{opacity:.4;cursor:default}.controls select{max-width:150px}
+#counter{direction:ltr;text-align:center;display:inline-block;min-width:72px;font-weight:900;font-size:13px;color:#cadde4}
+.progress{height:5px;position:absolute;bottom:0;right:0;left:0;background:#29465b;z-index:15}.progress i{display:block;height:100%;width:0;background:var(--teal);transition:width .15s}
+.keys{font-size:11px;color:#9eb3c3}
+@media(max-width:900px){.controls a,.controls button,.controls select{font-size:11px;padding:6px 8px;min-height:35px}.group{gap:4px}}
+@media(max-width:600px){body{padding:4px}.stage{border-radius:9px}.shell{width:100%}.controls{justify-content:center}.keys{display:none}.story-img{border-radius:7px}.pillar{border-radius:8px}.quiz-q .choice{border-radius:8px}}
+@media print{body{background:white}.controls,.keys,.progress{display:none}.shell{width:100%}.stage{width:100%;height:auto;border:0;box-shadow:none;aspect-ratio:auto}.slide{display:block!important;position:relative;width:100%;height:56.25vw;page-break-after:always}}
+</style></head><body>
+<div class="shell" id="shell" tabindex="0"><main class="stage" id="stage" aria-live="polite"></main><div class="progress"><i id="progress"></i></div></div>
+<nav class="controls" aria-label="פקדי המצגת">
+<div class="group"><a href="sports-excellence-goggins.html">↩ מערך המורה</a><select id="sessions" aria-label="בחירת שיעור"></select></div>
+<div class="group"><button id="previous">→ הקודמת</button><span id="counter"></span><button id="next" class="hot">הבאה ←</button></div>
+<div class="group"><button id="speak">🔊 הקרא</button><button id="stopVoice">■ עצור</button><button id="full">⛶ מסך מלא</button></div>
+</nav><div class="keys">חצים למעבר · Enter למעבר קדימה · R לחשיפת מסר · F למסך מלא · לחיצה על תשובה להצבעה · ההקראה תלויה בקולות הזמינים בדפדפן</div>
+<script src="sports-excellence-goggins-data.js"></script><script>
+(()=>{
+"use strict";
+const d=window.GOGGINS_UNIT,stage=document.getElementById('stage');if(!d){stage.textContent='שגיאה בטעינת הנתונים';return}
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const slides=[],marks={};
+const foot=n=>'<div class="foot"><span>בית ספר אור · חקר האוטוביוגרפיה</span><span>שיעור '+n+'</span></div>';
+function add(lesson,kind,id,body){const html='<section class="slide '+kind+'" data-lesson="'+lesson+'" data-id="'+esc(id)+'"><div class="content">'+body+'</div>'+foot(lesson)+'</section>';slides.push({lesson,kind,id,html})}
+function photo(img){const p=d.images[img];return '<div class="story-img"><img src="'+esc(p.src)+'" alt="'+esc(p.caption)+'" loading="lazy" onerror="this.classList.add(\'failed\')"><div class="fallback">🏃</div><div class="credit"><a href="'+esc(p.page)+'" target="_blank" rel="noopener noreferrer">'+esc(p.caption)+' · '+esc(p.credit)+'</a></div></div>'}
+function background(img){const p=d.images[img];return '<div class="background-photo"><img src="'+esc(p.src)+'" alt="" onerror="this.style.display=\'none\'"></div><div class="photo-credit"><a href="'+esc(p.page)+'" target="_blank" rel="noopener noreferrer">'+esc(p.credit)+'</a></div>'}
+d.sessions.forEach(sess=>{
+ marks[sess.id]=slides.length;
+ const first=d.sections.find(s=>s.session===sess.id);
+ add(sess.id,'cover','cover-'+sess.id,background(first.image)+'<div class="eyebrow">מצוינות וספורט · שיעור '+sess.id+' · 50 דקות</div><h1>'+esc(sess.title)+'</h1><p>'+esc(sess.hook)+'</p><span class="capsule">סיפור · דיון · מחקר · פעילות</span>');
+ d.sections.filter(s=>s.session===sess.id).forEach(s=>{
+  add(sess.id,'question',s.id,'<div class="eyebrow">שיעור '+sess.id+' · סעיף '+esc(s.id)+' · שאלה לכיתה</div><h2>'+esc(s.title)+'</h2><div class="question-title">'+esc(s.question)+'</div><div class="question-ask">עוצרים לדיון לפני שחושפים את הסיפור</div>');
+  add(sess.id,'story',s.id,'<div class="eyebrow">הסיפור · '+esc(s.id)+'</div><h2>'+esc(s.title)+'</h2><div class="story-layout"><div class="story-copy"><p>'+esc(s.story)+'</p><div class="highlight">'+esc(s.questions[0])+'</div></div>'+photo(s.image)+'</div>');
+  add(sess.id,'concept',s.id,'<div class="eyebrow">המסקנה · '+esc(s.id)+'</div><h2>מה אפשר ללמוד?</h2><div class="three">'+s.ideas.map(p=>'<div class="pillar"><b>'+esc(p.label)+'</b><p>'+esc(p.text)+'</p></div>').join('')+'</div><div class="science">'+esc(s.science)+'</div><div class="action">✍️ פעילות: '+esc(s.activity)+'</div>');
+ });
+ d.quiz.filter(q=>q.session===sess.id).forEach((q,i)=>{
+  const k='quiz-'+sess.id+'-'+i;
+  add(sess.id,'quiz-q',k,'<div class="eyebrow">בדיקת הבנה · שיעור '+sess.id+' · שאלה '+(i+1)+'</div><h2>'+esc(q.q)+'</h2><div class="choices">'+q.a.map((a,j)=>'<button type="button" class="choice" data-answer="'+j+'" data-key="'+k+'"><em>'+['א׳','ב׳','ג׳'][j]+'</em>'+esc(a)+'</button>').join('')+'</div><p class="small">בחרו תשובה, נמקו את הבחירה ואז עברו לשקופית ההסבר.</p>');
+  add(sess.id,'quiz-a',k,'<div class="eyebrow">בדיקת הבנה · שיעור '+sess.id+' · שקופית התשובה</div><h2>'+esc(q.q)+'</h2><div class="correct-caption">התשובה הנכונה היא:</div><div class="answer-letter">'+['א׳','ב׳','ג׳'][q.correct]+' — '+esc(q.a[q.correct])+'</div><div class="why">'+esc(q.why)+'</div>');
+ });
+ add(sess.id,'summary','summary-'+sess.id,'<div class="eyebrow">שיעור '+sess.id+' · מסכמים</div><h1>מה נלמד מהסיפור —<br><span class="gold">ומה לא נחקה?</span></h1><p>'+esc(sess.focus)+'</p><p class="mint">בחרו מחשבה אחת ומעשה אחד לשבוע הקרוב.</p>');
+});
+const rendered=slides.map((s,i)=>{const tmp=document.createElement('div');tmp.innerHTML=s.html;const el=tmp.firstElementChild;el.dataset.index=i;stage.append(el);return el});
+let active=0,answers={};
+const counter=document.getElementById('counter'),progress=document.getElementById('progress');
+function stopVoice(){if('speechSynthesis' in window)window.speechSynthesis.cancel()}
+function show(i,save=true){stopVoice();active=Math.max(0,Math.min(i,rendered.length-1));rendered.forEach((el,j)=>el.classList.toggle('active',j===active));counter.textContent=(active+1)+' / '+rendered.length;progress.style.width=((active+1)/rendered.length*100)+'%';document.getElementById('previous').disabled=active===0;document.getElementById('next').disabled=active===rendered.length-1;document.getElementById('sessions').value=String(slides[active].lesson);if(save){const u=new URL(location.href);u.searchParams.set('start',String(active+1));u.searchParams.delete('section');u.searchParams.delete('lesson');history.replaceState({},'',u)}}
+function next(){show(active+1)}function prev(){show(active-1)}
+document.getElementById('previous').onclick=prev;document.getElementById('next').onclick=next;
+document.getElementById('sessions').innerHTML=d.sessions.map(s=>'<option value="'+s.id+'">שיעור '+s.id+' · '+esc(s.title)+'</option>').join('');
+document.getElementById('sessions').onchange=e=>show(marks[e.target.value]);
+document.getElementById('full').onclick=()=>{if(document.fullscreenElement)document.exitFullscreen?.();else document.getElementById('shell').requestFullscreen?.()};
+document.getElementById('speak').onclick=()=>{if(!('speechSynthesis' in window)){alert('הדפדפן אינו תומך בהקראה');return}stopVoice();const text=rendered[active].querySelector('.content')?.innerText||'';const msg=new SpeechSynthesisUtterance(text);msg.lang='he-IL';msg.rate=.92;const voices=window.speechSynthesis.getVoices();const he=voices.find(v=>v.lang.toLowerCase().startsWith('he'));if(he)msg.voice=he;window.speechSynthesis.speak(msg)};
+document.getElementById('stopVoice').onclick=stopVoice;
+stage.addEventListener('click',e=>{const b=e.target.closest('[data-answer]');if(!b)return;const k=b.dataset.key;answers[k]=Number(b.dataset.answer);b.closest('.slide').querySelectorAll('[data-answer]').forEach(x=>x.classList.toggle('selected',x===b))});
+document.addEventListener('keydown',e=>{if(['ArrowLeft','PageDown','Enter'].includes(e.key)){if(e.target.closest('button,select')&&e.key==='Enter')return;e.preventDefault();next()}else if(['ArrowRight','PageUp'].includes(e.key)){e.preventDefault();prev()}else if(e.key==='f'||e.key==='F'||e.key==='כ'){e.preventDefault();document.getElementById('full').click()}else if(e.key==='Home')show(0);else if(e.key==='End')show(rendered.length-1)});
+let touch=null;document.getElementById('shell').addEventListener('touchstart',e=>{touch=e.touches[0]?.clientX??null},{passive:true});document.getElementById('shell').addEventListener('touchend',e=>{if(touch===null)return;const dx=(e.changedTouches[0]?.clientX??touch)-touch;touch=null;if(Math.abs(dx)>70)show(active+(dx>0?1:-1))},{passive:true});
+const p=new URLSearchParams(location.search),section=p.get('section'),lesson=p.get('lesson'),start=Number(p.get('start'));if(section){const i=slides.findIndex(x=>x.id===section&&x.kind==='question');show(i<0?0:i,false)}else if(lesson&&Object.hasOwn(marks,lesson))show(marks[lesson],false);else if(start>=1&&start<=slides.length&&Number.isInteger(start))show(start-1,false);else show(0,false);
+window.GOGGINS_SLIDES={get count(){return slides.length},get totalLessons(){return d.sessions.length},startOfLesson:n=>marks[n],slideFor:id=>slides.findIndex(x=>x.kind==='question'&&x.id===id),sourceVersion:d.version};
+})();
+</script></body></html>
