@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="מערך מלא ומבוסס מקורות לחקר האוטוביוגרפיה של דייוויד גוגינס: 6 שיעורים, 26 נושאים, סיפורים, מחקר, דילמות, משימות ומצגת אינטראקטיבית תואמת.">
+<title>דייוויד גוגינס — האוטוביוגרפיה כמעבדה למצוינות | בית ספר אור</title>
+<style>
+:root{--navy:#101d34;--ink:#19334d;--muted:#536b7f;--line:#dbe6ed;--bg:#f1f5f7;--teal:#087f77;--warm:#c58a3a;--blue:#23608a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 Arial,"Noto Sans Hebrew",system-ui,sans-serif}
+a{color:#126f83}button{font:inherit;cursor:pointer}a:focus-visible,button:focus-visible{outline:3px solid #dcad53;outline-offset:3px}
+.frame{max-width:1190px;margin:auto;padding:0 18px 100px}.top{position:sticky;top:0;z-index:30;display:flex;gap:8px;align-items:center;flex-wrap:wrap;background:#f1f5f7ee;backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:10px 0}
+.top a,.top button{background:#fff;border:1px solid var(--line);border-radius:12px;text-decoration:none;padding:8px 13px;color:#194b69;font-weight:800;font-size:13px;min-height:40px}.top .cta{background:#087f77;border-color:#087f77;color:#fff}
+.top label{margin-inline-start:auto;font-size:12px;font-weight:800;color:var(--muted)}
+.hero{margin:16px 0 22px;min-height:305px;position:relative;isolation:isolate;overflow:hidden;border-radius:29px;color:#fff;background:linear-gradient(125deg,#12263d,#083e4a);display:grid;grid-template-columns:1fr 340px;align-items:center;box-shadow:0 15px 37px #0b1a3030}
+.hero-inner{padding:35px 38px;position:relative;z-index:2}.tag{font-size:13px;font-weight:900;color:#90e5cc;letter-spacing:.06em}.hero h1{font-size:clamp(31px,4.8vw,57px);line-height:1.16;margin:12px 0}.hero p{font-size:17px;color:#d6e9f0;max-width:750px;margin:0 0 19px}.facts{display:flex;gap:9px;flex-wrap:wrap}.facts span{border:1px solid #ffffff65;border-radius:20px;background:#ffffff15;padding:5px 12px;font-size:12px;font-weight:800}
+.hero-photo{height:100%;min-height:305px;background:linear-gradient(100deg,#0c3440,#06212e);position:relative}.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 27%;display:block}.hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 65%,#0d3145aa)}
+.hero-photo small{position:absolute;bottom:9px;left:10px;right:10px;color:#fff;font-size:10px;background:#0009;padding:4px 6px;border-radius:5px;z-index:1}
+.summary,.guard{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px 26px;margin:18px 0}.summary h2,.guard h2{margin:0 0 10px;font-size:23px}.summary p,.guard p{margin:8px 0;color:#415b70}
+.guard{background:#fff9eb;border-color:#efd6a9}.guard h2{color:#765014}
+.session-menu{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0 28px}
+.session-menu a{display:block;background:#fff;border:1px solid var(--line);border-radius:17px;padding:17px 18px;text-decoration:none;box-shadow:0 5px 18px #17354c0c}
+.session-menu strong{display:block;color:#0c6a71;font-size:13px}.session-menu b{display:block;font-size:17px;color:#172f43;line-height:1.35;margin:5px 0}
+.session-menu small{display:block;color:#657b8b;line-height:1.5}
+.session-head{scroll-margin-top:95px;padding:19px 23px;border-radius:19px;color:white;background:linear-gradient(110deg,#0f314b,#0d696a);margin:34px 0 18px}
+.session-head .over{color:#a7e7d4;font-size:13px;font-weight:900}.session-head h2{font-size:28px;margin:7px 0 8px;line-height:1.25}.session-head p{font-size:14px;color:#d6e8ea;margin:6px 0}
+.session-head .links{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.session-head a{color:#083e45;text-decoration:none;font-weight:900;background:#b4ead9;border-radius:9px;padding:7px 12px;font-size:12px}
+.section{scroll-margin-top:95px;margin:17px 0;background:#fff;border:1px solid var(--line);border-radius:24px;padding:26px;box-shadow:0 8px 22px #102f420a}
+.section-head{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.index{font-size:13px;font-weight:900;color:#116d6f;background:#def4ed;border-radius:17px;padding:3px 10px}.section h3{font-size:clamp(22px,3vw,30px);line-height:1.25;margin:9px 0 15px}
+.bigq{background:linear-gradient(115deg,#e6f4f8,#f1faf8);border-right:5px solid #1f8c90;border-radius:15px;padding:19px 22px;font-size:clamp(19px,2.5vw,26px);font-weight:900;color:#16465b}
+.story{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:19px;align-items:start;margin-top:21px}
+.story h4,.section h4{font-size:18px;color:#0a736e;margin:14px 0 9px}
+.story p{margin-top:6px}.photo{margin:0;background:#e7edf2;border-radius:15px;overflow:hidden}
+.photo img{display:block;width:100%;max-height:270px;object-fit:cover;object-position:center}
+.photo figcaption{padding:8px 10px;font-size:11px;line-height:1.4;color:#586b76}.photo figcaption a{color:inherit}
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:18px 0}
+.pillar{background:#f3f7fa;border:1px solid #dfebee;border-radius:14px;padding:15px}
+.pillar b{font-size:16px;color:#124f64;display:block}.pillar p{margin:6px 0 0;font-size:14px;color:#4b6473}
+.science{background:#eff7f8;border-right:4px solid #3b9b9b;padding:13px 17px;border-radius:12px}
+.questions{padding-right:22px;margin:9px 0}.questions li{padding:4px 0}
+.answer{border:1px solid #e7d0a2;border-radius:14px;background:#fff7e9;margin-top:14px;padding:13px 18px}
+.answer p{margin:5px 0}.practice{border-radius:14px;background:#e9f6f0;border:1px solid #bce2d0;margin-top:12px;padding:13px 18px}
+.sources{margin:12px 0 0;color:#5d7586;font-size:12px}.sources a{margin:0 0 0 12px}
+.jump{display:inline-flex;background:#0c7979;color:#fff;text-decoration:none;padding:9px 14px;border-radius:11px;font-weight:900;font-size:13px;margin-top:14px}
+.quiz-zone{scroll-margin-top:100px;background:#fff;border:1px solid var(--line);border-radius:22px;margin:22px 0;padding:25px}
+.quiz-zone h2{margin:0}.quiz-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}
+.quiz-item{background:#f5f8fa;border:1px solid var(--line);border-radius:14px;padding:15px}.quiz-item h4{font-size:16px;margin:0 0 9px}.quiz-item ol{margin:0;padding-right:22px}
+.quiz-item details{margin-top:10px;background:#e8f5ee;border-radius:10px;padding:8px 11px;font-size:13px}.quiz-item summary{font-weight:800;cursor:pointer}
+.end{font-size:13px;color:#617585;text-align:center;padding:25px 10px}
+@media(max-width:900px){.hero{grid-template-columns:1fr 220px}.session-menu{grid-template-columns:repeat(2,1fr)}.story{grid-template-columns:1fr 220px}}
+@media(max-width:640px){.frame{padding:0 10px 85px}.hero{grid-template-columns:1fr}.hero-inner{padding:25px}.hero-photo{height:170px;min-height:0;order:-1}.hero-photo img{object-position:center 25%}.session-menu{grid-template-columns:1fr}.section{padding:18px}.story{grid-template-columns:1fr}.photo img{max-height:230px}.three,.quiz-list{grid-template-columns:1fr}.top label{display:none}.summary,.guard{padding:17px}.session-head h2{font-size:22px}}
+@media print{body{background:white}.top,.jump,.session-menu{display:none}.section{break-inside:avoid;border-color:#999;box-shadow:none}.frame{max-width:none}.hero{box-shadow:none}}
+</style></head>
+<body><main class="frame">
+<nav class="top" aria-label="ניווט"><a href="sports-excellence.html">↩ מצוינות וספורט</a><a href="#sessions">מפת היחידה</a><a href="#references">מקורות ומחקר</a><a class="cta" href="sports-excellence-goggins-slides.html" target="_blank" rel="noopener">▶ הצג מצגת</a><label>בית ספר אור · מדריך מורה</label></nav>
+<header class="hero"><div class="hero-inner"><div class="tag">מסע באוטוביוגרפיה · כיתות ז׳–ח׳ · יחידת מצוינות וספורט</div><h1>דייוויד גוגינס<br>מי כותב את סיפור החיים שלנו?</h1><p>מהילד שחווה פחד וחוסר שייכות אל לוחם, רץ סיבולת וסופר. נחקור את ההצלחות — וגם את המחירים, הטעויות והגבולות.</p><div class="facts"><span>6 שיעורים</span><span>26 תתי־נושאים</span><span>12 שאלות בדיקה</span><span>מדריך + מצגת מאותו מקור</span></div></div><div class="hero-photo"><img id="heroimg" alt="דייוויד גוגינס בריצה" loading="eager"><small>צילום ארכיוני אמיתי · קרדיט מלא בהמשך</small></div></header>
+<section class="summary"><h2>מטרות היחידה</h2><p>להבין מהי אוטוביוגרפיה ומה ההבדל בין סיפור אישי לבין מחקר; לדון בהשפעת חוויות ילדות ובהשתייכות; להכיר כלים לתכנון, התמדה ומסוגלות עצמית; ולזהות את הגבול שבין נחישות בריאה לסיכון ופגיעה.</p><p><strong>עיקרון הוראה:</strong> בכל תת־סעיף שואלים, שומעים עמדות, מספרים סיפור אמיתי, בודקים את ההסבר, מקיימים דילמה ומתרגלים צעד מעשי.</p></section>
+<section class="guard"><h2>לקרוא את גוגינס בהערכה — וגם בביקורת</h2><p>הספר הוא עדות אישית. השיטות של גוגינס אינן כולן טענות מחקריות מוכחות, ו״חוק 40 האחוזים״ אינו חוק פיזיולוגי. אין לעודד תלמידים להתאמן מעבר לכאב, לחקות ירידה קיצונית במשקל, להתעלם מצורך בשינה או לחשוף בפני הכיתה חוויות אישיות של אלימות, דחייה או פציעה.</p></section>
+<section id="sessions"><h2>תוכנית הוראה — שישה מפגשים של 50 דקות</h2><div class="session-menu" id="sessionmenu"></div></section>
+<div id="chapters"></div>
+<section class="quiz-zone" id="review"><h2>מאגר שאלות בדיקה — 12 שאלות עם תשובות</h2><p>בשקופיות כל שאלה מופיעה לפני שקופית התשובה וההסבר. כאן מופיע מפתח מלא למורה.</p><div id="quizroot" class="quiz-list"></div></section>
+<section class="summary" id="references"><h2>מקורות והבחנה בין סוגי מידע</h2><p><strong>העדות הביוגרפית:</strong> ספריו של גוגינס ומקורות המסכמים אותם. <strong>ידע מחקרי:</strong> מקורות CDC, הנחיות רפואת ספורט, ארגון העבודה הבין־לאומי ותיאוריה פסיכולוגית. <strong>העיבוד הכיתתי:</strong> שאלות, דילמות ותרגילים שפותחו במיוחד לבית הספר ולא הוצגו כשאלות שגוגינס כתב בעצמו.</p><div id="sourcelinks"></div></section>
+<footer class="end">☀️ בית ספר אור · יחידה עצמאית המיועדת ללמידה ביקורתית · כל התכנים והמצגת מסונכרנים מתוך מאגר תוכן אחד.</footer>
+</main><script src="sports-excellence-goggins-data.js"></script>
+<script>
+(()=>{
+"use strict";
+const d=window.GOGGINS_UNIT,$=id=>document.getElementById(id);if(!d){$('chapters').textContent='שגיאה בטעינת התוכן';return}
+const e=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const img=(key)=>{const p=d.images[key];return p?'<figure class="photo"><img loading="lazy" src="'+e(p.src)+'" alt="'+e(p.caption)+'" onerror="this.style.display=\'none\'"><figcaption><a href="'+e(p.page)+'" target="_blank" rel="noopener noreferrer">'+e(p.caption)+' · '+e(p.credit)+'</a></figcaption></figure>':''};
+$('heroimg').src=d.images.run.src;
+$('sessionmenu').innerHTML=d.sessions.map(s=>'<a href="#lesson-'+s.id+'"><strong>שיעור '+s.id+' · 50 דקות</strong><b>'+e(s.title)+'</b><small>'+e(s.focus)+'</small></a>').join('');
+const sourceLinks=s=>'<div class="sources">מקורות: '+s.sources.map(k=>d.refs[k]?'<a target="_blank" rel="noopener noreferrer" href="'+e(d.refs[k].url)+'">'+e(d.refs[k].title)+'</a>':'').join('')+'</div>';
+function card(s){return '<article class="section" id="part-'+s.id.replace('.','-')+'"><div class="section-head"><span class="index">'+e(s.id)+'</span><span class="index">שיעור '+s.session+'</span></div><h3>'+e(s.title)+'</h3><div class="bigq">'+e(s.question)+'</div><div class="story"><div><h4>הסיפור מהאוטוביוגרפיה</h4><p>'+e(s.story)+'</p><h4>ההסבר והמגבלות המדעיות</h4><div class="science">'+e(s.science)+'</div></div>'+img(s.image)+'</div><h4>שלושת הרעיונות שנכתוב על הלוח</h4><div class="three">'+s.ideas.map(x=>'<div class="pillar"><b>'+e(x.label)+'</b><p>'+e(x.text)+'</p></div>').join('')+'</div><h4>שאלות לדיון</h4><ol class="questions">'+s.questions.map(x=>'<li>'+e(x)+'</li>').join('')+'</ol><div class="practice"><b>✍️ פעילות בכיתה:</b> '+e(s.activity)+'</div><div class="answer"><b>המסר שנחשוף אחרי הדיון:</b><p>'+e(s.answer)+'</p><b>הערה למורה:</b><p>'+e(s.teacher)+'</p></div>'+sourceLinks(s)+'<a class="jump" href="sports-excellence-goggins-slides.html?section='+encodeURIComponent(s.id)+'" target="_blank" rel="noopener">▶ פתח את מצגת סעיף '+e(s.id)+'</a></article>'}
+$('chapters').innerHTML=d.sessions.map(sess=>'<div class="session-head" id="lesson-'+sess.id+'"><div class="over">שיעור '+sess.id+' · 50 דקות · '+e(sess.range)+'</div><h2>'+e(sess.title)+'</h2><p>'+e(sess.focus)+'</p><p><strong>שאלת מסגרת:</strong> '+e(sess.hook)+'</p><p><strong>הצעת חלוקת זמן:</strong> '+e(sess.plan)+'</p><div class="links"><a href="sports-excellence-goggins-slides.html?lesson='+sess.id+'" target="_blank" rel="noopener">▶ המצגת משיעור זה</a><a href="#sessions">↑ חזרה למפת היחידה</a></div></div>'+d.sections.filter(s=>s.session===sess.id).map(card).join('')).join('');
+$('quizroot').innerHTML=d.quiz.map((q,i)=>'<article class="quiz-item"><span class="index">שאלה '+(i+1)+' · שיעור '+q.session+'</span><h4>'+e(q.q)+'</h4><ol type="א">'+q.a.map(x=>'<li>'+e(x)+'</li>').join('')+'</ol><details><summary>חשוף תשובה והסבר</summary><b>תשובה '+['א׳','ב׳','ג׳'][q.correct]+'</b><p>'+e(q.why)+'</p></details></article>').join('');
+$('sourcelinks').innerHTML=Object.values(d.refs).map(r=>'<p>• <a href="'+e(r.url)+'" target="_blank" rel="noopener noreferrer">'+e(r.title)+'</a></p>').join('');
+})();
+</script><script src="site-nav.js"></script></body></html>
